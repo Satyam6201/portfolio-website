@@ -1,0 +1,19 @@
+.achievements {
+  padding: 50px;
+  text-align: center;
+  background: #fff;
+}
+.achievements h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+.achievements ul {
+  list-style: none;
+  padding: 0;
+}
+.achievements ul li {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #007bff;
+}

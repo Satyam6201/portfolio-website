@@ -1,0 +1,38 @@
+.blog {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.blog h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.blog article {
+  background: white;
+  padding: 20px;
+  margin: 10px auto;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.blog article:hover{
+  width: 81%;
+  box-shadow: 5px 5px 10px gray;
+}
+.blog article h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+.blog article p {
+  color: #555;
+}
+.blog article a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.blog-post a:hover {
+  text-decoration: underline;
+}

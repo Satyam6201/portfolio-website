@@ -1,0 +1,30 @@
+.education {
+  padding: 50px;
+  text-align: center;
+  background: #fff;
+}
+
+.education h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.edu-item {
+  background: #f8f9fa;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edu-item h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.edu-item p {
+  font-size: 1rem;
+  color: #555;
+}

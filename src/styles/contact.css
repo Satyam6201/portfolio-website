@@ -1,0 +1,23 @@
+.contact {
+  padding: 50px;
+  text-align: center;
+  background: #eaeaea;
+}
+.contact a {
+  color: #007bff;
+}
+.resume-button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 15px;
+  background-color: #4193ff;
+  color: rgb(0, 0, 0) !important;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.resume-button:hover {
+  background-color: #e2ecf5;
+}

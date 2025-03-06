@@ -1,0 +1,25 @@
+.techstack {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.tech-icons span {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.tech-icons span:hover {
+  transform: scale(1.1);
+}
