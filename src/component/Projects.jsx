@@ -46,7 +46,7 @@ const projects = [
     title: "Weather App",
     image: "/assets/weather-app.jpg",
     description: "A weather forecast app fetching real-time data from an API.",
-    tech: ["JavaScript", "HTML", "CSS"],
+    tech: ["JavaScript", "API", "HTML", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
     github: "https://github.com/Satyam6201/Weather-App",
   },
