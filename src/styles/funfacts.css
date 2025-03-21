@@ -13,6 +13,9 @@
 .funfacts:hover {
   transform: scale(1.02);
 }
+h2{
+  color: #ffcc00 !important;
+}
 
 h2, h3 {
   font-size: 2rem;

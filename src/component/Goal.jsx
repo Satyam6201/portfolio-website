@@ -35,7 +35,7 @@ function Goal() {
         </div>
       </div>
 
-      <a href="mailto:youremail@example.com" className="hire-me-btn">
+      <a href="mailto:satyamkmishraa@gmail.com" className="hire-me-btn">
         💼 Hire Me
       </a>
     </section>

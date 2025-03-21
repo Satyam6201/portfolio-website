@@ -1,28 +1,30 @@
 .hobbies {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 30px;
   background: linear-gradient(135deg, #2a5298, #4c73ba);
   color: white;
+  margin-bottom: 50px; /* Space below */
 }
 
 .hobbies h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
 }
 
 .hobbies-desc {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
+  font-size: 1.3rem;
+  max-width: 750px;
+  margin: 0 auto 35px;
   line-height: 1.6;
-  color: #f0f0f0;
+  color: #e0e0e0;
 }
 
 .hobbies-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
+  padding: 0 30px; /* Left & Right space */
 }
 
 .hobby-card {
@@ -30,41 +32,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  padding: 20px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  padding: 25px;
   text-align: center;
 }
 
 .hobby-card:hover {
   transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .hobby-icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  margin-bottom: 12px;
 }
 
 .hobby-name {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .hobby-card {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
   }
 
   .hobby-icon {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .hobby-name {
@@ -73,24 +76,32 @@
 }
 
 @media (max-width: 480px) {
+  .hobbies {
+    padding: 60px 20px;
+  }
+
   .hobbies h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hobbies-desc {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .hobbies-list {
+    padding: 0 10px; /* Less space for smaller screens */
   }
 
   .hobby-card {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
 
   .hobby-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hobby-name {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }

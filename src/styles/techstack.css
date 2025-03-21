@@ -1,7 +1,7 @@
 .techstack {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #1c1c1c, #343434);
+  background: linear-gradient(135deg, #003973, #E5E5BE);
   color: white;
 }
 
@@ -14,12 +14,12 @@
   font-size: 2.5rem;
   margin-bottom: 10px;
   font-weight: bold;
-  color: rgb(249, 241, 6);
+  color: #ffcc00;
 }
 
 .sub-text {
   font-size: 1.2rem;
-  color: #bbb;
+  color: #e7e2e2;
   margin-bottom: 30px;
 }
 

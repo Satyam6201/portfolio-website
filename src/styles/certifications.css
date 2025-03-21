@@ -1,55 +1,78 @@
 .certifications {
   text-align: center;
-  padding: 50px;
-  background: #f8f9fa;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ff00ff, #6600ff);
+
+}
+
+.cert-description {
+  font-size: 1.1rem;
+  color: #f9f6f6;
+  margin-bottom: 30px;
 }
 
 .certificates-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   margin-top: 20px;
 }
 
 .certificate-card {
   background: white;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
   padding: 20px;
-  max-width: 350px;
+  max-width: 360px;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .certificate-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .certificate-img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 15px;
+  border: 3px solid #ff4b2b;
 }
 
 .download-btn {
-  display: inline-block;
-  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
   background: linear-gradient(to right, #ff416c, #ff4b2b);
   color: white;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
-  margin-top: 10px;
+  transition: 0.3s ease-in-out;
+  gap: 8px;
+  font-size: 1rem;
 }
 
 .download-btn:hover {
   background: linear-gradient(to right, #ff4b2b, #ff416c);
+  transform: scale(1.05);
+}
+
+.download-icon {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
   .certificate-card {
     max-width: 90%;
+  }
+
+  .download-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
   }
 }

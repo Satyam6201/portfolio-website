@@ -1,124 +1,16 @@
-/* .projects {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f5f5f5;
-}
-
-.projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.project-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
-
-.project-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.project-info {
-  padding: 20px;
-}
-
-.project-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.project-info p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.tech {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-.project-links {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
-}
-
-.live-btn, .github-btn {
-  text-decoration: none;
-  color: white;
-  background: #222;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.live-btn:hover {
-  background: #ff416c;
-}
-
-.github-btn:hover {
-  background: #333;
-}
-
-@media (max-width: 768px) {
-  .projects h2 {
-    font-size: 2rem;
-  }
-
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .project-info h3 {
-    font-size: 1.5rem;
-  }
-}
- */
 
 /* Portfolio Section */
 .projects {
   text-align: center;
   padding: 60px 20px;
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
 .projects h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
   font-weight: 700;
-  color: #333;
+  color: #decd1a;
 }
 
 /* Project Container */
