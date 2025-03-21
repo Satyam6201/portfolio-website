@@ -1,0 +1,68 @@
+.funfacts {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 80%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.funfacts:hover {
+  transform: scale(1.02);
+}
+
+h2, h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.fact-card, .learning-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #ffcc00;
+}
+
+.fact-card button {
+  padding: 10px 20px;
+  border: none;
+  background: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.fact-card button:hover {
+  background: #ff9900;
+}
+
+@media (max-width: 768px) {
+  .funfacts {
+    width: 90%;
+    padding: 40px 15px;
+  }
+
+  h2, h3 {
+    font-size: 1.8rem;
+  }
+
+  .fact-card, .learning-card {
+    max-width: 90%;
+  }
+}

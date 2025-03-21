@@ -1,0 +1,176 @@
+/* .hiring {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  color: white;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 80%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hiring:hover {
+  transform: scale(1.02);
+}
+
+.hiring h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hiring p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+.hiring-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hire-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hire-btn:hover {
+  background: #ffcc00;
+  color: black;
+}
+
+.hire-btn svg {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .hiring {
+    width: 90%;
+    padding: 40px 15px;
+  }
+
+  .hiring h2 {
+    font-size: 2rem;
+  }
+
+  .hiring p {
+    font-size: 1rem;
+  }
+
+  .hire-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+} */
+
+.hiring-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 20px;
+}
+
+.hiring {
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+  border-radius: 10px;
+  width: 80%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hiring:hover {
+  transform: scale(1.02);
+}
+
+/* Internship Section */
+.internship {
+  background: linear-gradient(135deg, #4c73ba, #2a5298);
+}
+
+/* Full-Time Hiring Section */
+.fulltime {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+.hiring h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.hiring p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+.hiring-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hire-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hire-btn:hover {
+  background: #ffcc00;
+  color: black;
+}
+
+.hire-btn svg {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hiring {
+    width: 90%;
+    padding: 40px 15px;
+  }
+
+  .hiring h2 {
+    font-size: 2rem;
+  }
+
+  .hiring p {
+    font-size: 1rem;
+  }
+
+  .hire-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

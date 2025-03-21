@@ -1,38 +1,92 @@
 .blog {
-  padding: 50px;
-  background-color: #f9f9f9;
+  padding: 60px 20px;
+  background: #f9f9f9;
   text-align: center;
 }
+
 .blog h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
 }
-.blog article {
+
+.blog-intro {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.blog-card {
   background: white;
   padding: 20px;
-  margin: 10px auto;
-  width: 80%;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.blog article:hover{
-  width: 81%;
-  box-shadow: 5px 5px 10px gray;
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
-.blog article h3 {
-  font-size: 1.5rem;
-  color: #333;
+
+.blog-card h3 {
+  font-size: 1.6rem;
+  color: #222;
 }
-.blog article p {
+
+.blog-card p {
   color: #555;
-}
-.blog article a {
-  display: inline-block;
   margin-top: 10px;
+  font-size: 1rem;
+}
+
+.blog-card a {
+  display: inline-block;
+  margin-top: 12px;
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease-in-out;
 }
-.blog-post a:hover {
+
+.blog-card a:hover {
+  color: #ff4b2b;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+
+  .blog h2 {
+    font-size: 2rem;
+  }
+
+  .blog-intro {
+    font-size: 1rem;
+  }
+
+  .blog-card {
+    padding: 15px;
+  }
+
+  .blog-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .blog-card p {
+    font-size: 0.9rem;
+  }
 }

@@ -1,5 +1,108 @@
 .about {
   text-align: center;
-  padding: 40px;
-  background: #eaeaea;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e1e1e, #252525);
+  color: white;
+  border-radius: 12px;
+  margin: 50px auto;
+  width: 80%;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about:hover {
+  transform: scale(1.02);
+}
+
+.about h2 {
+  font-size: 2.8rem;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.about-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.about-section:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+.about-section h3 {
+  font-size: 1.8rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.about-section p, .about-section ul {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-section ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.about-section ul li span {
+  font-size: 1.4rem;
+  color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    width: 90%;
+    padding: 40px 15px;
+  }
+
+  .about h2 {
+    font-size: 2.4rem;
+  }
+
+  .about-intro {
+    font-size: 1.1rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p, .about-section ul {
+    font-size: 1rem;
+  }
+
+  .about-section ul li span {
+    font-size: 1.2rem;
+  }
 }

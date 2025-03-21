@@ -1,25 +1,98 @@
 .techstack {
   text-align: center;
-  padding: 50px;
-  background-color: #f8f9fa;
-}
-
-.tech-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.tech-icons span {
-  padding: 10px 15px;
-  background: #007bff;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1c1c1c, #343434);
   color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: transform 0.3s;
 }
 
-.tech-icons span:hover {
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.techstack h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: rgb(249, 241, 6);
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.tech-card:hover {
   transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.tech-card span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .techstack {
+    padding: 60px 15px;
+  }
+
+  .techstack h2 {
+    font-size: 2rem;
+  }
+
+  .sub-text {
+    font-size: 1rem;
+  }
+
+  .tech-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tech-card span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .techstack h2 {
+    font-size: 1.8rem;
+  }
+
+  .sub-text {
+    font-size: 0.9rem;
+  }
 }

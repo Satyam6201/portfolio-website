@@ -1,0 +1,60 @@
+.volunteer {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #4c73ba, #2a5298);
+  color: white;
+}
+
+.volunteer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.volunteer p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.volunteer-card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.volunteer-card:hover {
+  transform: scale(1.05);
+}
+
+.volunteer-icon {
+  font-size: 3rem;
+  color: #ff416c;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .volunteer h2 {
+    font-size: 2rem;
+  }
+
+  .volunteer p {
+    font-size: 1rem;
+  }
+
+  .volunteer-card {
+    padding: 15px;
+  }
+}

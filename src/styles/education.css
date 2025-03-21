@@ -1,30 +1,126 @@
 .education {
-  padding: 50px;
+  padding: 60px 20px;
   text-align: center;
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
 }
 
 .education h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.edu-item {
-  background: #f8f9fa;
-  padding: 15px;
-  margin: 15px auto;
-  max-width: 600px;
+/* Timeline UL */
+.edu-timeline {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Timeline Items */
+.edu-timeline li {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
-.edu-item h3 {
+/* Left Border Line */
+.edu-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+/* Hover Effect */
+.edu-timeline li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons */
+.edu-icon {
+  width: 50px;
+  height: 50px;
+  background: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   font-size: 1.5rem;
-  color: #007bff;
+  margin-right: 15px;
 }
 
-.edu-item p {
+/* Content */
+.edu-content {
+  text-align: left;
+  flex: 1;
+}
+
+.edu-content h3 {
+  font-size: 1.6rem;
+  color: #007bff;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edu-content p {
   font-size: 1rem;
   color: #555;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  transition: width 1s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education h2 {
+    font-size: 2rem;
+  }
+
+  .edu-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .edu-content p {
+    font-size: 0.9rem;
+  }
+
+  .edu-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
 }
