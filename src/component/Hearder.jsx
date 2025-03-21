@@ -7,16 +7,14 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="/public/assets/image.jpg" alt="Profile" className="profile-img" />
+        <img src="/assets/image.jpg" alt="Profile" className="profile-img" />
         <h1><i>Satyam Kumar Mishra</i></h1>
       </div>
 
-      {/* Mobile Menu Button */}
       <div className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </div>
 
-      {/* Navbar Links */}
       <nav className={menuOpen ? "nav-links active" : "nav-links"}>
         <ul>
           <li><a href="#home">Home</a></li>
