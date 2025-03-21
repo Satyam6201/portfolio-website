@@ -29,7 +29,7 @@ function Contact() {
         </a>
       </div>
 
-      <a href="public/Resume.pdf" download className="resume-btn">
+      <a href="/public/assets/Resume.pdf" download className="resume-btn">
         <FaDownload /> Download Resume
       </a>
     </section>

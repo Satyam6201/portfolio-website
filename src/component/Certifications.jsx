@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/certifications.css";
-import certificateImg from "/public/Certificate.png"; // Add your certificate image here
+import certificateImg from "/public/assets/Certificate.png"; 
 
 function Certifications() {
   return (

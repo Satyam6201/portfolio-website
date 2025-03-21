@@ -7,7 +7,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="public/image.jpg" alt="Profile" className="profile-img" />
+        <img src="/public/assets/image.jpg" alt="Profile" className="profile-img" />
         <h1><i>Satyam Kumar Mishra</i></h1>
       </div>
 

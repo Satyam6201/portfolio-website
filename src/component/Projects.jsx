@@ -4,7 +4,7 @@ import "../styles/projects.css";
 const projects = [
   {
     title: "Quora Post",
-    image: "public/Quora Post.jpg",
+    image: "/public/assets/Quora Post.jpg",
     description: "A Quora-like post-sharing platform using REST API.",
     tech: ["Node.js", "Express.js", "EJS", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
@@ -12,7 +12,7 @@ const projects = [
   },
   {
     title: "Digital Clock",
-    image: "public/Digital-clock-App.png",
+    image: "/public/assets/Digital-clock-App.png",
     description: "A modern digital clock with alarm, themes, and PWA support.",
     tech: ["React.js", "JavaScript", "HTML", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "Memory Card Game",
-    image: "public/memory-card-game.avif",
+    image: "/public/assets/memory-card-game.avif",
     description: "A fun memory-matching card game with animations.",
     tech: ["React.js", "JavaScript", "HTML", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
@@ -28,7 +28,7 @@ const projects = [
   },
   {
     title: "Quiz App",
-    image: "public/Quiz Game.jpg",
+    image: "/public/assets/Quiz Game.jpg",
     description: "An interactive quiz app with API-based questions & scoring.",
     tech: ["React.js", "JavaScript", "API", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
@@ -36,7 +36,7 @@ const projects = [
   },
   {
     title: "SaaS-Dashboard",
-    image: "public/SaaS-Dashboard.png",
+    image: "/public/assets/SaaS-Dashboard.png",
     description: "Enhanced SaaS Dashboard with modern UI, animated sidebar, dark mode fixes, and improved charts.",
     tech: ["React.js", "JavaScript", "HTML", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     title: "Weather App",
-    image: "public/weather-app.jpg",
+    image: "/public/assets/weather-app.jpg",
     description: "A weather forecast app fetching real-time data from an API.",
     tech: ["JavaScript", "HTML", "CSS"],
     liveDemo: "https://your-live-demo-link.com",
