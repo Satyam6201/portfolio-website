@@ -33,7 +33,7 @@ function Footer() {
           <span className="tooltip-text">GitHub</span>
         </a>
 
-        <a href="mailto:youremail@example.com" className="tooltip">
+        <a href="mailto:satyamkmishraa@gmail.com" className="tooltip">
           <FaEnvelope className="icon email" />
           <span className="tooltip-text">Email</span>
         </a>
