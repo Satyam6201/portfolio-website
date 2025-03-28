@@ -3,7 +3,7 @@
   padding: 80px 30px;
   background: linear-gradient(135deg, #2a5298, #4c73ba);
   color: white;
-  margin-bottom: 50px; /* Space below */
+  margin-bottom: 50px;
 }
 
 .hobbies h2 {
@@ -24,7 +24,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
-  padding: 0 30px; /* Left & Right space */
+  padding: 0 30px; 
 }
 
 .hobby-card {
@@ -89,7 +89,7 @@
   }
 
   .hobbies-list {
-    padding: 0 10px; /* Less space for smaller screens */
+    padding: 0 10px; 
   }
 
   .hobby-card {

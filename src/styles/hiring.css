@@ -21,12 +21,10 @@
   transform: scale(1.02);
 }
 
-/* Internship Section */
 .internship {
   background: linear-gradient(135deg, #4c73ba, #2a5298);
 }
 
-/* Full-Time Hiring Section */
 .fulltime {
   background: linear-gradient(135deg, #ff4b2b, #ff416c);
 }
