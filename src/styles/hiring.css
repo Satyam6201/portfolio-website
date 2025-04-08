@@ -76,7 +76,7 @@
 }
 
 /* Responsive Design */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hiring {
     width: 90%;
     padding: 40px 15px;
@@ -94,4 +94,4 @@
     padding: 10px 15px;
     font-size: 0.9rem;
   }
-} */
+}
