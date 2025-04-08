@@ -66,7 +66,7 @@
   font-size: 1.2rem;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .certificate-card {
     max-width: 90%;
   }
@@ -75,5 +75,5 @@
     padding: 10px 15px;
     font-size: 0.9rem;
   }
-} */
+}
  
