@@ -80,7 +80,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .about {
     width: 90%;
     padding: 40px 15px;
@@ -105,4 +105,4 @@
   .about-section ul li span {
     font-size: 1.2rem;
   }
-}
+} */

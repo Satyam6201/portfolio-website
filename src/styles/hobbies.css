@@ -60,7 +60,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hobby-card {
     width: 150px;
     height: 150px;
@@ -104,4 +104,4 @@
   .hobby-name {
     font-size: 0.95rem;
   }
-}
+} */

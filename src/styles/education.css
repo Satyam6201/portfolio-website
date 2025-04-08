@@ -98,7 +98,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .education h2 {
     font-size: 2rem;
   }
@@ -116,4 +116,4 @@
     height: 40px;
     font-size: 1.2rem;
   }
-}
+} */

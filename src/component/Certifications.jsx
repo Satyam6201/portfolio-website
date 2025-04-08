@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/certifications.css";
 import { FaDownload } from "react-icons/fa";
-import certificateImg from "/public/assets/Certificate.png"; 
+import certificateImg from "/public/assets/Certificate-WebD.png"; 
+import certificateImgDSA from "/public/assets/DSA-certificate.png";
 
 function Certifications() {
   return (
@@ -12,12 +13,19 @@ function Certifications() {
       </p>
 
       <div className="certificates-container">
-        {/* Single Certificate Card */}
         <div className="certificate-card">
           <img src={certificateImg} alt="Apna College Certificate" className="certificate-img" />
           <h3>Full Stack Web Development</h3>
           <p>Issued by <strong>Apna College</strong></p>
           <a href={certificateImg} download="Apna_College_Certificate.jpg" className="download-btn">
+            <FaDownload className="download-icon" /> Download
+          </a>
+        </div>
+        <div className="certificate-card">
+          <img src={certificateImg} alt="Apna College Certificate" className="certificate-img" />
+          <h3>Java-Based DSA Proficiency Program</h3>
+          <p>Issued by <strong>Apna College</strong></p>
+          <a href={certificateImgDSA} download="Apna_College_Certificate.jpg" className="download-btn">
             <FaDownload className="download-icon" /> Download
           </a>
         </div>

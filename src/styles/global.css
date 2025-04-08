@@ -1,4 +1,4 @@
-/* General Styles */
+General Styles
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -60,7 +60,7 @@ h2 {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .about, .projects, .contact, .funfacts, .hobbies, .blog, 
   .hiring-container, .achievements, .techstack {
     width: 90%;
@@ -111,4 +111,4 @@ h2 {
   .footer {
     font-size: 0.9rem;
   }
-}
+} */

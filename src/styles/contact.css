@@ -102,7 +102,7 @@
   background: #ff4b2b;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .contact {
     width: 90%;
     padding: 40px 15px;
@@ -122,4 +122,4 @@
     font-size: 0.9rem;
     padding: 10px 15px;
   }
-}
+} */

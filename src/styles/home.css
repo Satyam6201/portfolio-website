@@ -75,7 +75,7 @@ html, body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px ) { 
   .home {
     padding-top: 60px;
   }
@@ -125,4 +125,4 @@ html, body {
   .home-btn {
     padding: 12px 25px;
   }
-}
+} */
