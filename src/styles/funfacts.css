@@ -55,7 +55,7 @@ h2, h3 {
   background: #ff9900;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .funfacts {
     width: 90%;
     padding: 40px 15px;
@@ -68,4 +68,4 @@ h2, h3 {
   .fact-card, .learning-card {
     max-width: 90%;
   }
-} */
+}
