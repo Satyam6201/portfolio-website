@@ -65,7 +65,7 @@
   text-decoration: underline;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .blog-container {
     grid-template-columns: 1fr;
   }
@@ -89,4 +89,4 @@
   .blog-card p {
     font-size: 0.9rem;
   }
-} */
+}
