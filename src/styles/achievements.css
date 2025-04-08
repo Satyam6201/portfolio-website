@@ -52,7 +52,7 @@
   color: #fff;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .achievements {
     width: 90%;
   }
@@ -65,4 +65,4 @@
     width: 90%;
     padding: 15px;
   }
-} */
+}
