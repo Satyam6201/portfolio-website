@@ -121,7 +121,7 @@
   background: linear-gradient(135deg, #0072ff, #0045a1);
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .projects h2 {
     font-size: 2rem;
   }
@@ -133,4 +133,4 @@
   .project-info h3 {
     font-size: 1.4rem;
   }
-} */
+}
