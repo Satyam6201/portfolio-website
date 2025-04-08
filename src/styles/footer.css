@@ -18,7 +18,7 @@
 }
 
 .icon {
-  font-size: 32px !important;
+  font-size: 50px !important;
   transition: transform 0.3s ease-in-out, color 0.3s, text-shadow 0.3s;
   cursor: pointer;
   padding: 10px;
