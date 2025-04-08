@@ -1,4 +1,6 @@
-General Styles
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
