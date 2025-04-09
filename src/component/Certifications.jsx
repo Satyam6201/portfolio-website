@@ -9,7 +9,7 @@ function Certifications() {
     <section id="certifications" className="certifications">
       <h2>🎓 Certifications</h2>
       <p className="cert-description">
-        Here are some certifications that highlight my expertise in web development.
+        Here are some certifications that highlight my expertise in web development and DSA.
       </p>
 
       <div className="certificates-container">
