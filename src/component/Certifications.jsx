@@ -22,7 +22,7 @@ function Certifications() {
           </a>
         </div>
         <div className="certificate-card">
-          <img src={certificateImg} alt="Apna College Certificate" className="certificate-img" />
+          <img src={certificateImgDSA} alt="Apna College Certificate" className="certificate-img" />
           <h3>Java-Based DSA Proficiency Program</h3>
           <p>Issued by <strong>Apna College</strong></p>
           <a href={certificateImgDSA} download="Apna_College_Certificate.jpg" className="download-btn">
