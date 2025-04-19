@@ -28,8 +28,8 @@ h2 {
 }
 
 /* Sections - About, Projects, Contact, Fun Facts, Hobbies, Blog, Hiring, Achievements, techstack, volunteer, certifications*/
-.about, .projects, .contact, .funfacts, .hobbies, .goal-section, .education, 
-.blog, .hiring-container, .achievements, .techstack, .volunteer, .certifications {
+.about,.achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
+.hiring-container, .hobbies, .projects,.techstack, .volunteer{
 
   padding: 80px 20px;
   background-color: white;
@@ -75,7 +75,6 @@ h2 {
     text-align: center;
     gap: 10px;
   }
-
   .about, .projects, .contact, .funfacts, .hobbies, .blog, 
   .hiring-container, .achievements, .techstack {
     width: 95%;

@@ -24,7 +24,7 @@ html, body {
 }
 
 .home-content {
-  margin-top: -20px;
+  margin-top: -40px;
   max-width: 800px;
   padding: 40px;
   background: rgba(255, 255, 255, 0.1);
@@ -117,7 +117,7 @@ html, body {
 @media (max-width: 480px) {
   .home {
     padding-top: 50px;
-    width: 38% !important;
+    width: 39% !important;
   }
 
   .home-content {
@@ -147,22 +147,23 @@ html, body {
 
 @media (max-width: 400px) {
   .home {
+    margin-top: 90px;
     padding-top: 50px;
     width: 36% !important;
   }
 }
 @media (max-width: 380px) {
   .home {
-    margin-top: 70px;
+    margin-top: 90px;
     padding-top: 20px;
     width: 35% !important;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 361px) {
   .home {
-    margin-top: 80px;
+    margin-top: 90px;
     padding-top: 20px;
     width: 34% !important;
-    margin-left: 5px !important;
+    /* margin-left: 5px !important; */
   }
 }
