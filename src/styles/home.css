@@ -158,7 +158,7 @@ html, body {
     width: 35% !important;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 360px) {
   .home {
     margin-top: 70px;
     padding-top: 20px;
