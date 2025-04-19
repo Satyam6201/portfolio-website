@@ -163,6 +163,6 @@ html, body {
     margin-top: 80px;
     padding-top: 20px;
     width: 34% !important;
-
+    margin-left: 5px !important;
   }
 }
