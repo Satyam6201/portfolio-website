@@ -78,6 +78,7 @@ html, body {
 @media (max-width: 768px ) { 
   .home {
     padding-top: 60px;
+    width: 70% !important;
   }
 
   .home-content {
@@ -98,10 +99,17 @@ html, body {
     height: 220px;
   }
 }
+@media (max-width: 550px) {
+  .home {
+    padding-top: 50px;
+    width: 50% !important;
+  }
+}
 
 @media (max-width: 480px) {
   .home {
     padding-top: 50px;
+    width: 38% !important;
   }
 
   .home-content {
@@ -124,5 +132,21 @@ html, body {
 
   .home-btn {
     padding: 12px 25px;
+  }
+}
+
+
+
+@media (max-width: 400px) {
+  .home {
+    padding-top: 50px;
+    width: 36% !important;
+  }
+}
+@media (max-width: 380px) {
+  .home {
+    margin-top: 70px;
+    padding-top: 20px;
+    width: 35% !important;
   }
 }
