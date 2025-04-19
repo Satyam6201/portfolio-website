@@ -160,9 +160,9 @@ html, body {
 }
 @media (max-width: 360px) {
   .home {
-    margin-top: 70px;
+    margin-top: 80px;
     padding-top: 20px;
-    width: 32% !important;
+    width: 34% !important;
 
   }
 }
