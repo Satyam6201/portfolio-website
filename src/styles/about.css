@@ -53,7 +53,8 @@
   margin-bottom: 10px;
 }
 
-.about-section p, .about-section ul {
+.about-section p,
+.about-section ul {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -79,30 +80,123 @@
   color: #ffcc00;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+
+/* 300px - 479px (Very Small Devices like iPhone SE) */
+@media (max-width: 400px) {
   .about {
-    width: 90%;
-    padding: 40px 15px;
+    width: 35%;
+    padding: 30px 10px;
+    margin-left: 0px;
   }
 
   .about h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .about-intro {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p,
+  .about-section ul {
+    font-size: 0.95rem;
+  }
+
+  .about-section ul li span {
+    font-size: 1rem;
+  }
+}
+
+/* 480px - 767px (Small Phones & Large Phones) */
+@media (min-width: 410px) and (max-width: 767px) {
+  .about {
+    width: 40%;
+    padding: 35px 15px;
+    margin-left: -11px;
+  }
+
+  .about h2 {
+    font-size: 2.3rem;
+  }
+
+  .about-intro {
+    font-size: 1.05rem;
   }
 
   .about-section h3 {
     font-size: 1.5rem;
   }
 
-  .about-section p, .about-section ul {
+  .about-section p,
+  .about-section ul {
     font-size: 1rem;
   }
 
   .about-section ul li span {
     font-size: 1.2rem;
+  }
+}
+
+/* 768px - 1023px (Tablets and Small Laptops) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about {
+    width: 75%;
+    padding: 50px 30px;
+    margin-left: -5px;
+  }
+
+  .about h2 {
+    font-size: 2.6rem;
+  }
+
+  .about-intro {
+    font-size: 1.15rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.7rem;
+  }
+
+  .about-section p,
+  .about-section ul {
+    font-size: 1.05rem;
+  }
+
+  .about-section ul li span {
+    font-size: 1.3rem;
+  }
+}
+
+/* 1024px and above (Desktops) */
+@media (min-width: 1024px) {
+  .about {
+    width: 70%;
+    padding: 60px;
+  }
+
+  .about h2 {
+    font-size: 3rem;
+  }
+
+  .about-intro {
+    font-size: 1.25rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.9rem;
+  }
+
+  .about-section p,
+  .about-section ul {
+    font-size: 1.15rem;
+  }
+
+  .about-section ul li span {
+    font-size: 1.5rem;
   }
 }
