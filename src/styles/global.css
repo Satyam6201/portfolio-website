@@ -63,11 +63,18 @@ h2 {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .about, .projects, .contact, .funfacts, .hobbies, .blog, 
-  .hiring-container, .achievements, .techstack {
+.about,.achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
+.hiring-container, .hobbies, .projects,.techstack, .volunteer {
     width: 90%;
   }
 }
+
+@media (max-width: 950px) {
+  .about,.achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
+  .hiring-container, .hobbies, .projects,.techstack, .volunteer {
+      width: 70% !important;
+    }
+  }
 
 @media (max-width: 768px) {
   .header ul {
@@ -75,8 +82,8 @@ h2 {
     text-align: center;
     gap: 10px;
   }
-  .about, .projects, .contact, .funfacts, .hobbies, .blog, 
-  .hiring-container, .achievements, .techstack {
+  .about,.achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
+  .hiring-container, .hobbies, .projects,.techstack, .volunteer{
     width: 95%;
     padding: 60px 15px;
   }
@@ -99,8 +106,8 @@ h2 {
     padding-top: 60px;
   }
 
-  .about, .projects, .contact, .funfacts, .hobbies, .blog, 
-  .hiring-container, .achievements, .techstack {
+  .about,.achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
+  .hiring-container, .hobbies, .projects,.techstack, .volunteer {
     padding: 50px 15px;
     width: 100%;
   }
