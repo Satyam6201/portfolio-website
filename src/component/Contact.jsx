@@ -6,32 +6,37 @@ function Contact() {
   return (
     <section id="contact" className="contact">
       <h2>📞 Get in Touch</h2>
-      <p className="contact-text">Let's connect! Feel free to reach out to me for collaborations, job opportunities, or just to say hi.</p>
+      <p className="contact-subtext">Feel free to reach out for <strong>collaborations, internships, freelance work, or a friendly chat!</strong></p>
 
-      <div className="contact-info">
-        <a href="mailto:satyamkmishraa@gmail.com" className="contact-btn">
-          <FaEnvelope /> Email Me
-        </a>
-        <a href="tel:+916201902313" className="contact-btn">
-          <FaPhoneAlt /> Call Me
-        </a>
-        <a href="https://wa.me/916201902313" className="contact-btn">
-          <FaWhatsapp /> WhatsApp Me
-        </a>
+      <div className="contact-box">
+        <div className="contact-info">
+          <a href="mailto:satyamkmishraa@gmail.com" className="contact-btn">
+            <FaEnvelope /> Email Me
+          </a>
+          <a href="tel:+916201902313" className="contact-btn">
+            <FaPhoneAlt /> Call Me
+          </a>
+          <a href="https://wa.me/916201902313" className="contact-btn">
+            <FaWhatsapp /> WhatsApp Me
+          </a>
+        </div>
+
+        <div className="social-links">
+          <a href="https://github.com/Satyam6201" target="_blank" className="social-icon">
+            <FaGithub /> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/" target="_blank" className="social-icon">
+            <FaLinkedin /> LinkedIn
+          </a>
+        </div> 
+        <div className="resume-wrapper">
+          <a href="/assets/Resume.pdf" download className="resume-btn">
+          <FaDownload /> Download Resume
+          </a>
+        </div>
       </div>
 
-      <div className="social-links">
-        <a href="https://github.com/Satyam6201" target="_blank" className="social-icon">
-          <FaGithub /> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/" target="_blank" className="social-icon">
-          <FaLinkedin /> LinkedIn
-        </a>
-      </div>
-
-      <a href="/assets/Resume.pdf" download className="resume-btn">
-        <FaDownload /> Download Resume
-      </a>
+      <p className="footer-note">🚀 Let’s build something amazing together!</p>
     </section>
   );
 }

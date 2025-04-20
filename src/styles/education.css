@@ -2,21 +2,33 @@
   padding: 60px 20px;
   text-align: center;
   background: linear-gradient(135deg, #00b09b, #96c93d);
+  position: relative;
+  overflow: hidden;
 }
 
 .education h2 {
   font-size: 2.5rem;
-  color: #222;
-  margin-bottom: 40px;
+  color: #fff;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
+.education::after {
+  content: "My Academic Journey";
+  display: block;
+  font-size: 1.1rem;
+  color: #f5f5f5;
+  opacity: 0.8;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
 .edu-timeline {
   position: relative;
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
   list-style: none;
   padding-left: 0;
@@ -24,43 +36,39 @@
 
 .edu-timeline li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   position: relative;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}
-
-.edu-timeline li::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #007bff;
-  border-radius: 2px;
+  border-left: 5px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s;
 }
 
 .edu-timeline li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .edu-icon {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   background: #007bff;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  font-size: 1.5rem;
-  margin-right: 15px;
+  font-size: 1.6rem;
+  margin-right: 18px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+  transition: transform 0.3s;
+}
+
+.edu-timeline li:hover .edu-icon {
+  transform: rotate(10deg) scale(1.1);
 }
 
 .edu-content {
@@ -69,24 +77,36 @@
 }
 
 .edu-content h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #007bff;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  position: relative;
+}
+
+.edu-content h3::after {
+  content: attr(data-badge);
+  font-size: 0.75rem;
+  background: #ff416c;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: auto;
 }
 
 .edu-content p {
   font-size: 1rem;
-  color: #555;
+  color: #444;
+  margin: 6px 0;
 }
 
 .progress-bar {
   width: 100%;
-  height: 10px;
-  background: #ddd;
-  border-radius: 5px;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
   margin-top: 10px;
   overflow: hidden;
 }
@@ -95,4 +115,19 @@
   height: 100%;
   background: linear-gradient(to right, #ff4b2b, #ff416c);
   transition: width 1s ease-in-out;
+  border-radius: 6px;
+}
+
+.edu-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  background: #007bff;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
 }

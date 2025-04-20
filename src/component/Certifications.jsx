@@ -18,7 +18,7 @@ function Certifications() {
       type: "Web Development",
       image: certificateImg,
       downloadName: "WebDev_Certificate.jpg",
-      link: "#", // replace with real verification link if any
+      link: "#", 
     },
     {
       title: "Java-Based DSA Proficiency Program",

@@ -1,125 +1,99 @@
 .contact {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b, #fdf497);
+  background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
   color: white;
-  border-radius: 10px;
-  width: 80%;
+  border-radius: 16px;
+  width: 85%;
   margin: 50px auto;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease-in-out;
 }
 
 .contact:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #ffcc70, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .contact-text {
   font-size: 1.2rem;
-  max-width: 600px;
+  max-width: 650px;
   margin: 10px auto;
   line-height: 1.6;
+  color: #f0f0f0;
 }
 
 .contact-info {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 18px;
+  margin-top: 25px;
 }
 
-.contact-btn {
+.contact-btn,
+.social-icon,
+.resume-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: #ff416c;
+  gap: 10px;
+  padding: 14px 24px;
   color: white !important;
-  border-radius: 8px;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  box-shadow: 0 6px 15px rgba(255, 65, 108, 0.4);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.contact-btn:hover {
-  background: #ffcc00;
-  color: black;
+.contact-btn:hover,
+.social-icon:hover,
+.resume-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #f7b42c, #fc575e);
+  color: #000 !important;
 }
 
-.contact-btn svg {
-  font-size: 1.2rem;
-}
-
+/* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 18px;
+  margin-top: 25px;
 }
 
-.social-icon {
+/* Resume Button Centered */
+.resume-wrapper {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 15px;
-  background: #222;
-  color: white !important;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.social-icon:hover {
-  background: #ffcc00;
-  color: black;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .resume-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 25px;
-  background: #ff416c;
-  color: white !important;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-top: 25px;
-  transition: 0.3s ease-in-out;
+  padding: 16px 30px;
+  font-size: 1rem;
+  border-radius: 14px;
+  font-weight: 600;
 }
 
-.resume-btn:hover {
-  background: #ff4b2b;
+/* SVG Icon Size */
+.contact-btn svg,
+.social-icon svg,
+.resume-btn svg {
+  font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  .contact {
-    width: 90%;
-    padding: 40px 15px;
-  }
 
-  .contact h2 {
-    font-size: 2rem;
-  }
-
-  .contact-text {
-    font-size: 1rem;
-  }
-
-  .contact-btn,
-  .social-icon,
-  .resume-btn {
-    font-size: 0.9rem;
-    padding: 10px 15px;
-  }
-}
