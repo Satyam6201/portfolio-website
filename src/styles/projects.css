@@ -1,48 +1,48 @@
 .projects {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
 }
 
 .projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  font-weight: 700;
-  color: #decd1a;
+  font-size: 2.7rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+  color: #ffcb05;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .project-card {
-  background: white;
-  border-radius: 15px;
+  background: #fff;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.35s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.18);
+  transform: scale(1.03);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .project-img {
   width: 100%;
-  height: 200px;
+  height: 210px;
   object-fit: cover;
-  border-radius: 15px 15px 0 0;
-  transition: transform 0.3s ease;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-img {
@@ -50,21 +50,22 @@
 }
 
 .project-info {
-  padding: 20px;
+  padding: 22px;
   text-align: center;
 }
 
 .project-info h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #222;
-  font-weight: bold;
+  color: #333;
+  font-weight: 700;
 }
 
 .project-info p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .tech-stack {
@@ -72,14 +73,14 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 12px;
+  margin-bottom: 16px;
 }
 
 .tech {
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
+  color: #fff;
   padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
   box-shadow: 0 3px 8px rgba(255, 65, 108, 0.3);
@@ -88,17 +89,18 @@
 .project-links {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 14px;
+  margin-top: 10px;
 }
 
-.live-btn, .github-btn {
+.live-btn,
+.github-btn {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: 1rem;
   font-weight: bold;
-  padding: 12px 18px;
-  border-radius: 8px;
+  padding: 12px 20px;
+  border-radius: 50px;
   transition: all 0.3s ease-in-out;
   display: inline-flex;
   align-items: center;
@@ -106,17 +108,17 @@
 }
 
 .live-btn {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: linear-gradient(135deg, #28a745, #218838);
 }
 
 .github-btn {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: linear-gradient(135deg, #6f42c1, #563d7c);
 }
 
 .live-btn:hover {
-  background: linear-gradient(135deg, #0056b3, #003c80);
+  background: linear-gradient(135deg, #218838, #19692c);
 }
 
 .github-btn:hover {
-  background: linear-gradient(135deg, #0072ff, #0045a1);
+  background: linear-gradient(135deg, #563d7c, #3e2d5c);
 }

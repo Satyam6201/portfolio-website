@@ -17,7 +17,7 @@ html, body {
 }
 
 .typewriter {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffcc00;
@@ -34,7 +34,7 @@ html, body {
 }
 
 .home h2 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -44,16 +44,17 @@ html, body {
 }
 
 .home p {
-  font-size: 1.3rem;
-  max-width: 600px;
+  font-size: 1.4rem;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .home img {
-  width: 280px;
-  height: 280px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #fff;
@@ -80,4 +81,53 @@ html, body {
 .home-btn:hover {
   background: #ffeb3b;
   transform: scale(1.1);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  margin: 0 20px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  background: #ffcc00;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icon svg {
+  margin-right: 8px;
+}
+
+.social-icon:hover {
+  background: #ffeb3b;
+  transform: scale(1.1);
+}
+
+/* Call to Action Section */
+.cta-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cta-section h4 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
 }
