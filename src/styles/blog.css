@@ -65,28 +65,3 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .blog-container {
-    grid-template-columns: 1fr;
-  }
-
-  .blog h2 {
-    font-size: 2rem;
-  }
-
-  .blog-intro {
-    font-size: 1rem;
-  }
-
-  .blog-card {
-    padding: 15px;
-  }
-
-  .blog-card h3 {
-    font-size: 1.4rem;
-  }
-
-  .blog-card p {
-    font-size: 0.9rem;
-  }
-}

@@ -65,15 +65,3 @@
 .download-icon {
   font-size: 1.2rem;
 }
-
-@media (max-width: 768px) {
-  .certificate-card {
-    max-width: 90%;
-  }
-
-  .download-btn {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
-}
- 

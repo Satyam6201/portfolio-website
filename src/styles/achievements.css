@@ -51,18 +51,3 @@
   font-weight: bold;
   color: #fff;
 }
-
-@media (max-width: 768px) {
-  .achievements {
-    width: 90%;
-  }
-
-  .achievements h2 {
-    font-size: 2rem;
-  }
-
-  .achievement-card {
-    width: 90%;
-    padding: 15px;
-  }
-}
