@@ -65,3 +65,88 @@
 .download-icon {
   font-size: 1.2rem;
 }
+.tag {
+  background: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.cert-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.view-btn, .verify-btn {
+  padding: 10px 14px;
+  border: none;
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.3s ease-in-out;
+}
+
+.view-btn:hover, .verify-btn:hover {
+  background-color: #007acc;
+}
+
+.cert-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.cert-preview-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 95%;
+  max-height: 90vh;
+  overflow: auto;
+  text-align: center;
+  position: relative;
+}
+
+.cert-preview-modal img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.close-preview {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #ff4b2b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-preview:hover {
+  background-color: #e43f1f;
+}
+
