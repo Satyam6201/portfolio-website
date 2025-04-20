@@ -54,18 +54,3 @@ h2, h3 {
 .fact-card button:hover {
   background: #ff9900;
 }
-
-@media (max-width: 768px) {
-  .funfacts {
-    width: 90%;
-    padding: 40px 15px;
-  }
-
-  h2, h3 {
-    font-size: 1.8rem;
-  }
-
-  .fact-card, .learning-card {
-    max-width: 90%;
-  }
-}
