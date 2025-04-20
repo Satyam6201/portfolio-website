@@ -1,53 +1,79 @@
 .achievements {
   padding: 60px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #56ccf2, #2f80ed, #1e3c72, #1c1c54);
-
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1c1c54);
   color: white;
-  border-radius: 10px;
+  border-radius: 14px;
   margin: 50px auto;
   width: 80%;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
 }
 
+.achievements:hover {
+  transform: scale(1.01);
+}
+
 .achievements h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.7rem;
+  margin-bottom: 12px;
   color: #ffd700;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-style: italic;
+  color: #e0e0e0;
 }
 
 .achievements-list {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 25px;
 }
 
 .achievement-card {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 25px;
+  border-radius: 16px;
   width: 280px;
   text-align: center;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffd70044, #ffffff22);
+  z-index: -1;
+  filter: blur(20px);
+  opacity: 0.3;
 }
 
 .achievement-card:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
   color: #ffd700;
 }
 
 .achievement-card p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fefefe;
 }
