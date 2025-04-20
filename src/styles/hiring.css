@@ -75,23 +75,3 @@
   font-size: 1.2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hiring {
-    width: 90%;
-    padding: 40px 15px;
-  }
-
-  .hiring h2 {
-    font-size: 2rem;
-  }
-
-  .hiring p {
-    font-size: 1rem;
-  }
-
-  .hire-btn {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
-}

@@ -64,35 +64,3 @@
   cursor: pointer;
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 55%;
-    background: rgba(34, 34, 34, 0.95);
-    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 15px;
-    border-radius: 10px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links ul li {
-    margin: 10px 0;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-}
