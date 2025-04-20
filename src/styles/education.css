@@ -96,24 +96,3 @@
   background: linear-gradient(to right, #ff4b2b, #ff416c);
   transition: width 1s ease-in-out;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .education h2 {
-    font-size: 2rem;
-  }
-
-  .edu-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .edu-content p {
-    font-size: 0.9rem;
-  }
-
-  .edu-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-}
