@@ -1,36 +1,40 @@
 import React from "react";
 import "../styles/goal.css";
-import { FaRocket, FaBriefcase, FaLightbulb } from "react-icons/fa"; // Icons
+import { FaRocket, FaBriefcase, FaLightbulb } from "react-icons/fa";
 
 function Goal() {
   return (
     <section id="goal" className="goal-section">
-      <h2>🎯 Career Objective</h2>
+      <h2>🚀 My Career Goals</h2>
+      <p className="goal-subtext">
+        Striving to grow as a professional in web development while constantly learning, building, and innovating.
+      </p>
+
       <div className="goal-container">
         <div className="goal-card">
           <FaRocket className="goal-icon" />
-          <h3>Internship & Learning</h3>
+          <h3>Internships & Real-World Projects</h3>
           <p>
-            I am eager to gain hands-on experience in **Frontend Development** with a focus on **React.js**,
-            **JavaScript**, and **UI/UX design**.
+            I'm eager to contribute to real-world projects through internships in <strong>Frontend Development</strong>,
+            utilizing <strong>React.js</strong>, <strong>JavaScript</strong>, and crafting engaging <strong>UI/UX</strong>.
           </p>
         </div>
 
         <div className="goal-card">
           <FaBriefcase className="goal-icon" />
-          <h3>Job Opportunities</h3>
+          <h3>Kickstart My Career</h3>
           <p>
-            Seeking an entry-level **Full-Stack Web Developer** role where I can apply my knowledge of **MERN Stack**,
-            contribute to projects, and grow professionally.
+            Seeking a role as a <strong>Full-Stack Developer</strong> where I can work with the <strong>MERN Stack</strong>,
+            build impactful applications, and collaborate in a dynamic environment.
           </p>
         </div>
 
         <div className="goal-card">
           <FaLightbulb className="goal-icon" />
-          <h3>Continuous Learning</h3>
+          <h3>Lifelong Learning</h3>
           <p>
-            Passionate about learning **Data Structures & Algorithms (DSA)**, **System Design**, and exploring
-            **cutting-edge web technologies**.
+            I aim to continuously improve my understanding of <strong>Data Structures & Algorithms</strong>, 
+            <strong>System Design</strong>, and explore <strong>modern web technologies</strong> to stay ahead in tech.
           </p>
         </div>
       </div>

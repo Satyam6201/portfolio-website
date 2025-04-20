@@ -1,68 +1,92 @@
 .goal-section {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
 }
 
 .goal-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.goal-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #f0f0f0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .goal-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  max-width: 900px;
+  gap: 25px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .goal-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
   text-align: center;
-  width: 280px;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(6px);
 }
 
 .goal-card:hover {
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .goal-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #ffcc00;
 }
 
 .goal-card p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
+  color: #e0e0e0;
 }
 
 .goal-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #ffd700; 
+  font-size: 2.2rem;
+  color: #ffd700;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .hire-me-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #ff416c;
+  margin-top: 40px;
+  padding: 14px 30px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
   color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
+  font-size: 1rem;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 .hire-me-btn:hover {
-  background: #ff4b2b;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  transform: translateY(-2px);
 }
-

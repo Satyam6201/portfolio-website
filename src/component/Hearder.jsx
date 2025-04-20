@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.body.className = darkMode ? "dark" : "light";
+  }, [darkMode]);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
     <header className="header">
@@ -11,8 +24,13 @@ function Header() {
         <h1><i>Satyam Kumar Mishra</i></h1>
       </div>
 
-      <div className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
+      <div className="menu-controls">
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {darkMode ? "🌞" : "🌙"}
+        </button>
+        <div className="menu-btn" onClick={toggleMenu}>
+          {menuOpen ? "✖" : "☰"}
+        </div>
       </div>
 
       <nav className={menuOpen ? "nav-links active" : "nav-links"}>
@@ -30,4 +48,3 @@ function Header() {
 }
 
 export default Header;
-
