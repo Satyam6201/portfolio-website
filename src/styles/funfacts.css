@@ -3,36 +3,45 @@
   padding: 60px 20px;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   margin: 50px auto;
   width: 80%;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
 }
 
 .funfacts:hover {
   transform: scale(1.02);
 }
-h2{
-  color: #ffcc00 !important;
-}
 
 h2, h3 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #ffcc00 !important;
+}
+
+.icon-title, .icon-sub {
+  margin-right: 8px;
+  color: #ffcc00;
 }
 
 .fact-card, .learning-card {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
   margin: 20px auto;
-  max-width: 500px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  transition: all 0.4s ease;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .icon {
@@ -40,17 +49,50 @@ h2, h3 {
   color: #ffcc00;
 }
 
+.fact-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
 .fact-card button {
-  padding: 10px 20px;
+  padding: 10px 24px;
+  font-size: 1rem;
   border: none;
-  background: #ffcc00;
-  color: black;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: #000;
   font-weight: bold;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.4s ease;
 }
 
 .fact-card button:hover {
-  background: #ff9900;
+  background: linear-gradient(135deg, #ffd700, #ff7f00);
+  transform: scale(1.05);
+}
+
+/* Learning Progress Bar */
+.progress-line {
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.progress-line::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  animation: fillBar 2s ease-in-out forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 75%; }
 }

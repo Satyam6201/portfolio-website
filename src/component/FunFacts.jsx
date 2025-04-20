@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "../styles/funfacts.css";
-import { FaLaugh, FaLightbulb } from "react-icons/fa";
+import { FaLaugh, FaLightbulb, FaBolt, FaSmileBeam } from "react-icons/fa";
 
 const facts = [
-  "I can solve a Rubik’s Cube in under 1 minute!",
-  "I can code in 3+ programming languages!",
-  "I enjoy solving DSA problems in my free time.",
-  "I once debugged a program for 5 hours just to find a missing semicolon!",
-  "I love dark mode so much that I wish real life had one!",
-  "I sometimes talk to my code like it's a real person!",
-  "The first program I ever wrote was 'Hello World' and I felt like a hacker!",
-  "I once deleted my own project by accident and had to rebuild it from scratch!",
-  "I use GitHub more than social media!",
-  "I enjoy debugging more than actual coding sometimes!"
+  "🤹 I can solve a Rubik’s Cube in under 1 minute!",
+  "💻 I can code in 5+ languages and counting!",
+  "🧠 I find DSA problems oddly satisfying.",
+  "🤯 Debugged 5 hrs just to fix a missing semicolon!",
+  "🌑 I love dark mode so much, I dream in it!",
+  "🎙️ I sometimes talk to my code... it listens! 👀",
+  "👨‍💻 My first 'Hello World' made me feel like a hacker.",
+  "🗑️ Accidentally deleted my entire project once — rebuilt it stronger!",
+  "🧑‍🚀 GitHub > Social Media any day!",
+  "🛠️ Debugging is therapy — fight me 😤!"
 ];
 
 function FunFacts() {
@@ -25,18 +25,20 @@ function FunFacts() {
 
   return (
     <section id="funfacts" className="funfacts">
-      <h2>🎉 Fun Facts About Me</h2>
-      <div className="fact-card">
+      <h2><FaSmileBeam className="icon-title" /> Fun Facts About Me</h2>
+
+      <div className="fact-card glass">
         <FaLaugh className="icon" />
-        <p>{fact}</p>
+        <p className="fact-text">{fact}</p>
         <button onClick={generateFact}>🔄 Show Another</button>
       </div>
 
-      <h3>🚀 What I'm Currently Learning</h3>
-      <div className="learning-card">
+      <h3><FaBolt className="icon-sub" /> What I'm Currently Learning</h3>
+      <div className="learning-card glass">
         <FaLightbulb className="icon" />
-        <p>Exploring **Next.js** for Server-Side Rendering!</p>
-        <p>Deep diving into **DSA & Competitive Programming**.</p>
+        <p>📘 Exploring <strong>Next.js</strong> for SSR & SEO!</p>
+        <p>📚 Deep diving into <strong>DSA</strong> & <strong>Competitive Programming</strong>.</p>
+        <div className="progress-line"></div>
       </div>
     </section>
   );
