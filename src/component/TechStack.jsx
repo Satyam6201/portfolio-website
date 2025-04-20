@@ -20,8 +20,10 @@ function TechStack() {
   return (
     <section id="techstack" className="techstack">
       <div className="container">
-        <h2>🚀 My Tech Stack</h2>
-        <p className="sub-text">Tools & technologies I use to build amazing projects.</p>
+        <h2>🚀 Tech Stack I Master</h2>
+        <p className="sub-text">Here's a glimpse of technologies and tools I love building with.</p>
+        <p className="tagline">⚡ Turning ideas into interactive web experiences!</p>
+
         <div className="tech-grid">
           {techs.map((tech, index) => (
             <div key={index} className="tech-card">
@@ -30,6 +32,8 @@ function TechStack() {
             </div>
           ))}
         </div>
+
+        <p className="footer-quote">💡 "Always learning. Always building."</p>
       </div>
     </section>
   );
