@@ -47,6 +47,7 @@ body {
 
 /* Responsive: All screens below 1024px */
 @media (max-width: 1024px) {
+  .about,
   .achievements,
   .blog,
   .certifications,
@@ -65,6 +66,7 @@ body {
 
 /* Below 768px (Tablets & phones) */
 @media (max-width: 768px) {
+  .about,
   .achievements,
   .blog,
   .certifications,
@@ -83,6 +85,7 @@ body {
 
 /* Below 480px (Small phones) */
 @media (max-width: 480px) {
+  .about,
   .achievements,
   .blog,
   .certifications,
@@ -99,6 +102,7 @@ body {
     font-size: 0.9rem;
   }
 
+  .about h2,
   .achievements h2,
   .blog h2,
   .certifications h2,

@@ -10,6 +10,17 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.about-section p code {
+  background: #333;
+  color: #ffcc00;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin: 4px;
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+}
+
+
 .about:hover {
   transform: scale(1.02);
 }
