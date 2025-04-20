@@ -3,29 +3,65 @@ import "../styles/hobbies.css";
 
 function Hobbies() {
   const hobbies = [
-    { emoji: "🏏", name: "Playing Cricket" },
-    { emoji: "🎮", name: "Gaming" },
-    { emoji: "🎵", name: "Listening to Music" },
-    { emoji: "✈️", name: "Traveling & Exploring New Places 🌍" },
-    { emoji: "🎬", name: "Watching Movies & Web Series" },
-    { emoji: "📸", name: "Photography" },
-    { emoji: "📚", name: "Reading Tech Blogs" },
-    { emoji: "🍳", name: "Cooking & Trying New Recipes" },
-    { emoji: "💻", name: "Exploring New Tech & Coding" },
+    {
+      emoji: "🏏",
+      name: "Playing Cricket",
+      desc: "Fun, fitness, and teamwork.",
+    },
+    {
+      emoji: "🎮",
+      name: "Gaming",
+      desc: "Boosts focus & reflexes.",
+    },
+    {
+      emoji: "🎵",
+      name: "Listening to Music",
+      desc: "Relaxes and refreshes.",
+    },
+    {
+      emoji: "✈️",
+      name: "Traveling & Exploring 🌍",
+      desc: "New places, new vibes.",
+    },
+    {
+      emoji: "🎬",
+      name: "Watching Movies",
+      desc: "Stories that inspire.",
+    },
+    {
+      emoji: "📸",
+      name: "Photography",
+      desc: "Capturing moments creatively.",
+    },
+    {
+      emoji: "📚",
+      name: "Reading Tech Blogs",
+      desc: "Stay updated with trends.",
+    },
+    {
+      emoji: "🍳",
+      name: "Cooking",
+      desc: "Love trying new recipes.",
+    },
+    {
+      emoji: "💻",
+      name: "Coding & Tech",
+      desc: "Passionate about innovation.",
+    },
   ];
 
   return (
     <section id="hobbies" className="hobbies">
       <h2>Hobbies & Interests</h2>
       <p className="hobbies-desc">
-        Apart from coding, I have a diverse set of interests that keep me
-        engaged and inspired. Here are a few of them:
+        Outside of coding, these hobbies keep me energized and curious:
       </p>
       <div className="hobbies-list">
         {hobbies.map((hobby, index) => (
           <div key={index} className="hobby-card">
             <span className="hobby-icon">{hobby.emoji}</span>
             <p className="hobby-name">{hobby.name}</p>
+            <p className="hobby-desc">{hobby.desc}</p>
           </div>
         ))}
       </div>
@@ -34,4 +70,3 @@ function Hobbies() {
 }
 
 export default Hobbies;
-
