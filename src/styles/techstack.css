@@ -60,39 +60,3 @@
   color: #fff;
 }
 
-@media (max-width: 768px) {
-  .techstack {
-    padding: 60px 15px;
-  }
-
-  .techstack h2 {
-    font-size: 2rem;
-  }
-
-  .sub-text {
-    font-size: 1rem;
-  }
-
-  .tech-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .tech-card span {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .techstack h2 {
-    font-size: 1.8rem;
-  }
-
-  .sub-text {
-    font-size: 0.9rem;
-  }
-}
