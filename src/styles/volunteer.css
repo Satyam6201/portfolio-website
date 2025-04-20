@@ -44,17 +44,3 @@
   color: #ff416c;
   margin-bottom: 15px;
 }
-
-@media (max-width: 768px) {
-  .volunteer h2 {
-    font-size: 2rem;
-  }
-
-  .volunteer p {
-    font-size: 1rem;
-  }
-
-  .volunteer-card {
-    padding: 15px;
-  }
-}
