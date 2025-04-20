@@ -10,7 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* Home Section */
 .home {
   padding-top: 120px;
@@ -46,14 +45,73 @@ body {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Contact Section */
-.contact a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
+/* Responsive: All screens below 1024px */
+@media (max-width: 1024px) {
+  .achievements,
+  .blog,
+  .certifications,
+  .contact,
+  .education,
+  .funfacts,
+  .goal-section,
+  .hiring-container,
+  .hobbies,
+  .projects,
+  .techstack,
+  .volunteer {
+    padding: 30px 15px;
+  }
 }
 
-.contact a:hover {
-  color: #0056b3;
+/* Below 768px (Tablets & phones) */
+@media (max-width: 768px) {
+  .achievements,
+  .blog,
+  .certifications,
+  .contact,
+  .education,
+  .funfacts,
+  .goal-section,
+  .hiring-container,
+  .hobbies,
+  .projects,
+  .techstack,
+  .volunteer {
+    padding: 20px 10px;
+  }
+}
+
+/* Below 480px (Small phones) */
+@media (max-width: 480px) {
+  .achievements,
+  .blog,
+  .certifications,
+  .contact,
+  .education,
+  .funfacts,
+  .goal-section,
+  .hiring-container,
+  .hobbies,
+  .projects,
+  .techstack,
+  .volunteer {
+    padding: 15px 5px;
+    font-size: 0.9rem;
+  }
+
+  .achievements h2,
+  .blog h2,
+  .certifications h2,
+  .contact h2,
+  .education h2,
+  .funfacts h2,
+  .goal-section h2,
+  .hiring-container h2,
+  .hobbies h2,
+  .projects h2,
+  .techstack h2,
+  .volunteer h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
 }
