@@ -1,13 +1,13 @@
 .techstack {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -15,69 +15,76 @@
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: 800;
-  color: #ffcc00;
-  letter-spacing: 1px;
+  color: #00ffff;
+  letter-spacing: 1.2px;
 }
 
 .sub-text {
   font-size: 1.2rem;
-  color: #ddd;
+  color: #dddddd;
   margin-bottom: 10px;
 }
 
 .tagline {
   font-size: 1rem;
-  color: #f9f9f9;
+  color: #f1f1f1;
   font-style: italic;
   margin-bottom: 30px;
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
   justify-content: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .tech-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(145deg, #1e1e2f, #2a2a3d);
   padding: 20px;
-  border-radius: 14px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
 }
 
 .tech-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 20px #ffcc00aa;
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 20px #00ffff77;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .tech-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 12px;
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+  width: 65px;
+  height: 65px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.4));
 }
 
-.tech-card span {
-  font-size: 1rem;
-  font-weight: bold;
+.tech-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
   color: #ffffff;
-  letter-spacing: 0.5px;
+}
+
+.tech-feature {
+  font-size: 0.85rem;
+  color: #cccccc;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .footer-quote {
-  margin-top: 40px;
-  font-size: 1rem;
+  margin-top: 50px;
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #cccccc;
+  color: #ccc;
   opacity: 0.85;
 }
