@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/education.css";
-import { FaGraduationCap, FaSchool, FaUniversity } from "react-icons/fa";
+import { FaGraduationCap, FaSchool, FaUniversity, FaCertificate } from "react-icons/fa";
 
 function Education() {
   return (
@@ -14,8 +14,9 @@ function Education() {
           <div className="edu-content">
             <h3 data-badge="Current">B-Tech | Computer Science & Engineering (2022 - 2026)</h3>
             <p>🎓 Radharaman Institute of Technology and Science, Bhopal</p>
-            <p>📊 CGPA: <strong>7.96</strong> — <em>University Topper (1st to 3rd Sem)</em></p>
-            <div className="progress-bar"><div className="progress" style={{ width: "80%" }}></div></div>
+            <p>📊 CGPA: <strong>8.96</strong> — <em title="Secured 1st Rank in 1st to 3rd semesters">University Topper</em></p>
+            <p>💡 Specialized in Web Development, Data Structures, and AI tools</p>
+            <div className="progress-bar"><div className="progress" style={{ width: "86%" }}></div></div>
           </div>
         </li>
 
@@ -25,7 +26,7 @@ function Education() {
           <div className="edu-content">
             <h3 data-badge="Passed">XII (BSEB) | 2022</h3>
             <p>🏫 S.N.S.D.N.G Watson +2 School, Madhubani, Bihar</p>
-            <p>📊 Percentage: <strong>71.4%</strong> — <em>Merit Holder</em></p>
+            <p>📊 Percentage: <strong>71.4%</strong> — <em title="State Board Merit List">Merit Holder</em></p>
             <div className="progress-bar"><div className="progress" style={{ width: "71%" }}></div></div>
           </div>
         </li>
