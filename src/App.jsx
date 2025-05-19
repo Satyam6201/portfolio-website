@@ -9,6 +9,7 @@ import Volunteer from "./component/Volunteer";
 import Certifications from "./component/Certifications";
 import Hiring from "./component/Hiring";
 import Projects from "./component/Projects";
+import Testimonials from "./component/Testimonials";
 import Goal from "./component/Goal";
 import Achievements from "./component/Achievements";
 import Education from "./component/Education";
@@ -31,6 +32,7 @@ function App() {
       <Achievements />
       <Education />
       <Certifications />
+      <Testimonials />
       <Goal />
       <Hiring />
       <Blog />
