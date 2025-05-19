@@ -8,42 +8,36 @@ function Blog() {
       desc: "Sharing my experiences, challenges, and growth as a web developer from beginner to advanced.",
       readTime: "4 min read",
       date: "April 10, 2025",
+      author: "Satyam Kumar",
       tags: ["Web Dev", "React", "JS", "Node.js"],
+      // image: "https://source.unsplash.com/featured/?code,developer",
     },
     {
       title: "⚡ Building Scalable Web Apps with MERN",
       desc: "Learn how to build a high-performance MERN stack application with best practices and clean architecture.",
       readTime: "6 min read",
       date: "March 28, 2025",
+      author: "Satyam Kumar",
       tags: ["MERN", "MongoDB", "React", "Node.js"],
+      image: "https://source.unsplash.com/featured/?mern,code",
     },
     {
       title: "💡 Java DSA Roadmap for Coding Interviews",
       desc: "Cracking coding interviews requires mastering DSA in Java. Here's a structured roadmap with must-know problems and techniques.",
       readTime: "8 min read",
       date: "March 10, 2025",
+      author: "Satyam Kumar",
       tags: ["Java", "DSA", "Interview Prep"],
+      image: "https://source.unsplash.com/featured/?java,code",
     },
     {
       title: "🛠️ Optimizing Java Code for Efficiency",
       desc: "Write efficient Java code by understanding time complexities, design patterns, and Java collections framework.",
       readTime: "5 min read",
       date: "February 25, 2025",
+      author: "Satyam Kumar",
       tags: ["Java", "Optimization", "Clean Code"],
-    },
-    {
-      title: "🔗 Connecting React with Node.js",
-      desc: "A step-by-step guide on integrating your React frontend with a Node.js and Express backend using REST APIs.",
-      readTime: "5 min read",
-      date: "February 12, 2025",
-      tags: ["React", "Express", "API"],
-    },
-    {
-      title: "📈 Mastering Data Structures in Java",
-      desc: "Deep dive into essential data structures like Trees, Graphs, and HashMaps for Java-based interview prep.",
-      readTime: "7 min read",
-      date: "January 30, 2025",
-      tags: ["Java", "Data Structures"],
+      image: "https://source.unsplash.com/featured/?java,optimization",
     },
   ];
 
@@ -57,20 +51,22 @@ function Blog() {
       <div className="blog-container">
         {blogPosts.map((post, index) => (
           <article className="blog-card" key={index}>
-            <h3>{post.title}</h3>
-            <p>{post.desc}</p>
-            <div className="blog-meta">
-              <span>📅 {post.date}</span>
-              <span>⏱️ {post.readTime}</span>
+            {/* <img src={post.image} alt="Blog" className="blog-image" /> */}
+            <div className="blog-content">
+              <h3>{post.title}</h3>
+              <p>{post.desc}</p>
+              <div className="blog-meta">
+                <span>📅 {post.date}</span>
+                <span>⏱️ {post.readTime}</span>
+              </div>
+              <div className="blog-author">✍️ {post.author}</div>
+              <div className="blog-tags">
+                {post.tags.map((tag, idx) => (
+                  <span key={idx} className="tag">#{tag}</span>
+                ))}
+              </div>
+              <a href="#">Read more →</a>
             </div>
-            <div className="blog-tags">
-              {post.tags.map((tag, idx) => (
-                <span key={idx} className="tag">
-                  #{tag}
-                </span>
-              ))}
-            </div>
-            <a href="#">Read more →</a>
           </article>
         ))}
       </div>
