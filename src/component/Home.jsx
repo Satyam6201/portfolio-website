@@ -1,38 +1,54 @@
 import React from "react";
 import "../styles/home.css";
 import { Typewriter } from "react-simple-typewriter";
-import { FaLinkedin, FaGithub} from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 function Home() {
   return (
     <section id="home" className="home">
       <div className="home-content fade-in">
-        <img src="/assets/image.jpg" alt="Satyam Kumar Mishra" />
+        <img src="/assets/image.jpg" alt="Satyam Kumar Mishra" className="profile-img" />
         <h2>
           Hi, I'm <span className="highlight">Satyam Kumar Mishra</span>
         </h2>
+
         <h3 className="typewriter">
           <Typewriter
-            words={['Full-Stack Web Developer', 'React.js Specialist', 'Problem Solver']}
+            words={[
+              'Full-Stack Web Developer',
+              'React.js Enthusiast',
+              'Tech Community Contributor',
+              'Creative Problem Solver'
+            ]}
             loop={true}
             cursor
             cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={40}
-            delaySpeed={1200}
+            typeSpeed={60}
+            deleteSpeed={30}
+            delaySpeed={1300}
           />
         </h3>
 
         <p>
-          I’m a passionate <strong>Full-Stack Developer</strong> with a strong foundation in 
-          <strong> React.js, JavaScript, and Backend technologies</strong>. I specialize in building dynamic, scalable, and performance-driven applications. 
-          From responsive user interfaces to real-world problem-solving systems, my goal is to deliver seamless user experiences and elegant code.
+          I’m a <strong>dedicated full-stack developer</strong> with a passion for building
+          impactful digital solutions. With a strong command over <strong>React.js</strong>,
+          <strong> JavaScript</strong>, and <strong>modern backend technologies</strong>, I
+          strive to deliver clean, scalable, and user-focused applications.
+        </p>
+
+        <p>
+          I enjoy solving real-world challenges through code, optimizing performance,
+          and crafting engaging UIs. Currently, I'm exploring advanced frontend
+          architectures and cloud-based backend solutions.
         </p>
 
         <div className="cta-section">
-          <h4>Let’s Collaborate!</h4>
-          <p>Open to exciting internships, freelance projects, or tech roles. Let’s build innovative products together.</p>
-          <a href="#projects" className="home-btn">Explore My Projects</a>
+          <h4>🚀 Let's Collaborate</h4>
+          <p>
+            I'm open to internships, freelance projects, or full-time roles where I can
+            bring ideas to life and grow alongside a talented team.
+          </p>
+          <a href="#projects" className="home-btn">See My Work</a>
         </div>
 
         <div className="social-links">
