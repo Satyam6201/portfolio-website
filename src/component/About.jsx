@@ -4,67 +4,77 @@ import "../styles/about.css";
 function About() {
   return (
     <section id="about" className="about">
-      <h2>About Me</h2>
+      <h2>🚀 About Me</h2>
 
       <div className="about-header">
         <p className="about-intro">
-          Hello! I’m a passionate <strong>Full-Stack Web Developer</strong> with a love for turning ideas into impactful digital solutions.  
-          I specialize in building <strong>modern, scalable</strong> web applications using <code>React.js</code>, <code>Node.js</code>, <code>MongoDB</code>, and <code>Express.js</code>.  
-          From stunning UIs to high-performance backends—<strong>I build it all.</strong>
+          Hi there! I'm a <strong>Full-Stack Web Developer</strong> driven by curiosity and creativity.  
+          I bring ideas to life with <code>React.js</code>, <code>Node.js</code>, <code>Express.js</code>, and <code>MongoDB</code>, blending modern design with scalable code.  
+          <br />
+          Whether it's a sleek UI or a powerful API—<strong>I build both ends.</strong>
         </p>
       </div>
 
       <div className="counters">
-        <div><h3>👨‍💻 15+</h3><p>Projects Completed</p></div>
-        <div><h3>🌟 4.9/5</h3><p>Peer Review Score</p></div>
-        <div><h3>🎯 2+</h3><p>Years of Experience</p></div>
+        <div className="counter-box">
+          <h3>👨‍💻 15+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div className="counter-box">
+          <h3>🌟 4.9/5</h3>
+          <p>Peer Review Rating</p>
+        </div>
+        <div className="counter-box">
+          <h3>📅 2+ yrs</h3>
+          <p>Hands-on Experience</p>
+        </div>
       </div>
 
       <div className="about-content">
         <div className="about-section">
-          <h3>🎓 Academic Excellence</h3>
+          <h3>🎓 Academic Achievements</h3>
           <p>
-            🥇 Ranked <strong>1st</strong> in 1st–3rd Semesters<br />
-            🥉 Ranked <strong>3rd</strong> in 4th & 5th Semesters<br />
-            📘 Strong foundation in <strong>DSA, Java</strong>, and <strong>Web Development</strong>
+            🥇 <strong>1st Rank</strong> (1st–3rd Semesters)<br />
+            🥉 <strong>3rd Rank</strong> (4th–5th Semesters)<br />
+            📚 Strong in <strong>Java, DSA</strong> & <strong>Web Dev</strong>
           </p>
         </div>
 
         <div className="about-section">
-          <h3>💡 What Drives Me</h3>
+          <h3>⚡ What Drives Me</h3>
           <ul>
-            <li>🚀 Building interactive and modern web apps</li>
-            <li>💻 Learning emerging tech (AI, Firebase, Next.js)</li>
-            <li>🔍 Writing clean, maintainable code</li>
-            <li>🤝 Collaborating in dynamic teams</li>
+            <li>🚀 Creating immersive user experiences</li>
+            <li>🧠 Exploring AI, Next.js, Firebase</li>
+            <li>📦 Writing clean, scalable code</li>
+            <li>🤝 Collaborating with creative teams</li>
           </ul>
         </div>
 
         <div className="about-section">
-          <h3>⚙️ Technical Skills</h3>
+          <h3>🛠️ My Tech Stack</h3>
           <ul>
             <li>✅ React.js, Next.js, JavaScript, TypeScript</li>
             <li>✅ Node.js, Express.js, MongoDB, MySQL</li>
-            <li>✅ Firebase, REST APIs, Git/GitHub, Netlify</li>
-            <li>✅ CSS, Sass, Responsive UI, Figma Integration</li>
+            <li>✅ Firebase, REST APIs, Git, Netlify</li>
+            <li>✅ CSS, Sass, Responsive Design, Figma</li>
           </ul>
         </div>
 
         <div className="about-section">
-          <h3>🧠 My Interests</h3>
+          <h3>🎮 Fun Projects & Interests</h3>
           <ul>
-            <li>🎮 Creating games like Simon Says, Whack-a-Mole</li>
-            <li>💡 Solving DSA problems in Java</li>
-            <li>📺 Building full-stack clones (Netflix, Amazon)</li>
-            <li>📣 Conducting workshops & mentoring peers</li>
+            <li>🧠 Building games like Simon Says, Brick Breaker</li>
+            <li>🧩 Solving DSA problems using Java</li>
+            <li>🎬 Developing full-stack clones (Netflix, Amazon)</li>
+            <li>🎤 Hosting workshops & mentoring juniors</li>
           </ul>
         </div>
 
         <div className="about-section">
-          <h3>🚀 Career Goals</h3>
+          <h3>🌟 Career Vision</h3>
           <p>
-            I aim to work with <strong>forward-thinking companies</strong> on impactful products, grow as a developer, and contribute meaningfully to real-world solutions.  
-            I'm currently open to <strong>internships & full-time roles</strong> in full-stack development.
+            I'm passionate about working with <strong>innovative teams</strong> to solve real-world challenges.  
+            Open to <strong>internships</strong> and <strong>full-time opportunities</strong> in web development. Let's build the future together!
           </p>
         </div>
       </div>
