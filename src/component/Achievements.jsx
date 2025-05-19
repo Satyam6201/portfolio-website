@@ -1,13 +1,22 @@
 import React from "react";
 import "../styles/achievements.css";
-import { FaTrophy, FaProjectDiagram, FaCode, FaLaptopCode, FaUsers, FaMedal } from "react-icons/fa";
+import {
+  FaTrophy,
+  FaProjectDiagram,
+  FaCode,
+  FaLaptopCode,
+  FaUsers,
+  FaMedal,
+  FaCertificate,
+  FaRocket
+} from "react-icons/fa";
 
 function Achievements() {
   return (
     <section id="achievements" className="achievements">
       <h2>🏆 Achievements & Milestones</h2>
       <p className="subtitle">A glimpse into my journey of growth and excellence 🚀</p>
-      
+
       <div className="achievements-list">
 
         <div className="achievement-card">
@@ -38,6 +47,16 @@ function Achievements() {
         <div className="achievement-card">
           <FaUsers className="icon" />
           <p>Led multiple <strong>tech events & community sessions</strong> in college clubs and T&P Cell.</p>
+        </div>
+
+        <div className="achievement-card">
+          <FaCertificate className="icon" />
+          <p>Completed <strong>certified courses</strong> in Data Structures, React, and Backend Development.</p>
+        </div>
+
+        <div className="achievement-card">
+          <FaRocket className="icon" />
+          <p>Actively contributing to <strong>open-source projects</strong> & GitHub repositories.</p>
         </div>
 
       </div>
