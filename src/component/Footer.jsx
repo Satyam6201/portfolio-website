@@ -7,6 +7,8 @@ import {
   FaTwitter,
   FaInstagram,
   FaFacebook,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import "../styles/footer.css";
 
@@ -14,10 +16,7 @@ function Footer() {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowTopBtn(window.scrollY > 300);
-    };
-
+    const handleScroll = () => setShowTopBtn(window.scrollY > 300);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -28,63 +27,49 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p className="footer-title">Made with ❤️ by Satyam Kumar Mishra</p>
+      <h2 className="footer-title">Made with ❤️ by Satyam Kumar Mishra</h2>
 
-      <div className="footer-links">
-        <a
-          href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tooltip"
-        >
-          <FaLinkedin className="icon linkedin" />
-          <span className="tooltip-text">LinkedIn</span>
-        </a>
+      <div className="footer-content">
+        <div className="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-        <a
-          href="https://github.com/Satyam6201"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tooltip"
-        >
-          <FaGithub className="icon github" />
-          <span className="tooltip-text">GitHub</span>
-        </a>
+        <div className="footer-section">
+          <h3>Contact Info</h3>
+          <p><FaEnvelope /> satyamkmishraa@gmail.com</p>
+          <p><FaPhoneAlt /> +91 6201902313</p>
+          <p><FaMapMarkerAlt /> India</p>
+        </div>
 
-        <a href="mailto:satyamkmishraa@gmail.com" className="tooltip">
-          <FaEnvelope className="icon email" />
-          <span className="tooltip-text">Email</span>
-        </a>
-
-        <a
-          href="https://x.com/satyamkmishraa?t=kATgYsKWGY4_ZJfpr1l7pg&s=09"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tooltip"
-        >
-          <FaTwitter className="icon twitter" />
-          <span className="tooltip-text">Twitter</span>
-        </a>
-
-        <a
-          href="https://www.instagram.com/satyammishra_467"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tooltip"
-        >
-          <FaInstagram className="icon instagram" />
-          <span className="tooltip-text">Instagram</span>
-        </a>
-
-        <a
-          href="https://www.facebook.com/profile.php?id=100024550755973"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tooltip"
-        >
-          <FaFacebook className="icon facebook" />
-          <span className="tooltip-text">Facebook</span>
-        </a>
+        <div className="footer-section">
+          <h3>Follow Me</h3>
+          <div className="footer-links">
+            <a href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/" target="_blank" rel="noreferrer" className="tooltip">
+              <FaLinkedin className="icon linkedin" /><span className="tooltip-text">LinkedIn</span>
+            </a>
+            <a href="https://github.com/Satyam6201" target="_blank" rel="noreferrer" className="tooltip">
+              <FaGithub className="icon github" /><span className="tooltip-text">GitHub</span>
+            </a>
+            <a href="mailto:satyamkmishraa@gmail.com" className="tooltip">
+              <FaEnvelope className="icon email" /><span className="tooltip-text">Email</span>
+            </a>
+            <a href="https://x.com/satyamkmishraa?t=kATgYsKWGY4_ZJfpr1l7pg&s=09" target="_blank" rel="noreferrer" className="tooltip">
+              <FaTwitter className="icon twitter" /><span className="tooltip-text">Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/satyammishra_467" target="_blank" rel="noreferrer" className="tooltip">
+              <FaInstagram className="icon instagram" /><span className="tooltip-text">Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100024550755973" target="_blank" rel="noreferrer" className="tooltip">
+              <FaFacebook className="icon facebook" /><span className="tooltip-text">Facebook</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       {showTopBtn && (

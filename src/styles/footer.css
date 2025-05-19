@@ -1,6 +1,6 @@
 .footer {
   text-align: center;
-  padding: 10px;
+  padding: 40px 20px 20px;
   background: linear-gradient(135deg, #232526, #414345);
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
@@ -9,59 +9,85 @@
 }
 
 .footer-title {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #ffcc70;
   letter-spacing: 1px;
 }
 
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ffd369;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.95rem;
+  display: block;
+  margin: 8px 0;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ffcc70;
+}
+
+.footer-section p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .footer-links {
   display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 25px;
   flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .icon {
-  font-size: 45px;
+  font-size: 35px;
   transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  padding: 12px;
+  padding: 10px;
   border-radius: 50%;
   background-color: #fff;
 }
 
 .icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
   opacity: 0.9;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
-.linkedin {
-  color: #0e76a8;
-}
-
-.github {
-  color: #171515;
-}
-
-.email {
-  color: #d44638;
-}
-
-.twitter {
-  color: #1DA1F2;
-}
-
-.instagram {
-  color: #E1306C;
-}
-
-.facebook {
-  color: #1877F2;
-}
+.linkedin { color: #0e76a8; }
+.github { color: #171515; }
+.email { color: #d44638; }
+.twitter { color: #1DA1F2; }
+.instagram { color: #E1306C; }
+.facebook { color: #1877F2; }
 
 .tooltip {
   position: relative;
