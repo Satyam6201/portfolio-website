@@ -21,11 +21,17 @@ function Header() {
     <header className="header">
       <div className="logo">
         <img src="/assets/image.jpg" alt="Profile" className="profile-img" />
-        <h1><i>Satyam Kumar Mishra</i></h1>
+        <h1 className="glow-text" title="Frontend Developer">
+          <i>Satyam Kumar Mishra</i>
+        </h1>
       </div>
 
       <div className="menu-controls">
-        <button className="theme-toggle" onClick={toggleTheme}>
+        <button
+          className="theme-toggle ripple"
+          onClick={toggleTheme}
+          title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
           {darkMode ? "🌞" : "🌙"}
         </button>
         <div className="menu-btn" onClick={toggleMenu}>
