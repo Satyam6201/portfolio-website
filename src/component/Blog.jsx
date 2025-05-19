@@ -59,6 +59,13 @@ function Blog() {
       date: "December 22, 2024",
       tags: ["API", "REST", "GraphQL"],
     },
+    {
+      title: "🧠 Learning React the Smart Way",
+      desc: "Unlock the power of React by mastering components, hooks, state management, and real-world project structures.",
+      readTime: "5 min read",
+      date: "May 15, 2025",
+      tags: ["React", "Hooks", "Frontend", "Best Practices"],
+    }
   ];
 
   return (
