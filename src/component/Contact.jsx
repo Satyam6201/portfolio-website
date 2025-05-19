@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/contact.css";
 import {
   FaEnvelope,
@@ -11,6 +11,22 @@ import {
 } from "react-icons/fa";
 
 function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const whatsappLink = `https://wa.me/916201902313?text=Hi%20Satyam!%20My%20name%20is%20${encodeURIComponent(
+    form.name
+  )},%20and%20my%20email%20is%20${encodeURIComponent(
+    form.email
+  )}.%20${encodeURIComponent(form.message)}`;
+
+  const mailtoLink = `mailto:satyamkmishraa@gmail.com?subject=Message%20from%20${encodeURIComponent(
+    form.name
+  )}&body=${encodeURIComponent(form.message)}%0D%0AFrom:%20${encodeURIComponent(form.email)}`;
+
   return (
     <section id="contact" className="contact">
       <h2>📞 Get in Touch</h2>
@@ -20,10 +36,7 @@ function Contact() {
 
       <div className="contact-box">
         <div className="contact-info">
-          <a
-            href="mailto:satyamkmishraa@gmail.com?subject=Hello%20Satyam&body=I%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect!"
-            className="contact-btn"
-          >
+          <a href="mailto:satyamkmishraa@gmail.com" className="contact-btn">
             <FaEnvelope /> Email Me
           </a>
           <a href="tel:+916201902313" className="contact-btn">
@@ -64,6 +77,43 @@ function Contact() {
             <FaDownload /> Download Resume
           </a>
         </div>
+
+        {/* Message Form */}
+        <form className="message-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            value={form.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+
+          <div className="send-buttons">
+            <a href={mailtoLink} className="contact-btn" target="_blank" rel="noopener noreferrer">
+              <FaEnvelope /> Send via Email
+            </a>
+            <a href={whatsappLink} className="contact-btn" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp /> Send via WhatsApp
+            </a>
+          </div>
+        </form>
       </div>
 
       <p className="footer-note">🚀 Let’s build something amazing together!</p>

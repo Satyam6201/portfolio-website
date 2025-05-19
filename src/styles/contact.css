@@ -176,3 +176,35 @@
   }
 }
 
+.message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-form input,
+.message-form textarea {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+  outline: 2px solid #ff416c;
+}
+
+.send-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
