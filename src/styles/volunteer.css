@@ -1,13 +1,13 @@
 .volunteer {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 80px 20px;
+background: linear-gradient(135deg, #11998e, #38ef7d);
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .volunteer h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   background: linear-gradient(90deg, #ff6a00, #ee0979);
   -webkit-background-clip: text;
@@ -16,45 +16,60 @@
 
 .volunteer p {
   font-size: 1.2rem;
-  max-width: 650px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-  color: #dddddd;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+  color: #e0e0e0;
 }
 
 .volunteer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
   margin: auto;
+  animation: fadeInUp 1s ease-in;
 }
 
 .volunteer-card {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   color: #000000;
-  padding: 25px 20px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
   position: relative;
+  overflow: hidden;
+}
+
+.volunteer-card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .volunteer-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }
 
 .volunteer-icon {
-  font-size: 2.8rem;
+  font-size: 3rem;
   color: #ff416c;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  animation: pop 0.4s ease-in-out;
 }
 
 .volunteer-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
   color: #111111;
 }
 
@@ -62,7 +77,6 @@
   display: block;
   font-size: 0.95rem;
   color: #555;
-  margin-top: 5px;
   font-weight: 500;
 }
 
@@ -70,8 +84,8 @@
   display: flex;
   align-items: center;
   font-size: 0.85rem;
-  margin: 5px 0 10px;
-  color: #888;
+  margin: 8px 0 12px;
+  color: #777;
   gap: 6px;
 }
 
@@ -81,7 +95,30 @@
 
 .volunteer-card p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #333;
   margin-top: 10px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
