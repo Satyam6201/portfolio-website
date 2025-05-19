@@ -1,4 +1,5 @@
-import React from "react";
+// Projects.jsx
+import React, { useState, useEffect } from "react";
 import "../styles/projects.css";
 
 const projects = [
@@ -77,24 +78,84 @@ const projects = [
     tech: ["JavaScript", "HTML", "CSS"],
     liveDemo: "https://2-d-brick-breaker-game.vercel.app/",
     github: "https://github.com/Satyam6201/2D-Brick-Breaker-Game",
-  }
+  },
+];
+
+// Extract unique tech tags for filter dropdown
+const uniqueTech = [
+  "All",
+  ...new Set(projects.flatMap((p) => p.tech)),
 ];
 
 function Projects() {
+  const [filter, setFilter] = useState("All");
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+
+  useEffect(() => {
+    if (filter === "All") {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(
+        projects.filter((project) => project.tech.includes(filter))
+      );
+    }
+  }, [filter]);
+
+  // Scroll animation for cards
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const cards = document.querySelectorAll(".project-card");
+    cards.forEach((card) => observer.observe(card));
+
+    return () => {
+      cards.forEach((card) => observer.unobserve(card));
+    };
+  }, [filteredProjects]);
+
   return (
     <section id="projects" className="projects">
       <h2>🚀 Projects</h2>
+
+      <div className="filter-container">
+        <label htmlFor="tech-filter">Filter by Tech:</label>
+        <select
+          id="tech-filter"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
+          {uniqueTech.map((tech, i) => (
+            <option key={i} value={tech}>
+              {tech}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="projects-container">
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <div key={index} className="project-card">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-img"
-            />
+            <div className="img-wrapper">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-img"
+              />
+              <div className="overlay">
+                <p>{project.description}</p>
+              </div>
+            </div>
             <div className="project-info">
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
               <div className="tech-stack">
                 {project.tech.map((tech, i) => (
                   <span key={i} className="tech">
@@ -120,6 +181,7 @@ function Projects() {
                   💻 GitHub
                 </a>
               </div>
+              <button className="details-btn">View Details</button>
             </div>
           </div>
         ))}

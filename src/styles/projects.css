@@ -1,15 +1,48 @@
+/* projects.css */
+
 .projects {
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px 20px 80px;
   background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
 }
 
 .projects h2 {
-  font-size: 2.7rem;
+  font-size: 3rem;
   margin-bottom: 40px;
-  font-weight: 800;
+  font-weight: 900;
   color: #ffcb05;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filter-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: #ffcb05;
+  font-weight: 700;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.filter-container select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  font-weight: 600;
+}
+
+.filter-container select:hover,
+.filter-container select:focus {
+  box-shadow: 0 0 8px #ffcb05;
 }
 
 .projects-container {
@@ -22,103 +55,204 @@
 
 .project-card {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.2);
-  transition: all 0.35s ease;
+  box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.project-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .project-img {
   width: 100%;
-  height: 210px;
+  height: 220px;
   object-fit: cover;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+  font-size: 0.95rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.img-wrapper:hover .overlay {
+  opacity: 1;
 }
 
 .project-info {
-  padding: 22px;
+  padding: 25px 22px 30px;
   text-align: center;
+  width: 100%;
 }
 
 .project-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #333;
-  font-weight: 700;
-}
-
-.project-info p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+  color: #222;
+  font-weight: 800;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .tech {
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
   color: #fff;
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: 0 3px 8px rgba(255, 65, 108, 0.3);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 65, 108, 0.35);
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.tech:hover {
+  transform: scale(1.15);
+  cursor: default;
 }
 
 .project-links {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 10px;
+  gap: 18px;
+  margin-bottom: 15px;
 }
 
-.live-btn,
-.github-btn {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
+/* Live Demo Button */
 .live-btn {
-  background: linear-gradient(135deg, #28a745, #218838);
-}
-
-.github-btn {
-  background: linear-gradient(135deg, #6f42c1, #563d7c);
+  background: linear-gradient(45deg, #56ab2f, #a8e063);
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.6);
+  color: #fff;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .live-btn:hover {
-  background: linear-gradient(135deg, #218838, #19692c);
+  background: linear-gradient(45deg, #a8e063, #56ab2f);
+  box-shadow:
+    0 0 8px #00bfff,
+    0 0 20px #1e90ff,
+    0 0 30px #00bfff;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* GitHub Button */
+.github-btn {
+  background: linear-gradient(45deg, #020024, #090979);
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.5);
+  color: #ffa500;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .github-btn:hover {
-  background: linear-gradient(135deg, #563d7c, #3e2d5c);
+  background: linear-gradient(45deg, #090979, #020024);
+  box-shadow:
+    0 0 8px #ffa500,
+    0 0 20px #ff8c00,
+    0 0 30px #ffa500;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* Shared styles */
+.live-btn,
+.github-btn {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+/* Details Button (kept same with a pink gradient) */
+.details-btn {
+  background-color: transparent;
+  border: 2px solid #ff416c;
+  padding: 10px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 50px;
+  color: #ff416c;
+  cursor: pointer;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.2s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  display: inline-block;
+}
+
+.details-btn:hover {
+  background-color: #ff416c;
+  color: white;
+  box-shadow:
+    0 0 10px #ff416c,
+    0 0 20px #ff4b2b,
+    0 0 30px #ff758c;
+  transform: scale(1.1);
 }
