@@ -9,8 +9,8 @@ import {
   FaFacebook,
   FaPhoneAlt,
   FaMapMarkerAlt,
-  FaCode
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import "../styles/footer.css";
 
 function Footer() {
@@ -44,16 +44,16 @@ function Footer() {
 
         <div className="footer-section">
           <h3>Contact Info</h3>
-          <p><FaEnvelope /> satyamkmishraa@gmail.com</p>
-          <p><FaPhoneAlt /> +91 6201902313</p>
+          <p><FaEnvelope /><a href="mailto:satyamkmishraa@gmail.com">satyamkmishraa@gmail.com</a></p>
+          <p><FaPhoneAlt /><a href="tel:+916201902313">+91 6201902313</a></p>
           <p>
+            <FaMapMarkerAlt />
             <a
-              href="https://www.google.com/maps/place/Bhopal,+Madhya+Pradesh"
+              href="https://www.google.com/maps?q=Bhopal,+India"
               target="_blank"
               rel="noreferrer"
-              className="location-link"
             >
-              <FaMapMarkerAlt /> Bhopal, India
+              Bhopal, India
             </a>
           </p>
         </div>
@@ -62,25 +62,32 @@ function Footer() {
           <h3>Follow Me</h3>
           <div className="footer-links">
             <a href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/" target="_blank" rel="noreferrer" className="tooltip">
-              <FaLinkedin className="icon linkedin" /><span className="tooltip-text">LinkedIn</span>
+              <FaLinkedin className="icon linkedin" />
+              <span className="tooltip-text">LinkedIn</span>
             </a>
             <a href="https://github.com/Satyam6201" target="_blank" rel="noreferrer" className="tooltip">
-              <FaGithub className="icon github" /><span className="tooltip-text">GitHub</span>
+              <FaGithub className="icon github" />
+              <span className="tooltip-text">GitHub</span>
             </a>
             <a href="mailto:satyamkmishraa@gmail.com" className="tooltip">
-              <FaEnvelope className="icon email" /><span className="tooltip-text">Email</span>
+              <FaEnvelope className="icon email" />
+              <span className="tooltip-text">Email</span>
             </a>
             <a href="https://x.com/satyamkmishraa?t=kATgYsKWGY4_ZJfpr1l7pg&s=09" target="_blank" rel="noreferrer" className="tooltip">
-              <FaTwitter className="icon twitter" /><span className="tooltip-text">Twitter</span>
+              <FaTwitter className="icon twitter" />
+              <span className="tooltip-text">Twitter</span>
             </a>
             <a href="https://www.instagram.com/satyammishra_467" target="_blank" rel="noreferrer" className="tooltip">
-              <FaInstagram className="icon instagram" /><span className="tooltip-text">Instagram</span>
+              <FaInstagram className="icon instagram" />
+              <span className="tooltip-text">Instagram</span>
             </a>
             <a href="https://www.facebook.com/profile.php?id=100024550755973" target="_blank" rel="noreferrer" className="tooltip">
-              <FaFacebook className="icon facebook" /><span className="tooltip-text">Facebook</span>
+              <FaFacebook className="icon facebook" />
+              <span className="tooltip-text">Facebook</span>
             </a>
             <a href="https://leetcode.com/u/satyammishra62/" target="_blank" rel="noreferrer" className="tooltip">
-              <FaCode className="icon leetcode" /><span className="tooltip-text">LeetCode</span>
+              <SiLeetcode className="icon leetcode" />
+              <span className="tooltip-text">LeetCode</span>
             </a>
           </div>
         </div>
