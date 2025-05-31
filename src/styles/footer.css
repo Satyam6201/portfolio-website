@@ -142,3 +142,29 @@
   color: #ccc;
   margin-top: 10px;
 }
+.location-link {
+  text-decoration: none;
+  color: #ccc;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.location-link:hover {
+  color: #ffcc70;
+  text-decoration: underline;
+}
+
+/* LeetCode Icon Style */
+.leetcode {
+  color: #ffa116;
+  background: linear-gradient(145deg, #fff8e1, #ffd180);
+}
+
+/* Optional: Add glowing animation on hover */
+.icon:hover {
+  transform: scale(1.2);
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
