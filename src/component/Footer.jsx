@@ -9,6 +9,7 @@ import {
   FaFacebook,
   FaPhoneAlt,
   FaMapMarkerAlt,
+  FaCode
 } from "react-icons/fa";
 import "../styles/footer.css";
 
@@ -45,7 +46,16 @@ function Footer() {
           <h3>Contact Info</h3>
           <p><FaEnvelope /> satyamkmishraa@gmail.com</p>
           <p><FaPhoneAlt /> +91 6201902313</p>
-          <p><FaMapMarkerAlt />Bhopal, India</p>
+          <p>
+            <a
+              href="https://www.google.com/maps/place/Bhopal,+Madhya+Pradesh"
+              target="_blank"
+              rel="noreferrer"
+              className="location-link"
+            >
+              <FaMapMarkerAlt /> Bhopal, India
+            </a>
+          </p>
         </div>
 
         <div className="footer-section">
@@ -68,6 +78,9 @@ function Footer() {
             </a>
             <a href="https://www.facebook.com/profile.php?id=100024550755973" target="_blank" rel="noreferrer" className="tooltip">
               <FaFacebook className="icon facebook" /><span className="tooltip-text">Facebook</span>
+            </a>
+            <a href="https://leetcode.com/u/satyammishra62/" target="_blank" rel="noreferrer" className="tooltip">
+              <FaCode className="icon leetcode" /><span className="tooltip-text">LeetCode</span>
             </a>
           </div>
         </div>
