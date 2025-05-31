@@ -85,10 +85,6 @@ function Footer() {
               <FaFacebook className="icon facebook" />
               <span className="tooltip-text">Facebook</span>
             </a>
-            <a href="https://leetcode.com/u/satyammishra62/" target="_blank" rel="noreferrer" className="tooltip">
-              <SiLeetcode className="icon leetcode" />
-              <span className="tooltip-text">LeetCode</span>
-            </a>
           </div>
         </div>
       </div>
