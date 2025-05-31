@@ -54,32 +54,33 @@ function Home() {
 
         {/* Contact Links */}
         <div className="contact-links">
-          <a href="tel:+919876543210" className="contact-item">
-            <FaPhoneAlt /> +91 9876543210
+          <a href="tel:+916201902313" className="contact-item">
+            <FaPhoneAlt /> +91 6201902313
           </a>
           <a href="mailto:satyam@example.com" className="contact-item">
-            <FaEnvelope /> satyam@example.com
+            <FaEnvelope /> satyamkmishraa@gmail.com
           </a>
         </div>
 
         {/* Resume Section */}
-        <div className="resume-section">
-          <a
-            href="/assets/Resume.pdf"
-            download
-            className="resume-btn download"
-          >
-            <FaFileDownload /> Download Resume
-          </a>
-          <a
-            href="/assets/Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="resume-btn view"
-          >
-            <FaEye /> View Resume
-          </a>
-        </div>
+        <div className="resume-buttons">
+  <a
+    href="/assets/Resume.pdf"
+    download
+    className="resume-btn"
+  >
+    📥 Download Resume
+  </a>
+  <a
+    href="/assets/Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="resume-btn"
+  >
+    👁️ View Resume
+  </a>
+</div>
+
 
         {/* Social Links */}
         <div className="social-links">
