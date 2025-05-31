@@ -77,6 +77,16 @@ function Contact() {
             <FaDownload /> Download Resume
           </a>
         </div>
+        <a
+  href="https://leetcode.com/Satyam6201/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+>
+  <img src="/assets/leetcode.png" alt="LeetCode" className="leetcode-icon" />
+  LeetCode
+</a>
+
 
         {/* Message Form */}
         <form className="message-form">
