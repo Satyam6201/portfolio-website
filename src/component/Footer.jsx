@@ -73,6 +73,10 @@ function Footer() {
               <FaEnvelope className="icon email" />
               <span className="tooltip-text">Email</span>
             </a>
+            <a href="https://leetcode.com/u/satyammishra62/" target="_blank" rel="noreferrer" className="tooltip">
+              <SiLeetcode className="icon leetcode" />
+              <span className="tooltip-text">LeetCode</span>
+            </a>
             <a href="https://x.com/satyamkmishraa?t=kATgYsKWGY4_ZJfpr1l7pg&s=09" target="_blank" rel="noreferrer" className="tooltip">
               <FaTwitter className="icon twitter" />
               <span className="tooltip-text">Twitter</span>
