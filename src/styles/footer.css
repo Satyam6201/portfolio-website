@@ -172,8 +172,6 @@
   text-decoration: underline;
 }
 
-
-/* Optional: Add glowing animation on hover */
 .icon:hover {
   transform: scale(1.2);
   opacity: 0.9;
