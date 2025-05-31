@@ -159,8 +159,19 @@
 /* LeetCode Icon Style */
 .leetcode {
   color: #ffa116;
-  background: linear-gradient(145deg, #fff8e1, #ffd180);
 }
+
+.footer-section p a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section p a:hover {
+  color: #ffcc70;
+  text-decoration: underline;
+}
+
 
 /* Optional: Add glowing animation on hover */
 .icon:hover {
