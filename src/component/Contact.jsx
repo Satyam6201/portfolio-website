@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/contact.css";
 import {
   FaEnvelope,
@@ -23,7 +23,8 @@ function Contact() {
     if (!form.email) errs.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(form.email)) errs.email = "Email is invalid";
     if (!form.message.trim()) errs.message = "Message is required";
-    else if (form.message.length < 10) errs.message = "Message should be at least 10 characters";
+    else if (form.message.length < 10)
+      errs.message = "Message should be at least 10 characters";
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -60,13 +61,18 @@ function Contact() {
 
   const mailtoLink = `mailto:satyamkmishraa@gmail.com?subject=Message%20from%20${encodeURIComponent(
     form.name
-  )}&body=${encodeURIComponent(form.message)}%0D%0AFrom:%20${encodeURIComponent(form.email)}`;
+  )}&body=${encodeURIComponent(form.message)}%0D%0AFrom:%20${encodeURIComponent(
+    form.email
+  )}`;
 
   return (
     <section id="contact" className="contact">
       <h2>📞 Get in Touch</h2>
       <p className="contact-subtext">
-        Feel free to reach out for <strong>collaborations, internships, freelance work, or a friendly chat!</strong>
+        Feel free to reach out for{" "}
+        <strong>
+          collaborations, internships, freelance work, or a friendly chat!
+        </strong>
       </p>
 
       <div className="contact-box">
@@ -75,7 +81,11 @@ function Contact() {
             <a href="mailto:satyamkmishraa@gmail.com" className="contact-btn">
               <FaEnvelope /> Email Me
             </a>
-            <button onClick={() => copyToClipboard("satyamkmishraa@gmail.com", "Email")} title="Copy Email" className="copy-btn">
+            <button
+              onClick={() => copyToClipboard("satyamkmishraa@gmail.com", "Email")}
+              title="Copy Email"
+              className="copy-btn"
+            >
               <FaCopy />
             </button>
           </div>
@@ -83,7 +93,11 @@ function Contact() {
             <a href="tel:+916201902313" className="contact-btn">
               <FaPhoneAlt /> Call Me
             </a>
-            <button onClick={() => copyToClipboard("+916201902313", "Phone Number")} title="Copy Phone" className="copy-btn">
+            <button
+              onClick={() => copyToClipboard("+916201902313", "Phone Number")}
+              title="Copy Phone"
+              className="copy-btn"
+            >
               <FaCopy />
             </button>
           </div>
@@ -96,7 +110,12 @@ function Contact() {
         </div>
 
         <div className="social-links">
-          <a href="https://github.com/Satyam6201" target="_blank" rel="noopener noreferrer" className="social-icon">
+          <a
+            href="https://github.com/Satyam6201"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+          >
             <FaGithub /> GitHub
           </a>
           <a
@@ -115,10 +134,7 @@ function Contact() {
           >
             <FaMapMarkerAlt /> Bhopal, MP
           </a>
-          <a
-            href="https://leetcode.com/Satyam6201/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a href="https://leetcode.com/u/satyammishra62/" target="_blank" rel="noreferrer" 
             className="social-icon"
           >
             <SiLeetcode className="icon leetcode" />
@@ -133,11 +149,7 @@ function Contact() {
         </div>
 
         {/* Message Form */}
-        <form
-          className="message-form"
-          onSubmit={(e) => e.preventDefault()}
-          noValidate
-        >
+        <form className="message-form" onSubmit={(e) => e.preventDefault()} noValidate>
           <input
             type="text"
             name="name"
