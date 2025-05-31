@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/contact.css";
 import {
   FaEnvelope,
@@ -8,13 +8,48 @@ import {
   FaDownload,
   FaWhatsapp,
   FaMapMarkerAlt,
+  FaCopy,
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
+  const [toast, setToast] = useState("");
+
+  const validate = () => {
+    const errs = {};
+    if (!form.name.trim()) errs.name = "Name is required";
+    if (!form.email) errs.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(form.email)) errs.email = "Email is invalid";
+    if (!form.message.trim()) errs.message = "Message is required";
+    else if (form.message.length < 10) errs.message = "Message should be at least 10 characters";
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // clear error on input change
+  };
+
+  const showToast = (msg) => {
+    setToast(msg);
+    setTimeout(() => setToast(""), 3000);
+  };
+
+  const handleSend = (method) => {
+    if (!validate()) {
+      showToast("Please fix errors before sending");
+      return;
+    }
+    showToast(`Message sent via ${method}!`);
+    setForm({ name: "", email: "", message: "" }); // clear form
+  };
+
+  const copyToClipboard = (text, label) => {
+    navigator.clipboard.writeText(text);
+    showToast(`${label} copied to clipboard!`);
   };
 
   const whatsappLink = `https://wa.me/916201902313?text=Hi%20Satyam!%20My%20name%20is%20${encodeURIComponent(
@@ -36,12 +71,22 @@ function Contact() {
 
       <div className="contact-box">
         <div className="contact-info">
-          <a href="mailto:satyamkmishraa@gmail.com" className="contact-btn">
-            <FaEnvelope /> Email Me
-          </a>
-          <a href="tel:+916201902313" className="contact-btn">
-            <FaPhoneAlt /> Call Me
-          </a>
+          <div className="contact-btn-copy">
+            <a href="mailto:satyamkmishraa@gmail.com" className="contact-btn">
+              <FaEnvelope /> Email Me
+            </a>
+            <button onClick={() => copyToClipboard("satyamkmishraa@gmail.com", "Email")} title="Copy Email" className="copy-btn">
+              <FaCopy />
+            </button>
+          </div>
+          <div className="contact-btn-copy">
+            <a href="tel:+916201902313" className="contact-btn">
+              <FaPhoneAlt /> Call Me
+            </a>
+            <button onClick={() => copyToClipboard("+916201902313", "Phone Number")} title="Copy Phone" className="copy-btn">
+              <FaCopy />
+            </button>
+          </div>
           <a
             href="https://wa.me/916201902313?text=Hi%20Satyam!%20I%20checked%20your%20portfolio%20and%20would%20love%20to%20connect."
             className="contact-btn"
@@ -70,6 +115,15 @@ function Contact() {
           >
             <FaMapMarkerAlt /> Bhopal, MP
           </a>
+          <a
+            href="https://leetcode.com/Satyam6201/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+          >
+            <SiLeetcode className="icon leetcode" />
+            LeetCode
+          </a>
         </div>
 
         <div className="resume-wrapper">
@@ -77,19 +131,13 @@ function Contact() {
             <FaDownload /> Download Resume
           </a>
         </div>
-        <a
-  href="https://leetcode.com/Satyam6201/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="social-icon"
->
-  <img src="/assets/leetcode.png" alt="LeetCode" className="leetcode-icon" />
-  LeetCode
-</a>
-
 
         {/* Message Form */}
-        <form className="message-form">
+        <form
+          className="message-form"
+          onSubmit={(e) => e.preventDefault()}
+          noValidate
+        >
           <input
             type="text"
             name="name"
@@ -98,6 +146,8 @@ function Contact() {
             onChange={handleChange}
             required
           />
+          {errors.name && <small className="error">{errors.name}</small>}
+
           <input
             type="email"
             name="email"
@@ -106,6 +156,8 @@ function Contact() {
             onChange={handleChange}
             required
           />
+          {errors.email && <small className="error">{errors.email}</small>}
+
           <textarea
             name="message"
             rows="4"
@@ -114,17 +166,28 @@ function Contact() {
             onChange={handleChange}
             required
           ></textarea>
+          {errors.message && <small className="error">{errors.message}</small>}
 
           <div className="send-buttons">
-            <a href={mailtoLink} className="contact-btn" target="_blank" rel="noopener noreferrer">
+            <button
+              type="button"
+              className="contact-btn"
+              onClick={() => handleSend("Email")}
+            >
               <FaEnvelope /> Send via Email
-            </a>
-            <a href={whatsappLink} className="contact-btn" target="_blank" rel="noopener noreferrer">
+            </button>
+            <button
+              type="button"
+              className="contact-btn"
+              onClick={() => handleSend("WhatsApp")}
+            >
               <FaWhatsapp /> Send via WhatsApp
-            </a>
+            </button>
           </div>
         </form>
       </div>
+
+      {toast && <div className="toast">{toast}</div>}
 
       <p className="footer-note">🚀 Let’s build something amazing together!</p>
     </section>
