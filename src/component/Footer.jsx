@@ -45,7 +45,7 @@ function Footer() {
           <h3>Contact Info</h3>
           <p><FaEnvelope /> satyamkmishraa@gmail.com</p>
           <p><FaPhoneAlt /> +91 6201902313</p>
-          <p><FaMapMarkerAlt /> India</p>
+          <p><FaMapMarkerAlt />Bhopal, India</p>
         </div>
 
         <div className="footer-section">
