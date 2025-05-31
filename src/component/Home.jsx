@@ -1,13 +1,14 @@
 import React from "react";
 import "../styles/home.css";
 import { Typewriter } from "react-simple-typewriter";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaFileDownload, FaEye } from "react-icons/fa";
 
 function Home() {
   return (
     <section id="home" className="home">
       <div className="home-content fade-in">
         <img src="/assets/image.jpg" alt="Satyam Kumar Mishra" className="profile-img" />
+
         <h2>
           Hi, I'm <span className="highlight">Satyam Kumar Mishra</span>
         </h2>
@@ -51,6 +52,36 @@ function Home() {
           <a href="#projects" className="home-btn">See My Work</a>
         </div>
 
+        {/* Contact Links */}
+        <div className="contact-links">
+          <a href="tel:+919876543210" className="contact-item">
+            <FaPhoneAlt /> +91 9876543210
+          </a>
+          <a href="mailto:satyam@example.com" className="contact-item">
+            <FaEnvelope /> satyam@example.com
+          </a>
+        </div>
+
+        {/* Resume Section */}
+        <div className="resume-section">
+          <a
+            href="/assets/Resume.pdf"
+            download
+            className="resume-btn download"
+          >
+            <FaFileDownload /> Download Resume
+          </a>
+          <a
+            href="/assets/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn view"
+          >
+            <FaEye /> View Resume
+          </a>
+        </div>
+
+        {/* Social Links */}
         <div className="social-links">
           <a
             href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/"
@@ -61,6 +92,7 @@ function Home() {
             <FaLinkedin size={24} />
             LinkedIn
           </a>
+
           <a
             href="https://github.com/Satyam6201"
             target="_blank"
