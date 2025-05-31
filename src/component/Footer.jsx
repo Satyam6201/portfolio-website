@@ -37,6 +37,7 @@ function Footer() {
             <li><a href="#skills">Skills</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#Education">Education</a></li>
           </ul>
         </div>
 
