@@ -36,6 +36,7 @@ function About() {
           <p>
             🥇 <strong>1st Rank</strong> (1st–3rd Semesters)<br />
             🥉 <strong>3rd Rank</strong> (4th–5th Semesters)<br />
+            🥉 <strong>1rd Rank</strong> (6th Semesters)<br />
             📚 Strong in <strong>Java, DSA</strong> & <strong>Web Dev</strong>
           </p>
         </div>
