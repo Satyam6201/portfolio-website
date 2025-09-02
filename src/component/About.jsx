@@ -46,7 +46,7 @@ function About() {
           viewport={{ once: true }}
           custom={2}
         >
-          <h3>👨‍💻 <CountUp end={15} duration={3} />+</h3>
+          <h3>👨‍💻 <CountUp end={25} duration={3} />+</h3>
           <p>Projects Completed</p>
         </motion.div>
 
@@ -70,7 +70,7 @@ function About() {
           viewport={{ once: true }}
           custom={4}
         >
-          <h3>📅 <CountUp end={2} duration={3} />+ yrs</h3>
+          <h3>📅 <CountUp end={3} duration={3} />+ yrs</h3>
           <p>Hands-on Experience</p>
         </motion.div>
       </div>
@@ -84,6 +84,7 @@ function About() {
               <>
                 🥇 <strong>1st Rank</strong> (1st–3rd Semesters)<br />
                 🥉 <strong>3rd Rank</strong> (4th–5th Semesters)<br />
+                🥇 <strong>1st Rank</strong> (6th Semesters)<br />
                 📚 Strong in <strong>Java, DSA</strong> & <strong>Web Dev</strong>
               </>
             ),
