@@ -1,93 +1,125 @@
 .about {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1a1a1a, #202020);
-  color: white;
+  padding: 80px 20px;
   border-radius: 20px;
-  width: 80%;
-  margin: 50px auto;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease-in-out;
+  width: 85%;
+  margin: 60px auto;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-.about:hover {
-  transform: scale(1.01);
+/* Animated Gradient Background Blobs */
+.about::before,
+.about::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: blob 20s infinite;
+}
+
+.about::before {
+  top: -100px;
+  left: -150px;
+  width: 350px;
+  height: 350px;
+  background: #ff4b2b;
+}
+
+.about::after {
+  bottom: -120px;
+  right: -150px;
+  width: 300px;
+  height: 300px;
+  background: #00f2fe;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(50px, -50px) scale(1.2); }
 }
 
 .about h2 {
   font-size: 3rem;
-  color: #ffcc00;
-  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffcc00, #ff4b2b, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 25px;
 }
 
 .about-intro {
-  font-size: 1.2rem;
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.7;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
+  font-size: 1.25rem;
+  max-width: 750px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
   border-radius: 12px;
-  margin-bottom: 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
 }
 
-.about-intro code {
-  background: #2c2c2c;
-  color: #ffcc00;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-family: 'Courier New', monospace;
+.about-intro:hover {
+  transform: scale(1.02);
 }
 
+/* Counters */
 .counters {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
 }
 
 .counter-box {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 20px 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 25px 35px;
+  min-width: 180px;
+  transition: all 0.3s ease;
+  box-shadow: inset -3px -3px 8px rgba(255,255,255,0.2),
+              inset 3px 3px 8px rgba(0,0,0,0.4);
 }
 
 .counter-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .counter-box h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #ffcc00;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .counter-box p {
   font-size: 1rem;
+  color: #e0e0e0;
 }
 
+/* Sections */
 .about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
 .about-section {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
 }
 
 .about-section:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-6px) rotateX(2deg);
 }
 
 .about-section h3 {
@@ -99,10 +131,8 @@
 .about-section p,
 .about-section ul {
   font-size: 1.1rem;
-  max-width: 650px;
-  margin: 0 auto;
-  color: #f0f0f0;
-  line-height: 1.6;
+  color: #f5f5f5;
+  line-height: 1.7;
 }
 
 .about-section ul {
@@ -111,12 +141,13 @@
 }
 
 .about-section ul li {
+  padding: 8px 0;
   display: flex;
   align-items: center;
-  justify-content: start;
   gap: 12px;
-  font-size: 1.1rem;
-  padding: 8px 0;
+  transition: transform 0.2s ease;
 }
 
-
+.about-section ul li:hover {
+  transform: translateX(5px);
+}
