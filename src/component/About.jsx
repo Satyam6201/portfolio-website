@@ -17,7 +17,7 @@ function About() {
 
       <div className="counters">
         <div className="counter-box">
-          <h3>👨‍💻 15+</h3>
+          <h3>👨‍💻 25+</h3>
           <p>Projects Completed</p>
         </div>
         <div className="counter-box">
