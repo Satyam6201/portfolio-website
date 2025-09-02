@@ -115,7 +115,7 @@ function About() {
             title: "🎮 Fun Projects & Interests",
             content: (
               <ul>
-                <li>🧠 Games like Simon Says, Brick Breaker</li>
+                <li>🧠 Games like Simon Says, Brick Breaker, Snake Game</li>
                 <li>🧩 Solving DSA problems using Java</li>
                 <li>🎬 Full-stack clones (Netflix, Amazon)</li>
                 <li>🎤 Hosting workshops & mentoring juniors</li>
