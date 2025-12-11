@@ -5,7 +5,7 @@ import "../styles/projects.css";
 const projects = [
   {
     title: "Connectify",
-    image: "/assets/amazon.webp",
+    image: "/assets/Video and Message.jpg",
     description:
       "A real-time chat and video calling app built with MERN, featuring JWT auth, messaging, and modern UI themes.",
     tech: [
@@ -21,18 +21,20 @@ const projects = [
     github: "https://github.com/Satyam6201/Connectify",
   },
   {
-    title: "Quora Post",
-    image: "/assets/Quora Post.jpg",
-    description: "A Quora-like post-sharing platform using REST API.",
-    tech: ["Node.js", "Express.js", "EJS", "CSS"],
-    liveDemo: "https://your-live-demo-link.com",
-    github: "https://github.com/Satyam6201/Quora-Post",
-  },{
+    title: "Grocerin – E-Commerce Web App",
+    image: "/assets/Grocerin.jpg",
+    description: 
+      "A full-stack e-commerce platform with product listing, cart, wishlist, user auth, seller dashboard, and secure USD checkout.",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Payment Gateway"],
+    liveDemo: "https://grocerinx.vercel.app",
+    github: "https://github.com/Satyam6201/Grocerin"
+  },
+  {
     title: "Amazon Clone",
     image: "/assets/amazon.webp",
     description:
       "A modern Amazon clone showcasing frontend skills with a clean UI, product listings, search, and cart features.",
-    tech: ["React.js", "JavaScript", "HTML", "CSS"],
+    tech: ["React.js", "JavaScript", "API", "HTML", "CSS"],
     liveDemo: "https://amazon-clone-react-js-pi.vercel.app/",
     github: "https://github.com/Satyam6201/Amazon-Clone---React.js",
   },
