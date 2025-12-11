@@ -134,7 +134,7 @@ function Contact() {
           >
             <FaMapMarkerAlt /> Bhopal, MP
           </a>
-          <a href="https://leetcode.com/u/satyammishra62/" target="_blank" rel="noreferrer" 
+          <a href="https://leetcode.com/u/satyammishra62" target="_blank" rel="noreferrer" 
             className="social-icon"
           >
             <SiLeetcode className="icon leetcode" />
