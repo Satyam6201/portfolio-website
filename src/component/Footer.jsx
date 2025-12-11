@@ -61,7 +61,7 @@ function Footer() {
         <div className="footer-section">
           <h3>Follow Me</h3>
           <div className="footer-links">
-            <a href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/" target="_blank" rel="noreferrer" className="tooltip">
+            <a href="https://www.linkedin.com/in/satyam-kumar-mishra-dev" target="_blank" rel="noreferrer" className="tooltip">
               <FaLinkedin className="icon linkedin" />
               <span className="tooltip-text">LinkedIn</span>
             </a>
