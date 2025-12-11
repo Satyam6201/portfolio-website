@@ -4,6 +4,30 @@ import "../styles/projects.css";
 
 const projects = [
   {
+    title: "Connectify",
+    image: "/assets/amazon.webp",
+    description:
+      "A real-time chat and video calling app built with MERN, featuring JWT auth, messaging, and modern UI themes.",
+    tech: [
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT Authentication",
+    "Zustand",
+    "Tailwind CSS",
+  ],
+    liveDemo: "https://your-live-demo-link.com",
+    github: "https://github.com/Satyam6201/Connectify",
+  },
+  {
+    title: "Quora Post",
+    image: "/assets/Quora Post.jpg",
+    description: "A Quora-like post-sharing platform using REST API.",
+    tech: ["Node.js", "Express.js", "EJS", "CSS"],
+    liveDemo: "https://your-live-demo-link.com",
+    github: "https://github.com/Satyam6201/Quora-Post",
+  },{
     title: "Amazon Clone",
     image: "/assets/amazon.webp",
     description:
