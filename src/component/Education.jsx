@@ -16,7 +16,7 @@ function Education() {
             <p>🎓 Radharaman Institute of Technology and Science, Bhopal</p>
             <p>📊 CGPA: <strong>8.03</strong> — <em title="Secured 1st Rank in 1st to 3rd semesters">College Topper</em></p>
             <p>💡 Specialized in Web Development, Data Structures, and AI tools</p>
-            <div className="progress-bar"><div className="progress" style={{ width: "76%" }}></div></div>
+            <div className="progress-bar"><div className="progress" style={{ width: "82%" }}></div></div>
           </div>
         </li>
 
