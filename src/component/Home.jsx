@@ -85,7 +85,7 @@ function Home() {
         {/* Social Links */}
         <div className="social-links">
           <a
-            href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/"
+            href="https://www.linkedin.com/in/satyam-kumar-mishra-dev"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon"
