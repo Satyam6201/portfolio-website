@@ -208,3 +208,7 @@
   flex-wrap: wrap;
 }
 
+/* LeetCode Icon Style */
+.leetcode {
+  color: #ffa116;
+}
