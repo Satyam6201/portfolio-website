@@ -21,7 +21,7 @@ const projects = [
     github: "https://github.com/Satyam6201/Connectify",
   },
   {
-    title: "Grocerin – E-Commerce Web App",
+    title: "Grocerin",
     image: "/assets/Grocerin.jpg",
     description: 
       "A full-stack e-commerce platform with product listing, cart, wishlist, user auth, seller dashboard, and secure USD checkout.",
