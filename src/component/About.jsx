@@ -1,83 +1,110 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/about.css";
 
 function About() {
+  const [projects, setProjects] = useState(0);
+  const [students, setStudents] = useState(0);
+
+  // Animated counters
+  useEffect(() => {
+    let p = 0;
+    let s = 0;
+
+    const interval = setInterval(() => {
+      if (p < 35) {
+        p++;
+        setProjects(p);
+      }
+      if (s < 250) {
+        s += 5;
+        setStudents(s);
+      }
+      if (p >= 35 && s >= 250) clearInterval(interval);
+    }, 40);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="about" className="about">
-      <h2>🚀 About Me</h2>
+      <div className="about-overlay"></div>
 
-      <div className="about-header">
-        <p className="about-intro">
-          Hi there! I'm a <strong>Full-Stack Web Developer</strong> driven by curiosity and creativity.  
-          I bring ideas to life with <code>React.js</code>, <code>Node.js</code>, <code>Express.js</code>, and <code>MongoDB</code>, blending modern design with scalable code.  
+      <h2 className="about-title">🚀 About Me</h2>
+
+      <p className="about-intro">
+        I'm <strong>Satyam Kumar Mishra</strong>, a performance-driven 
+        <strong> Full-Stack MERN & Next.js Developer</strong> with a passion 
+        for building scalable SaaS platforms, secure authentication systems, 
+        and production-ready web applications.
+        <br /><br />
+        I specialize in transforming complex ideas into clean architecture 
+        using <code>React</code>, <code>Next.js</code>, <code>Node.js</code>, 
+        <code>Express</code>, and <code>MongoDB</code>.
+      </p>
+
+      {/* Counters */}
+      <div className="counters">
+        <div className="counter-box glow">
+          <h3>{projects}+</h3>
+          <p>Projects Built & Deployed</p>
+        </div>
+
+        <div className="counter-box glow">
+          <h3>{students}+</h3>
+          <p>Students Mentored</p>
+        </div>
+
+        <div className="counter-box glow">
+          <h3>8.03 CGPA</h3>
+          <p>B.Tech CSE</p>
+        </div>
+      </div>
+
+      {/* Experience Section */}
+      <div className="about-section glass">
+        <h3>💼 Professional Experience</h3>
+        <p>
+          <strong>Software Development Intern – Software Beatz (Remote)</strong>
           <br />
-          Whether it's a sleek UI or a powerful API—<strong>I build both ends.</strong>
+          Developed scalable full-stack modules using MERN stack.
+          Implemented JWT authentication, built REST APIs, 
+          optimized backend performance, and followed Git PR workflows.
         </p>
       </div>
 
-      <div className="counters">
-        <div className="counter-box">
-          <h3>👨‍💻 25+</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div className="counter-box">
-          <h3>🌟 4.9/5</h3>
-          <p>Peer Review Rating</p>
-        </div>
-        <div className="counter-box">
-          <h3>📅 2+ yrs</h3>
-          <p>Hands-on Experience</p>
-        </div>
+      {/* Achievements */}
+      <div className="about-section glass">
+        <h3>🏆 Achievements</h3>
+        <ul>
+          <li>🥇 1st Rank – 1st, 2nd & 3rd Semester</li>
+          <li>🏅 Innovative Project Award – Tech Expo 2025</li>
+          <li>📚 Conducted Workshops for 250+ Students</li>
+          <li>🚀 Built 35+ Production-Level Projects</li>
+        </ul>
       </div>
 
-      <div className="about-content">
-        <div className="about-section">
-          <h3>🎓 Academic Achievements</h3>
-          <p>
-            🥇 <strong>1st Rank</strong> (1st–3rd Semesters)<br />
-            🥉 <strong>3rd Rank</strong> (4th–5th Semesters)<br />
-            🥉 <strong>1rd Rank</strong> (6th Semesters)<br />
-            📚 Strong in <strong>Java, DSA</strong> & <strong>Web Dev</strong>
-          </p>
-        </div>
+      {/* Tech Stack */}
+      <div className="about-section glass">
+        <h3>🛠️ Technical Expertise</h3>
+        <ul>
+          <li>Frontend → React.js, Next.js, TypeScript, Tailwind</li>
+          <li>Backend → Node.js, Express, JWT, MVC Architecture</li>
+          <li>Databases → MongoDB, PostgreSQL, MySQL, Firebase</li>
+          <li>DevOps → Git, Docker (Basic), CI/CD, Vercel</li>
+          <li>Concepts → OOP, SDLC, API Security, System Design</li>
+        </ul>
+      </div>
 
-        <div className="about-section">
-          <h3>⚡ What Drives Me</h3>
-          <ul>
-            <li>🚀 Creating immersive user experiences</li>
-            <li>🧠 Exploring AI, Next.js, Firebase</li>
-            <li>📦 Writing clean, scalable code</li>
-            <li>🤝 Collaborating with creative teams</li>
-          </ul>
-        </div>
-
-        <div className="about-section">
-          <h3>🛠️ My Tech Stack</h3>
-          <ul>
-            <li>✅ React.js, Next.js, JavaScript, TypeScript</li>
-            <li>✅ Node.js, Express.js, MongoDB, MySQL</li>
-            <li>✅ Firebase, REST APIs, Git, Netlify</li>
-            <li>✅ CSS, Sass, Responsive Design, Figma</li>
-          </ul>
-        </div>
-
-        <div className="about-section">
-          <h3>🎮 Fun Projects & Interests</h3>
-          <ul>
-            <li>🧠 Building games like Simon Says, Brick Breaker</li>
-            <li>🧩 Solving DSA problems using Java</li>
-            <li>🎬 Developing full-stack clones (Netflix, Amazon)</li>
-            <li>🎤 Hosting workshops & mentoring juniors</li>
-          </ul>
-        </div>
-
-        <div className="about-section">
-          <h3>🌟 Career Vision</h3>
-          <p>
-            I'm passionate about working with <strong>innovative teams</strong> to solve real-world challenges.  
-            Open to <strong>internships</strong> and <strong>full-time opportunities</strong> in web development. Let's build the future together!
-          </p>
-        </div>
+      {/* Vision */}
+      <div className="about-section vision">
+        <h3>🌟 My Vision</h3>
+        <p>
+          I aim to join innovative engineering teams where I can contribute to 
+          scalable product development, improve performance architecture, and 
+          build user-first digital experiences.
+          <br /><br />
+          Open for <strong>Internships</strong> and <strong>Full-Time Roles</strong>.
+        </p>
       </div>
     </section>
   );

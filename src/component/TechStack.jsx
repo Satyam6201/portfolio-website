@@ -2,39 +2,97 @@ import React from "react";
 import "../styles/techstack.css";
 
 function TechStack() {
-  const techs = [
-    { name: "Java", img: "/assets/java-svgrepo-com.svg", feature: "OOPs, DSA, Backend APIs" },
-    { name: "HTML5", img: "/assets/html-5-svgrepo-com.svg", feature: "Semantic structure for web pages" },
-    { name: "CSS3", img: "/assets/css-3-svgrepo-com.svg", feature: "Modern responsive layouts & animations" },
-    { name: "JavaScript", img: "/assets/javascript-svgrepo-com.svg", feature: "Logic, DOM, and interactivity" },
-    { name: "Bootstrap", img: "/assets/bootstrap-svgrepo-com.svg", feature: "Rapid UI development" },
-    { name: "Tailwind CSS", img: "/assets/tailwind-css-svgrepo-com.svg", feature: "Utility-first styling" },
-    { name: "React.js", img: "/assets/reactjs-svgrepo-com.svg", feature: "Component-driven UI & Hooks" },
-    { name: "Node.js", img: "/assets/nodejs-icon-svgrepo-com.svg", feature: "Backend services & APIs" },
-    { name: "Express.js", img: "/assets/express-js.png", feature: "Routing & middleware for backend" },
-    { name: "MongoDB", img: "/assets/database-svgrepo-com.svg", feature: "NoSQL DB for scalable apps" },
-    { name: "MySQL", img: "/assets/mysql-svgrepo-com.svg", feature: "Relational DB & schema design" },
-    { name: "Git & GitHub", img: "/assets/github-142-svgrepo-com.svg", feature: "Version control & collaboration" },
+
+  const techCategories = [
+    {
+      title: "Frontend Development",
+      items: [
+        { name: "HTML5", icon: "html" , desc: "Semantic & accessible web structure" },
+        { name: "CSS3", icon: "css", desc: "Responsive UI & animations" },
+        { name: "JavaScript", icon: "js", desc: "Core logic & DOM manipulation" },
+        { name: "TypeScript", icon: "ts", desc: "Type-safe scalable apps" },
+        { name: "React.js", icon: "react", desc: "Component-based UI architecture" },
+        { name: "Next.js", icon: "nextjs", desc: "SSR, SEO & production apps" },
+        { name: "Tailwind", icon: "tailwind", desc: "Utility-first styling" },
+        { name: "Bootstrap", icon: "bootstrap", desc: "Rapid UI prototyping" },
+      ],
+    },
+    {
+      title: "Backend Development",
+      items: [
+        { name: "Node.js", icon: "nodejs", desc: "Server-side runtime" },
+        { name: "Express.js", icon: "express", desc: "REST API & middleware" },
+        { name: "JWT Auth", icon: "nodejs", desc: "Authentication & protected routes" },
+        { name: "REST APIs", icon: "postman", desc: "API architecture & testing" },
+        { name: "MVC Architecture", icon: "nodejs", desc: "Clean scalable backend" },
+      ],
+    },
+    {
+      title: "Databases",
+      items: [
+        { name: "MongoDB", icon: "mongodb", desc: "NoSQL scalable database" },
+        { name: "MySQL", icon: "mysql", desc: "Relational DB schema design" },
+        { name: "PostgreSQL", icon: "postgres", desc: "Production SQL database" },
+        { name: "Firebase", icon: "firebase", desc: "Realtime & authentication services" },
+        { name: "Prisma ORM", icon: "prisma", desc: "Modern database ORM" },
+      ],
+    },
+    {
+      title: "Tools & DevOps",
+      items: [
+        { name: "Git", icon: "git", desc: "Version control" },
+        { name: "GitHub", icon: "github", desc: "Collaboration & repos" },
+        { name: "Docker", icon: "docker", desc: "Containerization basics" },
+        { name: "Vercel", icon: "vercel", desc: "Frontend deployment" },
+        { name: "Postman", icon: "postman", desc: "API testing" },
+        { name: "Figma", icon: "figma", desc: "UI/UX design collaboration" },
+      ],
+    },
+    {
+      title: "Programming & CS",
+      items: [
+        { name: "Java", icon: "java", desc: "DSA, OOP & problem solving" },
+        { name: "Data Structures", icon: "java", desc: "Arrays, Trees, Graphs" },
+        { name: "OOP", icon: "java", desc: "Encapsulation & abstraction" },
+        { name: "System Design", icon: "nodejs", desc: "Scalable architecture basics" },
+      ],
+    },
   ];
 
   return (
     <section id="techstack" className="techstack">
       <div className="container">
-        <h2>💻 My Tech Stack</h2>
-        <p className="sub-text">A curated list of technologies I work with to bring ideas to life.</p>
-        <p className="tagline">✨ Crafting modern web experiences with passion & precision.</p>
+        <h2 className="main-title">💻 Skills & Technologies</h2>
 
-        <div className="tech-grid">
-          {techs.map((tech, index) => (
-            <div key={index} className="tech-card">
-              <img src={tech.img} alt={tech.name} className="tech-icon" />
-              <span className="tech-name">{tech.name}</span>
-              <span className="tech-feature">{tech.feature}</span>
+        <p className="intro">
+          I design and develop full-stack applications from frontend UI to backend architecture,
+          focusing on performance, scalability, and clean code practices.
+        </p>
+
+        {techCategories.map((category, i) => (
+          <div className="category" key={i}>
+            <h3 className="category-title">{category.title}</h3>
+
+            <div className="tech-grid">
+              {category.items.map((tech, index) => (
+                <div key={index} className="tech-card">
+                  <img
+                    src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                    alt={tech.name}
+                    className="tech-icon"
+                  />
+                  <h4>{tech.name}</h4>
+                  <p>{tech.desc}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
 
-        <p className="footer-quote">📌 “Building for the web, one pixel at a time.”</p>
+        <div className="closing">
+          🚀 I continuously learn new technologies and build real-world projects
+          to strengthen my engineering fundamentals and product thinking.
+        </div>
       </div>
     </section>
   );
