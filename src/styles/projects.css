@@ -1,68 +1,100 @@
-/* projects.css */
+/* --- Root & Layout --- */
+:root {
+  --primary-gold: #ffcb05;
+  --accent-pink: #ff416c;
+  --accent-orange: #ff4b2b;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --neon-blue: #00f2fe;
+}
 
 .projects {
   text-align: center;
-  padding: 60px 20px 80px;
-  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  padding: 80px 20px;
+  background: radial-gradient(circle at top, #162e35, #0f2027);
   min-height: 100vh;
+  color: #fff;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Section Header --- */
+.section-header {
+  margin-bottom: 50px;
 }
 
 .projects h2 {
-  font-size: 3rem;
-  margin-bottom: 40px;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 10px;
   font-weight: 900;
-  color: #ffcb05;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  color: var(--primary-gold);
+  text-shadow: 0 0 20px rgba(255, 203, 5, 0.3);
   letter-spacing: 2px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
 }
 
+.project-badge {
+  display: inline-block;
+  background: rgba(255, 203, 5, 0.1);
+  color: var(--primary-gold);
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 1px solid var(--primary-gold);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+/* --- Filter Styling --- */
 .filter-container {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  color: #ffcb05;
+  color: var(--primary-gold);
   font-weight: 700;
-  font-size: 1.1rem;
-  user-select: none;
 }
 
 .filter-container select {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
+  padding: 10px 15px;
+  background: #1a363f;
+  color: #fff;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
   outline: none;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   font-weight: 600;
 }
 
-.filter-container select:hover,
-.filter-container select:focus {
-  box-shadow: 0 0 8px #ffcb05;
+.filter-container select:hover {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 10px rgba(255, 203, 5, 0.4);
 }
 
+/* --- Grid Container --- */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1280px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 20px;
 }
 
+/* --- Project Card (Glassmorphism) --- */
 .project-card {
-  background: #fff;
-  border-radius: 20px;
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.25);
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
   opacity: 0;
   transform: translateY(40px);
 }
@@ -70,189 +102,187 @@
 .project-card.fade-in {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.6s ease-out;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.35);
-  z-index: 2;
+  transform: translateY(-15px) scale(1.02);
+  border-color: var(--primary-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* --- Featured/AI Card (DentAlva) --- */
+.featured-card {
+  border: 2px solid var(--neon-blue);
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.featured-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, var(--accent-pink), var(--accent-orange));
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+
+/* --- Image & Overlay --- */
 .img-wrapper {
   position: relative;
   width: 100%;
+  height: 220px;
   overflow: hidden;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 
 .project-img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  padding: 20px;
-  font-size: 0.95rem;
-  font-style: italic;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  padding: 25px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   text-align: center;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 .img-wrapper:hover .overlay {
   opacity: 1;
 }
 
+/* --- Project Info --- */
 .project-info {
-  padding: 25px 22px 30px;
-  text-align: center;
-  width: 100%;
+  padding: 30px 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-info h3 {
-  font-size: 1.9rem;
-  margin-bottom: 12px;
-  color: #222;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #fff;
   font-weight: 800;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .tech {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(255, 65, 108, 0.35);
-  user-select: none;
-  transition: transform 0.2s ease;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.tech:hover {
-  transform: scale(1.15);
-  cursor: default;
+.project-card:hover .tech {
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
+  border-color: transparent;
+  transform: translateY(-3px);
 }
 
+/* --- Buttons & Links --- */
 .project-links {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-bottom: 15px;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-/* Live Demo Button */
+.live-btn, .github-btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
 .live-btn {
-  background: linear-gradient(45deg, #56ab2f, #a8e063);
-  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.6);
-  color: #fff;
-  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
-  cursor: pointer;
+  background: #56ab2f;
+  color: white;
 }
 
 .live-btn:hover {
-  background: linear-gradient(45deg, #a8e063, #56ab2f);
-  box-shadow:
-    0 0 8px #00bfff,
-    0 0 20px #1e90ff,
-    0 0 30px #00bfff;
-  transform: scale(1.1);
-  color: #fff;
+  background: #a8e063;
+  box-shadow: 0 0 20px rgba(86, 171, 47, 0.5);
+  transform: scale(1.05);
 }
 
-/* GitHub Button */
 .github-btn {
-  background: linear-gradient(45deg, #020024, #090979);
-  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.5);
-  color: #ffa500;
-  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
-  cursor: pointer;
+  background: #24292e;
+  color: white;
+  border: 1px solid #444;
 }
 
 .github-btn:hover {
-  background: linear-gradient(45deg, #090979, #020024);
-  box-shadow:
-    0 0 8px #ffa500,
-    0 0 20px #ff8c00,
-    0 0 30px #ffa500;
-  transform: scale(1.1);
-  color: #fff;
+  background: #fff;
+  color: #24292e;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
-/* Shared styles */
-.live-btn,
-.github-btn {
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 14px 28px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  user-select: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: all 0.3s ease-in-out;
-  border: none;
-}
-
-/* Details Button (kept same with a pink gradient) */
 .details-btn {
-  background-color: transparent;
-  border: 2px solid #ff416c;
-  padding: 10px 28px;
+  background: transparent;
+  border: 1px solid var(--accent-pink);
+  padding: 10px;
   font-weight: 600;
-  font-size: 1rem;
-  border-radius: 50px;
-  color: #ff416c;
+  border-radius: 12px;
+  color: var(--accent-pink);
   cursor: pointer;
-  transition:
-    background-color 0.4s ease,
-    color 0.4s ease,
-    box-shadow 0.4s ease,
-    transform 0.2s ease;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  user-select: none;
-  display: inline-block;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 .details-btn:hover {
-  background-color: #ff416c;
-  color: white;
-  box-shadow:
-    0 0 10px #ff416c,
-    0 0 20px #ff4b2b,
-    0 0 30px #ff758c;
-  transform: scale(1.1);
+  background: var(--accent-pink);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 65, 108, 0.4);
+}
+
+/* --- Responsive Fixes --- */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects h2 {
+    font-size: 2.2rem;
+  }
 }

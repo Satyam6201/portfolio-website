@@ -4,6 +4,32 @@ import "../styles/projects.css";
 
 const projects = [
   {
+    title: "DentAlva",
+    image: "/assets/dentalva.png",
+    description: "AI-Powered healthcare SaaS with voice assistants for automated appointment handling and role-based access.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Clerk", "Vapi AI", "Tailwind CSS"],
+    liveDemo: "https://dentwise-henna.vercel.app/",
+    github: "https://github.com/Satyam6201/DentAIva",
+    featured: true 
+  },
+    {
+    title: "Grocerin",
+    image: "/assets/Grocerin.jpg",
+    description: 
+      "A full-stack e-commerce platform with product listing, cart, wishlist, user auth, seller dashboard, and secure USD checkout.",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Payment Gateway"],
+    liveDemo: "https://grocerinx.vercel.app",
+    github: "https://github.com/Satyam6201/Grocerin"
+  },
+  {
+  title: "Medi-Connect",
+  image: "/assets/mediConnection.png",
+  description: "Full-stack MERN healthcare platform with multi-role authentication (Patient, Doctor, Admin), online appointment booking, dashboard management, and integrated payment gateway for secure medical consultations.",
+  tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Stripe/Razorpay", "CSS"],
+  liveDemo: "https://prescripto.vercel.app/",
+  github: "https://github.com/Satyam6201/Medi-Connect",
+  featured: true
+},{
     title: "Connectify",
     image: "/assets/Video and Message.jpg",
     description:
@@ -21,14 +47,14 @@ const projects = [
     github: "https://github.com/Satyam6201/Connectify",
   },
   {
-    title: "Grocerin",
-    image: "/assets/Grocerin.jpg",
-    description: 
-      "A full-stack e-commerce platform with product listing, cart, wishlist, user auth, seller dashboard, and secure USD checkout.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Payment Gateway"],
-    liveDemo: "https://grocerinx.vercel.app",
-    github: "https://github.com/Satyam6201/Grocerin"
-  },
+  title: "Employee Manager Pro",
+  image: "/assets/employee-manager.png", 
+  description: "A professional Full-Stack HRMS featuring real-time employee tracking, secure NextAuth integration, and dynamic server-side filtering.",
+  tech: ["Next.js 14", "Prisma", "PostgreSQL", "NextAuth", "Framer Motion", "Tailwind CSS"],
+  liveDemo: "https://employee-manager-pro-chi.vercel.app/",
+  github: "https://github.com/Satyam6201/employee-manager-pro",
+  featured: true 
+},
   {
     title: "Amazon Clone",
     image: "/assets/amazon.webp",
