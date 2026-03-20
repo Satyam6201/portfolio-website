@@ -14,7 +14,7 @@ function Education() {
           <div className="edu-content">
             <h3 data-badge="Current">B-Tech | Computer Science & Engineering (2022 - 2026)</h3>
             <p>🎓 Radharaman Institute of Technology and Science, Bhopal</p>
-            <p>📊 CGPA: <strong>8.03</strong> — <em title="Secured 1st Rank in 1st to 3rd semesters">College Topper</em></p>
+            <p>📊 CGPA: <strong>8.15</strong> — <em title="Secured 1st Rank in 1st to 3rd semesters">College Topper</em></p>
             <p>💡 Specialized in Web Development, Data Structures, and AI tools</p>
             <div className="progress-bar"><div className="progress" style={{ width: "82%" }}></div></div>
           </div>

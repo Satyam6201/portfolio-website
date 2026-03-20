@@ -1,8 +1,6 @@
 .education {
   padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #00b09b, #96c93d);
-  position: relative;
+  text-align: center;  position: relative;
   overflow: hidden;
 }
 

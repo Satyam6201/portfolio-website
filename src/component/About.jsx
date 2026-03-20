@@ -32,13 +32,13 @@ function About() {
       <h2 className="about-title">🚀 About Me</h2>
 
       <p className="about-intro">
-        I'm <strong>Satyam Kumar Mishra</strong>, a performance-driven 
-        <strong> Full-Stack MERN & Next.js Developer</strong> with a passion 
-        for building scalable SaaS platforms, secure authentication systems, 
+        I'm <strong>Satyam Kumar Mishra</strong>, a performance-driven
+        <strong> Full-Stack MERN & Next.js Developer</strong> with a passion
+        for building scalable SaaS platforms, secure authentication systems,
         and production-ready web applications.
         <br /><br />
-        I specialize in transforming complex ideas into clean architecture 
-        using <code>React</code>, <code>Next.js</code>, <code>Node.js</code>, 
+        I specialize in transforming complex ideas into clean architecture
+        using <code>React</code>, <code>Next.js</code>, <code>Node.js</code>,
         <code>Express</code>, and <code>MongoDB</code>.
       </p>
 
@@ -55,7 +55,7 @@ function About() {
         </div>
 
         <div className="counter-box glow">
-          <h3>8.03 CGPA</h3>
+          <h3>8.15 CGPA</h3>
           <p>B.Tech CSE</p>
         </div>
       </div>
@@ -67,7 +67,7 @@ function About() {
           <strong>Software Development Intern – Software Beatz (Remote)</strong>
           <br />
           Developed scalable full-stack modules using MERN stack.
-          Implemented JWT authentication, built REST APIs, 
+          Implemented JWT authentication, built REST APIs,
           optimized backend performance, and followed Git PR workflows.
         </p>
       </div>
@@ -99,8 +99,8 @@ function About() {
       <div className="about-section vision">
         <h3>🌟 My Vision</h3>
         <p>
-          I aim to join innovative engineering teams where I can contribute to 
-          scalable product development, improve performance architecture, and 
+          I aim to join innovative engineering teams where I can contribute to
+          scalable product development, improve performance architecture, and
           build user-first digital experiences.
           <br /><br />
           Open for <strong>Internships</strong> and <strong>Full-Time Roles</strong>.

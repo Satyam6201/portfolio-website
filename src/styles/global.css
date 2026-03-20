@@ -4,10 +4,19 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f5f5 ;
+  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #020617, #172554);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #e2e8f0;
   text-align: center;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Home Section */
@@ -21,17 +30,21 @@ body {
   width: 100%;
 }
 
-/* Sections - About, Projects, Contact, Fun Facts, Hobbies, Blog, Hiring, Achievements, techstack, volunteer, certifications*/
+/* Sections - About, Projects, Contact, Fun Facts, Hobbies, Blog, Hiring, Achievements, techstack, volunteer, certifications, experience */
 .achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
-.hiring-container, .hobbies, .projects,.techstack, .volunteer{
-
+.hiring-container, .hobbies, .projects,.techstack, .volunteer, .home, .experience {
   padding: 80px 20px;
-  background-color: white;
   margin: 50px auto;
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 
@@ -39,7 +52,7 @@ body {
 /* Hover Effect */
  .projects:hover, .contact:hover, .funfacts:hover, .techstack:hover,
 .goal-section:hover,.hobbies:hover, .blog:hover, .hiring-container:hover, 
-.achievements:hover, .volunteer:hover, .education:hover, .certifications:hover {
+.achievements:hover, .volunteer:hover, .education:hover, .certifications:hover, .experience:hover {
 
   transform: scale(1.02);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
@@ -59,7 +72,8 @@ body {
   .hobbies,
   .projects,
   .techstack,
-  .volunteer {
+  .volunteer,
+  .experience {
     padding: 30px 15px;
   }
 }
@@ -78,7 +92,8 @@ body {
   .hobbies,
   .projects,
   .techstack,
-  .volunteer {
+  .volunteer,
+  .experience {
     padding: 20px 10px;
   }
 }
@@ -97,7 +112,8 @@ body {
   .hobbies,
   .projects,
   .techstack,
-  .volunteer {
+  .volunteer,
+  .experience {
     padding: 15px 5px;
     font-size: 0.9rem;
   }
@@ -114,7 +130,8 @@ body {
   .hobbies h2,
   .projects h2,
   .techstack h2,
-  .volunteer h2 {
+  .volunteer h2,
+  .experience h2 {
     font-size: 1.3rem;
     text-align: center;
   }

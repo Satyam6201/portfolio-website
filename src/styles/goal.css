@@ -1,8 +1,6 @@
 .goal-section {
   text-align: center;
-  padding: 70px 20px;
-  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
-  color: white;
+  padding: 70px 20px;  color: white;
   position: relative;
   overflow: hidden;
 }

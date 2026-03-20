@@ -10,9 +10,7 @@
 
 .projects {
   text-align: center;
-  padding: 80px 20px;
-  background: radial-gradient(circle at top, #162e35, #0f2027);
-  min-height: 100vh;
+  padding: 80px 20px;  min-height: 100vh;
   color: #fff;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }

@@ -4,9 +4,7 @@
   width: 85%;
   margin: 80px auto;
   border-radius: 25px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
+  overflow: hidden;  color: white;
   box-shadow: 0 25px 60px rgba(0,0,0,0.4);
   backdrop-filter: blur(15px);
   animation: fadeIn 1.2s ease-in-out;

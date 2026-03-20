@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./component/Hearder";
 import Home from "./component/Home";
 import About from "./component/About";
+import Experience from "./component/Experience";
 import TechStack from "./component/TechStack";
 import FunFacts from "./component/FunFacts";
 import Hobbies from "./component/Hobbies";
@@ -24,6 +25,7 @@ function App() {
       <Header />
       <Home />
       <About />
+      <Experience />
       <TechStack />
       <FunFacts />
       <Hobbies />

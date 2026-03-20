@@ -1,8 +1,6 @@
 .hobbies {
   text-align: center;
-  padding: 80px 30px;
-  background: linear-gradient(135deg, #2a5298, #1e3c72);
-  color: white;
+  padding: 80px 30px;  color: white;
   margin-bottom: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

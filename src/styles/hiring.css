@@ -2,9 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 30px;
-  background: linear-gradient(135deg, #1d2b64, #f8cdda);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 30px;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   gap: 50px;
 }
