@@ -1,11 +1,21 @@
 .certifications {
   text-align: center;
-  padding: 60px 20px;}
+  padding: 60px 20px;
+}
+
+.certifications h2 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  animation: dropIn 0.7s ease-out;
+}
 
 .cert-description {
   font-size: 1.1rem;
   color: #f9f6f6;
   margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .certificates-container {
@@ -16,7 +26,9 @@
   margin-top: 20px;
 }
 
+/* Card */
 .certificate-card {
+  position: relative;
   background: white;
   color: black !important;
   border-radius: 12px;
@@ -24,20 +36,105 @@
   padding: 20px;
   max-width: 360px;
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  border: 3px solid transparent;
+  opacity: 0;
+  animation: cardRise 0.7s ease forwards;
 }
 
 .certificate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Distinct styling per category */
+.certificate-card.internship {
+  border-color: rgba(30, 144, 255, 0.35);
+}
+
+.certificate-card.internship:hover {
+  border-color: #1e90ff;
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.35), 0px 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.certificate-card.certification {
+  border-color: rgba(255, 204, 0, 0.35);
+}
+
+.certificate-card.certification:hover {
+  border-color: #ffcc00;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.35), 0px 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Corner badge (briefcase / certificate icon) */
+.card-badge {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.certificate-card.internship .card-badge {
+  background: linear-gradient(135deg, #1e90ff, #007acc);
+}
+
+.certificate-card.certification .card-badge {
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: #111;
+}
+
+/* Image + shine sweep effect */
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .certificate-img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 10px;
-  margin-bottom: 15px;
   border: 3px solid #ff4b2b;
+  transition: transform 0.5s ease;
+}
+
+.certificate-card.internship .certificate-img {
+  border-color: #1e90ff;
+}
+
+.img-wrapper:hover .certificate-img {
+  transform: scale(1.06);
+}
+
+.img-shine {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.img-wrapper:hover .img-shine {
+  animation: shineSweep 0.9s ease forwards;
 }
 
 .download-btn {
@@ -63,6 +160,7 @@
 .download-icon {
   font-size: 1.2rem;
 }
+
 .tag {
   background: #ffcc00;
   color: #000;
@@ -72,6 +170,16 @@
   display: inline-block;
   margin-top: 10px;
   font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.tag.internship {
+  background: #1e90ff;
+  color: #fff;
+}
+
+.certificate-card:hover .tag {
+  transform: scale(1.08);
 }
 
 .cert-actions {
@@ -95,11 +203,12 @@
   gap: 6px;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, transform 0.3s ease;
 }
 
 .view-btn:hover, .verify-btn:hover {
   background-color: #007acc;
+  transform: scale(1.05);
 }
 
 .cert-preview-overlay {
@@ -113,6 +222,7 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+  animation: fadeIn 0.3s ease;
 }
 
 .cert-preview-modal {
@@ -124,6 +234,7 @@
   overflow: auto;
   text-align: center;
   position: relative;
+  animation: popIn 0.35s ease;
 }
 
 .cert-preview-modal img {
@@ -146,5 +257,87 @@
 
 .close-preview:hover {
   background-color: #e43f1f;
+  transform: scale(1.05);
 }
 
+/* Animations */
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shineSweep {
+  from { left: -75%; }
+  to { left: 125%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .certifications h2 {
+    font-size: 1.9rem;
+  }
+
+  .cert-description {
+    font-size: 1rem;
+  }
+
+  .certificate-card {
+    max-width: 90%;
+    padding: 16px;
+  }
+
+  .cert-actions {
+    flex-direction: column;
+  }
+
+  .download-btn, .view-btn, .verify-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications {
+    padding: 40px 12px;
+  }
+
+  .card-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+    top: -10px;
+    left: -10px;
+  }
+}
