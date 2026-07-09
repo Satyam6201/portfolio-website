@@ -54,6 +54,10 @@
   transition: all 0.3s ease;
 }
 
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
 /* Timeline Dot */
 .experience-item::before {
   content: "";
@@ -67,6 +71,26 @@
   box-shadow: 0 0 15px #ffcc00;
 }
 
+/* Current / most recent role gets a highlighted dot + badge */
+.experience-item:first-child::before {
+  background: #4ade80;
+  box-shadow: 0 0 15px #4ade80;
+}
+
+.experience-item:first-child .experience-header::after {
+  content: "Most Recent";
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #111;
+  background: #4ade80;
+  border-radius: 20px;
+  vertical-align: middle;
+}
+
 /* Hover effect */
 .experience-item:hover {
   transform: translateY(-8px) scale(1.01);
@@ -75,10 +99,15 @@
 }
 
 /* Header */
+.experience-header {
+  margin-bottom: 5px;
+}
+
 .experience-header h3 {
   font-size: 1.6rem;
   color: #ffffff;
   margin-bottom: 5px;
+  display: inline-block;
 }
 
 .experience-header h4 {
@@ -129,10 +158,46 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ---------------------------------- */
+/* Responsive Design                  */
+/* ---------------------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .experience {
+    padding: 60px 18px;
+  }
+
+  .experience h2 {
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+  }
+
   .experience-item {
-    padding: 25px;
+    padding: 25px 25px 25px 55px;
+  }
+
+  .experience-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .experience-header h4 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .experience {
+    padding: 50px 15px;
+  }
+
+  .experience h2 {
+    font-size: 1.9rem;
+  }
+
+  .experience-item {
+    padding: 22px;
   }
 
   .experience-timeline::before {
@@ -141,5 +206,37 @@
 
   .experience-item::before {
     display: none;
+  }
+
+  .experience-item:first-child .experience-header::after {
+    display: block;
+    margin: 8px 0 0;
+    width: fit-content;
+  }
+
+  .experience-body ul {
+    padding-left: 16px;
+  }
+
+  .experience-body li {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience h2 {
+    font-size: 1.6rem;
+  }
+
+  .experience-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .experience-header h4 {
+    font-size: 0.95rem;
+  }
+
+  .experience-date {
+    font-size: 0.82rem;
   }
 }
