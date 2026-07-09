@@ -4,7 +4,8 @@
   width: 85%;
   margin: 80px auto;
   border-radius: 25px;
-  overflow: hidden;  color: white;
+  overflow: hidden;
+  color: white;
   box-shadow: 0 25px 60px rgba(0,0,0,0.4);
   backdrop-filter: blur(15px);
   animation: fadeIn 1.2s ease-in-out;
@@ -24,6 +25,7 @@
   margin-bottom: 30px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .about-intro {
@@ -43,6 +45,7 @@
   padding: 4px 8px;
   border-radius: 6px;
   color: #ffcc00;
+  word-break: break-word;
 }
 
 /* Counters */
@@ -52,6 +55,8 @@
   gap: 30px;
   flex-wrap: wrap;
   margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
 }
 
 .counter-box {
@@ -59,6 +64,8 @@
   border-radius: 15px;
   background: rgba(255,255,255,0.07);
   transition: all 0.4s ease;
+  text-align: center;
+  min-width: 160px;
 }
 
 .counter-box h3 {
@@ -80,6 +87,8 @@
   padding: 30px;
   border-radius: 18px;
   transition: 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .glass {
@@ -107,10 +116,58 @@
   padding: 8px 0;
 }
 
+/* Experience & Project entries */
+.experience-item,
+.project-item {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.experience-item:last-child,
+.project-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.experience-item p,
+.project-item p {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-date {
+  font-size: 0.9rem;
+  color: #ffcc00;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.project-stack {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+  margin: 4px 0 12px;
+}
+
+.experience-item ul li::before,
+.project-item ul li::before {
+  content: "▸ ";
+  color: #ffcc00;
+}
+
 /* Vision Highlight */
 .vision {
   background: linear-gradient(45deg, #ffcc00, #ff9900);
   color: black;
+}
+
+.vision h3 {
+  color: #111;
 }
 
 /* Animations */
@@ -122,4 +179,130 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------- */
+/* Responsive Design                  */
+/* ---------------------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .about {
+    width: 92%;
+    padding: 60px 25px;
+  }
+
+  .about-title {
+    font-size: 2.6rem;
+  }
+
+  .about-intro {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  .counter-box {
+    padding: 20px 30px;
+    min-width: 140px;
+  }
+
+  .counter-box h3 {
+    font-size: 2.1rem;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .about {
+    width: 95%;
+    padding: 50px 18px;
+    margin: 50px auto;
+    border-radius: 18px;
+  }
+
+  .about-title {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 18px;
+    margin-bottom: 35px;
+  }
+
+  .counters {
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .counter-box {
+    padding: 16px 22px;
+    min-width: 130px;
+  }
+
+  .counter-box h3 {
+    font-size: 1.8rem;
+  }
+
+  .counter-box p {
+    font-size: 0.85rem;
+  }
+
+  .about-section {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  .about-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .experience-item p,
+  .project-item p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .about {
+    padding: 35px 12px;
+    border-radius: 14px;
+  }
+
+  .about-title {
+    font-size: 1.7rem;
+  }
+
+  .about-intro {
+    font-size: 0.92rem;
+    padding: 14px;
+  }
+
+  .counters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter-box {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .about-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .about-section ul li {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+
+  .project-stack {
+    font-size: 0.78rem;
+  }
 }
