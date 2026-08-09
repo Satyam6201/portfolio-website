@@ -2,8 +2,6 @@
 
 An ultra-modern, high-performance, and responsive Full-Stack Developer Portfolio built with **React 19, Vite, React Router v7, Framer Motion, Google Gemini AI, and CSS Glassmorphism Design System**.
 
-![Portfolio Preview Banner](/assets/dentalva.png)
-
 ---
 
 ## ✨ Key Features & Highlights
