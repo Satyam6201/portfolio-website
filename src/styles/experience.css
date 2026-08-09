@@ -1,36 +1,21 @@
 .experience {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
   position: relative;
 }
 
-/* Heading */
 .experience h2 {
-  font-size: 2.8rem;
-  margin-bottom: 50px;
-  color: #ffcc00;
-  letter-spacing: 1px;
+  font-size: 2.3rem;
+  margin-bottom: 35px;
   position: relative;
 }
 
-.experience h2::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: #ffcc00;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 5px;
-}
-
-/* Timeline */
 .experience-timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 850px;
   margin: auto;
 }
 
-/* Vertical line */
 .experience-timeline::before {
   content: "";
   position: absolute;
@@ -38,205 +23,107 @@
   top: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, #ffcc00, transparent);
+  background: linear-gradient(to bottom, var(--accent-color), transparent);
 }
 
-/* Card */
 .experience-item {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 15px;
-  padding: 30px 30px 30px 60px;
-  margin-bottom: 30px;
+  background: var(--tag-bg);
+  color: var(--text-primary);
+  border-radius: 16px;
+  padding: 24px 24px 24px 55px;
+  margin-bottom: 25px;
   position: relative;
   text-align: left;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.35s ease;
 }
 
 .experience-item:last-child {
   margin-bottom: 0;
 }
 
-/* Timeline Dot */
 .experience-item::before {
   content: "";
   position: absolute;
-  left: 8px;
-  top: 35px;
+  left: 11px;
+  top: 30px;
   width: 20px;
   height: 20px;
-  background: #ffcc00;
+  background: var(--accent-color);
   border-radius: 50%;
-  box-shadow: 0 0 15px #ffcc00;
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
-/* Current / most recent role gets a highlighted dot + badge */
 .experience-item:first-child::before {
-  background: #4ade80;
-  box-shadow: 0 0 15px #4ade80;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.5);
 }
 
 .experience-item:first-child .experience-header::after {
-  content: "Most Recent";
+  content: "Recent Internship";
   display: inline-block;
   margin-left: 12px;
   padding: 3px 10px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #111;
-  background: #4ade80;
+  color: white;
+  background: #22c55e;
   border-radius: 20px;
   vertical-align: middle;
 }
 
-/* Hover effect */
 .experience-item:hover {
-  transform: translateY(-8px) scale(1.01);
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Header */
-.experience-header {
-  margin-bottom: 5px;
+  transform: translateY(-6px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .experience-header h3 {
-  font-size: 1.6rem;
-  color: #ffffff;
-  margin-bottom: 5px;
-  display: inline-block;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-weight: 700;
 }
 
 .experience-header h4 {
-  font-size: 1.2rem;
-  color: #ffcc00;
-  margin-bottom: 5px;
+  font-size: 1.05rem;
+  color: var(--accent-color);
+  margin-bottom: 4px;
+  font-weight: 600;
 }
 
 .experience-date {
-  font-size: 0.9rem;
-  color: #a0aec0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
   font-style: italic;
 }
 
-/* List */
 .experience-body ul {
-  padding-left: 20px;
-  margin-top: 15px;
+  padding-left: 18px;
+  margin-top: 12px;
 }
 
 .experience-body li {
-  font-size: 1rem;
-  color: #e2e8f0;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
   line-height: 1.6;
-  transition: color 0.2s ease;
 }
 
-.experience-body li:hover {
-  color: #ffffff;
-}
-
-/* Animation */
-.fade-in {
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* ---------------------------------- */
-/* Responsive Design                  */
-/* ---------------------------------- */
-
-/* Tablets */
-@media (max-width: 900px) {
-  .experience {
-    padding: 60px 18px;
-  }
-
-  .experience h2 {
-    font-size: 2.3rem;
-    margin-bottom: 40px;
-  }
-
-  .experience-item {
-    padding: 25px 25px 25px 55px;
-  }
-
-  .experience-header h3 {
-    font-size: 1.4rem;
-  }
-
-  .experience-header h4 {
-    font-size: 1.05rem;
-  }
-}
-
-/* Phones */
 @media (max-width: 768px) {
-  .experience {
-    padding: 50px 15px;
-  }
-
-  .experience h2 {
-    font-size: 1.9rem;
-  }
-
   .experience-item {
-    padding: 22px;
+    padding: 18px;
   }
 
-  .experience-timeline::before {
-    display: none;
-  }
-
+  .experience-timeline::before,
   .experience-item::before {
     display: none;
   }
 
-  .experience-item:first-child .experience-header::after {
-    display: block;
-    margin: 8px 0 0;
-    width: fit-content;
-  }
-
-  .experience-body ul {
-    padding-left: 16px;
-  }
-
-  .experience-body li {
-    font-size: 0.92rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .experience h2 {
-    font-size: 1.6rem;
-  }
-
   .experience-header h3 {
-    font-size: 1.25rem;
-  }
-
-  .experience-header h4 {
-    font-size: 0.95rem;
-  }
-
-  .experience-date {
-    font-size: 0.82rem;
+    font-size: 1.2rem;
   }
 }

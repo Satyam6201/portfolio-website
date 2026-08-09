@@ -1,36 +1,42 @@
 .footer {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 50px 25px 25px;
   text-align: center;
-  padding: 40px 20px 20px;
-  background: rgba(15, 23, 42, 0.75);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
   position: relative;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 .footer-title {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.4rem;
   margin-bottom: 30px;
-  color: #ffcc70;
-  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 40px;
-  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto 35px;
   text-align: left;
 }
 
+.footer-section {
+  flex: 1;
+  min-width: 240px;
+}
+
 .footer-section h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #ffd369;
-  border-bottom: 1px solid #555;
-  padding-bottom: 5px;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
 .footer-section ul {
@@ -39,159 +45,130 @@
   margin: 0;
 }
 
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
 .footer-section ul li a {
+  color: var(--text-secondary);
   text-decoration: none;
-  color: #ccc;
   font-size: 0.95rem;
-  display: block;
-  margin: 8px 0;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: #ffcc70;
+  color: var(--accent-color);
+  padding-left: 5px;
 }
 
 .footer-section p {
-  margin: 8px 0;
+  color: var(--text-secondary);
   font-size: 0.95rem;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.footer-section p a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section p a:hover {
+  color: var(--accent-color);
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.icon {
-  font-size: 35px;
-  transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: #fff;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-  opacity: 0.9;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
-}
-
-.linkedin {
-  color: #0e76a8;
-}
-
-.github {
-  color: #171515;
-}
-
-.email {
-  color: #d44638;
-}
-
-.twitter {
-  color: #1DA1F2;
-}
-
-.instagram {
-  color: #E1306C;
-}
-
-.facebook {
-  color: #1877F2;
+  gap: 14px;
 }
 
 .tooltip {
   position: relative;
+  display: inline-block;
 }
 
-.tooltip .tooltip-text {
-  visibility: hidden;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 6px 10px;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
+.tooltip .icon {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
   transition: all 0.3s ease;
-  white-space: nowrap;
-  font-size: 0.8rem;
+}
+
+.tooltip:hover .icon {
+  transform: translateY(-3px) scale(1.15);
+  color: var(--accent-color);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 90px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 0;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -45px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.75rem;
+  border: 1px solid var(--border-color);
 }
 
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(-6px);
 }
 
 .top-btn {
   position: fixed;
   bottom: 25px;
-  right: 25px;
-  background: linear-gradient(to right, #f12711, #f5af19);
-  color: #fff;
-  border: none;
+  left: 25px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  padding: 16px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
   cursor: pointer;
-  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px var(--accent-glow);
   z-index: 1000;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .top-btn:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+  transform: translateY(-4px) scale(1.1);
+  background: var(--accent-secondary);
 }
 
 .footer-bottom-text {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
 }
 
-.location-link {
-  text-decoration: none;
-  color: #ccc;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.3s ease;
-}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.location-link:hover {
-  color: #ffcc70;
-  text-decoration: underline;
-}
+  .footer-section p {
+    justify-content: center;
+  }
 
-/* LeetCode Icon Style */
-.leetcode {
-  color: #ffa116;
-}
-
-.footer-section p a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-section p a:hover {
-  color: #ffcc70;
-  text-decoration: underline;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-  opacity: 0.9;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  .footer-links {
+    justify-content: center;
+  }
 }

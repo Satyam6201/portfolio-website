@@ -1,109 +1,104 @@
 .funfacts {
   text-align: center;
-  padding: 60px 20px;  color: white;
-  border-radius: 12px;
-  margin: 50px auto;
-  width: 80%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
+  padding: 60px 20px;
 }
 
-.funfacts:hover {
-  transform: scale(1.02);
-}
-
-h2, h3 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #ffcc00 !important;
+.funfacts h3 {
+  font-size: 1.4rem;
+  margin: 30px 0 15px;
+  color: var(--accent-color);
 }
 
 .icon-title, .icon-sub {
   margin-right: 8px;
-  color: #ffcc00;
+  color: var(--accent-color);
 }
 
 .fact-card, .learning-card, .didyouknow-card {
   padding: 25px;
   margin: 20px auto;
-  max-width: 600px;
-  border-radius: 12px;
+  max-width: 650px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  transition: all 0.4s ease;
+  background: var(--tag-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.35s ease;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+.fact-card:hover, .learning-card:hover, .didyouknow-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
 }
 
-.icon {
-  font-size: 2.5rem;
-  color: #ffcc00;
+.fact-card .icon, .learning-card .icon {
+  font-size: 2.2rem;
+  color: var(--accent-color);
 }
 
 .fact-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  max-width: 500px;
+  max-width: 550px;
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .fact-card button {
-  padding: 10px 24px;
-  font-size: 1rem;
+  padding: 10px 22px;
+  font-size: 0.95rem;
   border: none;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #ffcc00, #ff9900);
-  color: #000;
-  font-weight: bold;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  color: white;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.4s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--accent-glow);
 }
 
 .fact-card button:hover {
-  background: linear-gradient(135deg, #ffd700, #ff7f00);
   transform: scale(1.05);
+  box-shadow: 0 8px 25px var(--accent-glow);
 }
 
-/* Learning Progress Bar */
 .progress-line {
   width: 100%;
-  height: 6px;
-  background: #ddd;
+  height: 8px;
+  background: var(--input-bg);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
   margin-top: 15px;
+  border: 1px solid var(--border-color);
 }
 
 .progress-line::after {
   content: '';
   position: absolute;
   height: 100%;
-  width: 75%;
-  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  width: 80%;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
   animation: fillBar 2s ease-in-out forwards;
 }
 
 @keyframes fillBar {
   from { width: 0%; }
-  to { width: 75%; }
+  to { width: 80%; }
 }
 
 .didyouknow-card {
   align-items: flex-start;
   text-align: left;
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 6px solid #ffcc00;
-  color: #fff;
+  border-left: 5px solid var(--accent-color);
+  color: var(--text-secondary);
 }
 
 .didyouknow-card p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }

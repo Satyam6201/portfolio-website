@@ -21,11 +21,11 @@ function About() {
         s += 5;
         setStudents(s);
       }
-      if (d < 900) {
+      if (d < 1000) {
         d += 15;
-        setProblems(Math.min(d, 900));
+        setProblems(Math.min(d, 1000));
       }
-      if (p >= 45 && s >= 250 && d >= 900) clearInterval(interval);
+      if (p >= 45 && s >= 250 && d >= 1000) clearInterval(interval);
     }, 40);
 
     return () => clearInterval(interval);
@@ -82,7 +82,7 @@ function About() {
         <div className="experience-item">
           <p>
             <strong>Full Stack Development Intern – Code Innovative Technologies (Remote)</strong>
-            <span className="exp-date">Feb 2026 – May 2026</span>
+            <span className="exp-date">Feb 2026 – Present</span>
           </p>
           <ul>
             <li>Developed scalable full-stack web applications using React.js, Next.js, Node.js, Express.js, MongoDB, and PostgreSQL.</li>
@@ -140,7 +140,7 @@ function About() {
         <h3>🏆 Achievements & Certifications</h3>
         <ul>
           <li>🥇 Winner – Innovative Project Award, College Tech Expo 2025</li>
-          <li>💻 Solved 900+ DSA problems on LeetCode using Java</li>
+          <li>💻 Solved 1000+ DSA problems on LeetCode using Java</li>
           <li>🚀 Built and deployed 45+ full-stack web applications</li>
           <li>📚 Conducted Web Development & Java workshops for 250+ students</li>
           <li>📜 Full Stack Development Internship – Code Innovative Technologies</li>
@@ -154,11 +154,13 @@ function About() {
       <div className="about-section glass">
         <h3>🛠️ Technical Expertise</h3>
         <ul>
-          <li>Frontend → React.js, Next.js, TypeScript, Tailwind CSS, Shadcn UI, Bootstrap</li>
-          <li>Backend → Node.js, Express.js, REST APIs, JWT Auth, RBAC, MVC Architecture</li>
-          <li>Databases → MongoDB, PostgreSQL, MySQL, Prisma ORM, Firebase</li>
-          <li>Generative AI → OpenAI API, Prompt Engineering, LLM Integration, AI Chatbots</li>
-          <li>Tools & CS Fundamentals → Git, GitHub, Docker (Basic), Postman, Vercel, DSA, OOP, DBMS, OS, System Design</li>
+          <li><strong>Generative AI & LLMs:</strong> OpenAI API, GenAI Workflows, LLM Integration, RAG Architecture, Prompt Engineering</li>
+          <li><strong>API Security & Auth:</strong> JWT Auth, OAuth 2.0, RBAC, API Security, Authentication & Authorization Middleware</li>
+          <li><strong>Backend & Systems:</strong> Node.js, Express.js, REST APIs, Redis Caching, Apache Kafka, System Design, Load Balancer, CDN</li>
+          <li><strong>Frontend:</strong> React.js, Next.js 14/15, TypeScript, JavaScript (ES6+), Tailwind CSS, Bootstrap</li>
+          <li><strong>Databases:</strong> MongoDB, PostgreSQL, MySQL, Redis, Firebase, Prisma ORM</li>
+          <li><strong>DevOps & Cloud Hosting:</strong> Docker, CI/CD Pipelines, Vercel, Netlify, Render, Railway, Git/GitHub, Postman</li>
+          <li><strong>CS Fundamentals:</strong> Java (1000+ DSA Solved), Object-Oriented Programming (OOP), Operating Systems, DBMS</li>
         </ul>
       </div>
 

@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "../styles/certifications.css";
 import { FaDownload, FaEye, FaExternalLinkAlt, FaBriefcase, FaCertificate } from "react-icons/fa";
-import certificateImg from "/public/assets/Certificate-WebD.png";
-import certificateImgDSA from "/public/assets/DSA-certificate.png";
-import certificateImgCodeInnovative from "/public/assets/Certificate-CodeInnovative.png";
-import certificateImgSoftwareBeatz from "/public/assets/Certificate-SoftwareBeatz.png";
 
 function Certifications() {
   const [preview, setPreview] = useState(null);
@@ -19,8 +15,8 @@ function Certifications() {
       date: "Feb 2026 – May 2026",
       type: "Internship",
       category: "internship",
-      image: certificateImgCodeInnovative,
-      downloadName: "CodeInnovative_Internship_Certificate.jpg",
+      image: "/assets/Certificate-CodeInnovative.png",
+      downloadName: "CodeInnovative_Internship_Certificate.png",
       link: "#",
     },
     {
@@ -29,8 +25,8 @@ function Certifications() {
       date: "Oct 2025 – Feb 2026",
       type: "Internship",
       category: "internship",
-      image: certificateImgSoftwareBeatz,
-      downloadName: "SoftwareBeatz_Internship_Certificate.jpg",
+      image: "/assets/Certificate-SoftwareBeatz.png",
+      downloadName: "SoftwareBeatz_Internship_Certificate.png",
       link: "#",
     },
     {
@@ -39,8 +35,8 @@ function Certifications() {
       date: "April 2024",
       type: "Web Development",
       category: "certification",
-      image: certificateImg,
-      downloadName: "WebDev_Certificate.jpg",
+      image: "/assets/Certificate-WebD.png",
+      downloadName: "WebDev_Certificate.png",
       link: "#",
     },
     {
@@ -49,8 +45,8 @@ function Certifications() {
       date: "January 2025",
       type: "Data Structures & Algorithms",
       category: "certification",
-      image: certificateImgDSA,
-      downloadName: "DSA_Certificate.jpg",
+      image: "/assets/DSA-certificate.png",
+      downloadName: "DSA_Certificate.png",
       link: "#",
     },
   ];

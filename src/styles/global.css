@@ -1,16 +1,68 @@
+:root {
+  /* Default Dark Mode Variables */
+  --bg-primary: #0b0f19;
+  --bg-gradient: linear-gradient(-45deg, #0b0f19, #111827, #1e1b4b, #0f172a);
+  --bg-card: rgba(15, 23, 42, 0.65);
+  --bg-card-hover: rgba(30, 41, 59, 0.8);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-color: #6366f1;
+  --accent-secondary: #a855f7;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(99, 102, 241, 0.5);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+  --header-bg: rgba(11, 15, 25, 0.85);
+  --input-bg: rgba(15, 23, 42, 0.8);
+  --tag-bg: rgba(99, 102, 241, 0.15);
+  --tag-text: #818cf8;
+}
+
+[data-theme="light"], body.light {
+  /* Light Mode Variables */
+  --bg-primary: #f8fafc;
+  --bg-gradient: linear-gradient(-45deg, #f1f5f9, #e2e8f0, #e0e7ff, #f8fafc);
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent-color: #4f46e5;
+  --accent-secondary: #9333ea;
+  --accent-glow: rgba(79, 70, 229, 0.25);
+  --border-color: rgba(15, 23, 42, 0.12);
+  --border-hover: rgba(79, 70, 229, 0.4);
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --glass-border: 1px solid rgba(15, 23, 42, 0.1);
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --tag-bg: rgba(79, 70, 229, 0.1);
+  --tag-text: #4338ca;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #020617, #172554);
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-gradient);
   background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color: #e2e8f0;
-  text-align: center;
-  scroll-behavior: smooth;
+  animation: gradientBG 18s ease infinite;
+  color: var(--text-primary);
+  text-align: left;
+  line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 @keyframes gradientBG {
@@ -19,7 +71,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Home Section */
+/* Home Section Container */
 .home {
   padding-top: 120px;
   min-height: 100vh;
@@ -30,109 +82,120 @@ body {
   width: 100%;
 }
 
-/* Sections - About, Projects, Contact, Fun Facts, Hobbies, Blog, Hiring, Achievements, techstack, volunteer, certifications, experience */
+/* Base Sections Styling across site */
 .achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
-.hiring-container, .hobbies, .projects,.techstack, .volunteer, .home, .experience {
-  padding: 80px 20px;
-  margin: 50px auto;
-  width: 90%;
-  max-width: 1200px;
-  background: rgba(255, 255, 255, 0.05);
+.hiring-container, .hobbies, .projects, .techstack, .volunteer, .home, .experience, .testimonials-section {
+  padding: 70px 25px;
+  margin: 40px auto;
+  width: 92%;
+  max-width: 1240px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: var(--glass-border);
+  color: var(--text-primary);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease, border-color 0.4s ease;
+}
+
+/* Universal Section Titles */
+.achievements h2, .blog h2, .certifications h2, .contact h2, .education h2, .funfacts h2, 
+.goal-section h2, .hiring-container h1, .hiring-container h2, .hobbies h2, .projects h2, 
+.techstack h2, .volunteer h2, .experience h2, .testimonials-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Hover Accent Effects for Section Cards */
+.projects:hover, .contact:hover, .funfacts:hover, .techstack:hover,
+.goal-section:hover, .hobbies:hover, .blog:hover, .hiring-container:hover, 
+.achievements:hover, .volunteer:hover, .education:hover, .certifications:hover, .experience:hover, .testimonials-section:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 36px -10px var(--accent-glow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Glass Utility Class */
+.glass {
+  background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: var(--glass-border);
+  border-radius: 16px;
 }
 
-
-
-/* Hover Effect */
- .projects:hover, .contact:hover, .funfacts:hover, .techstack:hover,
-.goal-section:hover,.hobbies:hover, .blog:hover, .hiring-container:hover, 
-.achievements:hover, .volunteer:hover, .education:hover, .certifications:hover, .experience:hover {
-
-  transform: scale(1.02);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+/* Utility Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
 }
 
-/* Responsive: All screens below 1024px */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Rules */
 @media (max-width: 1024px) {
-  .about,
-  .achievements,
-  .blog,
-  .certifications,
-  .contact,
-  .education,
-  .funfacts,
-  .goal-section,
-  .hiring-container,
-  .hobbies,
-  .projects,
-  .techstack,
-  .volunteer,
-  .experience {
-    padding: 30px 15px;
+  .achievements, .blog, .certifications, .contact, .education, .funfacts, 
+  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .volunteer, .experience, .testimonials-section {
+    padding: 50px 20px;
+    margin: 30px auto;
   }
 }
 
-/* Below 768px (Tablets & phones) */
 @media (max-width: 768px) {
-  .about,
-  .achievements,
-  .blog,
-  .certifications,
-  .contact,
-  .education,
-  .funfacts,
-  .goal-section,
-  .hiring-container,
-  .hobbies,
-  .projects,
-  .techstack,
-  .volunteer,
-  .experience {
-    padding: 20px 10px;
+  .achievements, .blog, .certifications, .contact, .education, .funfacts, 
+  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .volunteer, .experience, .testimonials-section {
+    padding: 35px 16px;
+    width: 95%;
+    border-radius: 16px;
+  }
+
+  .achievements h2, .blog h2, .certifications h2, .contact h2, .education h2, .funfacts h2, 
+  .goal-section h2, .hiring-container h1, .hiring-container h2, .hobbies h2, .projects h2, 
+  .techstack h2, .volunteer h2, .experience h2, .testimonials-title {
+    font-size: 1.75rem;
+    text-align: center;
   }
 }
 
-/* Below 480px (Small phones) */
 @media (max-width: 480px) {
-  .about,
-  .achievements,
-  .blog,
-  .certifications,
-  .contact,
-  .education,
-  .funfacts,
-  .goal-section,
-  .hiring-container,
-  .hobbies,
-  .projects,
-  .techstack,
-  .volunteer,
-  .experience {
-    padding: 15px 5px;
-    font-size: 0.9rem;
-  }
-
-  .about h2,
-  .achievements h2,
-  .blog h2,
-  .certifications h2,
-  .contact h2,
-  .education h2,
-  .funfacts h2,
-  .goal-section h2,
-  .hiring-container h2,
-  .hobbies h2,
-  .projects h2,
-  .techstack h2,
-  .volunteer h2,
-  .experience h2 {
-    font-size: 1.3rem;
-    text-align: center;
+  .achievements, .blog, .certifications, .contact, .education, .funfacts, 
+  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .volunteer, .experience, .testimonials-section {
+    padding: 25px 12px;
+    font-size: 0.95rem;
   }
 }

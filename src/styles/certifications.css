@@ -10,8 +10,8 @@
 }
 
 .cert-description {
-  font-size: 1.1rem;
-  color: #f9f6f6;
+  font-size: 1.05rem;
+  color: var(--text-muted);
   margin-bottom: 30px;
   max-width: 700px;
   margin-left: auto;
@@ -29,41 +29,53 @@
 /* Card */
 .certificate-card {
   position: relative;
-  background: white;
-  color: black !important;
-  border-radius: 12px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  padding: 20px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 24px;
   max-width: 360px;
   text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  border: 3px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.4s ease;
+  border: 1px solid var(--border-color);
   opacity: 0;
   animation: cardRise 0.7s ease forwards;
 }
 
 .certificate-card:hover {
   transform: translateY(-8px) scale(1.015);
-  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 36px var(--accent-glow);
 }
 
 /* Distinct styling per category */
 .certificate-card.internship {
-  border-color: rgba(30, 144, 255, 0.35);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .certificate-card.internship:hover {
-  border-color: #1e90ff;
-  box-shadow: 0 0 25px rgba(30, 144, 255, 0.35), 0px 16px 30px rgba(0, 0, 0, 0.25);
+  border-color: var(--accent-color);
 }
 
 .certificate-card.certification {
-  border-color: rgba(255, 204, 0, 0.35);
+  border-color: rgba(245, 158, 11, 0.3);
 }
 
 .certificate-card.certification:hover {
-  border-color: #ffcc00;
-  box-shadow: 0 0 25px rgba(255, 204, 0, 0.35), 0px 16px 30px rgba(0, 0, 0, 0.25);
+  border-color: #f59e0b;
+}
+
+.certificate-card h3 {
+  font-size: 1.2rem;
+  margin: 12px 0 8px;
+  color: var(--text-primary);
+}
+
+.certificate-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin: 4px 0;
 }
 
 /* Corner badge (briefcase / certificate icon) */
@@ -71,46 +83,43 @@
   position: absolute;
   top: -14px;
   left: -14px;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 1.1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
 
 .certificate-card.internship .card-badge {
-  background: linear-gradient(135deg, #1e90ff, #007acc);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
 }
 
 .certificate-card.certification .card-badge {
-  background: linear-gradient(135deg, #ffcc00, #ff9900);
-  color: #111;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
 }
 
 /* Image + shine sweep effect */
 .img-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 15px;
 }
 
 .certificate-img {
   width: 100%;
-  height: auto;
+  height: 190px;
+  object-fit: cover;
   display: block;
-  border-radius: 10px;
-  border: 3px solid #ff4b2b;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
   transition: transform 0.5s ease;
-}
-
-.certificate-card.internship .certificate-img {
-  border-color: #1e90ff;
 }
 
 .img-wrapper:hover .certificate-img {
@@ -126,7 +135,7 @@
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-20deg);
@@ -141,31 +150,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
   color: white;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-weight: 600;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease;
   gap: 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .download-btn:hover {
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
-  transform: scale(1.05);
-}
-
-.download-icon {
-  font-size: 1.2rem;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .tag {
-  background: #ffcc00;
-  color: #000;
+  background: var(--tag-bg);
+  color: var(--tag-text);
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 50px;
   display: inline-block;
   margin-top: 10px;
@@ -173,29 +178,20 @@
   transition: transform 0.3s ease;
 }
 
-.tag.internship {
-  background: #1e90ff;
-  color: #fff;
-}
-
-.certificate-card:hover .tag {
-  transform: scale(1.08);
-}
-
 .cert-actions {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .view-btn, .verify-btn {
-  padding: 10px 14px;
-  border: none;
-  background-color: #1e90ff;
-  color: white;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   display: flex;
@@ -203,12 +199,14 @@
   gap: 6px;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: background 0.3s ease-in-out, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .view-btn:hover, .verify-btn:hover {
-  background-color: #007acc;
-  transform: scale(1.05);
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 .cert-preview-overlay {
@@ -217,23 +215,27 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1100;
   animation: fadeIn 0.3s ease;
 }
 
 .cert-preview-modal {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 95%;
-  max-height: 90vh;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: var(--glass-border);
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 90%;
+  max-height: 85vh;
   overflow: auto;
   text-align: center;
   position: relative;
+  box-shadow: var(--card-shadow);
   animation: popIn 0.35s ease;
 }
 
@@ -241,22 +243,23 @@
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .close-preview {
   margin-top: 15px;
-  padding: 10px 16px;
-  background-color: #ff4b2b;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .close-preview:hover {
-  background-color: #e43f1f;
+  background-color: var(--accent-secondary);
   transform: scale(1.05);
 }
 
@@ -311,12 +314,12 @@
   }
 
   .cert-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .certificate-card {
-    max-width: 90%;
-    padding: 16px;
+    max-width: 100%;
+    padding: 18px;
   }
 
   .cert-actions {
@@ -325,19 +328,5 @@
 
   .download-btn, .view-btn, .verify-btn {
     width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .certifications {
-    padding: 40px 12px;
-  }
-
-  .card-badge {
-    width: 34px;
-    height: 34px;
-    font-size: 0.95rem;
-    top: -10px;
-    left: -10px;
   }
 }
