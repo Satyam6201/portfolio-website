@@ -246,6 +246,78 @@
   color: var(--accent-color);
 }
 
+/* Chat Action Grid & Buttons */
+.chat-message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.chat-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.chat-action-btn.email {
+  background: var(--accent-color);
+  color: white;
+}
+
+.chat-action-btn.email:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+.chat-action-btn.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.chat-action-btn.whatsapp:hover {
+  background: #1eb956;
+  transform: translateY(-2px);
+}
+
+.chat-action-btn.phone {
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.chat-action-btn.phone:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.chat-action-btn.resume {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.chat-action-btn.resume:hover {
+  background: #f59e0b;
+  color: white;
+  transform: translateY(-2px);
+}
+
 /* Typing Dots Animation */
 .typing-dots {
   display: flex;
@@ -355,11 +427,44 @@
 }
 
 @media (max-width: 480px) {
+  .chatbot-wrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .chatbot-toggle-btn {
+    padding: 10px 16px;
+    font-size: 1.1rem;
+  }
+
+  .chat-badge {
+    font-size: 0.82rem;
+  }
+
   .chatbot-window {
-    bottom: 80px;
-    right: 15px;
-    left: 15px;
-    width: auto;
-    height: 75vh;
+    position: fixed;
+    bottom: 75px;
+    left: 12px;
+    right: 12px;
+    width: calc(100vw - 24px);
+    height: min(78vh, 520px);
+    border-radius: 18px;
+  }
+
+  .chat-action-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .chat-action-btn {
+    font-size: 0.74rem;
+    padding: 6px 8px;
   }
 }
+
+@media (max-width: 360px) {
+  .chat-action-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

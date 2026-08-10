@@ -1,49 +1,143 @@
 import React from "react";
 import "../styles/education.css";
-import { FaGraduationCap, FaSchool, FaUniversity, FaCertificate } from "react-icons/fa";
+import { 
+  FaGraduationCap, 
+  FaSchool, 
+  FaUniversity, 
+  FaCheckCircle, 
+  FaTrophy, 
+  FaStar,
+  FaAward
+} from "react-icons/fa";
 
 function Education() {
+  const educationData = [
+    {
+      id: "btech",
+      status: "Completed",
+      statusType: "completed",
+      title: "B.Tech | Computer Science & Engineering",
+      period: "2022 - 2026",
+      institution: "Radharaman Institute of Technology and Science, Bhopal",
+      score: "CGPA: 8.17",
+      scoreDetail: "College Topper (Rank #1 in Semesters 1 - 3)",
+      description: "Successfully completed Degree with hands-on expertise in Full-Stack Web Development (MERN/Next.js), Data Structures & Algorithms (1000+ DSA Solved), Systems Architecture, and Generative AI Integration.",
+      skills: ["MERN Stack", "Next.js", "Java & DSA", "System Design", "Generative AI", "PostgreSQL"],
+      progress: 100,
+      icon: <FaUniversity />,
+      isHighlight: true
+    },
+    {
+      id: "xii",
+      status: "Passed",
+      statusType: "passed",
+      title: "Class XII (BSEB) - Senior Secondary",
+      period: "2020 - 2022",
+      institution: "S.N.S.D.N.G Watson +2 School, Madhubani, Bihar",
+      score: "Percentage: 71.4%",
+      scoreDetail: "State Board Merit Holder",
+      description: "Focused on Physics, Chemistry, Mathematics (PCM) and foundational Computer Science concepts.",
+      skills: ["Physics", "Chemistry", "Mathematics", "Computer Fundamentals"],
+      progress: 100,
+      icon: <FaSchool />,
+      isHighlight: false
+    },
+    {
+      id: "x",
+      status: "Passed",
+      statusType: "passed",
+      title: "Class X (BSEB) - Secondary Education",
+      period: "2019 - 2020",
+      institution: "B.S.H/S, Barhgoriya, Nahar, Madhubani, Bihar",
+      score: "Percentage: 68.6%",
+      scoreDetail: "First Division",
+      description: "Completed secondary education with distinction and strong performance in Mathematics and Science.",
+      skills: ["Mathematics", "General Science", "Social Studies"],
+      progress: 100,
+      icon: <FaSchool />,
+      isHighlight: false
+    }
+  ];
+
   return (
     <section id="education" className="education">
-      <h2><FaGraduationCap /> Education</h2>
+      <div className="edu-header">
+        <h2>
+          <FaGraduationCap className="edu-header-icon" /> Education & Academic Journey
+        </h2>
+        <p className="edu-subtitle">
+          My academic qualifications, accomplishments, and engineering specialization
+        </p>
+      </div>
 
-      <ul className="edu-timeline">
-        {/* B-Tech */}
-        <li>
-          <div className="edu-icon"><FaUniversity /></div>
-          <div className="edu-content">
-            <h3 data-badge="Current">B-Tech | Computer Science & Engineering (2022 - 2026)</h3>
-            <p>🎓 Radharaman Institute of Technology and Science, Bhopal</p>
-            <p>📊 CGPA: <strong>8.17</strong> — <em title="Secured 1st Rank in 1st to 3rd semesters">College Topper</em></p>
-            <p>💡 Specialized in Web Development, Data Structures, and AI tools</p>
-            <div className="progress-bar"><div className="progress" style={{ width: "82%" }}></div></div>
-          </div>
-        </li>
+      <div className="edu-timeline">
+        {educationData.map((item) => (
+          <div 
+            key={item.id} 
+            className={`edu-card ${item.isHighlight ? "highlight-card" : ""}`}
+          >
+            <div className="edu-icon-wrapper">
+              <div className="edu-icon">
+                {item.icon}
+              </div>
+            </div>
 
-        {/* 12th */}
-        <li>
-          <div className="edu-icon"><FaSchool /></div>
-          <div className="edu-content">
-            <h3 data-badge="Passed">XII (BSEB) | 2022</h3>
-            <p>🏫 S.N.S.D.N.G Watson +2 School, Madhubani, Bihar</p>
-            <p>📊 Percentage: <strong>71.4%</strong> — <em title="State Board Merit List">Merit Holder</em></p>
-            <div className="progress-bar"><div className="progress" style={{ width: "71%" }}></div></div>
-          </div>
-        </li>
+            <div className="edu-content">
+              <div className="edu-card-header">
+                <div>
+                  <h3 className="edu-title">{item.title}</h3>
+                  <span className="edu-period">{item.period}</span>
+                </div>
+                <span className={`status-badge ${item.statusType}`}>
+                  {item.statusType === "completed" && <FaCheckCircle className="badge-icon" />}
+                  {item.status}
+                </span>
+              </div>
 
-        {/* 10th */}
-        <li>
-          <div className="edu-icon"><FaSchool /></div>
-          <div className="edu-content">
-            <h3 data-badge="Passed">X (BSEB) | 2020</h3>
-            <p>🏫 B.S.H/S, Barhgoriya, Nahar, Madhubani, Bihar</p>
-            <p>📊 Percentage: <strong>68.6%</strong></p>
-            <div className="progress-bar"><div className="progress" style={{ width: "68%" }}></div></div>
+              <div className="edu-institution">
+                <FaUniversity className="institution-icon" />
+                <span>{item.institution}</span>
+              </div>
+
+              <div className="edu-metrics">
+                <span className="metric-score">{item.score}</span>
+                {item.scoreDetail && (
+                  <span className="metric-detail">
+                    <FaTrophy className="trophy-icon" /> {item.scoreDetail}
+                  </span>
+                )}
+              </div>
+
+              <p className="edu-description">{item.description}</p>
+
+              {item.skills && (
+                <div className="edu-tags">
+                  {item.skills.map((skill, i) => (
+                    <span key={i} className="edu-tag">{skill}</span>
+                  ))}
+                </div>
+              )}
+
+              <div className="progress-container">
+                <div className="progress-label">
+                  <span>Completion Status</span>
+                  <span>{item.progress}% Completed</span>
+                </div>
+                <div className="progress-bar">
+                  <div 
+                    className={`progress ${item.statusType === "completed" ? "completed-progress" : ""}`} 
+                    style={{ width: `${item.progress}%` }}
+                  >
+                    <span className="progress-shimmer"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </li>
-      </ul>
+        ))}
+      </div>
     </section>
   );
 }
 
-export default Education;
+export default Education;

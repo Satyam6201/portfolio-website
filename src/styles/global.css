@@ -83,6 +83,7 @@ body {
 }
 
 /* Base Sections Styling across site */
+/* Base Sections Styling across site */
 .achievements, .blog, .certifications, .contact, .education, .funfacts, .goal-section, 
 .hiring-container, .hobbies, .projects, .techstack, .volunteer, .home, .experience, .testimonials-section {
   padding: 70px 25px;
@@ -97,6 +98,7 @@ body {
   border-radius: 20px;
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease, border-color 0.4s ease;
+  overflow-x: hidden;
 }
 
 /* Universal Section Titles */
@@ -123,7 +125,8 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -178,15 +181,16 @@ body {
   .achievements, .blog, .certifications, .contact, .education, .funfacts, 
   .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
   .volunteer, .experience, .testimonials-section {
-    padding: 35px 16px;
-    width: 95%;
+    padding: 32px 14px;
+    width: calc(100% - 24px);
+    margin: 20px auto;
     border-radius: 16px;
   }
 
   .achievements h2, .blog h2, .certifications h2, .contact h2, .education h2, .funfacts h2, 
   .goal-section h2, .hiring-container h1, .hiring-container h2, .hobbies h2, .projects h2, 
   .techstack h2, .volunteer h2, .experience h2, .testimonials-title {
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     text-align: center;
   }
 }
@@ -195,7 +199,15 @@ body {
   .achievements, .blog, .certifications, .contact, .education, .funfacts, 
   .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
   .volunteer, .experience, .testimonials-section {
-    padding: 25px 12px;
-    font-size: 0.95rem;
+    padding: 24px 12px;
+    width: calc(100% - 16px);
+    font-size: 0.92rem;
+    border-radius: 14px;
+  }
+
+  .achievements h2, .blog h2, .certifications h2, .contact h2, .education h2, .funfacts h2, 
+  .goal-section h2, .hiring-container h1, .hiring-container h2, .hobbies h2, .projects h2, 
+  .techstack h2, .volunteer h2, .experience h2, .testimonials-title {
+    font-size: 1.45rem;
   }
 }

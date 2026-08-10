@@ -182,18 +182,40 @@
     padding: 18px;
   }
 
+  .counters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
   .counter-box {
-    padding: 16px 20px;
-    min-width: 130px;
+    padding: 16px 12px;
+    min-width: 0;
+    width: 100%;
   }
 
   .counter-box h3 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+
+  .counter-box p {
+    font-size: 0.8rem;
+  }
+
+  .about-section {
+    padding: 18px 14px;
   }
 
   .experience-item p,
   .project-item p {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .counters {
+    grid-template-columns: 1fr;
   }
 }
