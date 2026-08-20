@@ -32,7 +32,7 @@ SATYAM KUMAR MISHRA - COMPLETE PORTFOLIO DETAILS:
    - Key Strength: Solved 1000+ DSA problems on LeetCode using Java. Strong fundamentals in System Design, OOP, DBMS, and OS.
    - Notice Period: Immediate Joining (0 Days Notice)
    - Preferred Roles: Full-Time Software Engineer / Full-Stack Developer / Frontend & MERN Engineering Internship
-   - Location: Bhopal, MP, India (Open for Remote, Hybrid, & On-Site roles)
+   - Location: Delhi, India (Open for Remote, Hybrid, & On-Site roles)
    - Resume Download URL: /assets/Resume.pdf
 
 2. EDUCATION:
@@ -108,7 +108,7 @@ SATYAM KUMAR MISHRA - COMPLETE PORTFOLIO DETAILS:
 8. CONTACT & HIRING CHANNELS:
    - Email: satyamkmishraa@gmail.com
    - Phone / WhatsApp: +91 6201902313
-   - Location: Bhopal, Madhya Pradesh, India
+   - Location: Delhi, India
    - GitHub: https://github.com/Satyam6201
    - LinkedIn: https://www.linkedin.com/in/satyam-kumar-mishra-dev
    - LeetCode: https://leetcode.com/u/SatyamMIshra62
@@ -128,7 +128,7 @@ function getFallbackResponse(query) {
   const q = query.toLowerCase();
 
   if (q.includes("hire") || q.includes("hiring") || q.includes("job") || q.includes("intern") || q.includes("recruiter") || q.includes("opportunity") || q.includes("role") || q.includes("fulltime") || q.includes("available")) {
-    return `💼 **Hire Satyam Kumar Mishra:**\n\nSatyam is **Available for Immediate Joining** (0 Days Notice Period) for:\n- 🚀 **Full-Time Software / Full-Stack Engineer**\n- 🎓 **Frontend / MERN / Next.js Engineering Internship**\n- 🤖 **GenAI / RAG Systems Integration Role**\n\n**Key Highlights:**\n- ⚡ **1000+ DSA Solved** on LeetCode (Java)\n- 🛠️ **45+ Web Projects & SaaS Apps** (Next.js, React, Node, MongoDB, GenAI, RAG)\n- 🏆 **University Rank #1** – CGPA 8.17 (College Topper)\n- 🤖 **RAG Architecture** – MockMate AI with FAISS, OpenAI, MongoDB Atlas\n- 📍 **Remote / On-Site / Hybrid** – Bhopal, MP\n\n[DIRECT_CONTACT_ACTIONS]`;
+    return `💼 **Hire Satyam Kumar Mishra:**\n\nSatyam is **Available for Immediate Joining** (0 Days Notice Period) for:\n- 🚀 **Full-Time Software / Full-Stack Engineer**\n- 🎓 **Frontend / MERN / Next.js Engineering Internship**\n- 🤖 **GenAI / RAG Systems Integration Role**\n\n**Key Highlights:**\n- ⚡ **1000+ DSA Solved** on LeetCode (Java)\n- 🛠️ **45+ Web Projects & SaaS Apps** (Next.js, React, Node, MongoDB, GenAI, RAG)\n- 🏆 **University Rank #1** – CGPA 8.17 (College Topper)\n- 🤖 **RAG Architecture** – MockMate AI with FAISS, OpenAI, MongoDB Atlas\n- 📍 **Remote / On-Site / Hybrid** – Delhi, India\n\n[DIRECT_CONTACT_ACTIONS]`;
   }
 
   if (q.includes("mockmate") || q.includes("mock mate") || q.includes("interview") || q.includes("rag") || q.includes("faiss") || q.includes("vector")) {
@@ -152,7 +152,7 @@ function getFallbackResponse(query) {
   }
 
   if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("whatsapp") || q.includes("call") || q.includes("mail")) {
-    return `📞 **Get in Touch with Satyam:**\n\n- ✉️ **Email**: satyamkmishraa@gmail.com\n- 📱 **Phone / WhatsApp**: +91 6201902313\n- 📍 **Location**: Bhopal, MP, India (Open for Remote)\n- 💻 **GitHub**: [github.com/Satyam6201](https://github.com/Satyam6201)\n- 🔗 **LinkedIn**: [linkedin.com/in/satyam-kumar-mishra-dev](https://www.linkedin.com/in/satyam-kumar-mishra-dev)\n- 📊 **LeetCode**: [leetcode.com/u/SatyamMIshra62](https://leetcode.com/u/SatyamMIshra62)\n\n[DIRECT_CONTACT_ACTIONS]`;
+    return `📞 **Get in Touch with Satyam:**\n\n- ✉️ **Email**: satyamkmishraa@gmail.com\n- 📱 **Phone / WhatsApp**: +91 6201902313\n- 📍 **Location**: Delhi, India (Open for Remote)\n- 💻 **GitHub**: [github.com/Satyam6201](https://github.com/Satyam6201)\n- 🔗 **LinkedIn**: [linkedin.com/in/satyam-kumar-mishra-dev](https://www.linkedin.com/in/satyam-kumar-mishra-dev)\n- 📊 **LeetCode**: [leetcode.com/u/SatyamMIshra62](https://leetcode.com/u/SatyamMIshra62)\n\n[DIRECT_CONTACT_ACTIONS]`;
   }
 
   if (q.includes("education") || q.includes("college") || q.includes("cgpa") || q.includes("btech") || q.includes("degree") || q.includes("university")) {
@@ -285,8 +285,11 @@ function AIChatbot() {
         const tokens = remaining.split(/(<LINK::[^>]+>|<BOLD::[^>]+>)/);
         tokens.forEach((token, j) => {
           if (token.startsWith("<LINK::")) {
-            const [, url, label] = token.replace("<LINK::", "").replace(">", "").split("::");
-            parts.push(<a key={`${i}-${j}`} href={`${url}::${label}`.split("::")[0] + "::" + `${url}::${label}`.split("::")[1] } href={url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-color)", textDecoration: "underline" }}>{label}</a>);
+            const inner = token.replace("<LINK::", "").replace(">", "");
+            const splitIdx = inner.indexOf("::");
+            const url = inner.substring(0, splitIdx);
+            const label = inner.substring(splitIdx + 2);
+            parts.push(<a key={`${i}-${j}`} href={url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-color)", textDecoration: "underline" }}>{label}</a>);
           } else if (token.startsWith("<BOLD::")) {
             const bold = token.replace("<BOLD::", "").replace(">", "");
             parts.push(<strong key={`${i}-${j}`}>{bold}</strong>);
