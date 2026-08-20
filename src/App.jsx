@@ -21,6 +21,7 @@ import Blog from "./component/Blog";
 import Contact from "./component/Contact";
 import Footer from "./component/Footer";
 import AIChatbot from "./component/AIChatbot";
+import ThemePicker from "./component/ThemePicker";
 
 import "./styles/global.css";
 
@@ -90,6 +91,7 @@ function App() {
 
         <Footer />
         <AIChatbot />
+        <ThemePicker />
       </div>
     </ThemeProvider>
   );

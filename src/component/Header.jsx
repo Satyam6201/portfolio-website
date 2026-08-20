@@ -5,7 +5,7 @@ import {
   FaSun, FaMoon, FaBars, FaTimes,
   FaHome, FaUser, FaCode, FaProjectDiagram,
   FaBriefcase, FaGraduationCap, FaCertificate,
-  FaBlog, FaEnvelope, FaChevronDown,
+  FaBlog, FaEnvelope, FaChevronDown, FaPalette, FaCheck
 } from "react-icons/fa";
 import "../styles/header.css";
 
@@ -22,16 +22,20 @@ const navItems = [
 ];
 
 function Header() {
-  const [menuOpen, setMenuOpen]       = useState(false);
-  const [scrolled, setScrolled]       = useState(false);
+  const [menuOpen, setMenuOpen]             = useState(false);
+  const [scrolled, setScrolled]             = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection]   = useState("home");
   const [showMoreMenu, setShowMoreMenu]     = useState(false);
-  const moreRef = useRef(null);
+  const [showThemeMenu, setShowThemeMenu]   = useState(false);
+  const [themeSearch, setThemeSearch]       = useState("");
+  
+  const moreRef  = useRef(null);
+  const themeRef = useRef(null);
 
-  const { isDarkMode, toggleTheme } = useTheme();
-  const location  = useLocation();
-  const navigate  = useNavigate();
+  const { theme, themes, setTheme, isDarkMode, toggleTheme, currentTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   /* ── Scroll progress + shrink ── */
   useEffect(() => {
@@ -62,17 +66,18 @@ function Header() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  /* ── Close "more" dropdown on outside click ── */
+  /* ── Close dropdowns on outside click ── */
   useEffect(() => {
     const handler = (e) => {
       if (moreRef.current && !moreRef.current.contains(e.target)) setShowMoreMenu(false);
+      if (themeRef.current && !themeRef.current.contains(e.target)) setShowThemeMenu(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   const toggleMenu = () => setMenuOpen((p) => !p);
-  const closeMenu  = () => { setMenuOpen(false); setShowMoreMenu(false); };
+  const closeMenu  = () => { setMenuOpen(false); setShowMoreMenu(false); setShowThemeMenu(false); };
 
   const handleNavClick = (hash) => {
     closeMenu();
@@ -90,6 +95,10 @@ function Header() {
 
   const isNavActive = (item) =>
     activeSection === item.hash.replace("#", "");
+
+  const filteredThemes = themeSearch.trim()
+    ? themes.filter((t) => t.label.toLowerCase().includes(themeSearch.toLowerCase()) || t.name.toLowerCase().includes(themeSearch.toLowerCase()))
+    : themes;
 
   return (
     <>
@@ -131,7 +140,7 @@ function Header() {
             <li ref={moreRef} className="more-dropdown-wrap">
               <button
                 className={`nav-btn more-btn ${moreItems.some(isNavActive) ? "active-link" : ""}`}
-                onClick={() => setShowMoreMenu((p) => !p)}
+                onClick={() => { setShowMoreMenu((p) => !p); setShowThemeMenu(false); }}
               >
                 <span className="nav-label">More</span>
                 <FaChevronDown className={`chevron ${showMoreMenu ? "open" : ""}`} />
@@ -155,8 +164,65 @@ function Header() {
           </ul>
         </nav>
 
-        {/* Controls */}
+        {/* Controls: Theme Picker Dropdown + Quick Sun/Moon + Hamburger */}
         <div className="menu-controls">
+          
+          {/* Navbar Theme Dropdown Selector */}
+          <div className="nav-theme-dropdown-wrap" ref={themeRef}>
+            <button
+              className={`nav-theme-btn ${showThemeMenu ? "active" : ""}`}
+              onClick={() => { setShowThemeMenu((p) => !p); setShowMoreMenu(false); }}
+              title="Change Background & Theme Color"
+              aria-label="Change Background Theme"
+            >
+              <FaPalette className="palette-icon" />
+              <span className="nav-theme-name">{currentTheme?.label || theme}</span>
+              <span className="nav-theme-dot" style={{ background: currentTheme?.colors[0] || "var(--accent-color)" }} />
+              <FaChevronDown className={`chevron ${showThemeMenu ? "open" : ""}`} />
+            </button>
+
+            {/* Navbar Theme Dropdown Menu */}
+            {showThemeMenu && (
+              <div className="nav-theme-menu">
+                <div className="nav-theme-header">
+                  <div className="nt-title-row">
+                    <span className="nt-title"><FaPalette /> Theme & Background</span>
+                    <button className="nt-quick-toggle" onClick={toggleTheme} title="Toggle Light/Dark">
+                      {isDarkMode ? <FaSun style={{ color: "#fbbf24" }} /> : <FaMoon style={{ color: "#6366f1" }} />}
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search 32+ themes..."
+                    className="nt-search-input"
+                    value={themeSearch}
+                    onChange={(e) => setThemeSearch(e.target.value)}
+                    autoFocus
+                  />
+                </div>
+
+                <div className="nav-theme-grid">
+                  {filteredThemes.map((t) => (
+                    <button
+                      key={t.name}
+                      className={`nav-theme-item ${theme === t.name ? "selected" : ""}`}
+                      onClick={() => { setTheme(t.name); setShowThemeMenu(false); }}
+                    >
+                      <div className="nt-swatches">
+                        {t.colors.map((c, idx) => (
+                          <span key={idx} style={{ background: c }} />
+                        ))}
+                      </div>
+                      <span className="nt-label">{t.label}</span>
+                      {theme === t.name && <FaCheck className="nt-check-icon" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Quick Light/Dark Toggle */}
           <button
             className="theme-toggle ripple"
             onClick={toggleTheme}
@@ -170,6 +236,7 @@ function Header() {
             </span>
           </button>
 
+          {/* Hamburger Menu */}
           <button
             className={`menu-btn ${menuOpen ? "open" : ""}`}
             onClick={toggleMenu}
@@ -189,6 +256,26 @@ function Header() {
             <span className="mobile-nav-title">Navigation</span>
             <button className="mobile-close-btn" onClick={closeMenu}><FaTimes /></button>
           </div>
+
+          {/* Mobile Theme Selector Strip */}
+          <div className="mobile-theme-strip">
+            <div className="mobile-theme-title">
+              <FaPalette /> Theme Color: <strong>{currentTheme?.label}</strong>
+            </div>
+            <div className="mobile-theme-scroll">
+              {themes.slice(0, 10).map((t) => (
+                <button
+                  key={t.name}
+                  className={`mobile-theme-chip ${theme === t.name ? "active" : ""}`}
+                  onClick={() => setTheme(t.name)}
+                >
+                  <span className="mt-dot" style={{ background: t.colors[0] }} />
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <ul>
             {navItems.map((item, index) => (
               <li key={item.path} style={{ "--i": index }}>

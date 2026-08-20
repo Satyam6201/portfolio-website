@@ -1,0 +1,312 @@
+/* ============================================================
+   THEME PICKER  –  Floating FAB & Animated Palette Modal
+============================================================ */
+
+.theme-picker-wrap {
+  position: fixed;
+  bottom: 25px;
+  right: 90px;
+  z-index: 1050;
+  font-family: inherit;
+}
+
+/* Floating Action Button */
+.theme-fab {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 20px var(--accent-glow), 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  overflow: visible;
+}
+
+.theme-fab:hover {
+  box-shadow: 0 8px 25px var(--accent-glow), 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.theme-fab.open {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.fab-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px dashed var(--accent-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  animation: fabSpin 10s linear infinite;
+}
+
+.theme-fab:hover .fab-ring {
+  opacity: 0.6;
+}
+
+@keyframes fabSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Theme Panel Modal */
+.theme-panel {
+  position: absolute;
+  bottom: 65px;
+  right: 0;
+  width: 360px;
+  max-width: 90vw;
+  max-height: 520px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px var(--accent-glow);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1060;
+}
+
+/* Header */
+.tp-header {
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tp-icon {
+  font-size: 1.15rem;
+  color: var(--accent-color);
+}
+
+.tp-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.tp-current-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 12px;
+  background: var(--tag-bg);
+  color: var(--accent-color);
+  text-transform: capitalize;
+}
+
+/* Search input */
+.tp-search {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tp-search:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Category Tabs */
+.tp-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tp-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tp-tab {
+  padding: 5px 11px;
+  background: var(--tag-bg);
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  border-radius: 20px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.tp-tab:hover {
+  color: var(--accent-color);
+  border-color: var(--border-hover);
+}
+
+.tp-tab.active {
+  background: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+/* Theme Cards Grid */
+.tp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 14px;
+  overflow-y: auto;
+  max-height: 300px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+}
+
+.tp-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tp-grid::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+/* Individual Theme Card */
+.tp-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 12px;
+  background: var(--input-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.tp-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.tp-card.selected {
+  border-color: var(--accent-color);
+  background: var(--tag-bg);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* 4-Color Swatch Preview Bar */
+.tp-swatches {
+  display: flex;
+  width: 100%;
+  height: 14px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.tp-swatch {
+  flex: 1;
+  height: 100%;
+}
+
+.tp-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tp-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  box-shadow: 0 2px 6px var(--accent-glow);
+}
+
+/* Footer */
+.tp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tp-count {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.tp-reset {
+  background: transparent;
+  border: none;
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.tp-reset:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .theme-picker-wrap {
+    bottom: 20px;
+    right: 80px;
+  }
+
+  .theme-panel {
+    width: 310px;
+    max-height: 460px;
+  }
+
+  .tp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
