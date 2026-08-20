@@ -4,6 +4,17 @@ import { FaExternalLinkAlt, FaGithub, FaSearch, FaTimes, FaStar } from "react-ic
 
 const projects = [
   {
+    id: "mockmate-ai",
+    title: "MockMate AI",
+    image: "/assets/mockmate-ai.jpg",
+    description: "Full-stack RAG AI mock interview platform featuring PDF resume parsing, FAISS vector embeddings, real-time AI evaluations, scoring feedback, and Stripe/Razorpay payments.",
+    details: "Built an end-to-end AI mock interview companion powered by Node.js, Express, MongoDB Atlas, and React. Implemented RAG (Retrieval-Augmented Generation) pipelines using OpenAI & OpenRouter APIs, text-embedding-3-small, pdf-parse, and FAISS vector stores to analyze candidate resumes and generate tailored interview questions. Features real-time AI answer scoring (correctness, confidence, communication), Multer file uploads, JWT authentication, Stripe/Razorpay payment gateways, Framer Motion animations, and dual deployment on Vercel & Render.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI / RAG", "FAISS Vector", "Tailwind CSS", "JWT", "Stripe / Razorpay", "Vercel / Render"],
+    liveDemo: "https://github.com/Satyam6201/MockMate-AI",
+    github: "https://github.com/Satyam6201/MockMate-AI",
+    featured: true
+  },
+  {
     id: "dentalva",
     title: "DentAIva",
     image: "/assets/dentalva.png",

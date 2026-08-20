@@ -1,79 +1,483 @@
+/* Main Goal Section (Base inherits from global.css .goal-section) */
 .goal-section {
+  position: relative;
   text-align: center;
-  padding: 60px 20px;
+  overflow: hidden;
 }
 
-.goal-subtext {
-  font-size: 1.05rem;
-  max-width: 780px;
-  margin: 0 auto 40px;
-  color: var(--text-muted);
-}
-
-.goal-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 22px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.goal-card {
-  background: var(--tag-bg);
-  border: 1px solid var(--border-color);
-  padding: 24px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: var(--card-shadow);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.35s ease;
-  color: var(--text-primary);
+/* Header Section */
+.goal-header {
+  margin-bottom: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.goal-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 25px var(--accent-glow);
+.goal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.goal-card h3 {
-  font-size: 1.25rem;
-  margin: 12px 0 8px;
-  color: var(--accent-color);
-  font-weight: 700;
+.target-icon {
+  color: #ef4444;
 }
 
-.goal-card p {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
+.goal-subtext {
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 0 auto 25px;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
-.goal-icon {
-  font-size: 2.2rem;
-  color: var(--accent-color);
-  margin-bottom: 8px;
+/* Stats Summary Banner */
+.goal-stats-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  padding: 12px 30px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
 }
 
-.hire-me-btn {
-  display: inline-block;
-  margin-top: 35px;
-  padding: 12px 32px;
-  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
-  color: white;
-  border-radius: 12px;
-  font-size: 1rem;
+.g-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.g-stat-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-color);
+}
+
+.g-stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.g-stat-divider {
+  width: 1px;
+  height: 25px;
+  background: var(--border-color);
+}
+
+/* Controls: Category Tabs & View Switcher */
+.goal-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.goal-category-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+[data-theme="light"] .goal-category-tabs,
+body.light .goal-category-tabs {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.g-tab-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px 18px;
+  font-size: 0.88rem;
   font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 4px 15px var(--accent-glow);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.g-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.g-tab-btn.active {
+  color: #ffffff;
+}
+
+[data-theme="light"] .g-tab-btn.active,
+body.light .g-tab-btn.active {
+  color: #ffffff;
+}
+
+.active-g-tab-indicator {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-color);
+  border-radius: 20px;
+  z-index: -1;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.goal-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .goal-view-toggle,
+body.light .goal-view-toggle {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.g-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
+.g-toggle-btn:hover {
+  color: var(--text-primary);
+}
+
+.g-toggle-btn.active {
+  background: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* Mode 1: 3D Stage Roadmap View */
+.goal-stage-container {
+  width: 100%;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  margin-bottom: 25px;
+}
+
+.goal-3d-roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  text-align: left;
+  transform-style: preserve-3d;
+}
+
+.goal-3d-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.goal-3d-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--goal-accent, var(--accent-color));
+  opacity: 0.9;
+}
+
+.goal-3d-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 16px 36px var(--goal-shadow, var(--accent-glow));
+}
+
+.g-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.g-phase-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--goal-shadow);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.g-readiness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.fire-badge-icon {
+  color: #f97316;
+  font-size: 0.8rem;
+}
+
+.g-card-header-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.g-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px var(--goal-shadow, rgba(0, 0, 0, 0.2));
+  transform: translateZ(25px);
+  transition: transform 0.3s ease;
+}
+
+.goal-3d-card:hover .g-icon-wrapper {
+  transform: translateZ(35px) rotate(6deg) scale(1.06);
+}
+
+.g-react-icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.g-header-text h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.g-tagline {
+  font-size: 0.82rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  display: block;
+}
+
+.g-card-description {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+/* Focus Readiness Meter */
+.g-meter-box {
+  margin-bottom: 16px;
+}
+
+.g-meter-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.g-meter-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+[data-theme="light"] .g-meter-bar-bg,
+body.light .g-meter-bar-bg {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.g-meter-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Skill Tags */
+.g-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.g-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--border-color);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.g-check-icon {
+  font-size: 0.7rem;
+  color: var(--accent-color);
+}
+
+/* Mode 2: 3D Grid Matrix View */
+.goal-grid-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  text-align: left;
+}
+
+.goal-grid-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.goal-grid-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--goal-accent, var(--accent-color));
+  opacity: 0.8;
+}
+
+.goal-grid-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 30px var(--goal-shadow, var(--accent-glow));
+}
+
+/* CTA Hire Me Button */
+.goal-cta-wrapper {
+  margin-top: 40px;
+}
+
+.hire-me-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  color: #ffffff;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px var(--accent-glow);
+  transition: all 0.35s ease;
+}
+
 .hire-me-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 25px var(--accent-glow);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.plane-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.hire-me-btn:hover .plane-icon {
+  transform: translateX(4px) translateY(-2px);
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .goal-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .goal-category-tabs,
+  .goal-view-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .goal-stats-banner {
+    padding: 10px 16px;
+    gap: 15px;
+  }
+
+  .g-stat-num {
+    font-size: 1.05rem;
+  }
+
+  .g-stat-lbl {
+    font-size: 0.68rem;
+  }
+
+  .goal-3d-roadmap,
+  .goal-grid-matrix {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+  }
 }

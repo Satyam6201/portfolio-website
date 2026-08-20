@@ -5,7 +5,7 @@ const experiences = [
   {
     role: 'Full Stack Development Intern',
     company: 'Code Innovative Technologies (Remote)',
-    date: 'Feb 2026 – May 2026',
+    date: 'Feb 2026 – Aug 2026',
     points: [
       <>Developed scalable full-stack web applications using <strong>React.js, Next.js, Node.js, Express.js, MongoDB, and PostgreSQL</strong>.</>,
       <>Designed and implemented <strong>RESTful APIs</strong> for real-world business applications, following clean, maintainable architecture.</>,

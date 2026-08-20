@@ -82,7 +82,7 @@ function About() {
         <div className="experience-item">
           <p>
             <strong>Full Stack Development Intern – Code Innovative Technologies (Remote)</strong>
-            <span className="exp-date">Feb 2026 – Present</span>
+            <span className="exp-date">Feb 2026 – Aug 2026</span>
           </p>
           <ul>
             <li>Developed scalable full-stack web applications using React.js, Next.js, Node.js, Express.js, MongoDB, and PostgreSQL.</li>
