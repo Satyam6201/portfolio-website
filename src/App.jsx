@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -20,8 +20,10 @@ import Education from "./component/Education";
 import Blog from "./component/Blog";
 import Contact from "./component/Contact";
 import Footer from "./component/Footer";
-import AIChatbot from "./component/AIChatbot";
-import ThemePicker from "./component/ThemePicker";
+
+// Lazy-load floating widgets to keep critical first paint ultra fast
+const AIChatbot = lazy(() => import("./component/AIChatbot"));
+const ThemePicker = lazy(() => import("./component/ThemePicker"));
 
 import "./styles/global.css";
 
@@ -90,8 +92,11 @@ function App() {
         </Routes>
 
         <Footer />
-        <AIChatbot />
-        <ThemePicker />
+        
+        <Suspense fallback={null}>
+          <AIChatbot />
+          <ThemePicker />
+        </Suspense>
       </div>
     </ThemeProvider>
   );
