@@ -8,24 +8,7 @@ export default defineConfig({
     minify: "esbuild",
     cssCodeSplit: true,
     chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            if (id.includes("react-dom") || id.includes("react-router") || id.includes("react-router-dom") || id.includes("react/")) {
-              return "vendor-react";
-            }
-            if (id.includes("framer-motion")) {
-              return "vendor-framer";
-            }
-            if (id.includes("react-icons")) {
-              return "vendor-icons";
-            }
-            return "vendor-misc";
-          }
-        },
-      },
-    },
+    rollupOptions: {},
   },
   server: {
     port: 3000,
