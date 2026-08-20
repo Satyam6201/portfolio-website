@@ -296,17 +296,50 @@
 /* Responsive adjustment */
 @media (max-width: 600px) {
   .theme-picker-wrap {
-    bottom: 20px;
-    right: 80px;
+    bottom: 18px;
+    right: 76px;
+  }
+
+  .theme-fab {
+    width: 46px;
+    height: 46px;
+    font-size: 1.15rem;
   }
 
   .theme-panel {
-    width: 310px;
-    max-height: 460px;
+    position: fixed;
+    bottom: 76px;
+    left: 12px;
+    right: 12px;
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+    max-height: min(75vh, 480px);
+    border-radius: 18px;
   }
 
   .tp-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+    padding: 10px;
+  }
+
+  .tp-header {
+    padding: 12px 14px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .theme-picker-wrap {
+    right: 68px;
+  }
+
+  .theme-fab {
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
+  }
+
+  .tp-grid {
+    grid-template-columns: 1fr;
   }
 }

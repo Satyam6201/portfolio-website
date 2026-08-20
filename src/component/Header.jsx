@@ -76,6 +76,40 @@ function Header() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  /* ── Body scroll lock when mobile menu is open ── */
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  /* ── Close menus on Escape key and window resize ── */
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        setShowMoreMenu(false);
+        setShowThemeMenu(false);
+      }
+    };
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const toggleMenu = () => setMenuOpen((p) => !p);
   const closeMenu  = () => { setMenuOpen(false); setShowMoreMenu(false); setShowThemeMenu(false); };
 
