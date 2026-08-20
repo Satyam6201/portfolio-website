@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaExternalLinkAlt, FaGithub, FaSearch, FaTimes, FaStar, FaSlidersH, FaThLarge, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/projects.css";
-import { FaExternalLinkAlt, FaGithub, FaSearch, FaTimes, FaStar } from "react-icons/fa";
 
 const projects = [
   {
@@ -23,7 +24,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Clerk", "Vapi AI", "Tailwind CSS"],
     liveDemo: "https://dentwise-henna.vercel.app/",
     github: "https://github.com/Satyam6201/DentAIva",
-    featured: true 
+    featured: true
   },
   {
     id: "grocerin",
@@ -49,13 +50,13 @@ const projects = [
   {
     id: "employee-manager-pro",
     title: "Employee Manager Pro",
-    image: "/assets/employee-manager.png", 
+    image: "/assets/employee-manager.png",
     description: "A professional Full-Stack HRMS featuring real-time employee tracking, secure NextAuth integration, and dynamic server-side filtering.",
     details: "An enterprise-grade Human Resource Management System built with Next.js 14 App Router, Prisma ORM, and PostgreSQL. Includes department analytics, shift tracking, NextAuth session handling, and Framer Motion micro-interactions.",
     tech: ["Next.js 14", "Prisma", "PostgreSQL", "NextAuth", "Framer Motion", "Tailwind CSS"],
     liveDemo: "https://employee-manager-pro-chi.vercel.app/",
     github: "https://github.com/Satyam6201/employee-manager-pro",
-    featured: true 
+    featured: true
   },
   {
     id: "connectify",
@@ -159,44 +160,48 @@ const projects = [
   },
 ];
 
-const uniqueTech = [
-  "All",
-  ...new Set(projects.flatMap((p) => p.tech)),
-];
+const uniqueTech = ["All", ...new Set(projects.flatMap((p) => p.tech))];
 
 function Projects() {
   const [filter, setFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [viewMode, setViewMode] = useState("grid"); // 'grid' | 'stage'
+  const [stageIndex, setStageIndex] = useState(0);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     let result = projects;
-
-    if (filter !== "All") {
-      result = result.filter((p) => p.tech.includes(filter));
-    }
-
+    if (filter !== "All") result = result.filter((p) => p.tech.includes(filter));
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q) ||
-          p.tech.some((t) => t.toLowerCase().includes(q))
+        (p) => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.tech.some((t) => t.toLowerCase().includes(q))
       );
     }
-
     setFilteredProjects(result);
+    setStageIndex(0);
   }, [filter, searchQuery]);
+
+  const handleNext = () => setStageIndex((prev) => (prev + 1) % filteredProjects.length);
+  const handlePrev = () => setStageIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
+
+  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 50) handleNext();
+    if (diff < -50) handlePrev();
+  };
 
   return (
     <section id="projects" className="projects">
       <h2>🚀 Featured Projects</h2>
       <p className="projects-subtext">
-        Explore my recent full-stack SaaS platforms, web applications, open-source projects, and interactive tools.
+        Explore my recent full-stack SaaS platforms, RAG AI systems, web applications, open-source projects, and interactive tools.
       </p>
 
+      {/* Search & Filter Bar */}
       <div className="filter-search-bar">
         <div className="search-input-wrapper">
           <FaSearch className="search-icon" />
@@ -207,149 +212,146 @@ function Projects() {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           {searchQuery && (
-            <button className="clear-search" onClick={() => setSearchQuery("")}>
-              <FaTimes />
-            </button>
+            <button className="clear-search" onClick={() => setSearchQuery("")}><FaTimes /></button>
           )}
         </div>
-
         <div className="filter-container">
           <label htmlFor="tech-filter">Tech Stack:</label>
-          <select
-            id="tech-filter"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-          >
-            {uniqueTech.map((tech, i) => (
-              <option key={i} value={tech}>
-                {tech}
-              </option>
-            ))}
+          <select id="tech-filter" value={filter} onChange={(e) => setFilter(e.target.value)}>
+            {uniqueTech.map((tech, i) => <option key={i} value={tech}>{tech}</option>)}
           </select>
         </div>
       </div>
 
-      <div className="projects-container">
-        {filteredProjects.length === 0 ? (
-          <div className="no-projects">
-            <p>No projects match your filter query. Try selecting another technology!</p>
-          </div>
-        ) : (
-          filteredProjects.map((project) => (
-            <div key={project.id} className="project-card">
-              {project.featured && (
-                <div className="featured-badge">
-                  <FaStar /> Featured
-                </div>
-              )}
-              <div className="img-wrapper">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-img"
-                  loading="lazy"
-                />
-                <div className="overlay">
-                  <p>{project.description}</p>
-                </div>
-              </div>
-
-              <div className="project-info">
-                <h3>{project.title}</h3>
-                <div className="tech-stack">
-                  {project.tech.slice(0, 5).map((tech, i) => (
-                    <span key={i} className="tech">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 5 && (
-                    <span className="tech extra">+{project.tech.length - 5}</span>
-                  )}
-                </div>
-
-                <div className="project-links">
-                  <a
-                    href={project.liveDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="live-btn"
-                  >
-                    <FaExternalLinkAlt /> Live Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="github-btn"
-                  >
-                    <FaGithub /> GitHub
-                  </a>
-                </div>
-
-                <button
-                  className="details-btn"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  View Full Details
-                </button>
-              </div>
-            </div>
-          ))
-        )}
+      {/* View Mode Switcher */}
+      <div className="projects-view-switcher">
+        <button className={`pv-toggle-btn ${viewMode === "grid" ? "active" : ""}`} onClick={() => setViewMode("grid")}>
+          <FaThLarge /> 3D Grid Matrix
+        </button>
+        <button className={`pv-toggle-btn ${viewMode === "stage" ? "active" : ""}`} onClick={() => setViewMode("stage")}>
+          <FaSlidersH /> 3D Stage Carousel
+        </button>
       </div>
 
-      {/* Project Detail Modal */}
-      {selectedProject && (
-        <div className="project-modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal-btn" onClick={() => setSelectedProject(null)}>
-              <FaTimes />
-            </button>
+      {/* 3D Grid Matrix View */}
+      {viewMode === "grid" && (
+        <motion.div className="projects-container" layout>
+          {filteredProjects.length === 0 ? (
+            <div className="no-projects"><p>No projects match your filter. Try another tech!</p></div>
+          ) : (
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, i) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                  transition={{ duration: 0.35, ease: "easeOut", delay: i * 0.05 }}
+                  className="project-card"
+                >
+                  {project.featured && <div className="featured-badge"><FaStar /> Featured</div>}
+                  <div className="img-wrapper">
+                    <img src={project.image} alt={project.title} className="project-img" loading="lazy" />
+                    <div className="overlay"><p>{project.description}</p></div>
+                  </div>
+                  <div className="project-info">
+                    <h3>{project.title}</h3>
+                    <div className="tech-stack">
+                      {project.tech.slice(0, 5).map((tech, i) => <span key={i} className="tech">{tech}</span>)}
+                      {project.tech.length > 5 && <span className="tech extra">+{project.tech.length - 5}</span>}
+                    </div>
+                    <div className="project-links">
+                      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="live-btn"><FaExternalLinkAlt /> Live Demo</a>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-btn"><FaGithub /> GitHub</a>
+                    </div>
+                    <button className="details-btn" onClick={() => setSelectedProject(project)}>View Full Details</button>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          )}
+        </motion.div>
+      )}
 
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="modal-img"
-            />
+      {/* 3D Stage Carousel View */}
+      {viewMode === "stage" && (
+        <div className="projects-stage-container" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+          {filteredProjects.length === 0 ? (
+            <div className="no-projects"><p>No projects match your filter. Try another tech!</p></div>
+          ) : (
+            <>
+              <div className="projects-3d-track">
+                {filteredProjects.map((project, index) => {
+                  const count = filteredProjects.length;
+                  let offset = (index - stageIndex + count) % count;
+                  if (offset > count / 2) offset -= count;
 
-            <h3>{selectedProject.title}</h3>
+                  let posClass = "hidden-stage";
+                  if (offset === 0) posClass = "active-stage";
+                  else if (offset === -1 || (stageIndex === 0 && index === count - 1)) posClass = "prev-stage";
+                  else if (offset === 1 || (stageIndex === count - 1 && index === 0)) posClass = "next-stage";
 
-            <p className="modal-description">
-              {selectedProject.details || selectedProject.description}
-            </p>
-
-            <div className="modal-tech-list">
-              <h4>Technologies Used:</h4>
-              <div className="tech-stack">
-                {selectedProject.tech.map((t, i) => (
-                  <span key={i} className="tech">
-                    {t}
-                  </span>
-                ))}
+                  return (
+                    <div key={project.id} className={`project-stage-card ${posClass}`} onClick={() => posClass === "active-stage" ? setSelectedProject(project) : setStageIndex(index)}>
+                      {project.featured && <div className="featured-badge" style={{ zIndex: 10 }}><FaStar /> Featured</div>}
+                      <img src={project.image} alt={project.title} className="stage-card-image" />
+                      <div className="stage-card-body">
+                        <div className="stage-card-title-row">
+                          <h3>{project.title}</h3>
+                        </div>
+                        <p className="stage-card-desc">{project.description}</p>
+                        <div className="tech-stack">
+                          {project.tech.slice(0, 4).map((t, i) => <span key={i} className="tech">{t}</span>)}
+                          {project.tech.length > 4 && <span className="tech extra">+{project.tech.length - 4}</span>}
+                        </div>
+                        <div className="stage-card-links">
+                          <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="live-btn" onClick={e => e.stopPropagation()}><FaExternalLinkAlt /> Live</a>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-btn" onClick={e => e.stopPropagation()}><FaGithub /> GitHub</a>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            </div>
 
-            <div className="modal-actions">
-              <a
-                href={selectedProject.liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="live-btn"
-              >
-                <FaExternalLinkAlt /> Open Live App
-              </a>
-              <a
-                href={selectedProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="github-btn"
-              >
-                <FaGithub /> View Source Code
-              </a>
-            </div>
-          </div>
+              <div className="stage-nav-controls">
+                <button className="stage-nav-btn" onClick={handlePrev}><FaChevronLeft /></button>
+                <div className="stage-dots">
+                  {filteredProjects.map((_, i) => (
+                    <button key={i} className={`dot ${i === stageIndex ? "active" : ""}`} onClick={() => setStageIndex(i)} />
+                  ))}
+                </div>
+                <button className="stage-nav-btn" onClick={handleNext}><FaChevronRight /></button>
+              </div>
+            </>
+          )}
         </div>
       )}
+
+      {/* Project Detail Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div className="project-modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedProject(null)}>
+            <motion.div className="project-modal" initial={{ scale: 0.85, opacity: 0, y: 20 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 0.85, opacity: 0, y: 20 }} transition={{ type: "spring", stiffness: 300, damping: 25 }} onClick={(e) => e.stopPropagation()}>
+              <button className="close-modal-btn" onClick={() => setSelectedProject(null)}><FaTimes /></button>
+              <img src={selectedProject.image} alt={selectedProject.title} className="modal-img" />
+              <h3>{selectedProject.title}</h3>
+              <p className="modal-description">{selectedProject.details || selectedProject.description}</p>
+              <div className="modal-tech-list">
+                <h4>Technologies Used:</h4>
+                <div className="tech-stack">
+                  {selectedProject.tech.map((t, i) => <span key={i} className="tech">{t}</span>)}
+                </div>
+              </div>
+              <div className="modal-actions">
+                <a href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer" className="live-btn"><FaExternalLinkAlt /> Open Live App</a>
+                <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="github-btn"><FaGithub /> View Source Code</a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
