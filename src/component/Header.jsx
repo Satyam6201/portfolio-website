@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import {
-  FaSun, FaMoon, FaBars, FaTimes,
+  FaBars, FaTimes,
   FaHome, FaUser, FaCode, FaProjectDiagram,
   FaBriefcase, FaGraduationCap, FaCertificate,
   FaBlog, FaEnvelope, FaChevronDown, FaPalette, FaCheck
@@ -33,7 +33,7 @@ function Header() {
   const moreRef  = useRef(null);
   const themeRef = useRef(null);
 
-  const { theme, themes, setTheme, isDarkMode, toggleTheme, currentTheme } = useTheme();
+  const { theme, themes, setTheme, currentTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -187,9 +187,7 @@ function Header() {
                 <div className="nav-theme-header">
                   <div className="nt-title-row">
                     <span className="nt-title"><FaPalette /> Theme & Background</span>
-                    <button className="nt-quick-toggle" onClick={toggleTheme} title="Toggle Light/Dark">
-                      {isDarkMode ? <FaSun style={{ color: "#fbbf24" }} /> : <FaMoon style={{ color: "#6366f1" }} />}
-                    </button>
+                    <span className="tp-current-badge">{currentTheme?.label || theme}</span>
                   </div>
                   <input
                     type="text"
@@ -221,20 +219,6 @@ function Header() {
               </div>
             )}
           </div>
-
-          {/* Quick Light/Dark Toggle */}
-          <button
-            className="theme-toggle ripple"
-            onClick={toggleTheme}
-            title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-            aria-label="Toggle theme"
-          >
-            <span className="toggle-icon">
-              {isDarkMode
-                ? <FaSun  style={{ color: "#fbbf24" }} />
-                : <FaMoon style={{ color: "#6366f1" }} />}
-            </span>
-          </button>
 
           {/* Hamburger Menu */}
           <button
