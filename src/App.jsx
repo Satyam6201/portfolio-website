@@ -21,6 +21,8 @@ import Blog from "./component/Blog";
 import Contact from "./component/Contact";
 import Footer from "./component/Footer";
 
+import AmbientBackground from "./component/AmbientBackground";
+
 // Lazy-load floating widgets to keep critical first paint ultra fast
 const AIChatbot = lazy(() => import("./component/AIChatbot"));
 const ThemePicker = lazy(() => import("./component/ThemePicker"));
@@ -73,6 +75,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="app-container">
+        <AmbientBackground />
         <ScrollToTop />
         <Header />
         

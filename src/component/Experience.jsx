@@ -1,32 +1,66 @@
-import React from 'react';
-import '../styles/experience.css';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaBriefcase,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaCheckCircle,
+  FaCode,
+  FaExternalLinkAlt,
+  FaStar,
+} from "react-icons/fa";
+import "../styles/experience.css";
 
 const experiences = [
   {
-    role: 'Full Stack Development Intern',
-    company: 'Code Innovative Technologies (Remote)',
-    date: 'Feb 2026 – Aug 2026',
-    points: [
-      <>Developed scalable full-stack web applications using <strong>React.js, Next.js, Node.js, Express.js, MongoDB, and PostgreSQL</strong>.</>,
-      <>Designed and implemented <strong>RESTful APIs</strong> for real-world business applications, following clean, maintainable architecture.</>,
-      <>Built <strong>responsive, reusable UI components</strong> shared across multiple production-oriented projects.</>,
-      <>Collaborated with developers using <strong>Git-based workflows and Agile methodologies</strong>, contributing to sprint planning and code reviews.</>,
-      <>Worked across the stack to integrate frontend and backend systems, ensuring smooth data flow between <strong>PostgreSQL</strong> and the API layer.</>,
+    id: "cit",
+    role: "Full Stack Development Intern",
+    company: "Code Innovative Technologies",
+    location: "Remote",
+    date: "Feb 2026 – Aug 2026",
+    badge: "Recent Internship",
+    isLatest: true,
+    techStack: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "REST APIs",
+      "Git / Agile",
+    ],
+    highlights: [
+      "Engineered scalable full-stack web applications using React.js, Next.js, Node.js, Express.js, MongoDB, and PostgreSQL.",
+      "Designed and implemented RESTful APIs for real-world business applications with clean architecture and strict schema validation.",
+      "Built responsive, accessible, reusable UI components shared across production-oriented client deliverables.",
+      "Collaborated across cross-functional engineering teams using Git PR workflows, code reviews, and Agile bi-weekly sprint planning.",
+      "Ensured seamless data synchronization between PostgreSQL database layers and frontend state management.",
     ],
   },
   {
-    role: 'Software Development Intern',
-    company: 'Software Beatz (Remote)',
-    date: 'Oct 2025 – Feb 2026',
-    points: [
-      <>Built and maintained full-stack applications using <strong>React.js, Node.js, Express.js, and MongoDB</strong> (MERN Stack).</>,
-      <>Designed and implemented <strong>RESTful APIs</strong> for authentication, user management, and CRUD operations.</>,
-      <>Implemented <strong>JWT-based authentication</strong> and protected routes ensuring secure access control.</>,
-      <>Optimized database queries and handled <strong>MongoDB operations</strong> for better performance.</>,
-      <>Collaborated with developers using <strong>Git, GitHub PR workflows</strong>, improving team productivity.</>,
-      <>Tested and debugged APIs using <strong>Postman</strong>, ensuring correct JSON request-response handling.</>,
-      <>Improved application stability by fixing backend bugs and enhancing error handling.</>,
-      <>Worked on <strong>responsive UI components</strong> and integrated APIs with the frontend seamlessly.</>,
+    id: "software-beatz",
+    role: "Software Development Intern",
+    company: "Software Beatz",
+    location: "Remote",
+    date: "Oct 2025 – Feb 2026",
+    badge: "Production Delivered",
+    isLatest: false,
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT Auth",
+      "Postman",
+      "REST APIs",
+    ],
+    highlights: [
+      "Built and maintained full-stack modules using React.js, Node.js, Express.js, and MongoDB (MERN stack).",
+      "Designed secure RESTful APIs for authentication, profile management, and multi-tenant CRUD operations.",
+      "Implemented JWT-based authentication and protected API middleware, ensuring zero-trust access control.",
+      "Optimized MongoDB aggregation queries and indexed collections, reducing backend response latency.",
+      "Conducted automated and manual API testing with Postman, validating edge cases and error response payloads.",
     ],
   },
 ];
@@ -34,29 +68,78 @@ const experiences = [
 const Experience = () => {
   return (
     <section className="experience" id="experience">
-      <h2>Professional Experience</h2>
+      <div className="experience-header-wrap">
+        <span className="shimmer-badge">
+          <FaBriefcase /> Work History & Industry Experience
+        </span>
+        <h2>Professional Experience</h2>
+        <p className="experience-subtext">
+          Hands-on full-stack engineering internships building production web applications, secure REST APIs, and scalable databases.
+        </p>
+      </div>
 
       <div className="experience-timeline">
         {experiences.map((exp, index) => (
-          <div
-            className="experience-item fade-in"
-            key={exp.company}
-            style={{ animationDelay: `${index * 0.2}s` }}
+          <motion.div
+            className={`experience-item glow-card-hover ${exp.isLatest ? "latest-item" : ""}`}
+            key={exp.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
           >
-            <div className="experience-header">
-              <h3>{exp.role}</h3>
-              <h4>{exp.company}</h4>
-              <span className="experience-date">{exp.date}</span>
+            {/* Timeline Node Glow */}
+            <div className="timeline-node">
+              <span className="node-dot" />
+              <span className="node-pulse" />
             </div>
 
+            <div className="exp-card-header">
+              <div className="exp-role-info">
+                <div className="exp-title-row">
+                  <h3>{exp.role}</h3>
+                  <span className={`exp-badge-pill ${exp.isLatest ? "latest" : ""}`}>
+                    {exp.isLatest && <FaStar className="star-icon" />}
+                    {exp.badge}
+                  </span>
+                </div>
+                <h4 className="exp-company">{exp.company}</h4>
+              </div>
+
+              <div className="exp-meta-pills">
+                <span className="meta-pill">
+                  <FaCalendarAlt /> {exp.date}
+                </span>
+                <span className="meta-pill">
+                  <FaMapMarkerAlt /> {exp.location}
+                </span>
+              </div>
+            </div>
+
+            {/* Highlights List */}
             <div className="experience-body">
               <ul>
-                {exp.points.map((point, i) => (
-                  <li key={i}>{point}</li>
+                {exp.highlights.map((point, i) => (
+                  <li key={i}>
+                    <FaCheckCircle className="check-bullet" />
+                    <span>{point}</span>
+                  </li>
                 ))}
               </ul>
             </div>
-          </div>
+
+            {/* Tech Stack Chips */}
+            <div className="exp-tech-strip">
+              <span className="tech-strip-title">Technologies Used:</span>
+              <div className="tech-chips">
+                {exp.techStack.map((tech, i) => (
+                  <span key={i} className="tech-chip">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
     </section>

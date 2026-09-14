@@ -162,8 +162,17 @@ const projects = [
 
 const uniqueTech = ["All", ...new Set(projects.flatMap((p) => p.tech))];
 
+const projectCategories = [
+  { label: "All Projects", key: "all" },
+  { label: "⭐ Featured", key: "featured" },
+  { label: "🤖 AI & RAG", key: "ai" },
+  { label: "🚀 Full-Stack MERN", key: "mern" },
+  { label: "▲ Next.js & SQL", key: "next" },
+];
+
 function Projects() {
   const [filter, setFilter] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -173,16 +182,37 @@ function Projects() {
 
   useEffect(() => {
     let result = projects;
-    if (filter !== "All") result = result.filter((p) => p.tech.includes(filter));
+
+    // Category filter
+    if (selectedCategory === "featured") {
+      result = result.filter((p) => p.featured);
+    } else if (selectedCategory === "ai") {
+      result = result.filter((p) => p.tech.some(t => t.toLowerCase().includes("ai") || t.toLowerCase().includes("rag") || t.toLowerCase().includes("vapi")));
+    } else if (selectedCategory === "mern") {
+      result = result.filter((p) => p.tech.includes("MongoDB") || p.tech.includes("Express.js") || p.tech.includes("Express"));
+    } else if (selectedCategory === "next") {
+      result = result.filter((p) => p.tech.some(t => t.toLowerCase().includes("next") || t.toLowerCase().includes("postgres") || t.toLowerCase().includes("prisma")));
+    }
+
+    // Tech filter
+    if (filter !== "All") {
+      result = result.filter((p) => p.tech.includes(filter));
+    }
+
+    // Search filter
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter(
-        (p) => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.tech.some((t) => t.toLowerCase().includes(q))
+        (p) =>
+          p.title.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.tech.some((t) => t.toLowerCase().includes(q))
       );
     }
+
     setFilteredProjects(result);
     setStageIndex(0);
-  }, [filter, searchQuery]);
+  }, [filter, selectedCategory, searchQuery]);
 
   const handleNext = () => setStageIndex((prev) => (prev + 1) % filteredProjects.length);
   const handlePrev = () => setStageIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
@@ -196,10 +226,28 @@ function Projects() {
 
   return (
     <section id="projects" className="projects">
-      <h2>🚀 Featured Projects</h2>
-      <p className="projects-subtext">
-        Explore my recent full-stack SaaS platforms, RAG AI systems, web applications, open-source projects, and interactive tools.
-      </p>
+      <div className="projects-header-wrap" style={{ textAlign: "center", marginBottom: "28px" }}>
+        <span className="shimmer-badge">
+          <FaStar /> Proven Track Record
+        </span>
+        <h2>Featured Projects</h2>
+        <p className="projects-subtext">
+          Explore my production full-stack SaaS platforms, RAG AI systems, enterprise dashboards, and real-time web applications.
+        </p>
+      </div>
+
+      {/* Category Filter Pills */}
+      <div className="project-category-pills" style={{ display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap", marginBottom: "22px" }}>
+        {projectCategories.map((cat) => (
+          <button
+            key={cat.key}
+            className={`skill-tab ${selectedCategory === cat.key ? "active" : ""}`}
+            onClick={() => { setSelectedCategory(cat.key); setFilter("All"); }}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
 
       {/* Search & Filter Bar */}
       <div className="filter-search-bar">
@@ -207,7 +255,7 @@ function Projects() {
           <FaSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Search projects by name or technology..."
+            placeholder="Search projects by name, keyword, or tech stack..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -248,7 +296,7 @@ function Projects() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, y: 20 }}
                   transition={{ duration: 0.35, ease: "easeOut", delay: i * 0.05 }}
-                  className="project-card"
+                  className="project-card glow-card-hover"
                 >
                   {project.featured && <div className="featured-badge"><FaStar /> Featured</div>}
                   <div className="img-wrapper">
@@ -258,7 +306,20 @@ function Projects() {
                   <div className="project-info">
                     <h3>{project.title}</h3>
                     <div className="tech-stack">
-                      {project.tech.slice(0, 5).map((tech, i) => <span key={i} className="tech">{tech}</span>)}
+                      {project.tech.slice(0, 5).map((tech, i) => (
+                        <span
+                          key={i}
+                          className="tech"
+                          style={{ cursor: "pointer" }}
+                          title={`Filter by ${tech}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFilter(tech);
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
                       {project.tech.length > 5 && <span className="tech extra">+{project.tech.length - 5}</span>}
                     </div>
                     <div className="project-links">

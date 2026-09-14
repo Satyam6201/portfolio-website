@@ -1,41 +1,60 @@
 .experience {
-  padding: 60px 20px;
-  text-align: center;
   position: relative;
+  text-align: left;
 }
 
-.experience h2 {
-  font-size: 2.3rem;
-  margin-bottom: 35px;
-  position: relative;
+.experience-header-wrap {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.experience-header-wrap h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.experience-subtext {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .experience-timeline {
   position: relative;
-  max-width: 850px;
-  margin: auto;
+  max-width: 920px;
+  margin: 0 auto;
+  padding-left: 36px;
 }
 
+/* Vertical Connecting Line */
 .experience-timeline::before {
   content: "";
   position: absolute;
-  left: 20px;
-  top: 0;
+  left: 10px;
+  top: 15px;
+  bottom: 25px;
   width: 3px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--accent-color), transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--accent-color),
+    var(--accent-secondary),
+    transparent
+  );
+  border-radius: 4px;
 }
 
 .experience-item {
   background: var(--tag-bg);
   color: var(--text-primary);
-  border-radius: 16px;
-  padding: 24px 24px 24px 55px;
-  margin-bottom: 25px;
+  border-radius: 20px;
+  padding: 30px 28px;
+  margin-bottom: 35px;
   position: relative;
-  text-align: left;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow);
   transition: all 0.35s ease;
@@ -45,85 +64,205 @@
   margin-bottom: 0;
 }
 
-.experience-item::before {
-  content: "";
+/* Timeline Node */
+.timeline-node {
   position: absolute;
-  left: 11px;
-  top: 30px;
-  width: 20px;
-  height: 20px;
-  background: var(--accent-color);
+  left: -33px;
+  top: 36px;
+  width: 18px;
+  height: 18px;
+}
+
+.node-dot {
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
-  box-shadow: 0 0 12px var(--accent-glow);
+  background: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+  z-index: 2;
+  border: 3px solid var(--bg-primary);
 }
 
-.experience-item:first-child::before {
+.node-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--accent-glow);
+  opacity: 0.6;
+  animation: pulseNode 2.5s infinite ease-out;
+  z-index: 1;
+}
+
+.latest-item .node-dot {
   background: #22c55e;
-  box-shadow: 0 0 12px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
 }
 
-.experience-item:first-child .experience-header::after {
-  content: "Recent Internship";
-  display: inline-block;
-  margin-left: 12px;
-  padding: 3px 10px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: white;
-  background: #22c55e;
-  border-radius: 20px;
-  vertical-align: middle;
+@keyframes pulseNode {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
-.experience-item:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 25px var(--accent-glow);
+/* Header */
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 18px;
+  margin-bottom: 18px;
 }
 
-.experience-header h3 {
+.exp-role-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exp-title-row h3 {
   font-size: 1.35rem;
-  color: var(--text-primary);
-  margin-bottom: 4px;
   font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
 }
 
-.experience-header h4 {
-  font-size: 1.05rem;
-  color: var(--accent-color);
-  margin-bottom: 4px;
+.exp-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.76rem;
   font-weight: 600;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--accent-color);
 }
 
-.experience-date {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  font-style: italic;
+.exp-badge-pill.latest {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.35);
 }
 
+.star-icon {
+  font-size: 0.75rem;
+}
+
+.exp-company {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin: 0;
+}
+
+.exp-meta-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* Highlights List */
 .experience-body ul {
-  padding-left: 18px;
-  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .experience-body li {
-  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.94rem;
   color: var(--text-secondary);
-  margin-bottom: 8px;
   line-height: 1.6;
 }
 
+.check-bullet {
+  color: var(--accent-color);
+  margin-top: 4px;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* Tech Stack Strip */
+.exp-tech-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.tech-strip-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-chip {
+  padding: 3px 9px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.tech-chip:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Responsive Rules */
 @media (max-width: 768px) {
-  .experience-item {
-    padding: 18px;
+  .experience-timeline {
+    padding-left: 0;
   }
 
   .experience-timeline::before,
-  .experience-item::before {
+  .timeline-node {
     display: none;
   }
 
-  .experience-header h3 {
+  .experience-item {
+    padding: 22px 18px;
+  }
+
+  .exp-title-row h3 {
     font-size: 1.2rem;
   }
 }
