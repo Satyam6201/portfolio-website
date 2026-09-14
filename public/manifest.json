@@ -1,0 +1,23 @@
+{
+  "name": "Satyam Kumar Mishra - Full-Stack Developer & AI Builder",
+  "short_name": "Satyam Mishra",
+  "description": "Portfolio of Satyam Kumar Mishra - Full-Stack MERN & Next.js Developer, Generative AI & RAG Builder with 1000+ DSA in Java.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/assets/image.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/image.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
