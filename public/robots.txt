@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://satyam6201.github.io/portfolio-website/sitemap.xml
+Sitemap: https://satyam-mishra.vercel.app/sitemap.xml
