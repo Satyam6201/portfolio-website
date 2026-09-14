@@ -142,11 +142,13 @@
   gap: 1px;
 }
 
-.header h1 {
+.header h1,
+.header .logo-heading {
   font-size: 1.22rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.15;
+  display: block;
 }
 
 /* Animated gradient text */

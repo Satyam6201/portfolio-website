@@ -91,9 +91,9 @@ function Home() {
         </div>
 
         {/* Hero Title */}
-        <h2 className="hero-title">
+        <h1 className="hero-title">
           Hi, I'm <span className="highlight">Satyam Kumar Mishra</span>
-        </h2>
+        </h1>
 
         {/* Terminal Style Animated Typewriter */}
         <div className="typewriter-container">

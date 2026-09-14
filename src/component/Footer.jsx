@@ -142,7 +142,12 @@ function Footer() {
         {/* Brand Column */}
         <motion.div className="footer-brand" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
           <div className="brand-logo">
-            <img src="/assets/image.jpg" alt="Satyam" className="brand-photo" />
+            <img
+              src="/assets/image.jpg"
+              alt="Satyam Kumar Mishra - Full-Stack Developer & AI Builder"
+              className="brand-photo"
+              loading="lazy"
+            />
             <div>
               <h2 className="brand-name">Satyam Kumar Mishra</h2>
               <span className="brand-role">Full-Stack Dev · AI Builder · RAG Systems</span>

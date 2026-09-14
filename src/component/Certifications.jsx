@@ -71,7 +71,12 @@ function Certifications() {
             </div>
 
             <div className="img-wrapper">
-              <img src={cert.image} alt={cert.title} className="certificate-img" />
+              <img
+                src={cert.image}
+                alt={`${cert.title} - ${cert.issuer}`}
+                className="certificate-img"
+                loading="lazy"
+              />
               <div className="img-shine"></div>
             </div>
 

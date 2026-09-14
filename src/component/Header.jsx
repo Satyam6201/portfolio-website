@@ -148,7 +148,7 @@ function Header() {
             <span className="logo-ring" />
           </div>
           <div className="logo-text">
-            <h1 className="glow-text"><i>Satyam Kumar Mishra</i></h1>
+            <span className="glow-text logo-heading"><i>Satyam Kumar Mishra</i></span>
             <span className="logo-subtitle">Full-Stack Dev · AI Builder</span>
           </div>
         </div>
