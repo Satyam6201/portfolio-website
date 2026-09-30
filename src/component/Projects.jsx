@@ -11,7 +11,7 @@ const projects = [
     description: "Full-stack RAG AI mock interview platform featuring PDF resume parsing, FAISS vector embeddings, real-time AI evaluations, scoring feedback, and Stripe/Razorpay payments.",
     details: "Built an end-to-end AI mock interview companion powered by Node.js, Express, MongoDB Atlas, and React. Implemented RAG (Retrieval-Augmented Generation) pipelines using OpenAI & OpenRouter APIs, text-embedding-3-small, pdf-parse, and FAISS vector stores to analyze candidate resumes and generate tailored interview questions. Features real-time AI answer scoring (correctness, confidence, communication), Multer file uploads, JWT authentication, Stripe/Razorpay payment gateways, Framer Motion animations, and dual deployment on Vercel & Render.",
     tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI / RAG", "FAISS Vector", "Tailwind CSS", "JWT", "Stripe / Razorpay", "Vercel / Render"],
-    liveDemo: "https://github.com/Satyam6201/MockMate-AI",
+    liveDemo: "https://mock-mate-ai-flame.vercel.app",
     github: "https://github.com/Satyam6201/MockMate-AI",
     featured: true
   },
@@ -22,7 +22,7 @@ const projects = [
     description: "AI-Powered healthcare SaaS with voice assistants for automated appointment handling, AI consultations, and role-based access control.",
     details: "Built a scalable AI-powered healthcare SaaS platform integrating the OpenAI API and Vapi AI for intelligent automated appointment handling and AI-assisted workflows. Implemented secure Clerk authentication, Role-Based Access Control (RBAC), and a scalable PostgreSQL/Prisma database architecture.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Clerk", "Vapi AI", "Tailwind CSS"],
-    liveDemo: "https://dentwise-henna.vercel.app/",
+    liveDemo: "https://dentwise-henna.vercel.app",
     github: "https://github.com/Satyam6201/DentAIva",
     featured: true
   },
@@ -43,7 +43,7 @@ const projects = [
     description: "Full-stack MERN healthcare platform with multi-role authentication (Patient, Doctor, Admin), online appointment booking, and dashboard management.",
     details: "Comprehensive healthcare portal supporting patient online booking, doctor schedule management, admin dashboard for platform analytics, and integrated Razorpay/Stripe payments for secure medical consultation fees.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Stripe/Razorpay", "CSS"],
-    liveDemo: "https://prescripto.vercel.app/",
+    liveDemo: "https://prescripto.vercel.app",
     github: "https://github.com/Satyam6201/Medi-Connect",
     featured: true
   },
@@ -54,7 +54,7 @@ const projects = [
     description: "A professional Full-Stack HRMS featuring real-time employee tracking, secure NextAuth integration, and dynamic server-side filtering.",
     details: "An enterprise-grade Human Resource Management System built with Next.js 14 App Router, Prisma ORM, and PostgreSQL. Includes department analytics, shift tracking, NextAuth session handling, and Framer Motion micro-interactions.",
     tech: ["Next.js 14", "Prisma", "PostgreSQL", "NextAuth", "Framer Motion", "Tailwind CSS"],
-    liveDemo: "https://employee-manager-pro-chi.vercel.app/",
+    liveDemo: "https://employee-manager-pro-chi.vercel.app",
     github: "https://github.com/Satyam6201/employee-manager-pro",
     featured: true
   },
@@ -65,7 +65,7 @@ const projects = [
     description: "A real-time chat and video calling app built with MERN, featuring JWT auth, messaging, and modern UI themes.",
     details: "Real-time communication app using Socket.io for messaging, WebRTC audio/video call signaling, Zustand state management, and custom avatar profiles.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Zustand", "Tailwind CSS"],
-    liveDemo: "https://github.com/Satyam6201/Connectify",
+    liveDemo: "https://connectify-videocall.vercel.app",
     github: "https://github.com/Satyam6201/Connectify",
   },
   {
@@ -75,7 +75,7 @@ const projects = [
     description: "A modern Amazon clone showcasing frontend skills with a clean UI, product listings, search, and cart features.",
     details: "Fully functional e-commerce frontend replicating Amazon's interface, featuring product filtering, cart persistence, ratings calculation, and responsive layout.",
     tech: ["React.js", "JavaScript", "REST API", "HTML", "CSS"],
-    liveDemo: "https://amazon-clone-react-js-pi.vercel.app/",
+    liveDemo: "https://amazon-clone-react-js-pi.vercel.app",
     github: "https://github.com/Satyam6201/Amazon-Clone---React.js",
   },
   {
@@ -95,7 +95,7 @@ const projects = [
     description: "A modern digital clock with alarm, dynamic themes, and PWA support.",
     details: "Interactive clock web app featuring customized timezone toggling, alarm sound notifications, stopwatch, and dark/light color themes.",
     tech: ["React.js", "JavaScript", "HTML", "CSS"],
-    liveDemo: "https://digital-clock-app-12.vercel.app/",
+    liveDemo: "https://digital-clock-app-12.vercel.app",
     github: "https://github.com/Satyam6201/Digital-Clock-App",
   },
   {
@@ -105,7 +105,7 @@ const projects = [
     description: "A fun memory-matching card game with smooth animations and high-score tracking.",
     details: "Gamified React application testing recall speed with flipped card animations, move counter, and timer.",
     tech: ["React.js", "JavaScript", "CSS"],
-    liveDemo: "https://memory-card-game-bice-zeta.vercel.app/",
+    liveDemo: "https://memory-card-game-bice-zeta.vercel.app",
     github: "https://github.com/Satyam6201/Memory-Card-Game",
   },
   {
@@ -115,7 +115,7 @@ const projects = [
     description: "An interactive quiz app with API-based questions & live score tracking.",
     details: "Category-driven trivia game pulling dynamic questions from OpenTDB API with countdown timer and performance analytics.",
     tech: ["React.js", "JavaScript", "REST API", "CSS"],
-    liveDemo: "https://quiz-app-zeta-rust-62.vercel.app/",
+    liveDemo: "https://quiz-app-zeta-rust-62.vercel.app",
     github: "https://github.com/Satyam6201/Quiz-App",
   },
   {
@@ -125,7 +125,7 @@ const projects = [
     description: "Enhanced SaaS Dashboard with a modern UI, animated sidebar, and analytics widgets.",
     details: "Admin panel layout equipped with interactive chart visualizations, user management tables, and quick action bars.",
     tech: ["React.js", "JavaScript", "HTML", "CSS"],
-    liveDemo: "https://saas-dashboard-teal.vercel.app/",
+    liveDemo: "https://saas-dashboard-teal.vercel.app",
     github: "https://github.com/Satyam6201/SaaS-Dashboard",
   },
   {
@@ -135,7 +135,7 @@ const projects = [
     description: "A weather forecast app fetching real-time data from an API with location search.",
     details: "Fetches live temperature, humidity, wind velocity, and 5-day weather predictions using OpenWeatherMap API.",
     tech: ["JavaScript", "REST API", "HTML", "CSS"],
-    liveDemo: "https://weather-app-seven-ashen-32.vercel.app/",
+    liveDemo: "https://weather-app-seven-ashen-32.vercel.app",
     github: "https://github.com/Satyam6201/Weather-App",
   },
   {
@@ -145,7 +145,7 @@ const projects = [
     description: "Classic two-player Tic-Tac-Toe game with clean UI and win streak counters.",
     details: "Responsive browser game with move history, reset options, and score counter.",
     tech: ["JavaScript", "HTML", "CSS"],
-    liveDemo: "https://tic-tac-toe-game-xi-peach.vercel.app/",
+    liveDemo: "https://tic-tac-toe-game-xi-peach.vercel.app",
     github: "https://github.com/Satyam6201/Tic-Tac-Toe-Game",
   },
   {
@@ -155,7 +155,7 @@ const projects = [
     description: "Enjoy breaking bricks with paddle control, increasing difficulty, and sound effects.",
     details: "HTML5 Canvas arcade game with collision detection physics, score multiplier, and lives management.",
     tech: ["JavaScript", "HTML5 Canvas", "CSS"],
-    liveDemo: "https://2-d-brick-breaker-game.vercel.app/",
+    liveDemo: "https://2-d-brick-breaker-game.vercel.app",
     github: "https://github.com/Satyam6201/2D-Brick-Breaker-Game",
   },
 ];
