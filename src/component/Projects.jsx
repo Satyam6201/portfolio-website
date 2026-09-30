@@ -10,7 +10,7 @@ const projects = [
     image: "/assets/mockmate-ai.jpg",
     description: "Full-stack RAG AI mock interview platform featuring PDF resume parsing, FAISS vector embeddings, real-time AI evaluations, scoring feedback, and Stripe/Razorpay payments.",
     details: "Built an end-to-end AI mock interview companion powered by Node.js, Express, MongoDB Atlas, and React. Implemented RAG (Retrieval-Augmented Generation) pipelines using OpenAI & OpenRouter APIs, text-embedding-3-small, pdf-parse, and FAISS vector stores to analyze candidate resumes and generate tailored interview questions. Features real-time AI answer scoring (correctness, confidence, communication), Multer file uploads, JWT authentication, Stripe/Razorpay payment gateways, Framer Motion animations, and dual deployment on Vercel & Render.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI / RAG", "FAISS Vector", "Tailwind CSS", "JWT", "Stripe / Razorpay", "Vercel / Render"],
+    tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI / RAG", "Redis", "Tailwind CSS", "JWT", "Stripe", "Vercel / Render", "Docker", "CICD"],
     liveDemo: "https://mock-mate-ai-flame.vercel.app",
     github: "https://github.com/Satyam6201/MockMate-AI",
     featured: true
@@ -64,7 +64,7 @@ const projects = [
     image: "/assets/Video and Message.jpg",
     description: "A real-time chat and video calling app built with MERN, featuring JWT auth, messaging, and modern UI themes.",
     details: "Real-time communication app using Socket.io for messaging, WebRTC audio/video call signaling, Zustand state management, and custom avatar profiles.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Zustand", "Tailwind CSS"],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Redis", "Docker", "Zustand", "Tailwind CSS"],
     liveDemo: "https://connectify-videocall.vercel.app",
     github: "https://github.com/Satyam6201/Connectify",
   },
