@@ -14,15 +14,19 @@ import {
   FaAward,
   FaBrain,
   FaCheckCircle,
+  FaBolt,
+  FaLaptopCode,
+  FaServer,
+  FaTerminal
 } from "react-icons/fa";
-import { SiNextdotjs, SiReact, SiNodedotjs, SiMongodb } from "react-icons/si";
+import { SiNextdotjs, SiReact, SiNodedotjs, SiMongodb, SiLeetcode } from "react-icons/si";
 import "../styles/home.css";
 
 const stats = [
-  { icon: <FaStar />, value: "1000+", label: "DSA Problems Solved", sub: "LeetCode (Java)" },
-  { icon: <FaRocket />, value: "45+", label: "Projects Built & Deployed", sub: "Full-Stack & SaaS" },
-  { icon: <FaAward />, value: "Rank #1", label: "University Topper", sub: "CGPA: 8.17" },
-  { icon: <FaBrain />, value: "2", label: "Industry Internships", sub: "Code CIT & Software Beatz" },
+  { icon: <SiLeetcode />, value: "1000+", label: "DSA Solutions in Java", sub: "LeetCode (Graphs, DP, Trees)" },
+  { icon: <FaRocket />, value: "15+", label: "Production & SaaS Systems", sub: "RAG AI & Full-Stack" },
+  { icon: <FaAward />, value: "Rank #1", label: "University College Topper", sub: "CGPA: 8.17 / 10.0" },
+  { icon: <FaBrain />, value: "2", label: "Software Internships", sub: "Code CIT & Software Beatz" },
 ];
 
 const floatingBadges = [
@@ -32,7 +36,7 @@ const floatingBadges = [
   { icon: <FaBrain />, label: "GenAI & RAG", className: "badge-ai", delay: 1.5 },
 ];
 
-function Home() {
+function Home({ onOpenRecruiter }) {
   return (
     <section id="home" className="home">
       <motion.div
@@ -41,7 +45,6 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Availability Badge */}
         <motion.div
           className="hero-status-pill shimmer-badge"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -49,10 +52,9 @@ function Home() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <span className="live-pulse-dot" />
-          <span>Available for Full-Time & Projects · 0 Days Notice</span>
+          <span>Available for Full-Time Engineering Roles · 0 Days Notice</span>
         </motion.div>
 
-        {/* Avatar with Floating Orbit Badges */}
         <div className="hero-avatar-container">
           <div className="avatar-glow-ring" />
           <motion.div
@@ -68,7 +70,6 @@ function Home() {
             />
           </motion.div>
 
-          {/* Floating Tech Badges */}
           {floatingBadges.map((badge, idx) => (
             <motion.div
               key={idx}
@@ -90,12 +91,10 @@ function Home() {
           ))}
         </div>
 
-        {/* Hero Title */}
         <h1 className="hero-title">
           Hi, I'm <span className="highlight">Satyam Kumar Mishra</span>
         </h1>
 
-        {/* Terminal Style Animated Typewriter */}
         <div className="typewriter-container">
           <span className="typewriter-prompt">&gt;</span>
           <h3 className="typewriter">
@@ -103,8 +102,8 @@ function Home() {
               words={[
                 "Full-Stack MERN & Next.js Engineer",
                 "Generative AI & RAG Systems Builder",
-                "1000+ DSA Problems Solved in Java",
-                "Scalable SaaS & API Architecture",
+                "1000+ DSA Solutions Solved in Java",
+                "Zero-Trust API & Scalable Architecture",
               ]}
               loop={true}
               cursor
@@ -116,14 +115,10 @@ function Home() {
           </h3>
         </div>
 
-        {/* Bio summary */}
         <p className="hero-description">
-          A dedicated <strong>Full-Stack Engineer</strong> crafting high-performance SaaS platforms,
-          secure authentication workflows, and modern <strong>Generative AI & RAG pipelines</strong> with
-          <strong> React.js, Next.js, Node.js, Express, MongoDB,</strong> and <strong>PostgreSQL</strong>.
+          Staff-level mindset engineer specializing in high-throughput SaaS platforms, zero-trust authentication protocols, and modern <strong>Generative AI & RAG pipelines</strong> with <strong>React 19, Next.js 15, Node.js, Express, PostgreSQL, MongoDB,</strong> and <strong>FAISS Vector Stores</strong>.
         </p>
 
-        {/* High-Impact Stats Bar */}
         <div className="hero-stats-grid">
           {stats.map((stat, i) => (
             <motion.div
@@ -142,36 +137,35 @@ function Home() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
         <div className="hero-action-buttons">
-          <motion.a
-            href="#projects"
+          <motion.button
+            onClick={onOpenRecruiter}
             className="hero-btn primary-btn"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.96 }}
+            style={{ cursor: "pointer", border: "none" }}
           >
-            <FaRocket /> Explore Featured Work
+            <FaBolt style={{ color: "#f59e0b" }} /> Recruiter Executive View
+          </motion.button>
+          <motion.a
+            href="#projects"
+            className="hero-btn secondary-btn"
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+          >
+            <FaRocket /> Explore Architecture & Work
           </motion.a>
           <motion.a
             href="/assets/Resume.pdf"
             download="Satyam_Kumar_Mishra_Resume.pdf"
-            className="hero-btn secondary-btn"
+            className="hero-btn outline-btn"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.96 }}
           >
             <FaDownload /> Download Resume
           </motion.a>
-          <motion.a
-            href="#contact"
-            className="hero-btn outline-btn"
-            whileHover={{ scale: 1.04, y: -2 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            <FaEnvelope /> Get in Touch
-          </motion.a>
         </div>
 
-        {/* Quick Contact & Social Strip */}
         <div className="hero-quick-connect">
           <div className="contact-links">
             <a href="tel:+916201902313" className="contact-item">
@@ -206,14 +200,14 @@ function Home() {
             </motion.a>
 
             <motion.a
-              href="/assets/Resume.pdf"
+              href="https://leetcode.com/u/SatyamMIshra62"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
               whileHover={{ y: -3, scale: 1.08 }}
             >
-              <FaEye size={18} />
-              <span>View CV</span>
+              <SiLeetcode size={18} />
+              <span>LeetCode</span>
             </motion.a>
           </div>
         </div>

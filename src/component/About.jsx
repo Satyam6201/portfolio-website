@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
 import {
   FaUser,
@@ -10,20 +10,16 @@ import {
   FaBrain,
   FaShieldAlt,
   FaRocket,
-  FaStar,
   FaChevronRight,
   FaArrowRight,
   FaCode,
-  FaLightbulb,
+  FaLightbulb
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import "../styles/about.css";
 
 const terminalFiles = {
-  "satyam.config.ts": `/**
- * Developer Profile Configuration
- * Satyam Kumar Mishra | Full-Stack & AI Engineer
- */
-export const engineer = {
+  "satyam.config.ts": `export const engineer = {
   name: "Satyam Kumar Mishra",
   role: "Full-Stack Engineer & Generative AI Builder",
   location: "Delhi, India (Open to Remote / On-Site)",
@@ -43,7 +39,7 @@ export const engineer = {
   competitiveProgramming: {
     platform: "LeetCode",
     language: "Java",
-    problemsSolved: 1000+
+    problemsSolved: "1000+"
   }
 };`,
 
@@ -64,7 +60,7 @@ Every millisecond counts. Profiling database queries, indexing schemas, and usin
   "tech-philosophy.json": `{
   "mindset": "Product-Minded Engineer",
   "dailyRoutine": [
-    "Solve algorithmic challenges in Java",
+    "Solve algorithmic challenges in Java (1000+ LeetCode)",
     "Architect full-stack modules & refine UX",
     "Experiment with latest GenAI / LLM tooling",
     "Mentor junior peers & review open-source PRs"
@@ -123,10 +119,9 @@ function About() {
 
   return (
     <section id="about" className="about" ref={sectionRef}>
-      {/* Section Header */}
       <div className="about-header">
         <span className="shimmer-badge">
-          <FaUser /> Engineering Story & Philosophy
+          <FaUser /> Engineering Narrative & Mindset
         </span>
         <h2 className="about-title">About Satyam</h2>
         <p className="about-subtext">
@@ -134,9 +129,7 @@ function About() {
         </p>
       </div>
 
-      {/* Main Grid: Narrative & Interactive Terminal */}
       <div className="about-main-grid">
-        {/* Left Column: Personal Narrative */}
         <motion.div
           className="about-story-col"
           initial={{ opacity: 0, x: -30 }}
@@ -144,7 +137,7 @@ function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="story-card">
-            <h3>From 1000+ DSA Solutions to Production SaaS 🚀</h3>
+            <h3>From 1000+ DSA Solutions to Production SaaS Systems</h3>
             <p>
               My journey in software engineering began with a deep fascination for algorithms and data structures.
               Solving <strong>1000+ LeetCode problems in Java</strong> trained my mind to identify edge cases,
@@ -153,7 +146,7 @@ function About() {
             <p>
               Today, I channel that problem-solving discipline into building scalable web applications.
               From architecting <strong>MockMate AI</strong> (a full-stack RAG mock interview platform using FAISS embeddings and OpenAI)
-              to deploying production-ready platforms during my software internships at <strong>Code Innovative Technologies</strong> and <strong>Software Beatz</strong>,
+              to deploying production-ready platforms during software internships at <strong>Code Innovative Technologies</strong> and <strong>Software Beatz</strong>,
               I thrive on turning complex business requirements into elegant digital experiences.
             </p>
             <p>
@@ -171,7 +164,6 @@ function About() {
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive Code Sandbox / Terminal */}
         <motion.div
           className="about-terminal-col"
           initial={{ opacity: 0, x: 30 }}
@@ -179,7 +171,6 @@ function About() {
           transition={{ duration: 0.6, delay: 0.15 }}
         >
           <div className="interactive-terminal">
-            {/* Terminal Window Header */}
             <div className="terminal-header">
               <div className="terminal-dots">
                 <span className="dot dot-red" />
@@ -187,7 +178,6 @@ function About() {
                 <span className="dot dot-green" />
               </div>
 
-              {/* Tabs */}
               <div className="terminal-tabs">
                 {Object.keys(terminalFiles).map((fileName) => (
                   <button
@@ -201,7 +191,6 @@ function About() {
                 ))}
               </div>
 
-              {/* Copy Code Button */}
               <button
                 className="terminal-copy-btn"
                 onClick={handleCopy}
@@ -213,7 +202,6 @@ function About() {
               </button>
             </div>
 
-            {/* Terminal Body */}
             <div className="terminal-body">
               <pre className="terminal-code">
                 <code>{terminalFiles[activeTab]}</code>
@@ -223,7 +211,6 @@ function About() {
         </motion.div>
       </div>
 
-      {/* Scroll-Triggered Metric Counters Strip */}
       <div className="about-counters-wrap">
         <div className="counters-grid">
           <motion.div
@@ -242,10 +229,10 @@ function About() {
             whileHover={{ y: -5, scale: 1.02 }}
           >
             <span className="counter-num">
-              {isInView ? <CountUp start={0} end={45} duration={2} /> : 0}+
+              {isInView ? <CountUp start={0} end={15} duration={2} /> : 0}+
             </span>
-            <span className="counter-label">Deployed Projects</span>
-            <span className="counter-sub">Full-Stack SaaS & Apps</span>
+            <span className="counter-label">Production Systems</span>
+            <span className="counter-sub">Full-Stack SaaS & RAG Apps</span>
           </motion.div>
 
           <motion.div
@@ -270,7 +257,6 @@ function About() {
         </div>
       </div>
 
-      {/* Core Engineering Pillars */}
       <div className="about-pillars-section">
         <h3 className="pillars-title">
           <FaLightbulb className="icon-bulb" /> Core Engineering Pillars

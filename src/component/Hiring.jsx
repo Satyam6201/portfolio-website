@@ -71,17 +71,17 @@ function Hiring() {
 
   const quickMessages = [
     {
-      label: "📅 Schedule Intro Call",
+      label: "Schedule Intro Call",
       subject: "Invitation%20for%20Intro%20Call",
       text: "Hi%20Satyam,%20we%20would%20like%20to%20schedule%20a%2015-minute%20introductory%20call%20with%20you!"
     },
     {
-      label: "💼 Full-Time Job Offer",
+      label: "Full-Time Job Opportunity",
       subject: "Full-Time%20Opportunity",
       text: "Hi%20Satyam,%20we%20have%20a%20Full-Time%20Software%20Developer%20opportunity%20we'd%20love%20to%20discuss."
     },
     {
-      label: "🎓 Internship Opening",
+      label: "Engineering Internship Opening",
       subject: "Internship%20Opportunity",
       text: "Hi%20Satyam,%20we%20are%20interested%20in%20considering%20you%20for%20an%20Engineering%20Internship."
     }
@@ -89,7 +89,6 @@ function Hiring() {
 
   return (
     <section className="hiring-container" id="hiring">
-      {/* Header Banner */}
       <div className="hiring-header">
         <div className="live-status-pill">
           <span className="live-dot"></span>
@@ -97,7 +96,7 @@ function Hiring() {
         </div>
         
         <h1 className="hiring-title">
-          <FaLightbulb className="title-icon" /> Let's Build Something Great Together
+          <FaLightbulb className="title-icon" /> Candidate Engagement & Hiring Hub
         </h1>
         <p className="hiring-subtext">
           Full-Stack MERN & Next.js Developer | Generative AI Integrator | Ready for Full-Time Roles & Internships
@@ -109,37 +108,35 @@ function Hiring() {
         </div>
       </div>
 
-      {/* Filter / Category Selector */}
       <div className="hiring-tabs-wrapper">
         <button 
           className={`tab-btn ${activeTab === "all" ? "active" : ""}`}
           onClick={() => setActiveTab("all")}
         >
-          🌟 All Cards
+          <FaStar /> All Roles
         </button>
         <button 
           className={`tab-btn ${activeTab === "fulltime" ? "active" : ""}`}
           onClick={() => setActiveTab("fulltime")}
         >
-          💼 Full-Time (FTE)
+          <FaBriefcase /> Full-Time (FTE)
         </button>
         <button 
           className={`tab-btn ${activeTab === "internship" ? "active" : ""}`}
           onClick={() => setActiveTab("internship")}
         >
-          🎓 Internship
+          <FaUserGraduate /> Internship
         </button>
         <button 
           className={`tab-btn ${activeTab === "saas" ? "active" : ""}`}
           onClick={() => setActiveTab("saas")}
         >
-          🤖 GenAI & SaaS MVP
+          <FaRobot /> GenAI & SaaS MVP
         </button>
       </div>
 
-      {/* Why Hire Satyam Highlight Section */}
       <div className="why-hire-section">
-        <h2><FaRocket /> Why Hire Satyam?</h2>
+        <h2><FaRocket /> Core Value Proposition</h2>
         <div className="why-hire-grid">
           {whyHireMe.map((item, idx) => (
             <div key={idx} className="why-hire-card">
@@ -151,9 +148,7 @@ function Hiring() {
         </div>
       </div>
 
-      {/* Interactive Role Cards Grid (Card Ways Look) */}
       <div className="hiring-cards-grid">
-        {/* Full-Time Card */}
         {(activeTab === "all" || activeTab === "fulltime") && (
           <div className="card-item fte-card-item">
             <div className="card-top-header">
@@ -178,9 +173,9 @@ function Hiring() {
               </div>
 
               <div className="card-metrics-row">
-                <div className="metric-pill">⚡ 1000+ DSA Solved</div>
-                <div className="metric-pill">🏆 CGPA 8.17</div>
-                <div className="metric-pill">🚀 45+ Web Apps</div>
+                <div className="metric-pill">1000+ DSA Solved</div>
+                <div className="metric-pill">CGPA 8.17 (Rank #1)</div>
+                <div className="metric-pill">15+ Production Apps</div>
               </div>
 
               <div className="card-footer-actions">
@@ -198,7 +193,6 @@ function Hiring() {
           </div>
         )}
 
-        {/* Internship Card */}
         {(activeTab === "all" || activeTab === "internship") && (
           <div className="card-item intern-card-item">
             <div className="card-top-header">
@@ -223,9 +217,9 @@ function Hiring() {
               </div>
 
               <div className="card-metrics-row">
-                <div className="metric-pill">📚 Rank #1 Sem 1-3</div>
-                <div className="metric-pill">💼 2 Internships Done</div>
-                <div className="metric-pill">⚡ Fast Learner</div>
+                <div className="metric-pill">Rank #1 Sem 1-3</div>
+                <div className="metric-pill">2 Internships Done</div>
+                <div className="metric-pill">Fast Learner</div>
               </div>
 
               <div className="card-footer-actions">
@@ -243,7 +237,6 @@ function Hiring() {
           </div>
         )}
 
-        {/* SaaS & GenAI MVP Card */}
         {(activeTab === "all" || activeTab === "saas") && (
           <div className="card-item saas-card-item">
             <div className="card-top-header">
@@ -268,9 +261,9 @@ function Hiring() {
               </div>
 
               <div className="card-metrics-row">
-                <div className="metric-pill">🤖 GenAI Specialist</div>
-                <div className="metric-pill">💳 Stripe & Auth</div>
-                <div className="metric-pill">⚡ MVP in Weeks</div>
+                <div className="metric-pill">GenAI Specialist</div>
+                <div className="metric-pill">Stripe & Auth</div>
+                <div className="metric-pill">MVP in Weeks</div>
               </div>
 
               <div className="card-footer-actions">
@@ -286,9 +279,8 @@ function Hiring() {
         )}
       </div>
 
-      {/* How We Collaborate Process Cards */}
       <div className="collaboration-process-section">
-        <h2><FaHandshake /> Simple 3-Step Hiring Process</h2>
+        <h2><FaHandshake /> 3-Step Candidate Onboarding</h2>
         <div className="process-cards-container">
           {processSteps.map((p, idx) => (
             <div key={idx} className="process-card">
@@ -301,9 +293,8 @@ function Hiring() {
         </div>
       </div>
 
-      {/* Pre-written Quick Action Card */}
       <div className="quick-action-card-banner">
-        <h3><FaPaperPlane /> Fast-Track Recruiter Outreach</h3>
+        <h3><FaPaperPlane /> Fast-Track Outreach Templates</h3>
         <p>Click below to open pre-filled contact templates in 1 tap:</p>
         <div className="quick-msg-buttons">
           {quickMessages.map((msg, index) => (
@@ -324,5 +315,3 @@ function Hiring() {
 }
 
 export default Hiring;
-
-
