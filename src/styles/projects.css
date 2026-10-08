@@ -716,3 +716,164 @@ body.light .projects-view-switcher {
     display: none;
   }
 }
+
+/* ── Tier Badges & Architecture Modal Enhancements ── */
+.project-card-top-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+}
+
+.tier-badge.tier-1 {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.tier-badge.tier-2 {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.tier-badge.tier-3 {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.archive-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 10px;
+}
+
+.archive-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.archive-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.modal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal-architecture-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.arch-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-size: 0.95rem;
+}
+
+.arch-header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.arch-flow-diagram {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+.arch-flow-diagram code {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #38bdf8;
+  white-space: nowrap;
+}
+
+.arch-tradeoffs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.arch-tradeoffs-section h5 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tradeoffs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tradeoff-item {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.tradeoff-item strong {
+  color: var(--text-primary);
+}
+
+.arch-metrics-footer {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.arch-metrics-footer strong {
+  color: #22c55e;
+}
