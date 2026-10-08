@@ -17,6 +17,7 @@ import {
   FaProjectDiagram,
   FaLinkedin,
   FaGithub,
+  FaBolt
 } from "react-icons/fa";
 import "../styles/chatbot.css";
 
@@ -49,15 +50,14 @@ SATYAM KUMAR MISHRA - COMPLETE PORTFOLIO DETAILS:
      * Conducted API testing with Postman and deployed production-ready web features.
 
 4. FEATURED PROJECTS:
-
    A. MockMate AI (Latest & Most Advanced):
    - Description: Full-stack AI-powered mock interview platform that generates personalized interview questions from resumes.
-   - Tech Stack: React, Tailwind CSS, Framer Motion, React Router DOM, Axios, React Hot Toast, Lucide React (Frontend); Node.js, Express, MongoDB Atlas, Mongoose, JWT, Multer (Backend); OpenAI API, OpenRouter API, text-embedding-3-small, FAISS Vector Store, pdf-parse, LangChain-style Chunking (AI/RAG); Stripe, Razorpay (Payments); Vercel (Frontend), Render (Backend), MongoDB Atlas (Database).
-   - Features: PDF resume parsing, FAISS vector embeddings for semantic search, real-time AI answer evaluation (correctness, confidence, communication), personalized question generation, secure JWT auth, Multer file uploads, Stripe/Razorpay payment integrations, interview history tracking, performance dashboards.
+   - Tech Stack: React, Tailwind CSS, Framer Motion, React Router DOM, Axios; Node.js, Express, MongoDB Atlas, Mongoose, JWT, Multer; OpenAI API, FAISS Vector Store, pdf-parse; Stripe, Razorpay; Vercel (Frontend), Render (Backend).
+   - Features: PDF resume parsing, FAISS vector embeddings for semantic search, real-time AI answer evaluation, personalized question generation, secure JWT auth, Multer file uploads, Stripe/Razorpay payment integrations.
    - GitHub: https://github.com/Satyam6201/MockMate-AI
 
    B. DentAIva:
-   - Description: AI-Powered healthcare SaaS with voice assistants for automated appointment handling.
+   - Description: Healthcare SaaS with voice assistants for automated appointment handling.
    - Tech: Next.js, TypeScript, PostgreSQL, Prisma ORM, Clerk Authentication, Vapi AI, Tailwind CSS, OpenAI API, RBAC.
    - Live: https://dentwise-henna.vercel.app/ | GitHub: https://github.com/Satyam6201/DentAIva
 
@@ -67,7 +67,7 @@ SATYAM KUMAR MISHRA - COMPLETE PORTFOLIO DETAILS:
    - Live: https://grocerinx.vercel.app | GitHub: https://github.com/Satyam6201/Grocerin
 
    D. Medi-Connect:
-   - Description: MERN healthcare platform with patient booking, doctor schedules, admin analytics, Razorpay/Stripe payments.
+   - Description: Healthcare platform with patient booking, doctor schedules, admin analytics, Razorpay/Stripe payments.
    - Tech: React.js, Node.js, Express.js, MongoDB, JWT, Stripe/Razorpay.
    - Live: https://prescripto.vercel.app/ | GitHub: https://github.com/Satyam6201/Medi-Connect
 
@@ -82,30 +82,15 @@ SATYAM KUMAR MISHRA - COMPLETE PORTFOLIO DETAILS:
    - GitHub: https://github.com/Satyam6201/Connectify
 
 5. TECHNICAL SKILLS:
-   - Generative AI & LLMs: OpenAI API, OpenRouter API, RAG Architecture, FAISS Vector Store, text-embedding-3-small, LangChain-style Chunking, LLM Context Processing, Prompt Engineering, Python.
-   - API Security & Auth: JWT Auth, OAuth 2.0, RBAC (Role-Based Access Control), API Security (CORS, Rate Limiting, Sanitization), Clerk Auth, NextAuth, Middleware.
-   - Backend & Systems: Node.js, Express.js, REST APIs, Redis Caching, Apache Kafka, System Design, Load Balancer, CDN Integration, Multer, pdf-parse.
-   - Frontend: React.js, Next.js 14/15, TypeScript, JavaScript (ES6+), Tailwind CSS, Framer Motion, React Router DOM, Axios, Bootstrap, HTML5/CSS3, Lucide React.
-   - Databases: MongoDB Atlas, PostgreSQL, MySQL, Redis, Firebase, Prisma ORM, Mongoose, FAISS Vector Store.
-   - DevOps & Cloud: Docker, CI/CD Pipelines (GitHub Actions), Vercel, Netlify, Render, Railway, Git & GitHub, Postman.
+   - Generative AI & LLMs: OpenAI API, RAG Architecture, FAISS Vector Store, text-embedding-3-small, Prompt Engineering, Python.
+   - API Security & Auth: JWT Auth, OAuth 2.0, RBAC (Role-Based Access Control), API Security (CORS, Rate Limiting), Clerk Auth, NextAuth.
+   - Backend & Systems: Node.js, Express.js, REST APIs, Redis Caching, Apache Kafka, System Design, Load Balancer, CDN.
+   - Frontend: React.js, Next.js 14/15, TypeScript, JavaScript (ES6+), Tailwind CSS, Framer Motion, Axios.
+   - Databases: MongoDB Atlas, PostgreSQL, MySQL, Redis, Firebase, Prisma ORM, FAISS Vector Store.
+   - DevOps & Cloud: Docker, CI/CD Pipelines (GitHub Actions), Vercel, Render, Git & GitHub, Postman.
    - CS Fundamentals: Java (1000+ DSA Solved on LeetCode), OOP Principles, Operating Systems, DBMS, System Design.
-   - Payments: Stripe Gateway, Razorpay Integration.
 
-6. ACHIEVEMENTS & MILESTONES:
-   - 1000+ DSA Problems Solved on LeetCode (Java)
-   - University Rank #1 / College Topper (Semesters 1-3, CGPA 8.17)
-   - 45+ Full-Stack Web Projects & SaaS Applications Built
-   - 400+ Students Mentored as Training & Placement Cell Member
-   - 10+ Tech Events Organized (Hackathons, Tech Fests)
-   - Multiple College Competition Winner (Coding, Project Expo)
-
-7. VOLUNTEER & COMMUNITY:
-   - Training & Placement (T&P) Cell Member – Radharaman Institute: Mentored 400+ students in placements & technical skills.
-   - Tech Fest Organizer – Radharaman Tech Fest: Organized 10+ technical events, workshops, hackathons.
-   - Campus Ambassador – GeeksForGeeks: Promoted coding culture on campus.
-   - Coding Community Lead: Led coding sessions, projects, and peer-learning groups.
-
-8. CONTACT & HIRING CHANNELS:
+6. CONTACT CHANNELS:
    - Email: satyamkmishraa@gmail.com
    - Phone / WhatsApp: +91 6201902313
    - Location: Delhi, India
@@ -114,68 +99,53 @@ SATYAM KUMAR MISHRA - COMPLETE PORTFOLIO DETAILS:
    - LeetCode: https://leetcode.com/u/SatyamMIshra62
 
 RESPONSE RULES:
-- Be polite, concise, enthusiastic, and helpful. Use emojis moderately.
-- When answering hiring/job/internship queries, emphasize: 0 Days Notice, 1000+ DSA, 45+ Projects, MERN/Next.js/GenAI/RAG expertise, immediate availability.
+- Be polite, concise, professional, and helpful. Do not use unicode emojis in your responses.
+- When answering hiring/job/internship queries, emphasize: 0 Days Notice, 1000+ DSA in Java, 15+ Production Systems, MERN/Next.js/GenAI/RAG expertise, immediate availability.
 - Include [DIRECT_CONTACT_ACTIONS] tag when answering hiring, contact, resume inquiries.
-- For MockMate AI, emphasize RAG pipeline, FAISS vector embeddings, OpenAI/OpenRouter, pdf-parse, Stripe/Razorpay, MongoDB Atlas, full-stack Node+React architecture.
-- Always sound human, warm, and proud of Satyam's achievements.
 `;
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 
-// Complete Smart Fallback Knowledge Base Engine
 function getFallbackResponse(query) {
   const q = query.toLowerCase();
 
   if (q.includes("hire") || q.includes("hiring") || q.includes("job") || q.includes("intern") || q.includes("recruiter") || q.includes("opportunity") || q.includes("role") || q.includes("fulltime") || q.includes("available")) {
-    return `💼 **Hire Satyam Kumar Mishra:**\n\nSatyam is **Available for Immediate Joining** (0 Days Notice Period) for:\n- 🚀 **Full-Time Software / Full-Stack Engineer**\n- 🎓 **Frontend / MERN / Next.js Engineering Internship**\n- 🤖 **GenAI / RAG Systems Integration Role**\n\n**Key Highlights:**\n- ⚡ **1000+ DSA Solved** on LeetCode (Java)\n- 🛠️ **45+ Web Projects & SaaS Apps** (Next.js, React, Node, MongoDB, GenAI, RAG)\n- 🏆 **University Rank #1** – CGPA 8.17 (College Topper)\n- 🤖 **RAG Architecture** – MockMate AI with FAISS, OpenAI, MongoDB Atlas\n- 📍 **Remote / On-Site / Hybrid** – Delhi, India\n\n[DIRECT_CONTACT_ACTIONS]`;
+    return `Candidate Executive Summary:\n\nSatyam is Available for Immediate Joining (0 Days Notice Period) for:\n- Full-Time Software / Full-Stack Engineer\n- Frontend / MERN / Next.js Engineering Internship\n- GenAI / RAG Systems Integration Role\n\nKey Highlights:\n- 1000+ DSA Solved on LeetCode (Java)\n- 15+ Production Web & SaaS Systems (Next.js, React, Node, MongoDB, GenAI, RAG)\n- University Rank #1 – CGPA 8.17 (College Topper)\n- RAG Architecture – MockMate AI with FAISS, OpenAI, MongoDB Atlas\n- Remote / On-Site / Hybrid – Delhi, India\n\n[DIRECT_CONTACT_ACTIONS]`;
   }
 
   if (q.includes("mockmate") || q.includes("mock mate") || q.includes("interview") || q.includes("rag") || q.includes("faiss") || q.includes("vector")) {
-    return `🤖 **MockMate AI – RAG Interview Platform:**\n\nSatyam's most advanced AI project — a **full-stack RAG-powered mock interview platform**.\n\n🔧 **Architecture:**\n- **Frontend**: React, Tailwind CSS, Framer Motion, React Router DOM, Axios, Lucide React\n- **Backend**: Node.js, Express, MongoDB Atlas, Mongoose, JWT, Multer\n- **AI/RAG**: OpenAI API + OpenRouter, text-embedding-3-small, **FAISS Vector Store**, pdf-parse, LangChain-style chunking\n- **Payments**: Stripe + Razorpay\n- **Deployment**: Vercel (Frontend), Render (Backend), MongoDB Atlas\n\n✨ **Features**: PDF resume parsing → FAISS embeddings → AI question generation → real-time answer scoring (correctness, confidence, communication) → session history tracking\n\n🔗 GitHub: https://github.com/Satyam6201/MockMate-AI`;
+    return `MockMate AI – RAG Interview Platform:\n\nSatyam's flagship AI system — a full-stack RAG-powered mock interview platform.\n\nArchitecture:\n- Frontend: React, Tailwind CSS, Framer Motion, React Router DOM, Axios\n- Backend: Node.js, Express, MongoDB Atlas, Mongoose, JWT, Multer\n- AI/RAG: OpenAI API, text-embedding-3-small, FAISS Vector Store, pdf-parse\n- Payments: Stripe + Razorpay\n- Deployment: Vercel (Frontend), Render (Backend), MongoDB Atlas\n\nFeatures: PDF resume parsing, FAISS vector embeddings, AI question generation, real-time multi-dimensional scoring.\n\nGitHub: https://github.com/Satyam6201/MockMate-AI`;
   }
 
   if (q.includes("resume") || q.includes("cv") || q.includes("download")) {
-    return `📄 You can view and download Satyam's official Resume below:\n\n[DIRECT_CONTACT_ACTIONS]`;
+    return `You can view and download Satyam's official Resume below:\n\n[DIRECT_CONTACT_ACTIONS]`;
   }
 
   if (q.includes("experience") || q.includes("work") || q.includes("internship") || q.includes("intern")) {
-    return `💼 **Satyam's Work Experience:**\n\n1. **Full Stack Dev Intern** – Code Innovative Technologies (Feb 2026 – May 2026)\n   - React, Next.js, Node.js, Express, MongoDB, PostgreSQL\n   - REST APIs, Git workflows, Agile sprints\n\n2. **Software Dev Intern** – Software Beatz (Oct 2025 – Feb 2026)\n   - MERN stack modules, JWT Auth, protected routes\n   - Postman API testing, production deployments\n\n[DIRECT_CONTACT_ACTIONS]`;
+    return `Satyam's Work Experience:\n\n1. Full Stack Dev Intern – Code Innovative Technologies (Feb 2026 – Aug 2026)\n   - React, Next.js, Node.js, Express, MongoDB, PostgreSQL\n   - REST APIs, Git workflows, Agile sprints\n\n2. Software Dev Intern – Software Beatz (Oct 2025 – Feb 2026)\n   - MERN stack modules, JWT Auth, protected routes\n   - Postman API testing, production deployments\n\n[DIRECT_CONTACT_ACTIONS]`;
   }
 
   if (q.includes("project") || q.includes("dentalva") || q.includes("grocerin") || q.includes("medi") || q.includes("connectify") || q.includes("employee")) {
-    return `🚀 **Satyam's Top Featured Projects:**\n\n1. 🤖 **MockMate AI** – RAG AI interview platform (Node, React, OpenAI, FAISS, MongoDB Atlas, Stripe/Razorpay)\n2. 🏥 **DentAIva** – AI healthcare SaaS (Next.js, Vapi AI, Clerk, Prisma, PostgreSQL)\n3. 🛒 **Grocerin** – E-commerce app (MERN, Stripe, Cloudinary)\n4. 🩺 **Medi-Connect** – MERN healthcare platform (JWT, Razorpay/Stripe)\n5. 👔 **Employee Manager Pro** – HRMS (Next.js 14, Prisma, PostgreSQL, NextAuth)\n6. 💬 **Connectify** – Real-time chat & video (MERN, Socket.io, WebRTC, Zustand)\n\n45+ total projects built!`;
+    return `Top Featured Production Systems:\n\n1. MockMate AI – RAG AI interview platform (Node, React, OpenAI, FAISS, MongoDB Atlas, Stripe/Razorpay)\n2. DentAIva – AI healthcare SaaS (Next.js, Vapi AI, Clerk, Prisma, PostgreSQL)\n3. Grocerin – E-commerce app (MERN, Stripe, Cloudinary)\n4. Medi-Connect – Healthcare platform (JWT, Razorpay/Stripe)\n5. Employee Manager Pro – Enterprise HRMS (Next.js 14, Prisma, PostgreSQL, NextAuth)\n6. Connectify – Real-time chat & video (MERN, Socket.io, WebRTC, Zustand)`;
   }
 
   if (q.includes("skill") || q.includes("tech") || q.includes("stack") || q.includes("dsa") || q.includes("java") || q.includes("ai") || q.includes("security") || q.includes("language") || q.includes("tool")) {
-    return `💻 **Satyam's Complete Technical Stack:**\n\n🤖 **AI/RAG**: OpenAI, OpenRouter, FAISS Vector, text-embedding-3-small, pdf-parse, Prompt Engineering, Python\n🔐 **Auth & Security**: JWT, OAuth 2.0, RBAC, CORS, Rate Limiting, Clerk, NextAuth\n⚙️ **Backend**: Node.js, Express, REST APIs, Redis, Apache Kafka, System Design, Multer\n⚛️ **Frontend**: React, Next.js 14/15, TypeScript, Tailwind CSS, Framer Motion, Axios\n🗄️ **Databases**: MongoDB Atlas, PostgreSQL, MySQL, Prisma ORM, Mongoose, Redis, FAISS\n💳 **Payments**: Stripe, Razorpay\n☁️ **DevOps**: Docker, CI/CD, Vercel, Render, GitHub Actions\n📐 **CS Fundamentals**: Java (1000+ DSA on LeetCode), OOP, OS, DBMS`;
+    return `Technical Architecture Stack:\n\n- AI/RAG: OpenAI, FAISS Vector, text-embedding-3-small, pdf-parse, Prompt Engineering, Python\n- Auth & Security: JWT Token Rotation, OAuth 2.0, RBAC, CORS, Rate Limiting, Clerk, NextAuth\n- Backend: Node.js, Express, REST APIs, Redis Caching, Apache Kafka, System Design\n- Frontend: React 19, Next.js 15, TypeScript, Tailwind CSS, Framer Motion, Axios\n- Databases: MongoDB Atlas, PostgreSQL, MySQL, Prisma ORM, Redis, FAISS\n- Payments: Stripe, Razorpay\n- DevOps: Docker, CI/CD, Vercel, Render, GitHub Actions\n- CS Fundamentals: Java (1000+ DSA on LeetCode), OOP, OS, DBMS`;
   }
 
   if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("whatsapp") || q.includes("call") || q.includes("mail")) {
-    return `📞 **Get in Touch with Satyam:**\n\n- ✉️ **Email**: satyamkmishraa@gmail.com\n- 📱 **Phone / WhatsApp**: +91 6201902313\n- 📍 **Location**: Delhi, India (Open for Remote)\n- 💻 **GitHub**: [github.com/Satyam6201](https://github.com/Satyam6201)\n- 🔗 **LinkedIn**: [linkedin.com/in/satyam-kumar-mishra-dev](https://www.linkedin.com/in/satyam-kumar-mishra-dev)\n- 📊 **LeetCode**: [leetcode.com/u/SatyamMIshra62](https://leetcode.com/u/SatyamMIshra62)\n\n[DIRECT_CONTACT_ACTIONS]`;
+    return `Candidate Contact Information:\n\n- Email: satyamkmishraa@gmail.com\n- Phone / WhatsApp: +91 6201902313\n- Location: Delhi, India (Open for Remote)\n- GitHub: https://github.com/Satyam6201\n- LinkedIn: https://www.linkedin.com/in/satyam-kumar-mishra-dev\n- LeetCode: https://leetcode.com/u/SatyamMIshra62\n\n[DIRECT_CONTACT_ACTIONS]`;
   }
 
   if (q.includes("education") || q.includes("college") || q.includes("cgpa") || q.includes("btech") || q.includes("degree") || q.includes("university")) {
-    return `🎓 **Satyam's Academic Background:**\n\n- **Degree**: B.Tech in Computer Science & Engineering\n- **Duration**: 2022 – 2026 (Completed)\n- **Institution**: Radharaman Institute of Technology & Science, Bhopal\n- **CGPA**: 8.17 ⭐\n- 🏆 **College Topper** – Rank #1 in Semesters 1, 2 & 3`;
+    return `Academic Credentials:\n\n- Degree: B.Tech in Computer Science & Engineering\n- Duration: 2022 – 2026 (Completed)\n- Institution: Radharaman Institute of Technology & Science, Bhopal\n- CGPA: 8.17 / 10.0\n- Distinction: College Topper – Rank #1 in Semesters 1, 2 & 3`;
   }
 
   if (q.includes("achievement") || q.includes("award") || q.includes("rank") || q.includes("topper") || q.includes("milestone") || q.includes("1000") || q.includes("leetcode")) {
-    return `🏆 **Satyam's Key Achievements:**\n\n- ⚡ **1000+ DSA Problems** Solved on LeetCode (Java)\n- 🥇 **University Rank #1** – CGPA 8.17 (College Topper, Semesters 1-3)\n- 🛠️ **45+ Full-Stack Projects** Built (SaaS, AI, MERN)\n- 🎓 **400+ Students Mentored** as T&P Cell Member\n- 🎯 **10+ Tech Events** Organized (Hackathons, Tech Fests)\n- 🤖 **RAG AI System** – MockMate AI with FAISS & OpenAI`;
+    return `Key Verifiable Milestones:\n\n- 1000+ DSA Problems Solved on LeetCode (Java)\n- University Rank #1 – CGPA 8.17 (College Topper, Semesters 1-3)\n- 15+ Production Full-Stack Projects Built (SaaS, AI, MERN)\n- 400+ Students Mentored as T&P Cell Member\n- 10+ Tech Events Organized (Hackathons, Tech Fests)\n- RAG AI System – MockMate AI with FAISS & OpenAI`;
   }
 
-  if (q.includes("volunteer") || q.includes("community") || q.includes("mentor") || q.includes("placement") || q.includes("t&p") || q.includes("event")) {
-    return `🌟 **Satyam's Volunteer & Community Work:**\n\n- 🎓 **T&P Cell Member** – Mentored 400+ students in placements & technical interviews\n- 🎪 **Tech Fest Organizer** – Organized 10+ hackathons, workshops, and tech events\n- 📣 **Campus Ambassador** – GeeksForGeeks coding culture promotion\n- 👥 **Coding Community Lead** – Led peer-learning sessions and project groups`;
-  }
-
-  if (q.includes("stripe") || q.includes("razorpay") || q.includes("payment")) {
-    return `💳 **Satyam's Payment Integration Experience:**\n\n- **Stripe**: Integrated in MockMate AI & Grocerin for subscription and order payments.\n- **Razorpay**: Integrated in MockMate AI & Medi-Connect for Indian payment gateway.\n- Features implemented: Webhooks, subscription plans, secure checkout, refund handling.`;
-  }
-
-  if (q.includes("goal") || q.includes("career") || q.includes("future") || q.includes("plan") || q.includes("ambition")) {
-    return `🎯 **Satyam's Career Goals:**\n\n- **Phase 1 (0-1 yr)**: Secure Full-Stack / MERN / GenAI role, contribute to real-world SaaS products, sharpen System Design.\n- **Phase 2 (1-2 yrs)**: Architect scalable platforms, become a RAG AI Systems expert, contribute to open-source.\n- **Phase 3 (2-4 yrs)**: Lead engineering teams, build & launch personal SaaS products.\n- **Phase 4 (4+ yrs)**: Found a tech startup or become a Principal Engineer at a top tech company.\n\n[DIRECT_CONTACT_ACTIONS]`;
-  }
-
-  return `Hi! 👋 I'm Satyam's AI Assistant. I can tell you about:\n\n- 🤖 **MockMate AI** – RAG AI interview platform (FAISS, OpenAI, Node, React, MongoDB)\n- 🚀 **45+ Full-Stack Projects** – SaaS, Healthcare, E-commerce, HRMS\n- ⚡ **1000+ DSA** solved on LeetCode\n- 🏆 **University Rank #1** – CGPA 8.17\n- 💼 **Work Experience** – 2 Internships\n- 💳 **Stripe/Razorpay** payment integrations\n- 📞 **Contact & Hire** Satyam directly\n\nJust ask me anything!\n\n[DIRECT_CONTACT_ACTIONS]`;
+  return `Hello. I am Satyam's AI Assistant. I can answer inquiries regarding:\n\n- MockMate AI – RAG AI interview platform (FAISS, OpenAI, Node, React, MongoDB)\n- 15+ Production Full-Stack Systems – SaaS, Healthcare, E-commerce, HRMS\n- 1000+ DSA solutions in Java on LeetCode\n- University Rank #1 – CGPA 8.17\n- Work Experience – 2 Internships\n- Direct Recruiter Outreach & Resume Download\n\n[DIRECT_CONTACT_ACTIONS]`;
 }
 
 function AIChatbot() {
@@ -183,7 +153,7 @@ function AIChatbot() {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: `Hi there! 👋 I'm Satyam's AI Assistant.\n\nI know everything about Satyam — his **MockMate AI RAG system**, **1000+ DSA problems**, **45+ projects**, **2 internships**, **University Rank #1**, and more!\n\nHow can I help you today?`,
+      text: `Hello. I am Satyam's AI Assistant.\n\nI have complete information on Satyam's **MockMate AI RAG system**, **1000+ DSA solutions in Java**, **15+ production systems**, **2 internships**, **University Rank #1 (8.17 CGPA)**, and hiring availability.\n\nHow may I assist you today?`,
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -191,7 +161,7 @@ function AIChatbot() {
   const messagesEndRef = useRef(null);
 
   const suggestionChips = [
-    { icon: <FaBriefcase />, label: "Hire Satyam" },
+    { icon: <FaBolt />, label: "Hire Satyam" },
     { icon: <FaPhoneAlt />, label: "Contact Info" },
     { icon: <FaFileDownload />, label: "Get Resume" },
     { icon: <FaProjectDiagram />, label: "Top Projects" },
@@ -245,7 +215,6 @@ function AIChatbot() {
         throw new Error("No candidate content");
       }
     } catch (error) {
-      console.warn("Gemini AI API fallback triggered:", error);
       setMessages((prev) => [...prev, { sender: "bot", text: getFallbackResponse(query) }]);
     } finally {
       setIsLoading(false);
@@ -267,19 +236,15 @@ function AIChatbot() {
       .replace(/\[View Resume \(PDF\)\]\(\/assets\/Resume\.pdf\)/g, "")
       .trim();
 
-    // Parse basic markdown: **bold**, [text](url)
     const parseMarkdown = (raw) => {
       const lines = raw.split("\n");
       return lines.map((line, i) => {
         const parts = [];
         let remaining = line;
-        let key = 0;
 
-        // Replace [text](url)
         remaining = remaining.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, (_, text, url) => {
           return `<LINK::${url}::${text}>`;
         });
-        // Replace **bold**
         remaining = remaining.replace(/\*\*([^*]+)\*\*/g, (_, bold) => `<BOLD::${bold}>`);
 
         const tokens = remaining.split(/(<LINK::[^>]+>|<BOLD::[^>]+>)/);
@@ -333,7 +298,6 @@ function AIChatbot() {
 
   return (
     <div className="chatbot-wrapper">
-      {/* Floating Toggle Button */}
       <button
         className={`chatbot-toggle-btn ${isOpen ? "active" : ""}`}
         onClick={toggleChat}
@@ -346,10 +310,8 @@ function AIChatbot() {
         {!isOpen && <span className="chatbot-ring-2" />}
       </button>
 
-      {/* Chat Window */}
       {isOpen && (
         <div className="chatbot-window">
-          {/* Header */}
           <div className="chatbot-header">
             <div className="bot-info">
               <div className="bot-avatar">
@@ -360,14 +322,13 @@ function AIChatbot() {
                 <h4>Satyam's AI Assistant <FaMagic className="sparkle-icon" /></h4>
                 <span className="status-indicator">
                   <span className="online-dot" />
-                  Powered by Gemini AI · Knows All Details
+                  Powered by Gemini AI · Candidate Knowledge Engine
                 </span>
               </div>
             </div>
             <button className="close-btn" onClick={toggleChat} aria-label="Close Chat"><FaMinus /></button>
           </div>
 
-          {/* Messages Body */}
           <div className="chatbot-messages">
             {messages.map((msg, index) => (
               <div key={index} className={`message-row ${msg.sender}`}>
@@ -391,7 +352,6 @@ function AIChatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick Suggestion Chips */}
           <div className="suggestion-chips">
             {suggestionChips.map((chip, idx) => (
               <button
@@ -405,7 +365,6 @@ function AIChatbot() {
             ))}
           </div>
 
-          {/* Input Footer */}
           <div className="chatbot-footer">
             <input
               type="text"

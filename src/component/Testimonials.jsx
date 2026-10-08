@@ -8,8 +8,7 @@ import {
   FaThLarge,
   FaSlidersH,
   FaComments,
-  FaCheckCircle,
-  FaHeart
+  FaCheckCircle
 } from "react-icons/fa";
 import "../styles/Testimonials.css";
 
@@ -18,7 +17,7 @@ const testimonialsData = [
     id: "priya-sharma",
     name: "Priya Sharma",
     role: "Web Developer Intern",
-    company: "College Tech Lab",
+    company: "Tech Development Lab",
     feedback:
       "Satyam is a fantastic collaborator. His React 19 architecture, attention to UI details, and problem-solving skills brought our team's project to life in record time!",
     rating: 5,
@@ -31,7 +30,7 @@ const testimonialsData = [
     id: "aman-verma",
     name: "Aman Verma",
     role: "DSA & Algos Peer",
-    company: "Coding Club",
+    company: "Competitive Coding Guild",
     feedback:
       "Satyam helped me understand complex Data Structures & Algorithms concepts with remarkable clarity. Highly recommended as a mentor and coding partner!",
     rating: 5,
@@ -46,7 +45,7 @@ const testimonialsData = [
     role: "College Club Lead",
     company: "Tech Society",
     feedback:
-      "An excellent speaker, workshop lead, and event organizer. His live guidance inspired 400+ students during our campus technical coding bootcamps.",
+      "An excellent workshop lead and event organizer. His live guidance inspired 400+ students during our technical coding bootcamps.",
     rating: 5,
     tag: "Leadership & Bootcamps",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -57,7 +56,7 @@ const testimonialsData = [
     id: "rahul-singh",
     name: "Rahul Singh",
     role: "Project Lead",
-    company: "Campus Incubator",
+    company: "Engineering Lab",
     feedback:
       "Satyam’s commitment to deadlines, clean code standards, and architectural attention to detail is unmatched. A true professional in every sense.",
     rating: 5,
@@ -72,7 +71,7 @@ const testimonialsData = [
     role: "UI/UX Designer",
     company: "Design Guild",
     feedback:
-      "Collaborating with Satyam made the design implementation seamless. His sharp eye for micro-interactions and layout math elevated our app’s overall look & feel.",
+      "Collaborating with Satyam made the design implementation seamless. His sharp eye for micro-interactions and layout math elevated our app’s overall feel.",
     rating: 5,
     tag: "UI/UX Craftsmanship",
     image: "https://randomuser.me/api/portraits/women/45.jpg",
@@ -83,11 +82,10 @@ const testimonialsData = [
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [viewMode, setViewMode] = useState("carousel"); // 'carousel' | 'grid'
+  const [viewMode, setViewMode] = useState("carousel");
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(0);
 
-  // Auto-play for 3D Carousel Stage
   useEffect(() => {
     if (viewMode !== "carousel" || isPaused) return;
 
@@ -106,7 +104,6 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
   };
 
-  // Touch Swipe Handlers for mobile 3D stage
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -119,20 +116,18 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials-section" id="testimonials">
-      {/* Header Section */}
       <div className="testimonials-header">
         <span className="testimonials-badge">
           <FaComments className="comments-icon" /> Peer Endorsements
         </span>
-        <h2 className="testimonials-title">🌟 What People Say</h2>
+        <h2 className="testimonials-title">What Collaborators Say</h2>
         <p className="testimonials-subtitle">
           Real feedback and recommendations from peers, project leads, UI designers, and workshop attendees.
         </p>
 
-        {/* Trust Metrics Banner */}
         <div className="testimonials-stats-banner">
           <div className="t-stat-item">
-            <span className="t-stat-num">5.0 ★</span>
+            <span className="t-stat-num">5.0 / 5.0</span>
             <span className="t-stat-lbl">Average Rating</span>
           </div>
           <div className="t-stat-divider" />
@@ -148,7 +143,6 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {/* Controls: View Switcher & Nav Buttons */}
       <div className="testimonials-controls">
         <div className="view-toggle">
           <button
@@ -177,7 +171,6 @@ const Testimonials = () => {
         )}
       </div>
 
-      {/* Mode 1: 3D Stage Carousel View */}
       {viewMode === "carousel" && (
         <div
           className="td-carousel-stage"
@@ -188,7 +181,6 @@ const Testimonials = () => {
         >
           <div className="td-3d-track">
             {testimonialsData.map((item, index) => {
-              // Calculate offset relative to active index
               const count = testimonialsData.length;
               let offset = (index - currentIndex + count) % count;
               if (offset > count / 2) offset -= count;
@@ -248,7 +240,6 @@ const Testimonials = () => {
             })}
           </div>
 
-          {/* Pagination Indicators */}
           <div className="td-dots">
             {testimonialsData.map((_, index) => (
               <button
@@ -262,7 +253,6 @@ const Testimonials = () => {
         </div>
       )}
 
-      {/* Mode 2: 3D Cards Grid View */}
       {viewMode === "grid" && (
         <motion.div className="testimonials-grid" layout>
           <AnimatePresence mode="popLayout">

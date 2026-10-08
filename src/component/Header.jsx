@@ -1,43 +1,58 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import {
-  FaBars, FaTimes,
-  FaHome, FaUser, FaCode, FaProjectDiagram,
-  FaBriefcase, FaGraduationCap, FaCertificate,
-  FaBlog, FaEnvelope, FaChevronDown, FaPalette, FaCheck
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaUser,
+  FaCode,
+  FaProjectDiagram,
+  FaBriefcase,
+  FaGraduationCap,
+  FaCertificate,
+  FaBlog,
+  FaEnvelope,
+  FaChevronDown,
+  FaPalette,
+  FaCheck,
+  FaSearch,
+  FaBolt,
+  FaTerminal
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import "../styles/header.css";
 
 const navItems = [
-  { path: "/",              hash: "#home",          label: "Home",          icon: <FaHome /> },
-  { path: "/about",         hash: "#about",         label: "About",         icon: <FaUser /> },
-  { path: "/techstack",     hash: "#techstack",     label: "Skills",        icon: <FaCode /> },
-  { path: "/projects",      hash: "#projects",      label: "Projects",      icon: <FaProjectDiagram /> },
-  { path: "/experience",    hash: "#experience",    label: "Experience",    icon: <FaBriefcase /> },
-  { path: "/education",     hash: "#education",     label: "Education",     icon: <FaGraduationCap /> },
-  { path: "/certifications",hash: "#certifications",label: "Certifications",icon: <FaCertificate /> },
-  { path: "/blog",          hash: "#blog",          label: "Blog",          icon: <FaBlog /> },
-  { path: "/contact",       hash: "#contact",       label: "Contact",       icon: <FaEnvelope /> },
+  { path: "/", hash: "#home", label: "Home", icon: <FaHome /> },
+  { path: "/about", hash: "#about", label: "About", icon: <FaUser /> },
+  { path: "/projects", hash: "#projects", label: "Projects", icon: <FaProjectDiagram /> },
+  { path: "/techstack", hash: "#techstack", label: "Skills", icon: <FaCode /> },
+  { path: "/experience", hash: "#experience", label: "Experience", icon: <FaBriefcase /> },
+  { path: "/dsa", hash: "#dsa-matrix", label: "DSA 1000+", icon: <SiLeetcode /> },
+  { path: "/playground", hash: "#playground", label: "Playground", icon: <FaTerminal /> },
+  { path: "/education", hash: "#education", label: "Education", icon: <FaGraduationCap /> },
+  { path: "/certifications", hash: "#certifications", label: "Certifications", icon: <FaCertificate /> },
+  { path: "/blog", hash: "#blog", label: "Blog", icon: <FaBlog /> },
+  { path: "/contact", hash: "#contact", label: "Contact", icon: <FaEnvelope /> },
 ];
 
-function Header() {
-  const [menuOpen, setMenuOpen]             = useState(false);
-  const [scrolled, setScrolled]             = useState(false);
+function Header({ onOpenCmd, onOpenRecruiter }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeSection, setActiveSection]   = useState("home");
-  const [showMoreMenu, setShowMoreMenu]     = useState(false);
-  const [showThemeMenu, setShowThemeMenu]   = useState(false);
-  const [themeSearch, setThemeSearch]       = useState("");
+  const [activeSection, setActiveSection] = useState("home");
+  const [showMoreMenu, setShowMoreMenu] = useState(false);
+  const [showThemeMenu, setShowThemeMenu] = useState(false);
+  const [themeSearch, setThemeSearch] = useState("");
   
-  const moreRef  = useRef(null);
+  const moreRef = useRef(null);
   const themeRef = useRef(null);
 
   const { theme, themes, setTheme, currentTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
 
-  /* ── Scroll progress + shrink ── */
   useEffect(() => {
     const onScroll = () => {
       const scrollTop = window.scrollY;
@@ -49,7 +64,6 @@ function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* ── Active section tracker via IntersectionObserver ── */
   useEffect(() => {
     const ids = navItems.map((n) => n.hash.replace("#", ""));
     const observers = [];
@@ -66,7 +80,6 @@ function Header() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  /* ── Close dropdowns on outside click ── */
   useEffect(() => {
     const handler = (e) => {
       if (moreRef.current && !moreRef.current.contains(e.target)) setShowMoreMenu(false);
@@ -76,7 +89,6 @@ function Header() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  /* ── Body scroll lock when mobile menu is open ── */
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -88,7 +100,6 @@ function Header() {
     };
   }, [menuOpen]);
 
-  /* ── Close menus on Escape key and window resize ── */
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -111,7 +122,7 @@ function Header() {
   }, []);
 
   const toggleMenu = () => setMenuOpen((p) => !p);
-  const closeMenu  = () => { setMenuOpen(false); setShowMoreMenu(false); setShowThemeMenu(false); };
+  const closeMenu = () => { setMenuOpen(false); setShowMoreMenu(false); setShowThemeMenu(false); };
 
   const handleNavClick = (hash) => {
     closeMenu();
@@ -123,12 +134,10 @@ function Header() {
     }
   };
 
-  /* Desktop: show first 6, rest in "More" dropdown */
   const primaryItems = navItems.slice(0, 6);
-  const moreItems    = navItems.slice(6);
+  const moreItems = navItems.slice(6);
 
-  const isNavActive = (item) =>
-    activeSection === item.hash.replace("#", "");
+  const isNavActive = (item) => activeSection === item.hash.replace("#", "");
 
   const filteredThemes = themeSearch.trim()
     ? themes.filter((t) => t.label.toLowerCase().includes(themeSearch.toLowerCase()) || t.name.toLowerCase().includes(themeSearch.toLowerCase()))
@@ -137,11 +146,8 @@ function Header() {
   return (
     <>
       <header className={`header ${scrolled ? "scrolled" : ""}`}>
-
-        {/* Scroll Progress Bar */}
         <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
 
-        {/* Logo */}
         <div className="logo" onClick={() => handleNavClick("#home")} style={{ cursor: "pointer" }}>
           <div className="logo-img-wrap">
             <img src="/assets/image.jpg" alt="Satyam Kumar Mishra" className="profile-img" />
@@ -153,7 +159,6 @@ function Header() {
           </div>
         </div>
 
-        {/* Desktop Nav */}
         <nav className="nav-desktop">
           <ul>
             {primaryItems.map((item, index) => (
@@ -170,7 +175,6 @@ function Header() {
               </li>
             ))}
 
-            {/* More Dropdown */}
             <li ref={moreRef} className="more-dropdown-wrap">
               <button
                 className={`nav-btn more-btn ${moreItems.some(isNavActive) ? "active-link" : ""}`}
@@ -198,10 +202,27 @@ function Header() {
           </ul>
         </nav>
 
-        {/* Controls: Theme Picker Dropdown + Quick Sun/Moon + Hamburger */}
         <div className="menu-controls">
-          
-          {/* Navbar Theme Dropdown Selector */}
+          <button
+            className="nav-recruiter-btn"
+            onClick={onOpenRecruiter}
+            title="Fast-Track Executive View"
+            aria-label="Open Recruiter Fast Track Mode"
+          >
+            <FaBolt className="bolt-icon" />
+            <span>Recruiter Mode</span>
+          </button>
+
+          <button
+            className="nav-cmd-trigger"
+            onClick={onOpenCmd}
+            title="Command Palette (Ctrl + K)"
+            aria-label="Open Command Palette"
+          >
+            <FaSearch />
+            <span className="cmd-key-badge">⌘K</span>
+          </button>
+
           <div className="nav-theme-dropdown-wrap" ref={themeRef}>
             <button
               className={`nav-theme-btn ${showThemeMenu ? "active" : ""}`}
@@ -215,7 +236,6 @@ function Header() {
               <FaChevronDown className={`chevron ${showThemeMenu ? "open" : ""}`} />
             </button>
 
-            {/* Navbar Theme Dropdown Menu */}
             {showThemeMenu && (
               <div className="nav-theme-menu">
                 <div className="nav-theme-header">
@@ -254,7 +274,6 @@ function Header() {
             )}
           </div>
 
-          {/* Hamburger Menu */}
           <button
             className={`menu-btn ${menuOpen ? "open" : ""}`}
             onClick={toggleMenu}
@@ -267,18 +286,24 @@ function Header() {
           </button>
         </div>
 
-        {/* Mobile Drawer */}
         <nav className={`nav-mobile ${menuOpen ? "active" : ""}`}>
-          {/* Close handle */}
           <div className="mobile-nav-header">
             <span className="mobile-nav-title">Navigation</span>
             <button className="mobile-close-btn" onClick={closeMenu}><FaTimes /></button>
           </div>
 
-          {/* Mobile Theme Selector Strip */}
+          <div className="mobile-quick-actions">
+            <button className="mobile-recruiter-btn" onClick={() => { closeMenu(); onOpenRecruiter(); }}>
+              <FaBolt /> Recruiter Mode
+            </button>
+            <button className="mobile-cmd-btn" onClick={() => { closeMenu(); onOpenCmd(); }}>
+              <FaSearch /> Search / ⌘K
+            </button>
+          </div>
+
           <div className="mobile-theme-strip">
             <div className="mobile-theme-title">
-              <FaPalette /> Theme Color: <strong>{currentTheme?.label}</strong>
+              <FaPalette /> Theme: <strong>{currentTheme?.label}</strong>
             </div>
             <div className="mobile-theme-scroll">
               {themes.slice(0, 10).map((t) => (

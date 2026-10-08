@@ -15,6 +15,7 @@ import {
   FaSearch,
   FaTimes,
   FaJava,
+  FaRocket
 } from "react-icons/fa";
 import {
   SiOpenai,
@@ -152,12 +153,10 @@ function TechStack() {
 
   const filteredCategories = techCategories
     .map((category) => {
-      // Category filter
       if (activeCategory !== "All" && category.categoryKey !== activeCategory) {
         return null;
       }
 
-      // Search query filter
       if (!searchQuery.trim()) return category;
 
       const q = searchQuery.toLowerCase();
@@ -176,7 +175,7 @@ function TechStack() {
       <div className="container">
         <div className="techstack-header">
           <span className="shimmer-badge">
-            <FaCogs /> Production Toolkit
+            <FaCogs /> Production Engineering Toolkit
           </span>
           <h2 className="main-title">Skills & Technical Expertise</h2>
           <p className="intro">
@@ -184,7 +183,6 @@ function TechStack() {
           </p>
         </div>
 
-        {/* Search & Category Filter Controls */}
         <div className="techstack-controls">
           <div className="tech-search-box">
             <FaSearch className="ts-search-icon" />
@@ -214,11 +212,10 @@ function TechStack() {
           </div>
         </div>
 
-        {/* Categories Grid */}
         <AnimatePresence mode="popLayout">
           {filteredCategories.length === 0 ? (
             <div className="no-tech-results">
-              <p>🔍 No technologies match your search query. Try another term!</p>
+              <p>No technologies match your search query. Try another term!</p>
             </div>
           ) : (
             filteredCategories.map((category, i) => (
@@ -233,7 +230,7 @@ function TechStack() {
                 <h3 className="category-title">{category.title}</h3>
 
                 <div className="tech-grid">
-                  {category.items.map((tech, index) => {
+                  {category.items.map((tech) => {
                     const IconComp = tech.icon;
                     return (
                       <motion.div
@@ -263,7 +260,7 @@ function TechStack() {
         </AnimatePresence>
 
         <div className="closing">
-          🚀 Always eager to master cutting-edge technologies, optimize system architectures, and deliver resilient product engineering solutions!
+          Committed to mastering cutting-edge architectures, optimizing system performance, and delivering resilient product engineering solutions.
         </div>
       </div>
     </section>

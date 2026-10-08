@@ -13,6 +13,7 @@ import {
   FaCheck,
   FaAward
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import "../styles/achievements.css";
 
 const ACHIEVEMENTS_DATA = [
@@ -43,30 +44,30 @@ const ACHIEVEMENTS_DATA = [
     shadow: "rgba(236, 72, 153, 0.35)"
   },
   {
-    id: "projects-count",
-    title: "10+ Real-World Projects",
-    subtitle: "Full-Stack Web Applications",
+    id: "dsa-milestone",
+    title: "1000+ DSA Solutions",
+    subtitle: "LeetCode Java Mastery",
     category: "Projects & Tech",
-    metric: "10+ Built",
-    icon: FaProjectDiagram,
+    metric: "1000+ Solved",
+    icon: SiLeetcode,
     description:
-      "Designed, engineered, and deployed 10+ real-world applications showcasing responsive UI/UX, robust APIs, and database design.",
-    tags: ["MERN Stack", "Full Stack", "Clean Architecture", "UI/UX"],
-    color: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
-    shadow: "rgba(59, 130, 246, 0.35)"
+      "Solved 1000+ algorithmic problems spanning graphs, dynamic programming, binary trees, and sliding window techniques.",
+    tags: ["Java", "LeetCode", "Data Structures", "Algorithms"],
+    color: "linear-gradient(135deg, #f89820 0%, #d97706 100%)",
+    shadow: "rgba(248, 152, 32, 0.35)"
   },
   {
-    id: "mern-proficiency",
-    title: "MERN Stack Mastery",
-    subtitle: "Full-Stack Web Engineering",
+    id: "projects-count",
+    title: "15+ Production Systems",
+    subtitle: "Full-Stack & SaaS Architecture",
     category: "Projects & Tech",
-    metric: "Full Stack",
-    icon: FaCode,
+    metric: "15+ Built",
+    icon: FaProjectDiagram,
     description:
-      "Demonstrated strong proficiency in building reactive frontends in React 19, RESTful Node/Express backends, and MongoDB optimizations.",
-    tags: ["React 19", "Node.js", "Express.js", "MongoDB"],
-    color: "linear-gradient(135deg, #6366f1 0%, #4338ca 100%)",
-    shadow: "rgba(99, 102, 241, 0.35)"
+      "Designed, engineered, and deployed 15+ real-world applications showcasing responsive UI/UX, robust APIs, and database design.",
+    tags: ["MERN Stack", "Next.js", "RAG Systems", "Clean Architecture"],
+    color: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
+    shadow: "rgba(59, 130, 246, 0.35)"
   },
   {
     id: "workshop-mentorship",
@@ -134,17 +135,15 @@ function Achievements() {
 
   return (
     <section id="achievements" className="achievements">
-      {/* Section Header */}
       <div className="achievements-header">
         <span className="achievements-badge">
           <FaStar className="star-badge-icon" /> Track Record & Impact
         </span>
         <h2>Achievements & Milestones</h2>
         <p className="subtitle">
-          A glimpse into my journey of academic excellence, full-stack project milestones, leadership, and community impact 🚀
+          A verifiable record of academic merit, full-stack production milestones, leadership, and community impact.
         </p>
 
-        {/* Stats Summary Banner */}
         <div className="achievements-stats-banner">
           <div className="ach-stat-item">
             <span className="ach-stat-num">Rank #1</span>
@@ -152,8 +151,8 @@ function Achievements() {
           </div>
           <div className="ach-stat-divider" />
           <div className="ach-stat-item">
-            <span className="ach-stat-num">10+</span>
-            <span className="ach-stat-lbl">Full-Stack Projects</span>
+            <span className="ach-stat-num">1000+</span>
+            <span className="ach-stat-lbl">DSA Problems Solved</span>
           </div>
           <div className="ach-stat-divider" />
           <div className="ach-stat-item">
@@ -163,7 +162,6 @@ function Achievements() {
         </div>
       </div>
 
-      {/* Category Tabs */}
       <div className="achievements-tabs-container">
         <div className="achievements-category-tabs">
           {CATEGORIES.map((cat) => (
@@ -185,7 +183,6 @@ function Achievements() {
         </div>
       </div>
 
-      {/* Achievements Grid */}
       <motion.div className="achievements-list" layout>
         <AnimatePresence mode="popLayout">
           {filteredItems.map((item) => {
@@ -206,7 +203,6 @@ function Achievements() {
                   "--ach-shadow-color": item.shadow
                 }}
               >
-                {/* Top Row: Icon Badge & Metric Pill */}
                 <div className="ach-card-top">
                   <div className="ach-icon-badge" style={{ background: item.color }}>
                     <IconComponent className="ach-react-icon" />
@@ -216,14 +212,11 @@ function Achievements() {
                   </span>
                 </div>
 
-                {/* Title & Subtitle */}
                 <h3 className="ach-card-title">{item.title}</h3>
                 <span className="ach-card-subtitle">{item.subtitle}</span>
 
-                {/* Description */}
                 <p className="ach-card-description">{item.description}</p>
 
-                {/* Tags Row */}
                 <div className="ach-tags-row">
                   {item.tags.map((tag, idx) => (
                     <span key={idx} className="ach-tag">

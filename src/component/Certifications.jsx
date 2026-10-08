@@ -53,11 +53,15 @@ function Certifications() {
 
   return (
     <section id="certifications" className="certifications">
-      <h2>🎓 Certifications & Internships</h2>
-      <p className="cert-description">
-        Verified certifications and internship experience letters showcasing hands-on
-        Full Stack Development work and strong Data Structures & Algorithms fundamentals in Java.
-      </p>
+      <div className="cert-header-wrap" style={{ textAlign: "center", marginBottom: "20px" }}>
+        <span className="shimmer-badge">
+          <FaCertificate /> Verified Credentials
+        </span>
+        <h2>Certifications & Internships</h2>
+        <p className="cert-description">
+          Verified certifications and internship experience credentials showcasing production Full Stack Engineering work and Data Structures & Algorithms expertise in Java.
+        </p>
+      </div>
 
       <div className="certificates-container">
         {certificates.map((cert, index) => (

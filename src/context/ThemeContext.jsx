@@ -35,7 +35,6 @@ export const THEMES = [
   { name: "sunset",    label: "Sunset",    colors: ["#1e293b","#f5734c","#ec4899","#ffffff"] },
 ];
 
-// Determine if a background is dark
 function isDarkColor(hex) {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
@@ -61,7 +60,6 @@ export const ThemeProvider = ({ children }) => {
     const accent2 = t.colors[2];
     const text = t.colors[3];
 
-    // Helper: hex to rgba
     const hexToRgba = (hex, alpha) => {
       const r = parseInt(hex.slice(1,3), 16);
       const g = parseInt(hex.slice(3,5), 16);
@@ -71,7 +69,6 @@ export const ThemeProvider = ({ children }) => {
 
     const dark = isDarkColor(bg);
 
-    // Set all CSS variables dynamically
     root.style.setProperty("--bg-primary", bg);
     root.style.setProperty("--bg-gradient", `linear-gradient(-45deg, ${bg}, ${hexToRgba(accent, 0.1)}, ${hexToRgba(accent2, 0.12)}, ${bg})`);
     root.style.setProperty("--bg-card", dark ? hexToRgba(bg, 0.7) : hexToRgba("#ffffff", 0.88));
@@ -91,7 +88,6 @@ export const ThemeProvider = ({ children }) => {
     root.style.setProperty("--tag-bg", hexToRgba(accent, 0.14));
     root.style.setProperty("--tag-text", accent);
 
-    // Save to localStorage
     localStorage.setItem("portfolio_theme", themeName);
     document.documentElement.setAttribute("data-theme", themeName);
     document.body.setAttribute("data-theme", themeName);
@@ -100,7 +96,6 @@ export const ThemeProvider = ({ children }) => {
 
   const setTheme = (name) => setThemeName(name);
 
-  // Legacy toggle (dark ↔ light) used by the navbar sun/moon button
   const toggleTheme = () => {
     setThemeName((prev) => (prev === "dark" ? "light" : "dark"));
   };

@@ -13,42 +13,42 @@ import {
 
 const funnyFacts = [
   {
-    fact: "🐛 Spent 5 hours debugging code, only to realize I was editing the wrong file!",
+    fact: "Spent 5 hours debugging code, only to realize I was editing the wrong file!",
     category: "Debugging Saga",
     tag: "Dev Pain"
   },
   {
-    fact: "🤹 Can solve a Rubik’s Cube in under 60 seconds while waiting for `npm install` to finish!",
+    fact: "Can solve a Rubik’s Cube in under 60 seconds while waiting for npm install to finish!",
     category: "Secret Talent",
-    tag: "Procrastination"
+    tag: "Focus"
   },
   {
-    fact: "🧠 Solved 1000+ DSA problems on LeetCode... still googles 'how to center a div' sometimes! 😂",
+    fact: "Solved 1000+ DSA problems on LeetCode... still googles 'how to center a div' sometimes!",
     category: "CSS Reality",
     tag: "Relatable"
   },
   {
-    fact: "☕ Java is to JavaScript as Car is to Carpet!",
+    fact: "Java is to JavaScript as Car is to Carpet!",
     category: "Tech Trivia",
     tag: "Classic"
   },
   {
-    fact: "🎙️ I talk to my AI Assistant out loud late at night... and it gives surprisingly good advice!",
-    category: "AI Friend",
+    fact: "I talk to my AI Assistant out loud late at night... and it gives surprisingly good advice!",
+    category: "AI Companion",
     tag: "Night Owl"
   },
   {
-    fact: "🤯 99 little bugs in the code... take one down, patch it around... 127 little bugs in the code!",
+    fact: "99 little bugs in the code... take one down, patch it around... 127 little bugs in the code!",
     category: "Coding Life",
     tag: "Recursion"
   },
   {
-    fact: "🗑️ Accidentally deleted a folder once... rebuilt the whole project 2x better in 1 day!",
+    fact: "Accidentally deleted a folder once... rebuilt the whole project 2x better in 1 day!",
     category: "Super Power",
     tag: "Resilience"
   },
   {
-    fact: "🌑 I love dark mode so much, my eyes hurt when I look at a white piece of real paper!",
+    fact: "I love dark mode so much, my eyes hurt when I look at a white piece of real paper!",
     category: "Dark Mode Supremacy",
     tag: "Theme"
   }
@@ -71,15 +71,15 @@ function FunFacts() {
   return (
     <section id="funfacts" className="funfacts">
       <div className="funfacts-header">
-        <h2>
-          <FaSmileBeam className="icon-title" /> Funny Facts & Dev Humor
-        </h2>
+        <span className="shimmer-badge">
+          <FaSmileBeam /> Developer Culture
+        </span>
+        <h2>Dev Realities & Engineering Humor</h2>
         <p className="funfacts-subtitle">
-          A lighthearted look at my coding quirks, late-night debugging sagas, and secret developer superpowers!
+          A lighthearted look at coding quirks, late-night debugging sagas, and developer life lessons.
         </p>
       </div>
 
-      {/* Main Interactive Flip Fact Card */}
       <div className={`interactive-fact-card ${isFlipping ? "flipping" : ""}`}>
         <div className="card-top-bar">
           <span className="fact-badge">
@@ -98,12 +98,11 @@ function FunFacts() {
         <div className="fact-footer">
           <span className="fact-tag">#{currentFact.tag}</span>
           <button className="next-fact-btn" onClick={nextFact}>
-            <FaSyncAlt className="spin-icon" /> Next Funny Fact
+            <FaSyncAlt className="spin-icon" /> Next Fact
           </button>
         </div>
       </div>
 
-      {/* Grid of Funny Dev Realities */}
       <div className="dev-realities-grid">
         <div className="reality-card glass">
           <div className="reality-icon"><FaBug /></div>
@@ -113,14 +112,14 @@ function FunFacts() {
 
         <div className="reality-card glass">
           <div className="reality-icon"><FaBolt /></div>
-          <h3>What I'm Currently Learning</h3>
-          <p>🚀 Mastering <strong>Next.js 15 Server Actions</strong> & <strong>OpenAI RAG Agents</strong>.</p>
+          <h3>Continuous Learning</h3>
+          <p>Mastering Next.js 15 Server Actions, RAG Architectures, and Distributed Systems.</p>
         </div>
 
         <div className="reality-card glass">
           <div className="reality-icon"><FaLightbulb /></div>
-          <h3>Did You Know?</h3>
-          <p>💡 I've mentored 250+ students in Web Dev & Java workshops, proving that teaching is the best way to learn!</p>
+          <h3>Community Leadership</h3>
+          <p>Mentored 400+ students in Web Dev & Java workshops, proving that teaching is the best way to master concepts.</p>
         </div>
       </div>
     </section>
@@ -128,4 +127,3 @@ function FunFacts() {
 }
 
 export default FunFacts;
-

@@ -22,7 +22,7 @@ function Education() {
       score: "CGPA: 8.17",
       scoreDetail: "College Topper (Rank #1 in Semesters 1 - 3)",
       description: "Successfully completed Degree with hands-on expertise in Full-Stack Web Development (MERN/Next.js), Data Structures & Algorithms (1000+ DSA Solved), Systems Architecture, and Generative AI Integration.",
-      skills: ["MERN Stack", "Next.js", "Java & DSA", "System Design", "Generative AI", "PostgreSQL"],
+      skills: ["MERN Stack", "Next.js 15", "Java & DSA (1000+)", "System Design", "Generative AI", "PostgreSQL"],
       progress: 100,
       icon: <FaUniversity />,
       isHighlight: true
@@ -62,11 +62,12 @@ function Education() {
   return (
     <section id="education" className="education">
       <div className="edu-header">
-        <h2>
-          <FaGraduationCap className="edu-header-icon" /> Education & Academic Journey
-        </h2>
+        <span className="shimmer-badge">
+          <FaGraduationCap /> Academic Pedigree
+        </span>
+        <h2>Education & Academic Journey</h2>
         <p className="edu-subtitle">
-          My academic qualifications, accomplishments, and engineering specialization
+          Academic qualifications, distinction milestones, and computer science engineering specialization.
         </p>
       </div>
 
@@ -140,4 +141,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default Education;

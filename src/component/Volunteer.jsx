@@ -128,17 +128,15 @@ function Volunteer() {
 
   return (
     <section id="volunteer" className="volunteer">
-      {/* Section Header */}
       <div className="volunteer-header">
         <span className="volunteer-badge">
           <FaHeart className="heart-badge-icon" /> Giving Back & Community
         </span>
         <h2>Volunteer & Community Work</h2>
         <p className="volunteer-desc">
-          Empowering learners, fostering tech innovation, organizing high-impact campus events, and contributing to the open-source ecosystem.
+          Empowering learners, fostering tech innovation, organizing campus events, and contributing to the open-source ecosystem.
         </p>
 
-        {/* Stats Summary Banner */}
         <div className="volunteer-stats-banner">
           <div className="volunteer-stat-item">
             <span className="v-stat-num">400+</span>
@@ -157,7 +155,6 @@ function Volunteer() {
         </div>
       </div>
 
-      {/* Category Tabs */}
       <div className="volunteer-tabs-container">
         <div className="volunteer-category-tabs">
           {CATEGORIES.map((cat) => (
@@ -179,7 +176,6 @@ function Volunteer() {
         </div>
       </div>
 
-      {/* Volunteer Grid */}
       <motion.div className="volunteer-grid" layout>
         <AnimatePresence mode="popLayout">
           {filteredItems.map((item) => {
@@ -200,7 +196,6 @@ function Volunteer() {
                   "--card-shadow-color": item.shadow
                 }}
               >
-                {/* Card Header Row */}
                 <div className="v-card-top">
                   <div className="v-icon-badge" style={{ background: item.color }}>
                     <IconComponent className="v-react-icon" />
@@ -208,11 +203,9 @@ function Volunteer() {
                   <span className="v-category-pill">{item.category}</span>
                 </div>
 
-                {/* Card Title & Org */}
                 <h3 className="v-card-title">{item.title}</h3>
                 <span className="v-card-subtitle">{item.organization}</span>
 
-                {/* Date & Impact Pill */}
                 <div className="v-meta-row">
                   <span className="v-date-tag">
                     <FaCalendarAlt className="v-meta-icon" /> {item.date}
@@ -222,10 +215,8 @@ function Volunteer() {
                   </span>
                 </div>
 
-                {/* Description */}
                 <p className="v-card-description">{item.description}</p>
 
-                {/* Highlight Tags */}
                 <div className="v-tags-row">
                   {item.tags.map((tag, idx) => (
                     <span key={idx} className="v-tag">

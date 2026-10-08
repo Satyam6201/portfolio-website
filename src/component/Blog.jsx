@@ -10,9 +10,11 @@ import {
   FaLaughBeam, 
   FaLightbulb, 
   FaFire, 
-  FaBookmark,
   FaTag,
-  FaShareAlt
+  FaShareAlt,
+  FaCode,
+  FaLock,
+  FaRobot
 } from "react-icons/fa";
 
 const blogPosts = [
@@ -20,13 +22,13 @@ const blogPosts = [
     id: 1,
     isFeatured: true,
     category: "React & Next.js",
-    title: "🧠 Mastering Next.js 15 Server Actions & RAG AI Architecture",
+    title: "Mastering Next.js 15 Server Actions & RAG AI Architecture",
     desc: "A deep dive into building production-ready SaaS platforms with Next.js 15, App Router, Server Actions, and OpenAI API integration.",
     content: `Building modern AI-powered applications requires leveraging server components and streaming responses.
 
 Key Takeaways:
 1. Server Actions simplify form mutations without writing explicit API routes.
-2. Vector embeddings with Pinecone/PGVector enable fast RAG (Retrieval-Augmented Generation) context lookup.
+2. Vector embeddings with Pinecone/FAISS enable fast RAG (Retrieval-Augmented Generation) context lookup.
 3. Clerk + Prisma ORM provides enterprise-grade Role-Based Access Control (RBAC).
 
 Whether you are building healthcare SaaS or e-commerce platforms, this architecture ensures sub-second response times and maximum security.`,
@@ -39,20 +41,20 @@ Whether you are building healthcare SaaS or e-commerce platforms, this architect
     id: 2,
     isFeatured: false,
     category: "Dev Humor",
-    title: "😂 10 Hilarious Realities of Being a Full-Stack Engineer",
-    desc: "Why do programmers prefer dark mode? Because light attracts bugs! A lighthearted collection of developer humor, bug hunting sagas, and coding memes.",
+    title: "10 Realities of Being a Full-Stack Engineer",
+    desc: "Why do programmers prefer dark mode? Because light attracts bugs! A lighthearted collection of developer humor and debugging sagas.",
     content: `Coding is 10% writing code and 90% figuring out why it doesn't work!
 
 Developer Myths vs Realities:
 - Myth: Developers write code non-stop for 8 hours.
-- Reality: Spent 4 hours renaming a variable, 2 hours on StackOverflow, and 2 hours explaining why a semicolon broke production.
+- Reality: Spent 4 hours renaming a variable, 2 hours on StackOverflow, and 2 hours explaining why a missing semicolon broke production.
 
-Classic Dev Jokes:
+Classic Dev Realities:
 1. There are 10 types of people in the world: those who understand binary, and those who don't.
 2. A SQL query walks into a bar, approaches two tables and asks... "Can I join you?"
 3. 99 little bugs in the code... take one down, patch it around... 127 little bugs in the code!
 
-Moral of the story: Keep coding, stay calm, and don't push to main on a Friday! 🚀`,
+Keep coding, stay calm, and test thoroughly before production deployment.`,
     readTime: "3 min read",
     date: "July 2026",
     likes: 289,
@@ -62,7 +64,7 @@ Moral of the story: Keep coding, stay calm, and don't push to main on a Friday! 
     id: 3,
     isFeatured: false,
     category: "Java & DSA",
-    title: "⚡ How I Solved 1000+ DSA Problems on LeetCode in Java",
+    title: "How I Solved 1000+ DSA Problems on LeetCode in Java",
     desc: "Pattern recognition, time complexity trade-offs, and graph/tree algorithms that cracked coding interviews.",
     content: `Consistency is the key to mastering Data Structures and Algorithms.
 
@@ -83,7 +85,7 @@ Focus on understanding underlying patterns rather than memorizing individual sol
     id: 4,
     isFeatured: false,
     category: "AI & GenAI",
-    title: "🤖 Integrating OpenAI Voice AI & RAG Agents into React Apps",
+    title: "Integrating OpenAI Voice AI & RAG Agents into React Apps",
     desc: "Learn how to embed conversational AI assistants and real-time voice agents into React & Next.js applications.",
     content: `Generative AI has shifted web apps from static portals to dynamic conversational partners.
 
@@ -97,7 +99,7 @@ In this guide, we walk through setting up streaming completions with the Vercel 
     id: 5,
     isFeatured: false,
     category: "Dev Humor",
-    title: "💬 Talking to Code: Confessions of a Night-Owl Programmer",
+    title: "Talking to Code: Confessions of a Night-Owl Programmer",
     desc: "Ever spent 5 hours debugging only to realize you forgot to call the function? You are not alone!",
     content: `Rubber duck debugging is real! Explaining your code out loud to a plastic duck (or your AI assistant) forces your brain to evaluate logic line by line.
 
@@ -114,7 +116,7 @@ Top 3 Late-Night Debugging Realizations:
     id: 6,
     isFeatured: false,
     category: "API & Security",
-    title: "🔒 JWT Authentication, RBAC & Redis Rate Limiting",
+    title: "JWT Authentication, RBAC & Redis Rate Limiting",
     desc: "Protecting Node.js and Express REST APIs with JWT tokens, refresh tokens, role-based authorization, and Redis caching.",
     content: `API security is non-negotiable in production SaaS products.
 
@@ -156,17 +158,16 @@ function Blog() {
 
   return (
     <section id="blog" className="blog">
-      {/* Header */}
       <div className="blog-header-section">
-        <h2>
-          <FaBookOpen className="header-icon" /> Tech Blog & Developer Stories
-        </h2>
+        <span className="shimmer-badge">
+          <FaBookOpen /> Insights & Case Studies
+        </span>
+        <h2>Engineering Blog & Technical Insights</h2>
         <p className="blog-intro">
-          Insights on Full-Stack Engineering, Generative AI, Java DSA, and Lighthearted Developer Humor!
+          Deep dives into Full-Stack Architecture, Generative AI, Java Algorithms, and Modern Web Security.
         </p>
       </div>
 
-      {/* Featured Hero Article */}
       {featuredPost && (
         <div className="featured-hero-card" onClick={() => setActivePost(featuredPost)}>
           <div className="featured-badge-pill">
@@ -188,13 +189,12 @@ function Blog() {
         </div>
       )}
 
-      {/* Search and Category Filter Controls */}
       <div className="blog-controls-wrapper">
         <div className="blog-search-bar">
           <FaSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Search articles by title, tech stack, or funny facts..."
+            placeholder="Search articles by title, tech stack, or topic..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -220,11 +220,10 @@ function Blog() {
         </div>
       </div>
 
-      {/* Blog Grid */}
       <div className="blog-container">
         {filteredPosts.length === 0 ? (
           <div className="no-posts">
-            <p>🔍 No articles found matching your search term.</p>
+            <p>No articles found matching your search term.</p>
           </div>
         ) : (
           filteredPosts.map((post) => (
@@ -264,7 +263,6 @@ function Blog() {
         )}
       </div>
 
-      {/* Article Detail Modal */}
       {activePost && (
         <div className="blog-modal-overlay" onClick={() => setActivePost(null)}>
           <div className="blog-modal" onClick={(e) => e.stopPropagation()}>
@@ -306,4 +304,3 @@ function Blog() {
 }
 
 export default Blog;
-

@@ -5,7 +5,6 @@ import {
   FaBriefcase,
   FaLightbulb,
   FaCubes,
-  FaCompass,
   FaSlidersH,
   FaThLarge,
   FaCheckCircle,
@@ -19,14 +18,14 @@ const GOALS_DATA = [
   {
     id: "internships",
     phase: "Phase 1 • 0-1 Year",
-    title: "Frontend & Full-Stack Internships",
-    tagline: "Building high-impact frontend products & responsive UIs",
+    title: "Full-Stack & Systems Engineering",
+    tagline: "Building high-impact production systems & responsive UIs",
     icon: FaRocket,
     readiness: 95,
     category: "Phase 1: Short-Term",
     description:
-      "Contribute to real-world software products through internships in Frontend & Web Development. Leveraging React 19, JavaScript, CSS3, and UI design principles to deliver fast, accessible, user-centric experiences.",
-    tags: ["React 19", "JavaScript (ES6+)", "UI/UX Design", "Responsive Web"],
+      "Contribute to real-world software products through full-stack engineering roles. Leveraging React 19, Next.js 15, Node.js, and API architecture to deliver fast, accessible, high-performance web systems.",
+    tags: ["React 19", "Next.js 15", "Node.js", "Express", "PostgreSQL"],
     color: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
     shadow: "rgba(59, 130, 246, 0.4)"
   },
@@ -34,41 +33,41 @@ const GOALS_DATA = [
     id: "fullstack-role",
     phase: "Phase 2 • 1-2 Years",
     title: "Full-Stack Software Engineer",
-    tagline: "Kickstarting professional career in modern web engineering",
+    tagline: "Scalable web architectures & microservices development",
     icon: FaBriefcase,
     readiness: 90,
     category: "Phase 2: Mid-Term",
     description:
-      "Securing a full-time Full-Stack Software Engineer role working with the MERN Stack. Building scalable APIs, backend services, client-side state management, and collaborating within agile engineering teams.",
-    tags: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
+      "Securing a full-time Software Engineer role building scalable APIs, event-driven backend services, distributed caching with Redis, and collaborating within agile engineering teams.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Redis", "Kafka"],
     color: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
     shadow: "rgba(139, 92, 246, 0.4)"
   },
   {
     id: "lifelong-learning",
     phase: "Phase 3 • 2-4 Years",
-    title: "Continuous Mastery & AI Tech",
-    tagline: "Mastering System Design, Next.js 15 & AI Agents",
+    title: "System Design & RAG Specialization",
+    tagline: "Mastering Distributed Systems & Vector Retrieval AI",
     icon: FaLightbulb,
     readiness: 88,
     category: "Phase 3: Mastery",
     description:
-      "Continuously expanding technical depth across Data Structures & Algorithms, System Design, Server Actions with Next.js 15, and integrating OpenAI RAG Agents into modern software solutions.",
-    tags: ["System Design", "Next.js 15", "AI RAG Agents", "Advanced DSA"],
+      "Continuously expanding technical depth across distributed system design, multi-tenant databases, FAISS vector indexing, and integrating OpenAI RAG Agents into enterprise workflows.",
+    tags: ["System Design", "Distributed Systems", "AI RAG Agents", "FAISS Vector"],
     color: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)",
     shadow: "rgba(245, 158, 11, 0.4)"
   },
   {
     id: "scalable-products",
     phase: "Phase 4 • 4+ Years",
-    title: "Architecting Scalable Products",
-    tagline: "Technical leadership & high-throughput software architecture",
+    title: "Staff Technical Leadership",
+    tagline: "Technical architecture & high-throughput software design",
     icon: FaCubes,
     readiness: 85,
     category: "Phase 4: Vision",
     description:
-      "Architecting robust, distributed, high-performance web systems that serve real-world users. Mentoring junior engineers, guiding product roadmaps, and driving technical excellence.",
-    tags: ["Distributed Systems", "Cloud Infrastructure", "Tech Leadership", "Scalable Apps"],
+      "Architecting robust, distributed, high-performance web platforms serving global users. Mentoring junior engineers, establishing code review excellence, and guiding product engineering roadmaps.",
+    tags: ["Cloud Infrastructure", "Tech Leadership", "Scalable Systems", "Architecture"],
     color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     shadow: "rgba(16, 185, 129, 0.4)"
   }
@@ -84,7 +83,7 @@ const CATEGORIES = [
 
 function Goal() {
   const [activeCategory, setActiveCategory] = useState("All Horizons");
-  const [viewMode, setViewMode] = useState("stage"); // 'stage' | 'grid'
+  const [viewMode, setViewMode] = useState("stage");
 
   const filteredGoals =
     activeCategory === "All Horizons"
@@ -93,17 +92,15 @@ function Goal() {
 
   return (
     <section id="goal" className="goal-section">
-      {/* Header Section */}
       <div className="goal-header">
         <span className="goal-badge">
           <FaBullseye className="target-icon" /> Vision & Roadmap
         </span>
-        <h2>🚀 My Career Goals</h2>
+        <h2>Engineering Roadmap & Career Goals</h2>
         <p className="goal-subtext">
-          My strategic career roadmap—from mastering modern full-stack web engineering to architecting scalable, high-impact software systems.
+          Strategic career progression—from mastering modern full-stack web engineering to architecting scalable, high-throughput software systems.
         </p>
 
-        {/* Stats Summary Banner */}
         <div className="goal-stats-banner">
           <div className="g-stat-item">
             <span className="g-stat-num">4</span>
@@ -111,7 +108,7 @@ function Goal() {
           </div>
           <div className="g-stat-divider" />
           <div className="g-stat-item">
-            <span className="g-stat-num">MERN & AI</span>
+            <span className="g-stat-num">Full-Stack & AI</span>
             <span className="g-stat-lbl">Primary Focus</span>
           </div>
           <div className="g-stat-divider" />
@@ -122,7 +119,6 @@ function Goal() {
         </div>
       </div>
 
-      {/* Controls: Category Tabs & View Switcher */}
       <div className="goal-controls">
         <div className="goal-category-tabs">
           {CATEGORIES.map((cat) => (
@@ -154,12 +150,11 @@ function Goal() {
             className={`g-toggle-btn ${viewMode === "grid" ? "active" : ""}`}
             onClick={() => setViewMode("grid")}
           >
-            <FaThLarge /> 3D Grid Matrix
+            <FaThLarge /> Matrix Grid View
           </button>
         </div>
       </div>
 
-      {/* Mode 1: 3D Stage Roadmap View */}
       {viewMode === "stage" && (
         <div className="goal-stage-container">
           <motion.div className="goal-3d-roadmap" layout>
@@ -182,7 +177,6 @@ function Goal() {
                       "--goal-shadow": goal.shadow
                     }}
                   >
-                    {/* Top Row: Phase Tag & Readiness Pill */}
                     <div className="g-card-top">
                       <span className="g-phase-pill" style={{ background: goal.color }}>
                         {goal.phase}
@@ -192,7 +186,6 @@ function Goal() {
                       </div>
                     </div>
 
-                    {/* Icon & Title Group */}
                     <div className="g-card-header-group">
                       <div className="g-icon-wrapper" style={{ background: goal.color }}>
                         <IconComponent className="g-react-icon" />
@@ -203,10 +196,8 @@ function Goal() {
                       </div>
                     </div>
 
-                    {/* Description */}
                     <p className="g-card-description">{goal.description}</p>
 
-                    {/* Focus Readiness Meter */}
                     <div className="g-meter-box">
                       <div className="g-meter-header">
                         <span>Target Focus & Preparedness</span>
@@ -223,7 +214,6 @@ function Goal() {
                       </div>
                     </div>
 
-                    {/* Skill Tags */}
                     <div className="g-tags-row">
                       {goal.tags.map((tag, idx) => (
                         <span key={idx} className="g-tag">
@@ -239,7 +229,6 @@ function Goal() {
         </div>
       )}
 
-      {/* Mode 2: 3D Grid Matrix View */}
       {viewMode === "grid" && (
         <motion.div className="goal-grid-matrix" layout>
           <AnimatePresence mode="popLayout">
@@ -296,10 +285,9 @@ function Goal() {
         </motion.div>
       )}
 
-      {/* CTA Button */}
       <div className="goal-cta-wrapper">
         <a href="mailto:satyamkmishraa@gmail.com" className="hire-me-btn">
-          <FaPaperPlane className="plane-icon" /> 💼 Hire Me / Let's Connect
+          <FaPaperPlane className="plane-icon" /> Connect for Opportunities
         </a>
       </div>
     </section>
