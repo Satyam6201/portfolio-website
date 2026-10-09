@@ -24,6 +24,7 @@ import {
   FaLaptopCode,
   FaTrophy,
   FaCogs,
+  FaServer,
   FaExternalLinkAlt
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
