@@ -17,7 +17,8 @@ import {
   FaRobot,
   FaCode,
   FaChevronDown,
-  FaChevronUp
+  FaChevronUp,
+  FaProjectDiagram
 } from "react-icons/fa";
 import "../styles/projects.css";
 
