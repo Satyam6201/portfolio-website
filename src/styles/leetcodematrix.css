@@ -630,9 +630,65 @@
 
 @media (max-width: 600px) {
   .dsa-metric-cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .dsa-stat-box {
+    padding: 14px;
+    gap: 8px;
+  }
+  .dsa-stat-icon-wrap {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  .dsa-stat-number {
+    font-size: 1.35rem;
+  }
+  .dsa-stat-label {
+    font-size: 0.72rem;
+  }
+  .dsa-stat-foot {
+    font-size: 0.72rem;
   }
   .rsi-title {
-    max-width: 150px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dsa-matrix-section {
+    padding: 30px 14px;
+    width: 95%;
+    gap: 22px;
+    border-radius: 16px;
+  }
+  .dsa-header h2 {
+    font-size: 1.4rem;
+  }
+  .dsa-subtext {
+    font-size: 0.88rem;
+  }
+  .dsa-metric-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .dsa-difficulty-card,
+  .dsa-recent-stream-card,
+  .dsa-topic-detail-card {
+    padding: 16px;
+  }
+  .recent-sub-item {
+    padding: 8px 10px;
+  }
+  .rsi-title {
+    max-width: 140px;
+    font-size: 0.78rem;
+  }
+  .dsa-topic-btn {
+    padding: 10px 12px;
+  }
+  .dtb-title {
+    font-size: 0.84rem;
   }
 }

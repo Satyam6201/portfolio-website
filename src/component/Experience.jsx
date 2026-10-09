@@ -13,28 +13,26 @@ import "../styles/experience.css";
 const experiences = [
   {
     id: "cit",
-    role: "Full Stack Development Intern",
+    role: "Full Stack Developer — Intern",
     company: "Code Innovative Technologies",
     location: "Remote",
     date: "Feb 2026 – Aug 2026",
     badge: "Recent Internship",
     isLatest: true,
     techStack: [
-      "React.js",
       "Next.js",
+      "React.js",
       "Node.js",
-      "Express.js",
       "MongoDB",
-      "PostgreSQL",
       "REST APIs",
-      "Git / Agile",
+      "JWT & RBAC",
+      "Docker",
+      "GitHub Actions (CI/CD)"
     ],
     highlights: [
-      "Architected and deployed 4+ full-stack production modules utilizing React.js, Next.js, Node.js, Express, and PostgreSQL, improving data fetch speeds by 34%.",
-      "Engineered 12+ RESTful API endpoints with strict schema validation and error-handling middleware, achieving 99.8% test coverage in CI pipelines.",
-      "Developed reusable, accessible UI component libraries shared across client deliverables, slashing frontend iteration cycle times by 28%.",
-      "Collaborated within cross-functional Agile engineering teams, conducting bi-weekly sprint reviews, Git PR code audits, and merge conflict resolutions.",
-      "Structured database indexing schemas in PostgreSQL and MongoDB, reducing average query execution latency from 240ms to under 75ms.",
+      "Engineered production-facing modules using Next.js, React.js, Node.js, and MongoDB, driving scalable core business features.",
+      "Architected 15+ secure RESTful APIs with JWT authentication and RBAC, ensuring strict data isolation and zero unauthorized access.",
+      "Automated CI/CD pipelines via GitHub Actions and Docker, cutting deployment cycle times by 40% with zero-downtime releases."
     ],
   },
   {
@@ -50,16 +48,15 @@ const experiences = [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "JWT Auth",
-      "Postman",
-      "REST APIs",
+      "MVC Architecture",
+      "Compound Indexing",
+      "Jest",
+      "Postman"
     ],
     highlights: [
-      "Engineered core MERN stack backend services for multi-tenant user authentication, profile management, and CRUD transactions.",
-      "Implemented zero-trust JWT authentication with refresh token rotation and protected route middleware, mitigating XSS and session hijacking risks.",
-      "Optimized complex MongoDB aggregation pipelines and indexing strategies, decreasing server memory overhead by 22%.",
-      "Authored automated and regression API test suites with Postman, validating 45+ endpoint contracts, edge cases, and status payload payloads.",
-      "Integrated frontend state synchronization with backend data layers, ensuring sub-second response times across high-traffic dashboard views.",
+      "Developed full-stack web applications using React.js, Node.js, Express.js, and MongoDB, following modular MVC design patterns.",
+      "Optimized high-traffic MongoDB queries using compound indexing and aggregation pipelines, slashing API latency by 35%.",
+      "Authored Jest unit tests and automated Postman test suites, achieving 85%+ test coverage and preventing critical production regressions."
     ],
   },
 ];
@@ -73,7 +70,7 @@ const Experience = () => {
         </span>
         <h2>Professional Experience</h2>
         <p className="experience-subtext">
-          Hands-on software engineering internships building production web architectures, secure REST APIs, and high-performance databases.
+          Production software engineering internships building full-stack modules, secure REST APIs with RBAC, automated CI/CD pipelines, and high-performance databases.
         </p>
       </div>
 
