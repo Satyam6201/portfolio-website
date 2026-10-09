@@ -23,7 +23,8 @@ import {
   FaShieldAlt,
   FaUsers,
   FaTrophy,
-  FaAward
+  FaAward,
+  FaLaptopCode
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import "../styles/chatbot.css";
