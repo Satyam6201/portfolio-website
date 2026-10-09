@@ -276,7 +276,7 @@ const projects = [
     description: "Interactive clock web app featuring customized timezone toggling, alarm sound notifications, stopwatch, and dynamic themes.",
     details: "Interactive clock web app featuring customized timezone toggling, alarm sound notifications, stopwatch, and dark/light color themes.",
     tech: ["React.js", "JavaScript", "HTML", "CSS"],
-    liveDemo: "https://digital-clock-app-12.vercel.app",
+    liveDemo: "https://clockify-delta.vercel.app/",
     github: "https://github.com/Satyam6201/Digital-Clock-App"
   },
   {
@@ -316,16 +316,39 @@ const projects = [
     github: "https://github.com/Satyam6201/Weather-App"
   },
   {
-    id: "tic-tac-toe",
-    title: "Tic-Tac-Toe Game",
-    tier: 3,
-    tierLabel: "Early Prototype & Utility",
-    image: "/assets/Tic Tac Toe.jpg",
-    description: "Classic two-player browser game with move history, reset options, and win streak tracking.",
-    details: "Responsive browser game with move history, reset options, and score counter.",
-    tech: ["JavaScript", "HTML", "CSS"],
-    liveDemo: "https://tic-tac-toe-game-xi-peach.vercel.app",
-    github: "https://github.com/Satyam6201/Tic-Tac-Toe-Game"
+    id: "ai-resume-parser",
+    title: "AI Resume Parser",
+    subtitle: "Production PDF-to-JSON Heuristic & Image Extraction Engine",
+    tier: 2,
+    tierLabel: "Real-Time & SaaS Application",
+    image: "/assets/resume-parser.png",
+    description: "Production-ready web application built with Node.js and Express that transforms PDF resumes into strictly structured JSON data with profile image extraction and zero external API dependencies.",
+    details: "Engineered an ultra-fast, local heuristic & regex parsing pipeline using Node.js, Express, pdf-parse, and Multer. Features automated profile picture extraction via PDF internal operator stream interception, zero-hallucination strict JSON schemas, section boundary isolation (Experience, Education, Projects, Skills, Summary), and a dark-mode Glassmorphism drag-and-drop UI.",
+    resumeHighlights: [
+      "Engineered an automated PDF resume-to-JSON extraction engine in Node.js and Express with strict schema validation.",
+      "Scanned PDF internal rendering operators to intercept raw image buffers, automatically extracting and saving embedded profile photos.",
+      "Implemented modular, isolated section parsers with heuristic boundary detection, eliminating cross-section data bleeding without external LLM costs.",
+      "Built a dark-mode Glassmorphism drag-and-drop interface with client-side syntax highlighting and sub-100ms parsing latency."
+    ],
+    architecture: {
+      diagram: "Client (Drag & Drop UI) ➔ Express POST /upload (Multer) ➔ pdf-parse Stream Interceptor ➔ Text Normalizer ➔ Section Boundary Detector ➔ Isolated Section Parsers ➔ Strict JSON Response",
+      tradeoffs: [
+        { decision: "Local Regex & Heuristics vs Cloud LLM APIs", reason: "Zero operational API costs, zero data privacy leaks, and sub-100ms local parse latency." },
+        { decision: "Modular Isolated Parsers vs Single-Pass Parser", reason: "Completely eliminates cross-section entity bleed between Experience and Projects." },
+        { decision: "Custom PDF Pagerender Buffer Interception", reason: "Scans internal rendering operators to extract embedded JPEG/PNG candidate profile pictures directly." }
+      ],
+      metrics: "Sub-100ms local parse latency, 100% strict JSON schema compliance, 0 external API costs, automatic profile photo extraction."
+    },
+    techStackLayers: [
+      { layer: "Backend API", stack: "Node.js (LTS), Express.js, Multer (multipart/form-data)" },
+      { layer: "Parsing Engine", stack: "pdf-parse (Custom Pagerender Image Interceptor), Heuristic Boundary Detector, Regex Dictionary" },
+      { layer: "Frontend UI", stack: "Vanilla HTML5, CSS3 Glassmorphism, JavaScript ES6+ (Drag & Drop, Syntax Highlighting)" },
+      { layer: "Storage & File System", stack: "Local File Buffers (/uploads/profile candidate photo storage)" }
+    ],
+    tech: ["Node.js", "Express.js", "JavaScript", "pdf-parse", "Multer", "HTML5", "CSS3 Glassmorphism", "Regex Engine"],
+    liveDemo: "https://github.com/Satyam6201/Resume-Parser",
+    github: "https://github.com/Satyam6201/Resume-Parser",
+    featured: true
   },
   {
     id: "brick-breaker",
@@ -590,7 +613,7 @@ function Projects() {
         <div className="archive-toggle-wrapper">
           <button className="archive-toggle-btn" onClick={() => setShowArchived(p => !p)}>
             {showArchived ? <FaChevronUp /> : <FaChevronDown />}
-            <span>{showArchived ? "Hide Early Prototypes & Mini-Apps" : "View Early Prototypes & Mini-Apps (6 Projects)"}</span>
+            <span>{showArchived ? "Hide Early Prototypes & Mini-Apps" : "View Early Prototypes & Mini-Apps (5 Projects)"}</span>
           </button>
         </div>
       )}
