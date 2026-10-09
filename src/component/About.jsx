@@ -13,7 +13,9 @@ import {
   FaChevronRight,
   FaArrowRight,
   FaCode,
-  FaLightbulb
+  FaLightbulb,
+  FaServer,
+  FaDatabase
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import "../styles/about.css";
@@ -21,55 +23,60 @@ import "../styles/about.css";
 const terminalFiles = {
   "satyam.config.ts": `export const engineer = {
   name: "Satyam Kumar Mishra",
-  role: "Full-Stack Engineer & Generative AI Builder",
-  location: "Delhi, India (Open to Remote / On-Site)",
+  role: "Full-Stack Software Engineer & GenAI Builder",
+  location: "Delhi, India (Open to Remote / Hybrid / Relocation)",
   availability: "Immediate (0 Days Notice)",
   education: {
     degree: "B.Tech Computer Science & Engineering",
     cgpa: 8.17,
-    distinction: "University Rank #1 (Semesters 1-3)"
+    distinction: "University Rank #1 College Topper (Semesters 1-3)"
   },
-  specializations: [
-    "Next.js 15 App Router & React 19 Architecture",
-    "Generative AI, OpenAI API & RAG Pipelines (FAISS)",
-    "Secure RESTful APIs with Node.js & Express",
-    "PostgreSQL, MongoDB Atlas, Prisma ORM & Redis",
-    "Stripe & Razorpay Payment Integration"
-  ],
   competitiveProgramming: {
     platform: "LeetCode",
-    language: "Java",
-    problemsSolved: "1000+"
-  }
+    language: "Java 17/21",
+    problemsSolved: "1,064+",
+    globalRank: "#28,349",
+    badges: 26,
+    maxStreak: "223 Days"
+  },
+  coreStack: [
+    "Next.js 15 (App Router, Turbopack, Server Actions)",
+    "React 19, TypeScript 5, Tailwind CSS v4, Zustand",
+    "Node.js (v20+), Express.js, REST APIs, WebSockets",
+    "Redis (ioredis sub-15ms caching & Pub/Sub)",
+    "PostgreSQL (Neon DB, Prisma ORM 6), MongoDB Atlas",
+    "Generative AI (Gemini 1.5/2.0 Flash, OpenAI, RAG, Vapi Voice SDK)",
+    "Docker (Multi-stage Alpine), CI/CD (GitHub Actions), NGINX"
+  ]
 };`,
 
-  "engineering-principles.md": `# Engineering Pillars & Code Philosophy
+  "engineering-principles.md": `# Production Engineering Principles & Philosophy
 
-### 1. Robust Architecture Over Hacks
-Build maintainable, testable software from day one. Separation of concerns, clear API contracts, and predictable data flow.
+### 1. High-Throughput & Low Latency First
+Sub-50ms API response budgets. Leveraging Redis caching layers, connection pooling, and Node clustering to scale backends effortlessly past 10,000+ req/min.
 
-### 2. Intelligent RAG & AI Integration
-In projects like MockMate AI and DentAIva, AI isn't a gimmick—it's a high-impact retrieval engine powered by vector embeddings and prompt engineering.
+### 2. Type-Safe End-to-End Contracts
+Strict schema validation with TypeScript 5, Prisma ORM 6, and Zod/Server Actions, ensuring zero runtime data corruption and deterministic API boundaries.
 
-### 3. Zero-Trust API Security
-Enforce role-based access control (RBAC), sanitized database queries, rate limiting via Redis, and secure JWT token rotation.
+### 3. Pragmatic AI & Vector Retrieval (RAG)
+Generative AI integrated as a high-precision retrieval engine. In MockMate AI, DentAIva, and Grocren, LLMs are grounded via vector embeddings, strict JSON output schemas, and low-latency voice streams.
 
-### 4. Relentless Optimization
-Every millisecond counts. Profiling database queries, indexing schemas, and using streaming server responses for sub-second user experiences.`,
+### 4. Zero-Trust API Security & Auth
+Enterprise-grade role-based access control (RBAC), JWT token rotation, HTTP-only session cookies, sliding-window rate limiting, and Stripe/Razorpay transactional integrity.`,
 
   "tech-philosophy.json": `{
-  "mindset": "Product-Minded Engineer",
-  "dailyRoutine": [
-    "Solve algorithmic challenges in Java (1000+ LeetCode)",
-    "Architect full-stack modules & refine UX",
-    "Experiment with latest GenAI / LLM tooling",
-    "Mentor junior peers & review open-source PRs"
+  "mindset": "Product-Minded Systems Engineer",
+  "dailyHabits": [
+    "Solve algorithmic challenges in Java (1064+ LeetCode)",
+    "Architect scalable full-stack features & benchmark latency",
+    "Integrate latest GenAI tooling & voice agents",
+    "Write comprehensive unit & integration test suites"
   ],
-  "values": [
+  "coreValues": [
     "Extreme Ownership",
     "High Shipping Velocity",
-    "Clean Code Craftsmanship",
-    "Humility & Curiosity"
+    "Clean Architecture Craftsmanship",
+    "Continuous Lifelong Learning"
   ]
 }`
 };
@@ -77,30 +84,30 @@ Every millisecond counts. Profiling database queries, indexing schemas, and usin
 const pillars = [
   {
     icon: <FaLaptopCode />,
-    title: "Full-Stack & Systems",
-    desc: "Architecting reactive frontends with Next.js 15 / React 19 and scalable Node/Express microservices.",
-    tags: ["Next.js 15", "React 19", "Node.js", "Express", "PostgreSQL"],
+    title: "Full-Stack & Distributed Systems",
+    desc: "Architecting high-throughput applications with Next.js 15, React 19, Node.js v20+, Express, and sub-15ms Redis caching.",
+    tags: ["Next.js 15", "React 19", "Node.js (Clustering)", "Redis", "PostgreSQL"],
     color: "#3b82f6",
   },
   {
     icon: <FaBrain />,
-    title: "Generative AI & RAG",
-    desc: "Engineering Retrieval-Augmented Generation with FAISS vector stores, OpenAI APIs, and AI voice agents.",
-    tags: ["OpenAI API", "FAISS Vector", "RAG", "Embeddings", "LangChain"],
+    title: "Generative AI & Voice / RAG",
+    desc: "Building low-latency RAG vector pipelines, real-time Vapi voice agents, and Google Gemini AI conversational engines.",
+    tags: ["Google Gemini", "OpenAI API", "Vapi Voice SDK", "FAISS Vector", "RAG"],
     color: "#8b5cf6",
   },
   {
     icon: <FaShieldAlt />,
-    title: "API Security & Auth",
-    desc: "Implementing enterprise-grade JWT auth, RBAC permissions, Redis rate limiting, and Stripe monetization.",
-    tags: ["JWT", "RBAC", "Redis", "Stripe API", "OAuth 2.0"],
+    title: "API Security & Cloud Architecture",
+    desc: "Implementing zero-trust JWT token rotation, RBAC, Clerk auth, Docker Alpine containers, and Stripe monetization.",
+    tags: ["JWT Rotation", "RBAC", "Clerk Auth", "Docker Compose", "Stripe API"],
     color: "#10b981",
   },
   {
     icon: <FaRocket />,
-    title: "Algorithmic Problem Solving",
-    desc: "Solved 1000+ LeetCode DSA problems in Java, mastering graphs, trees, dynamic programming, and system design.",
-    tags: ["Java", "1000+ LeetCode", "DSA", "System Design"],
+    title: "Algorithmic Rigor & Problem Solving",
+    desc: "Solved 1,064+ LeetCode DSA problems in Java (Rank #28,349), mastering graphs, dynamic programming, and system design.",
+    tags: ["Java 17/21", "1064+ LeetCode", "Graph Theory", "Dynamic Programming"],
     color: "#f59e0b",
   },
 ];
@@ -125,7 +132,7 @@ function About() {
         </span>
         <h2 className="about-title">About Satyam</h2>
         <p className="about-subtext">
-          Bridging algorithmic problem-solving with full-stack product engineering and Generative AI systems.
+          Bridging algorithmic problem-solving with full-stack systems engineering and production Generative AI architectures.
         </p>
       </div>
 
@@ -137,25 +144,26 @@ function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="story-card">
-            <h3>From 1000+ DSA Solutions to Production SaaS Systems</h3>
+            <h3>From 1,064+ DSA Solutions to Scalable Production Architectures</h3>
             <p>
-              My journey in software engineering began with a deep fascination for algorithms and data structures.
-              Solving <strong>1000+ LeetCode problems in Java</strong> trained my mind to identify edge cases,
-              evaluate memory tradeoffs, and write clean, resilient logic under pressure.
+              My software engineering journey is rooted in deep algorithmic discipline.
+              Solving <strong>1,064+ LeetCode problems in Java (Global Rank #28,349)</strong> trained me to evaluate memory tradeoffs,
+              identify complex edge cases, and write clean, resilient logic under strict latency budgets.
             </p>
             <p>
-              Today, I channel that problem-solving discipline into building scalable web applications.
-              From architecting <strong>MockMate AI</strong> (a full-stack RAG mock interview platform using FAISS embeddings and OpenAI)
-              to deploying production-ready platforms during software internships at <strong>Code Innovative Technologies</strong> and <strong>Software Beatz</strong>,
-              I thrive on turning complex business requirements into elegant digital experiences.
+              I channel this analytical mindset into architecting full-stack systems and GenAI applications.
+              From engineering <strong>MockMate AI</strong> (handling 10,000+ req/min with sub-45ms latency and in-memory RAG pipelines)
+              and <strong>DentAIva</strong> (Next.js 15 healthcare SaaS with Vapi AI voice triage)
+              to deploying production features during software internships at <strong>Code Innovative Technologies</strong> and <strong>Software Beatz</strong>,
+              I thrive on building scalable, reliable software.
             </p>
             <p>
-              I believe great software is built at the intersection of <strong>clean architecture, sub-second performance, intuitive user experience,</strong> and <strong>strong team collaboration</strong>.
+              I specialize in <strong>Next.js 15 App Router, React 19, Node.js clustering, Redis distributed caching, PostgreSQL (Neon DB), MongoDB Atlas</strong>, and <strong>Docker microservices</strong>.
             </p>
 
             <div className="story-nav-shortcuts">
               <a href="#projects" className="story-link-btn">
-                <span>Explore Projects</span> <FaArrowRight />
+                <span>Explore Featured Systems</span> <FaArrowRight />
               </a>
               <a href="#experience" className="story-link-btn outline">
                 <span>View Work History</span> <FaChevronRight />
@@ -218,10 +226,10 @@ function About() {
             whileHover={{ y: -5, scale: 1.02 }}
           >
             <span className="counter-num">
-              {isInView ? <CountUp start={0} end={1000} duration={2.2} /> : 0}+
+              {isInView ? <CountUp start={0} end={1064} duration={2.2} /> : 0}+
             </span>
             <span className="counter-label">DSA Problems Solved</span>
-            <span className="counter-sub">LeetCode (Java Mastery)</span>
+            <span className="counter-sub">Java • Global Rank #28,349</span>
           </motion.div>
 
           <motion.div
@@ -240,10 +248,10 @@ function About() {
             whileHover={{ y: -5, scale: 1.02 }}
           >
             <span className="counter-num">
-              {isInView ? <CountUp start={0} end={400} duration={2} /> : 0}+
+              {isInView ? <CountUp start={0} end={10} duration={2} /> : 0}K+
             </span>
-            <span className="counter-label">Students Mentored</span>
-            <span className="counter-sub">Workshops & T&P Cell</span>
+            <span className="counter-label">Req/Min Scaled</span>
+            <span className="counter-sub">Node Clustering & Redis</span>
           </motion.div>
 
           <motion.div

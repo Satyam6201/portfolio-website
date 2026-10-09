@@ -27,11 +27,11 @@ import "../styles/recruitermodal.css";
 
 const CANDIDATE_PROFILE = {
   name: "Satyam Kumar Mishra",
-  title: "Full-Stack Engineer & Generative AI Systems Builder",
+  title: "Full-Stack Software Engineer & Generative AI Builder",
   noticePeriod: "Immediate Joining (0 Days Notice)",
   location: "Delhi, India (Open to Remote, Hybrid, & Relocation)",
   cgpa: "8.17 / 10.0 (University Rank #1 College Topper)",
-  dsaMetric: "1000+ Algorithmic Problems Solved (Java)",
+  dsaMetric: "1064+ Solved (Java) • Global Rank #28,349",
   email: "satyamkmishraa@gmail.com",
   phone: "+91 6201902313",
   whatsappUrl: "https://wa.me/916201902313?text=Hi%20Satyam,%20we%20reviewed%20your%20executive%20profile%20and%20would%20like%20to%20discuss%20an%20engineering%20role.",
@@ -44,35 +44,51 @@ const CANDIDATE_PROFILE = {
 const FLAGSHIP_SYSTEMS = [
   {
     name: "MockMate AI",
-    badge: "RAG & LLM System",
-    metrics: "Sub-80ms FAISS similarity search, PDF parsing, real-time AI scoring",
-    stack: ["React", "Node.js", "Express", "MongoDB Atlas", "FAISS Vector", "OpenAI API", "Stripe"],
+    badge: "Flagship AI & RAG System",
+    metrics: "Node clustering (10K+ req/min, <45ms latency), Redis Pub/Sub, OpenRouter RAG (98.4% accuracy), ATS Resume Builder (2,500+ exports/hr)",
+    stack: ["React 19", "Node.js (Clustering)", "Express.js", "MongoDB", "Redis", "OpenRouter LLMs", "Stripe API", "Docker"],
     liveUrl: "https://mock-mate-ai-flame.vercel.app",
     repoUrl: "https://github.com/Satyam6201/MockMate-AI"
   },
   {
     name: "DentAIva",
-    badge: "Healthcare SaaS & Voice AI",
-    metrics: "Automated voice agent triage, Clerk RBAC auth, PostgreSQL migrations",
-    stack: ["Next.js 14", "TypeScript", "PostgreSQL", "Prisma ORM", "Clerk Auth", "Vapi AI"],
+    badge: "Next.js 15 & Voice AI SaaS",
+    metrics: "Vapi Web SDK automated voice triage (<300ms latency), Clerk RBAC auth, serverless PostgreSQL on Neon DB, Prisma ORM 6, Resend & TanStack Query v5",
+    stack: ["Next.js 15", "TypeScript 5", "Tailwind CSS v4", "PostgreSQL (Neon DB)", "Prisma ORM 6", "Clerk", "Vapi Web SDK"],
     liveUrl: "https://dentwise-henna.vercel.app",
     repoUrl: "https://github.com/Satyam6201/DentAIva"
   },
   {
-    name: "Medi-Connect",
-    badge: "Enterprise Healthcare Portal",
-    metrics: "Multi-role RBAC (Patient/Doctor/Admin), Stripe & Razorpay workflows",
-    stack: ["React", "Node.js", "Express", "MongoDB", "JWT Auth", "Stripe API"],
-    liveUrl: "https://prescripto.vercel.app",
-    repoUrl: "https://github.com/Satyam6201/Medi-Connect"
+    name: "Grocren (Grocerin)",
+    badge: "Gemini AI & Sub-15ms Redis",
+    metrics: "ioredis sub-15ms cache with TTL dictionary fallback (80% DB query reduction), Google Gemini 1.5/2.0 Flash AI, 100-connection MongoDB pool, Stripe & COD",
+    stack: ["React 19", "Vite 7", "Tailwind CSS 4", "Node.js v20+", "Express.js", "MongoDB Atlas", "Redis", "Google Gemini AI", "Stripe"],
+    liveUrl: "https://grocerinx.vercel.app",
+    repoUrl: "https://github.com/Satyam6201/Grocerin"
+  },
+  {
+    name: "Connectify",
+    badge: "WebRTC & Distributed Caching",
+    metrics: "High-throughput HD video & chat platform supporting 10,000+ concurrent users, Stream WebRTC SDK, Redis distributed caching (45% query latency cut)",
+    stack: ["React 19", "Node.js", "Express.js", "MongoDB", "Redis", "Stream WebRTC SDK", "Zustand", "Docker"],
+    liveUrl: "https://connectify-videocall.vercel.app",
+    repoUrl: "https://github.com/Satyam6201/Connectify"
+  },
+  {
+    name: "AI Resume Parser",
+    badge: "Heuristic & Image Extractor",
+    metrics: "Local PDF-to-JSON engine intercepting raw PDF rendering operators for embedded candidate photo extraction, strict schema validation, sub-100ms parse latency",
+    stack: ["Node.js", "Express.js", "pdf-parse", "Multer", "HTML5/CSS3 Glassmorphism", "Regex Engine"],
+    liveUrl: "https://github.com/Satyam6201/Resume-Parser",
+    repoUrl: "https://github.com/Satyam6201/Resume-Parser"
   }
 ];
 
 const CORE_MATRIX = [
-  { group: "Backend & Systems", items: ["Node.js", "Express.js", "REST Architecture", "Redis Caching", "Kafka", "Microservices"] },
-  { group: "Frontend Architecture", items: ["Next.js 15 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion"] },
-  { group: "AI & Vector Search", items: ["OpenAI API", "RAG Pipelines", "FAISS Vector Store", "Embeddings", "Prompt Engineering"] },
-  { group: "Databases & Security", items: ["PostgreSQL", "MongoDB Atlas", "Prisma ORM", "JWT Token Rotation", "RBAC", "Stripe API"] }
+  { group: "Backend & Distributed Systems", items: ["Node.js (v20+)", "Express.js", "REST APIs", "Redis (ioredis / PubSub)", "WebSockets", "Socket.IO", "Node Clustering"] },
+  { group: "Frontend Architecture", items: ["Next.js 15 (App Router)", "React 19", "TypeScript 5", "Tailwind CSS v4", "Zustand", "TanStack React Query v5", "Framer Motion"] },
+  { group: "Generative AI & Voice", items: ["OpenAI API", "Google Gemini 1.5/2.0 Flash", "OpenRouter LLMs", "RAG Pipelines", "Vapi Web SDK Voice", "LangChain", "Prompt Engineering"] },
+  { group: "Databases & Security", items: ["MongoDB Atlas (Pooled)", "PostgreSQL (Neon DB)", "Prisma ORM 6", "JWT Token Rotation", "RBAC", "Clerk Auth", "Helmet", "Stripe API"] }
 ];
 
 export default function RecruiterModal({ isOpen, onClose }) {
@@ -81,7 +97,7 @@ export default function RecruiterModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const handleCopySummary = () => {
-    const text = `Candidate: Satyam Kumar Mishra\nRole: Full-Stack Engineer & AI Builder\nAvailability: Immediate (0 Days Notice)\nStats: 1000+ LeetCode (Java), 8.17 CGPA (University Rank #1)\nCore Stack: Next.js, React, Node.js, Express, PostgreSQL, MongoDB, FAISS RAG, OpenAI API\nContact: ${CANDIDATE_PROFILE.email} | ${CANDIDATE_PROFILE.phone}\nResume: https://satyam-mishra.vercel.app/assets/Resume.pdf\nPortfolio: https://satyam-mishra.vercel.app/`;
+    const text = `Candidate: Satyam Kumar Mishra\nRole: Full-Stack Software Engineer & AI Builder\nAvailability: Immediate (0 Days Notice)\nStats: 1064+ LeetCode (Java), Global Rank #28,349, 8.17 CGPA (University Rank #1)\nCore Stack: Next.js 15, React 19, TypeScript 5, Node.js, Express, PostgreSQL, MongoDB, Redis, OpenAI / Gemini AI, Vapi Voice SDK\nContact: ${CANDIDATE_PROFILE.email} | ${CANDIDATE_PROFILE.phone}\nResume: https://satyam-devfolio.vercel.app/assets/Resume.pdf\nPortfolio: https://satyam-devfolio.vercel.app/`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -119,13 +135,13 @@ export default function RecruiterModal({ isOpen, onClose }) {
             </div>
             <div className="rm-stat-card">
               <span className="rm-stat-label">DSA Discipline</span>
-              <span className="rm-stat-value">1000+ Solved</span>
-              <span className="rm-stat-sub">LeetCode (Java Mastery)</span>
+              <span className="rm-stat-value">1064+ Solved</span>
+              <span className="rm-stat-sub">Java • Global Rank #28,349</span>
             </div>
             <div className="rm-stat-card">
               <span className="rm-stat-label">Academic Merit</span>
               <span className="rm-stat-value">CGPA 8.17</span>
-              <span className="rm-stat-sub">Rank #1 College Topper</span>
+              <span className="rm-stat-sub">University Rank #1 Topper</span>
             </div>
             <div className="rm-stat-card">
               <span className="rm-stat-label">Work Experience</span>
@@ -186,7 +202,7 @@ export default function RecruiterModal({ isOpen, onClose }) {
 
           <div className="rm-section">
             <h3 className="rm-section-title">
-              <FaServer /> Flagship Production Systems
+              <FaServer /> Flagship Production Systems & Architecture
             </h3>
             <div className="rm-projects-list">
               {FLAGSHIP_SYSTEMS.map((proj, idx) => (
@@ -225,12 +241,12 @@ export default function RecruiterModal({ isOpen, onClose }) {
             <div className="rm-history-card">
               <div className="rm-history-item">
                 <div className="rm-hi-header">
-                  <strong>Full Stack Development Intern</strong>
+                  <strong>Full Stack Developer — Intern</strong>
                   <span className="rm-hi-date">Feb 2026 – Aug 2026</span>
                 </div>
                 <span className="rm-hi-company">Code Innovative Technologies (Remote)</span>
                 <p className="rm-hi-desc">
-                  Engineered modular full-stack web applications with React.js, Next.js, Node.js, Express.js, and PostgreSQL. Designed high-throughput REST APIs and maintained strict Git PR review standards.
+                  Engineered production-facing modules using Next.js, React.js, Node.js, and MongoDB. Architected 15+ secure RESTful APIs with JWT authentication and RBAC. Automated CI/CD pipelines via GitHub Actions and Docker, cutting deployment cycle times by 40% with zero-downtime releases.
                 </p>
               </div>
 
@@ -241,7 +257,7 @@ export default function RecruiterModal({ isOpen, onClose }) {
                 </div>
                 <span className="rm-hi-company">Software Beatz (Remote)</span>
                 <p className="rm-hi-desc">
-                  Built secure MERN stack endpoints, integrated JWT token rotation, structured MongoDB aggregation pipelines, and executed comprehensive Postman API integration test suites.
+                  Developed full-stack web applications using React.js, Node.js, Express.js, and MongoDB following modular MVC patterns. Optimized high-traffic MongoDB queries via compound indexing and aggregations, slashing API latency by 35%. Authored Jest unit tests and automated Postman test suites (85%+ coverage).
                 </p>
               </div>
             </div>

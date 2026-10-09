@@ -8,24 +8,19 @@ import About from "./component/About";
 import Experience from "./component/Experience";
 import TechStack from "./component/TechStack";
 import LeetCodeMatrix from "./component/LeetCodeMatrix";
-import EngineeringPlayground from "./component/EngineeringPlayground";
 import Projects from "./component/Projects";
-import Achievements from "./component/Achievements";
 import Education from "./component/Education";
-import Certifications from "./component/Certifications";
-import Testimonials from "./component/Testimonials";
-import Goal from "./component/Goal";
-import Hiring from "./component/Hiring";
-import Blog from "./component/Blog";
-import FunFacts from "./component/FunFacts";
-import Hobbies from "./component/Hobbies";
-import Volunteer from "./component/Volunteer";
-import Contact from "./component/Contact";
-import Footer from "./component/Footer";
 import AmbientBackground from "./component/AmbientBackground";
 import CommandPalette from "./component/CommandPalette";
 import RecruiterModal from "./component/RecruiterModal";
+import Footer from "./component/Footer";
 
+const EngineeringPlayground = lazy(() => import("./component/EngineeringPlayground"));
+const Achievements = lazy(() => import("./component/Achievements"));
+const Certifications = lazy(() => import("./component/Certifications"));
+const Hiring = lazy(() => import("./component/Hiring"));
+const Blog = lazy(() => import("./component/Blog"));
+const Contact = lazy(() => import("./component/Contact"));
 const AIChatbot = lazy(() => import("./component/AIChatbot"));
 const ThemePicker = lazy(() => import("./component/ThemePicker"));
 
@@ -55,20 +50,19 @@ function FullPortfolio({ onOpenRecruiter }) {
       <About />
       <Experience />
       <LeetCodeMatrix />
-      <EngineeringPlayground />
+      <Suspense fallback={<div className="section-lazy-loading" />}>
+        <EngineeringPlayground />
+      </Suspense>
       <TechStack />
       <Projects />
-      <Achievements />
-      <Education />
-      <Certifications />
-      <Testimonials />
-      <Goal />
-      <Hiring />
-      <Blog />
-      <FunFacts />
-      <Hobbies />
-      <Volunteer />
-      <Contact />
+      <Suspense fallback={<div className="section-lazy-loading" />}>
+        <Achievements />
+        <Education />
+        <Certifications />
+        <Hiring />
+        <Blog />
+        <Contact />
+      </Suspense>
     </main>
   );
 }
@@ -105,13 +99,13 @@ function App() {
           <Route path="/projects" element={<main><Projects /></main>} />
           <Route path="/experience" element={<main><Experience /></main>} />
           <Route path="/dsa" element={<main><LeetCodeMatrix /></main>} />
-          <Route path="/playground" element={<main><EngineeringPlayground /></main>} />
+          <Route path="/playground" element={<main><Suspense fallback={null}><EngineeringPlayground /></Suspense></main>} />
           <Route path="/education" element={<main><Education /></main>} />
-          <Route path="/certifications" element={<main><Certifications /></main>} />
-          <Route path="/blog" element={<main><Blog /></main>} />
-          <Route path="/contact" element={<main><Contact /></main>} />
-          <Route path="/hiring" element={<main><Hiring /></main>} />
-          <Route path="/achievements" element={<main><Achievements /></main>} />
+          <Route path="/certifications" element={<main><Suspense fallback={null}><Certifications /></Suspense></main>} />
+          <Route path="/blog" element={<main><Suspense fallback={null}><Blog /></Suspense></main>} />
+          <Route path="/contact" element={<main><Suspense fallback={null}><Contact /></Suspense></main>} />
+          <Route path="/hiring" element={<main><Suspense fallback={null}><Hiring /></Suspense></main>} />
+          <Route path="/achievements" element={<main><Suspense fallback={null}><Achievements /></Suspense></main>} />
           <Route path="*" element={<FullPortfolio onOpenRecruiter={() => setRecruiterOpen(true)} />} />
         </Routes>
 

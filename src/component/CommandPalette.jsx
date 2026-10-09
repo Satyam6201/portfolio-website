@@ -60,11 +60,11 @@ const COMMAND_ACTIONS = [
   {
     category: "Featured Production Systems",
     items: [
-      { id: "proj-mockmate", label: "MockMate AI (RAG, FAISS, OpenAI)", icon: <FaRobot />, action: "link:https://mock-mate-ai-flame.vercel.app" },
-      { id: "proj-dentalva", label: "DentAIva (Healthcare SaaS, Voice AI)", icon: <FaLaptopCode />, action: "link:https://dentwise-henna.vercel.app" },
-      { id: "proj-grocerin", label: "Grocerin (E-commerce, Stripe)", icon: <FaProjectDiagram />, action: "link:https://grocerinx.vercel.app" },
-      { id: "proj-mediconnect", label: "Medi-Connect (Healthcare Portal)", icon: <FaProjectDiagram />, action: "link:https://prescripto.vercel.app" },
-      { id: "proj-emp", label: "Employee Manager Pro (Next.js 14 HRMS)", icon: <FaBriefcase />, action: "link:https://employee-manager-pro-chi.vercel.app" },
+      { id: "proj-mockmate", label: "MockMate AI (Node Clustering, Redis, OpenRouter RAG)", icon: <FaRobot />, action: "link:https://mock-mate-ai-flame.vercel.app" },
+      { id: "proj-dentalva", label: "DentAIva (Next.js 15, Vapi Voice SDK, Neon DB, Prisma 6)", icon: <FaLaptopCode />, action: "link:https://dentwise-henna.vercel.app" },
+      { id: "proj-grocerin", label: "Grocren (React 19, Vite 7, Sub-15ms Redis, Gemini AI)", icon: <FaProjectDiagram />, action: "link:https://grocerinx.vercel.app" },
+      { id: "proj-connectify", label: "Connectify (React 19, Stream WebRTC, 10K+ Users)", icon: <FaServer />, action: "link:https://connectify-videocall.vercel.app" },
+      { id: "proj-resume-parser", label: "AI Resume Parser (Node.js, PDF Image Extractor)", icon: <FaCode />, action: "link:https://github.com/Satyam6201/Resume-Parser" },
     ]
   },
   {
@@ -72,7 +72,7 @@ const COMMAND_ACTIONS = [
     items: [
       { id: "ext-github", label: "GitHub Profile (@Satyam6201)", icon: <FaGithub />, action: "link:https://github.com/Satyam6201" },
       { id: "ext-linkedin", label: "LinkedIn Profile", icon: <FaLinkedin />, action: "link:https://www.linkedin.com/in/satyam-kumar-mishra-dev" },
-      { id: "ext-leetcode", label: "LeetCode Profile (1000+ Solved)", icon: <SiLeetcode />, action: "link:https://leetcode.com/u/SatyamMIshra62" }
+      { id: "ext-leetcode", label: "LeetCode Profile (1064+ Solved, Rank #28,349)", icon: <SiLeetcode />, action: "link:https://leetcode.com/u/SatyamMIshra62" }
     ]
   }
 ];
