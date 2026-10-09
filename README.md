@@ -2,21 +2,23 @@
 
 # Satyam Kumar Mishra — Senior Full-Stack & GenAI Engineer Portfolio
 
-An enterprise-grade, high-performance portfolio application built with **React 19, Vite 6, Framer Motion, Google Gemini AI, and a Custom Glassmorphism Multi-Theme Design System**.
+An enterprise-grade, high-performance portfolio application built with **React 19, Vite 6/7, Next.js 15, Framer Motion, Google Gemini AI, and a Custom Glassmorphism Multi-Theme Design System**.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-satyam--devfolio.vercel.app-4f46e5?style=for-the-badge&logo=vercel&logoColor=white)](https://satyam-devfolio.vercel.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub_Repo-Satyam6201%2Fportfolio--website-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Satyam6201/portfolio-website)
-[![LeetCode Profile](https://img.shields.io/badge/LeetCode-1000+_DSA_Solved-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/SatyamMIshra62)
+[![LeetCode Profile](https://img.shields.io/badge/LeetCode-1064+_DSA_Solved-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/SatyamMIshra62)
 [![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)](https://github.com/Satyam6201/portfolio-website/blob/main/LICENSE)
 
 <br />
 
 [![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite_6-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Google Gemini API](https://img.shields.io/badge/Gemini_1.5_Flash-8E75B5?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
-[![Java](https://img.shields.io/badge/Java_DSA-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://leetcode.com/u/SatyamMIshra62)
+[![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js_v20+-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Google Gemini API](https://img.shields.io/badge/Gemini_1.5/2.0_Flash-8E75B5?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Redis](https://img.shields.io/badge/Redis_ioredis-DC382D?style=flat-square&logo=redis&logoColor=white)](https://redis.io/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL_Neon_DB-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://neon.tech/)
+[![Docker](https://img.shields.io/badge/Docker_Alpine-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com/)
 
 </div>
 
@@ -27,48 +29,87 @@ An enterprise-grade, high-performance portfolio application built with **React 1
 - **Live Deployment**: [https://satyam-devfolio.vercel.app/](https://satyam-devfolio.vercel.app/)
 - **Source Code Repository**: [https://github.com/Satyam6201/portfolio-website](https://github.com/Satyam6201/portfolio-website)
 - **Direct Resume PDF**: [Download Satyam's Resume](https://satyam-devfolio.vercel.app/assets/Resume.pdf)
-- **LeetCode Profile**: [SatyamMIshra62](https://leetcode.com/u/SatyamMIshra62)
+- **LeetCode Profile**: [SatyamMIshra62 (Rank #28,349)](https://leetcode.com/u/SatyamMIshra62)
 
 ---
 
 ## Table of Contents
 
 1. [Architectural Highlights & Key Features](#architectural-highlights--key-features)
-2. [Proof-of-Work Simulators & Engineering Modules](#proof-of-work-simulators--engineering-modules)
-3. [Tech Stack & System Architecture](#tech-stack--system-architecture)
-4. [Project Directory Structure](#project-directory-structure)
-5. [Getting Started & Local Setup](#getting-started--local-setup)
-6. [Environment Variables](#environment-variables)
-7. [About the Developer](#about-the-developer)
-8. [License](#license)
+2. [Featured Production Systems & Architecture](#featured-production-systems--architecture)
+3. [Proof-of-Work Simulators & Engineering Modules](#proof-of-work-simulators--engineering-modules)
+4. [Tech Stack & System Architecture](#tech-stack--system-architecture)
+5. [Responsive Design Architecture](#responsive-design-architecture)
+6. [Project Directory Structure](#project-directory-structure)
+7. [Getting Started & Local Setup](#getting-started--local-setup)
+8. [Environment Variables](#environment-variables)
+9. [About the Developer](#about-the-developer)
+10. [License](#license)
 
 ---
 
 ## Architectural Highlights & Key Features
 
 ### 1. Recruiter Fast-Track Executive View
-- High-efficiency modal tailored for technical recruiters and hiring managers.
+- High-efficiency modal tailored for technical recruiters and engineering leaders.
 - Provides a **30-second executive summary**, core competencies, quantifiable production metrics (latency reduction, RPS scalability, test coverage), and 1-click candidate actions (copy direct email, download resume PDF, schedule call, view GitHub).
 
 ### 2. Spotlight Command Palette (`Cmd+K` / `Ctrl+K`)
 - Global keyboard-accessible spotlight palette supporting instant search filtering, keyboard arrow navigation (`Up`/`Down`/`Enter`), quick section jump links, and direct external shortcuts.
 
-### 3. 3-Tier Production Project Architecture
-- **Tier 1 (Flagship Enterprise & AI Systems)**: Multi-tenant SaaS AI Website Builder and Automated Research Paper Synthesizer featuring interactive **System Architecture Flows** and deep **Engineering Trade-Offs Analysis** (e.g., Vector DB selection, WebSocket vs. SSE, Caching topologies).
-- **Tier 2 (Real-Time & Full-Stack Apps)**: Scalable multi-room collaboration systems with sub-50ms sync latencies.
-- **Tier 3 (Early Prototypes & Mini-Apps)**: Clean collapsible archive keeping the portfolio focused on senior-level engineering while demonstrating career breadth.
+### 3. Automated Live LeetCode Sync (1064+ Java Solutions)
+- **Automated Real-Time Polling**: Fetches live profile stats from LeetCode every 5 minutes with zero-downtime cached fallback.
+- **Verified Profile Metrics**: Live counter for **1,064+ Problems Solved in Java**, Global Rank **#28,349**, **26 Badges** (500-Days, 100-Days), **359 Active Days**, and **223 Max Day Streak**.
+- **Live Recent Submissions Stream**: Real-time feed of recently accepted Java problem submissions.
+- **Topic Mastery Breakdown**: 6 algorithmic domains (Dynamic Programming, Graph Theory, Binary Trees, Sliding Window, Monotonic Stacks, Backtracking) with time/space complexity analysis.
 
-### 4. 1000+ Java DSA Solutions Matrix & Algorithmic Rigor
-- Comprehensive algorithmic mastery tracker showcasing 1000+ LeetCode solutions in Java.
-- Detailed difficulty distribution (Easy, Medium, Hard) and interactive topic mastery cards covering **Dynamic Programming, Graph Theory, Binary Trees, Sliding Window, Monotonic Stacks, Priority Queues, and Backtracking**.
-
-### 5. Google Gemini 1.5 Flash AI Assistant
+### 4. Google Gemini 1.5 Flash AI Assistant
 - Conversational portfolio agent powered by the Google Gemini API with smart fallback heuristic mechanisms for 100% response reliability.
-- Answers recruiter inquiries regarding system architecture, LeetCode performance, tech stack, and direct resume requests.
+- Answers recruiter inquiries regarding system design, LeetCode performance, tech stack, and direct resume requests.
 
-### 6. Multi-Theme Token Engine
+### 5. Multi-Theme Token Engine
 - Persistent theme system with 6 developer-grade themes: **Cyberpunk Neon, Tokyo Night, Dracula Dark, Obsidian Gold, Matrix Cyber, and Clean Light**.
 - Zero flash on load via custom `ThemeContext` and CSS custom properties.
+
+---
+
+## Featured Production Systems & Architecture
+
+### 1. MockMate AI — Full-Stack AI Interview & ATS Resume Architect
+- **Stack**: React 19, Node.js (Clustering), Express.js, MongoDB Atlas, Redis Pub/Sub, OpenRouter LLMs, LangChain, Tailwind CSS, Docker, CI/CD
+- **System Highlights**:
+  - Node clustering processing **10,000+ requests/min** with **<45ms API response latency**.
+  - Distributed Redis caching layer slashing database load by **68%** and sustaining **5,000+ simultaneous WebSockets** via Socket.IO Pub/Sub.
+  - Intelligent RAG resume-parsing pipeline with OpenRouter LLMs achieving **98.4% contextual question accuracy**.
+  - ATS AI Resume Builder with real-time scoring (**99% ATS compatibility**) and vector PDF rendering scaling to **2,500+ exports/hour**.
+
+### 2. DentAIva — Enterprise AI Dental Voice & Clinical Triage SaaS
+- **Stack**: Next.js 15 (App Router, Turbopack, Server Actions), TypeScript 5, Tailwind CSS v4, PostgreSQL (Neon DB), Prisma ORM 6, Clerk Auth, Vapi Web SDK, Resend, TanStack React Query v5, Biome
+- **System Highlights**:
+  - Conversational AI voice agent using Vapi Web SDK for sub-300ms latency voice triage and automated appointment booking.
+  - Serverless PostgreSQL with Prisma ORM 6 on Neon DB with connection pooling and strict relational integrity.
+  - Multi-tenant role-based access control (Doctor, Clinic Staff, Patient) and optimistic UI mutations via TanStack Query v5.
+
+### 3. Grocren (Grocerin) — Scalable Grocery SaaS & AI Commerce Engine
+- **Stack**: React 19, Vite 7, Tailwind CSS 4, React Router v7, Node.js v20+, Express.js, ioredis, MongoDB Atlas (100-connection pooled cluster), Google Gemini API (1.5-flash, 2.0-flash, 1.5-pro), Stripe API & COD, Docker Alpine, NGINX
+- **System Highlights**:
+  - Sub-15ms query caching layer via `ioredis` with in-memory TTL dictionary fallback, slashing database reads by **80%**.
+  - Google Gemini AI integration for automated recipe generation, smart grocery substitution, and personalized cart recommendations.
+  - Hardened with Helmet, Express Rate Limit, JWT auth, Stripe API webhooks, and multi-stage Alpine Docker containers behind NGINX.
+
+### 4. Connectify — Real-Time Chat & HD Video Platform
+- **Stack**: React 19, Node.js, Express.js, MongoDB, Redis, Stream SDK (WebRTC/Chat), Tailwind CSS, DaisyUI, Zustand, TanStack Query, JWT, Docker
+- **System Highlights**:
+  - Scalable backend infrastructure supporting **10,000+ concurrent users** and **1,000+ req/sec**.
+  - Sub-second communication via Stream WebRTC/Chat SDK with distributed Redis query caching cutting latency by **45%**.
+  - Redis sliding-window rate limiting (**100 req/min**) and zero-downtime Docker Compose deployment.
+
+### 5. AI Resume Parser — Production PDF-to-JSON Extraction Engine
+- **Stack**: Node.js (LTS), Express.js, Multer, `pdf-parse` (Custom Pagerender Image Buffer Interceptor), Vanilla HTML5/CSS3 Glassmorphism, Regex Engine
+- **System Highlights**:
+  - Automated PDF resume-to-JSON extraction with zero external API dependencies and sub-100ms local parse latency.
+  - Intercepts raw PDF rendering operator streams to automatically extract and save embedded candidate profile pictures.
+  - Modular isolated parsers with heuristic section boundary detection eliminating section data bleeding.
 
 ---
 
@@ -88,14 +129,23 @@ The portfolio includes live in-browser engineering simulators to demonstrate cor
 
 | Domain | Technologies & Frameworks |
 | :--- | :--- |
-| **Frontend Core** | React 19, Next.js 14/15, TypeScript, JavaScript (ES6+), HTML5, CSS3 |
-| **Styling & Motion** | CSS Custom Properties, Glassmorphism Design Tokens, Tailwind CSS, Framer Motion, React Icons |
-| **Generative AI & LLMs** | Google Gemini 1.5 Flash API, OpenAI API, LangChain, RAG Architecture, Prompt Engineering |
-| **Security & Auth** | JWT Authentication, OAuth 2.0, Role-Based Access Control (RBAC), Helmet, Rate Limiting |
-| **Backend & Microservices** | Node.js, Express.js, REST APIs, WebSockets, Redis In-Memory Caching, Apache Kafka |
-| **Databases & Storage** | MongoDB, PostgreSQL, MySQL, Redis, Firebase Firestore, Prisma ORM |
-| **DevOps & Cloud** | Docker, GitHub Actions (CI/CD), Vercel, Render, Railway, Git & GitHub |
-| **Algorithms & CS** | Java (1000+ LeetCode DSA Problems Solved), OOP, System Design, Operating Systems, DBMS |
+| **Frontend Core** | React 19, Next.js 14/15, TypeScript 5, JavaScript (ES6+), HTML5, CSS3 |
+| **Styling & Motion** | CSS Custom Properties, Glassmorphism Design Tokens, Tailwind CSS v4, Framer Motion, React Icons |
+| **Generative AI & LLMs** | Google Gemini API (1.5/2.0 Flash, 1.5 Pro), OpenAI API, OpenRouter, LangChain, RAG Architecture, Vapi Web SDK |
+| **Security & Auth** | JWT Authentication, OAuth 2.0, Role-Based Access Control (RBAC), Helmet, Express Rate Limit, Clerk |
+| **Backend & Microservices** | Node.js (v20+), Express.js, REST APIs, WebSockets (Socket.IO), Redis In-Memory Caching (ioredis), Stream SDK |
+| **Databases & Storage** | MongoDB Atlas (Pooled Cluster), PostgreSQL (Neon DB), MySQL, Redis, Firebase, Prisma ORM 6 |
+| **DevOps & Cloud** | Docker (Alpine Multi-Stage), Docker Compose, NGINX Reverse Proxy, GitHub Actions (CI/CD), Vercel, Render |
+| **Algorithms & CS** | Java 17/21 (1064+ LeetCode DSA Problems Solved), OOP, System Design, Operating Systems, DBMS |
+
+---
+
+## Responsive Design Architecture
+
+The entire portfolio is engineered with a mobile-first, multi-breakpoint responsive layout:
+- **Navbar**: Adaptive layout scaling from desktop horizontal links to a slide-out drawer on `< 1024px` with icon-only controls on `< 640px` and compact logo scaling on `< 400px`.
+- **DSA Section**: Dynamic 4-column $\to$ 2-column $\to$ 1-column grid scaling for metric cards, live sync badges, difficulty progress bars, and recent submission stream.
+- **Projects Section**: Horizontal category scrolling, stacked search/filter dropdowns, responsive 3D carousel track, and layer-by-layer architectural case study modals with code block scroll containers.
 
 ---
 
@@ -104,7 +154,7 @@ The portfolio includes live in-browser engineering simulators to demonstrate cor
 ```text
 Portfolio/
 ├── public/
-│   └── assets/                         # Images, project assets, certificates & Resume.pdf
+│   └── assets/                         # Project screenshots, resume-parser.png, certificates & Resume.pdf
 ├── src/
 │   ├── component/                      # Senior UI & Engineering Components
 │   │   ├── About.jsx                   # Bio, background, and quantifiable career stats
@@ -120,11 +170,11 @@ Portfolio/
 │   │   ├── Footer.jsx                  # Footer with navigation and social channels
 │   │   ├── FunFacts.jsx                # Engineering quirks, setup, and fun stats
 │   │   ├── Goal.jsx                    # Engineering roadmap and career aspirations
-│   │   ├── Header.jsx                  # Navigation bar with Recruiter Mode and Theme toggle
+│   │   ├── Header.jsx                  # Responsive navbar with Recruiter Mode and Theme toggle
 │   │   ├── Hiring.jsx                  # Value proposition for recruiters and engineering leads
 │   │   ├── Hobbies.jsx                 # Personal interests, tech reading, and music
 │   │   ├── Home.jsx                    # Hero section with animated typewriter effect
-│   │   ├── LeetCodeMatrix.jsx          # 1000+ Java DSA solutions & Topic Mastery Matrix
+│   │   ├── LeetCodeMatrix.jsx          # Automated Live LeetCode sync & Topic Mastery Matrix
 │   │   ├── Projects.jsx                # 3-Tier project hierarchy with System Architecture flows
 │   │   ├── RecruiterModal.jsx          # 30-second Executive Summary modal for recruiters
 │   │   ├── TechStack.jsx               # Filterable skill matrix with proficiency ratings
@@ -137,10 +187,10 @@ Portfolio/
 │   │   ├── global.css                  # Core CSS variables, typography, and reset rules
 │   │   ├── commandpalette.css          # Spotlight modal and search styling
 │   │   ├── engineeringplayground.css   # Interactive simulator layouts and animations
-│   │   ├── leetcodematrix.css          # DSA matrix cards, progress bars, and badges
+│   │   ├── leetcodematrix.css          # DSA matrix cards, progress bars, and responsive styling
 │   │   ├── recruitermodal.css          # Executive view modal and quick-action buttons
-│   │   ├── header.css                  # Header, recruiter badge, and mobile drawer
-│   │   ├── projects.css                # Tiered project cards and architecture diagrams
+│   │   ├── header.css                  # Responsive header, recruiter badge, and mobile drawer
+│   │   ├── projects.css                # Tiered project cards, modals, and architecture diagrams
 │   │   └── chatbot.css                 # AI Chatbot drawer and bubble styles
 │   ├── App.jsx                         # Application router, keyboard bindings, and layout
 │   └── main.jsx                        # Entry point with BrowserRouter wrapper

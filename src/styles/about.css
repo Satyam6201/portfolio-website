@@ -10,33 +10,38 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  padding: 10px 0;
 }
 
 .about-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .about-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-top: 12px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-top: 10px;
   margin-bottom: 8px;
   font-weight: 800;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-subtext {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* Main Grid: Story + Terminal */
 .about-main-grid {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: 28px;
+  margin-bottom: 40px;
   align-items: stretch;
 }
 
@@ -48,7 +53,7 @@
 
 .story-card {
   height: 100%;
-  padding: 34px 28px;
+  padding: 30px 24px;
   background: var(--tag-bg);
   border: 1px solid var(--border-color);
   border-radius: 20px;
@@ -56,21 +61,22 @@
   flex-direction: column;
   justify-content: space-between;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .story-card h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   line-height: 1.35;
 }
 
 .story-card p {
-  font-size: 0.96rem;
-  line-height: 1.75;
+  font-size: 0.94rem;
+  line-height: 1.7;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .story-card strong {
@@ -88,11 +94,11 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
+  padding: 9px 16px;
   background: var(--accent-color);
   color: white;
   border-radius: 10px;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -137,22 +143,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 10px 14px;
   background: rgba(22, 27, 34, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   gap: 10px;
-  flex-wrap: wrap;
 }
 
 .terminal-dots {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .dot {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 }
 
@@ -164,22 +170,30 @@
   display: flex;
   gap: 6px;
   overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+  padding: 0 4px;
+}
+
+.terminal-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .terminal-tab {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 5px;
+  padding: 5px 10px;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #8b949e;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-family: monospace;
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .terminal-tab.active {
@@ -194,21 +208,22 @@
 }
 
 .tab-code-icon {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
 }
 
 .terminal-copy-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
+  gap: 5px;
+  padding: 5px 9px;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   color: #c9d1d9;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .terminal-copy-btn:hover {
@@ -221,16 +236,26 @@
 }
 
 .terminal-body {
-  padding: 18px 20px;
+  padding: 16px 18px;
   overflow-y: auto;
   max-height: 380px;
   flex: 1;
+  scrollbar-width: thin;
+}
+
+.terminal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
 .terminal-code {
   margin: 0;
   font-family: "Fira Code", "Courier New", Courier, monospace;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   line-height: 1.6;
   color: #e6edf3;
   white-space: pre-wrap;
@@ -239,7 +264,7 @@
 
 /* Metric Counters */
 .about-counters-wrap {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .counters-grid {
@@ -249,7 +274,7 @@
 }
 
 .counter-card {
-  padding: 24px 18px;
+  padding: 22px 16px;
   background: var(--tag-bg);
   border: 1px solid var(--border-color);
   border-radius: 18px;
@@ -258,7 +283,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .counter-card:hover {
@@ -267,7 +292,7 @@
 }
 
 .counter-num {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--accent-color);
   line-height: 1.1;
@@ -275,27 +300,27 @@
 }
 
 .counter-label {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .counter-sub {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
 }
 
 /* Core Engineering Pillars */
 .about-pillars-section {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .pillars-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -308,42 +333,47 @@
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 16px;
 }
 
 .pillar-card {
-  padding: 26px 20px;
+  padding: 24px 18px;
   background: var(--tag-bg);
   border: 1px solid var(--border-color);
   border-radius: 18px;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .pillar-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 16px;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
 }
 
 .pillar-card h4 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .pillar-card p {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 16px;
+  line-height: 1.55;
+  margin-bottom: 14px;
   flex-grow: 1;
 }
 
@@ -354,63 +384,116 @@
 }
 
 .pillar-tag {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: 3px 8px;
+  padding: 3px 7px;
   border-radius: 6px;
   background: var(--input-bg);
   color: var(--accent-color);
   border: 1px solid var(--border-color);
 }
 
-/* Responsive Rules */
+/* ============================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+============================================================ */
 @media (max-width: 1024px) {
   .about-main-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
-
   .pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .counters-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .story-card {
-    padding: 24px 18px;
+  .about {
+    width: 95%;
+    margin: 24px auto;
   }
-
+  .about-title {
+    font-size: 1.8rem;
+  }
+  .about-subtext {
+    font-size: 0.92rem;
+  }
+  .story-card {
+    padding: 22px 18px;
+  }
+  .story-card h3 {
+    font-size: 1.2rem;
+  }
+  .story-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
   .terminal-body {
-    padding: 14px 14px;
+    padding: 14px;
     max-height: 300px;
   }
-
   .terminal-code {
     font-size: 0.76rem;
   }
-
   .counter-num {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
-
-  .pillars-grid {
-    grid-template-columns: 1fr;
+  .pillars-title {
+    font-size: 1.25rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
+  .counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .counter-card {
+    padding: 16px 10px;
+  }
+  .counter-num {
+    font-size: 1.55rem;
+  }
+  .counter-label {
+    font-size: 0.8rem;
+  }
+  .counter-sub {
+    font-size: 0.7rem;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pillar-card {
+    padding: 20px 16px;
+  }
+  .story-nav-shortcuts {
+    flex-direction: column;
+  }
+  .story-link-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .about {
+    padding: 5px 0;
+  }
   .counters-grid {
     grid-template-columns: 1fr;
   }
-
-  .terminal-tabs {
-    width: 100%;
+  .terminal-header {
+    padding: 8px 10px;
   }
-
-  .terminal-tab span {
-    font-size: 0.7rem;
+  .terminal-tab {
+    padding: 4px 7px;
+    font-size: 0.68rem;
+  }
+  .terminal-copy-btn {
+    padding: 4px 7px;
+    font-size: 0.68rem;
   }
 }
