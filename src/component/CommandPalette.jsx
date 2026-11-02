@@ -50,12 +50,11 @@ const COMMAND_ACTIONS = [
     ]
   },
   {
-    category: "Recruiter & Direct Actions",
+    category: "Quick & Direct Actions",
     items: [
       { id: "act-resume", label: "Download Resume (PDF)", icon: <FaFileDownload />, action: "download:/assets/Resume.pdf" },
       { id: "act-email", label: "Send Email (satyamkmishraa@gmail.com)", icon: <FaEnvelope />, action: "link:mailto:satyamkmishraa@gmail.com" },
-      { id: "act-wa", label: "Chat on WhatsApp (+91 6201902313)", icon: <FaWhatsapp />, action: "link:https://wa.me/916201902313?text=Hi%20Satyam,%20we%20reviewed%20your%20portfolio!" },
-      { id: "act-recruiter-mode", label: "Open Recruiter Executive View", icon: <FaBolt />, action: "recruiter" }
+      { id: "act-wa", label: "Chat on WhatsApp (+91 6201902313)", icon: <FaWhatsapp />, action: "link:https://wa.me/916201902313?text=Hi%20Satyam,%20we%20reviewed%20your%20portfolio!" }
     ]
   },
   {
@@ -78,7 +77,7 @@ const COMMAND_ACTIONS = [
   }
 ];
 
-export default function CommandPalette({ isOpen, onClose, onOpenRecruiter }) {
+export default function CommandPalette({ isOpen, onClose }) {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef(null);
@@ -126,8 +125,6 @@ export default function CommandPalette({ isOpen, onClose, onOpenRecruiter }) {
     } else if (item.action.startsWith("link:")) {
       const url = item.action.replace("link:", "");
       window.open(url, "_blank", "noopener,noreferrer");
-    } else if (item.action === "recruiter") {
-      if (onOpenRecruiter) onOpenRecruiter();
     }
   };
 

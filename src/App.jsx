@@ -12,7 +12,6 @@ import Projects from "./component/Projects";
 import Education from "./component/Education";
 import AmbientBackground from "./component/AmbientBackground";
 import CommandPalette from "./component/CommandPalette";
-import RecruiterModal from "./component/RecruiterModal";
 import Footer from "./component/Footer";
 
 const EngineeringPlayground = lazy(() => import("./component/EngineeringPlayground"));
@@ -43,10 +42,10 @@ function ScrollToTop() {
   return null;
 }
 
-function FullPortfolio({ onOpenRecruiter }) {
+function FullPortfolio() {
   return (
     <main>
-      <Home onOpenRecruiter={onOpenRecruiter} />
+      <Home />
       <About />
       <Experience />
       <LeetCodeMatrix />
@@ -69,7 +68,6 @@ function FullPortfolio({ onOpenRecruiter }) {
 
 function App() {
   const [cmdOpen, setCmdOpen] = useState(false);
-  const [recruiterOpen, setRecruiterOpen] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -87,13 +85,10 @@ function App() {
       <div className="app-container">
         <AmbientBackground />
         <ScrollToTop />
-        <Header
-          onOpenCmd={() => setCmdOpen(true)}
-          onOpenRecruiter={() => setRecruiterOpen(true)}
-        />
+        <Header onOpenCmd={() => setCmdOpen(true)} />
         
         <Routes>
-          <Route path="/" element={<FullPortfolio onOpenRecruiter={() => setRecruiterOpen(true)} />} />
+          <Route path="/" element={<FullPortfolio />} />
           <Route path="/about" element={<main><About /></main>} />
           <Route path="/techstack" element={<main><TechStack /></main>} />
           <Route path="/projects" element={<main><Projects /></main>} />
@@ -106,7 +101,7 @@ function App() {
           <Route path="/contact" element={<main><Suspense fallback={null}><Contact /></Suspense></main>} />
           <Route path="/hiring" element={<main><Suspense fallback={null}><Hiring /></Suspense></main>} />
           <Route path="/achievements" element={<main><Suspense fallback={null}><Achievements /></Suspense></main>} />
-          <Route path="*" element={<FullPortfolio onOpenRecruiter={() => setRecruiterOpen(true)} />} />
+          <Route path="*" element={<FullPortfolio />} />
         </Routes>
 
         <Footer />
@@ -114,12 +109,6 @@ function App() {
         <CommandPalette
           isOpen={cmdOpen}
           onClose={() => setCmdOpen(false)}
-          onOpenRecruiter={() => setRecruiterOpen(true)}
-        />
-
-        <RecruiterModal
-          isOpen={recruiterOpen}
-          onClose={() => setRecruiterOpen(false)}
         />
 
         <Suspense fallback={null}>

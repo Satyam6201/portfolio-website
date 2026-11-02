@@ -17,7 +17,7 @@ import {
   FaPalette,
   FaCheck,
   FaSearch,
-  FaBolt,
+  FaFileDownload,
   FaTerminal
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
@@ -37,7 +37,7 @@ const navItems = [
   { path: "/contact", hash: "#contact", label: "Contact", icon: <FaEnvelope /> },
 ];
 
-function Header({ onOpenCmd, onOpenRecruiter }) {
+function Header({ onOpenCmd }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -204,16 +204,6 @@ function Header({ onOpenCmd, onOpenRecruiter }) {
 
         <div className="menu-controls">
           <button
-            className="nav-recruiter-btn"
-            onClick={onOpenRecruiter}
-            title="Fast-Track Executive View"
-            aria-label="Open Recruiter Fast Track Mode"
-          >
-            <FaBolt className="bolt-icon" />
-            <span>Recruiter Mode</span>
-          </button>
-
-          <button
             className="nav-cmd-trigger"
             onClick={onOpenCmd}
             title="Command Palette (Ctrl + K)"
@@ -293,12 +283,12 @@ function Header({ onOpenCmd, onOpenRecruiter }) {
           </div>
 
           <div className="mobile-quick-actions">
-            <button className="mobile-recruiter-btn" onClick={() => { closeMenu(); onOpenRecruiter(); }}>
-              <FaBolt /> Recruiter Mode
-            </button>
             <button className="mobile-cmd-btn" onClick={() => { closeMenu(); onOpenCmd(); }}>
               <FaSearch /> Search / ⌘K
             </button>
+            <a href="/assets/Resume.pdf" download="Satyam_Kumar_Mishra_Resume.pdf" className="mobile-resume-btn" onClick={closeMenu}>
+              <FaFileDownload /> Resume (PDF)
+            </a>
           </div>
 
           <div className="mobile-theme-strip">
