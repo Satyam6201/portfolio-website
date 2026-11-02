@@ -17,11 +17,9 @@ import Footer from "./component/Footer";
 const EngineeringPlayground = lazy(() => import("./component/EngineeringPlayground"));
 const Achievements = lazy(() => import("./component/Achievements"));
 const Certifications = lazy(() => import("./component/Certifications"));
-const Hiring = lazy(() => import("./component/Hiring"));
 const Blog = lazy(() => import("./component/Blog"));
 const Contact = lazy(() => import("./component/Contact"));
 const AIChatbot = lazy(() => import("./component/AIChatbot"));
-const ThemePicker = lazy(() => import("./component/ThemePicker"));
 
 import "./styles/global.css";
 
@@ -58,7 +56,6 @@ function FullPortfolio() {
         <Achievements />
         <Education />
         <Certifications />
-        <Hiring />
         <Blog />
         <Contact />
       </Suspense>
@@ -99,7 +96,6 @@ function App() {
           <Route path="/certifications" element={<main><Suspense fallback={null}><Certifications /></Suspense></main>} />
           <Route path="/blog" element={<main><Suspense fallback={null}><Blog /></Suspense></main>} />
           <Route path="/contact" element={<main><Suspense fallback={null}><Contact /></Suspense></main>} />
-          <Route path="/hiring" element={<main><Suspense fallback={null}><Hiring /></Suspense></main>} />
           <Route path="/achievements" element={<main><Suspense fallback={null}><Achievements /></Suspense></main>} />
           <Route path="*" element={<FullPortfolio />} />
         </Routes>
@@ -113,7 +109,6 @@ function App() {
 
         <Suspense fallback={null}>
           <AIChatbot />
-          <ThemePicker />
         </Suspense>
       </div>
     </ThemeProvider>

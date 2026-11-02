@@ -118,7 +118,7 @@ body {
 
 /* Universal Section Titles */
 .about h2, .achievements h2, .blog h2, .certifications h2, .contact h2, .education h2, .funfacts h2, 
-.goal-section h2, .hiring-container h1, .hiring-container h2, .hobbies h2, .projects h2, 
+.goal-section h2, .hobbies h2, .projects h2, 
 .techstack h2, .volunteer h2, .experience h2, .testimonials-title {
   font-size: clamp(1.6rem, 3.8vw, 2.3rem);
   font-weight: 700;
@@ -133,7 +133,7 @@ body {
 
 /* Hover Accent Effects for Section Cards */
 .about:hover, .projects:hover, .contact:hover, .funfacts:hover, .techstack:hover,
-.goal-section:hover, .hobbies:hover, .blog:hover, .hiring-container:hover, 
+.goal-section:hover, .hobbies:hover, .blog:hover, 
 .achievements:hover, .volunteer:hover, .education:hover, .certifications:hover, .experience:hover, .testimonials-section:hover {
   border-color: var(--border-hover);
   box-shadow: 0 12px 36px -10px var(--accent-glow);
@@ -190,7 +190,7 @@ body {
   }
 
   .achievements, .blog, .certifications, .contact, .education, .funfacts, 
-  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .goal-section, .hobbies, .projects, .techstack, 
   .volunteer, .experience, .testimonials-section {
     padding: 45px 22px;
     margin: 30px auto;
@@ -204,7 +204,7 @@ body {
   }
 
   .achievements, .blog, .certifications, .contact, .education, .funfacts, 
-  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .goal-section, .hobbies, .projects, .techstack, 
   .volunteer, .experience, .testimonials-section {
     padding: 30px 16px;
     width: calc(100% - 24px);
@@ -213,7 +213,7 @@ body {
   }
 
   .achievements h2, .blog h2, .certifications h2, .contact h2, .education h2, .funfacts h2, 
-  .goal-section h2, .hiring-container h1, .hiring-container h2, .hobbies h2, .projects h2, 
+  .goal-section h2, .hobbies h2, .projects h2, 
   .techstack h2, .volunteer h2, .experience h2, .testimonials-title {
     text-align: center;
     margin-bottom: 18px;
@@ -226,7 +226,7 @@ body {
   }
 
   .about, .achievements, .blog, .certifications, .contact, .education, .funfacts, 
-  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .goal-section, .hobbies, .projects, .techstack, 
   .volunteer, .experience, .testimonials-section {
     padding: 22px 12px;
     width: calc(100% - 16px);
@@ -238,7 +238,7 @@ body {
 
 @media (max-width: 360px) {
   .about, .achievements, .blog, .certifications, .contact, .education, .funfacts, 
-  .goal-section, .hiring-container, .hobbies, .projects, .techstack, 
+  .goal-section, .hobbies, .projects, .techstack, 
   .volunteer, .experience, .testimonials-section {
     padding: 18px 10px;
     width: calc(100% - 12px);

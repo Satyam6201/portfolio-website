@@ -44,7 +44,6 @@ const COMMAND_ACTIONS = [
       { id: "nav-playground", label: "Interactive System Playground", icon: <FaTerminal />, action: "hash:#playground" },
       { id: "nav-edu", label: "Education (Rank #1, 8.17 CGPA)", icon: <FaGraduationCap />, action: "hash:#education" },
       { id: "nav-cert", label: "Certifications & Credentials", icon: <FaCertificate />, action: "hash:#certifications" },
-      { id: "nav-hiring", label: "Recruiter Hub & Roles", icon: <FaLaptopCode />, action: "hash:#hiring" },
       { id: "nav-blog", label: "Tech Blog & Case Studies", icon: <FaBlog />, action: "hash:#blog" },
       { id: "nav-contact", label: "Contact & Reach Out", icon: <FaEnvelope />, action: "hash:#contact" },
     ]
