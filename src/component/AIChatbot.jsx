@@ -35,21 +35,20 @@ You are Satyam's AI Executive Assistant, an advanced, highly knowledgeable, and 
 Your mission is to provide exhaustive, precise, and metric-backed technical and behavioral insights about Satyam's engineering capabilities, production systems, algorithmic proficiency, work ethic, and immediate hiring availability.
 
 ============================================================
-1. RECRUITER EXECUTIVE SUMMARY & AVAILABILITY
-============================================================
 - Full Name: Satyam Kumar Mishra
+- Current Role: Full Stack Developer @ Link API Tech Pvt Ltd
 - Location: Delhi, India (Available for Remote worldwide, Hybrid, or On-Site Relocation to Bengaluru, Hyderabad, Pune, Mumbai, NCR, etc.)
-- Notice Period: Immediate Joining (0 Days Notice Period)
 - Target Roles:
   * Full-Stack Software Engineer / SDE 1
   * Frontend Software Engineer (React 19 / Next.js 15 / TypeScript)
   * Backend Software Engineer (Node.js Clustering / Express / PostgreSQL / Redis)
   * Generative AI & Voice AI Systems Engineer
 - Why Satyam Stands Out:
-  1. Proven Algorithmic Rigor: 1,064+ LeetCode DSA solutions in Java 17/21 (Global Rank #28,349, 26 Badges, 223+ Days Max Streak).
-  2. Production Shipping Velocity: Engineered 15+ full-stack and SaaS applications, implementing multi-tier caching (Redis), Node clustering (10K+ req/min), and zero-trust authentication.
-  3. High Academic Distinction: University Rank #1 College Topper (Semesters 1-3, CGPA 8.17 / 10.0) in B.Tech CSE.
-  4. Industry Production Experience: 2 Software Engineering Internships (Code Innovative Technologies & Software Beatz) delivering production APIs, CI/CD automation, and DB query optimizations.
+  1. Current Industry Engineering: Full Stack Developer at Link API Tech Pvt Ltd building scalable production web architectures and microservices.
+  2. Proven Algorithmic Rigor: 1,064+ LeetCode DSA solutions in Java 17/21 (Global Rank #28,349, 26 Badges, 223+ Days Max Streak).
+  3. Production Shipping Velocity: Engineered 15+ full-stack and SaaS applications, implementing multi-tier caching (Redis), Node clustering (10K+ req/min), and zero-trust authentication.
+  4. High Academic Distinction: University Rank #1 College Topper (Semesters 1-3, CGPA 8.17 / 10.0) in B.Tech CSE.
+  5. Prior Production Experience: 2 Software Engineering Internships (Code Innovative Technologies & Software Beatz) delivering production APIs, CI/CD automation, and DB query optimizations.
   5. Leadership & Mentorship: Mentored 400+ junior engineers in Java DSA & full-stack development as a Training & Placement Cell coordinator; organized 10+ hackathons and tech events.
 - Compensation & Salary Expectations: Open to competitive market standards aligned with the engineering band, scope of impact, and location.
 - Work Authorization: Indian Citizen, open to international sponsorship/relocation or global remote contracts.
@@ -163,12 +162,17 @@ F. Additional Systems:
 ============================================================
 4. PROFESSIONAL INDUSTRY WORK HISTORY
 ============================================================
-1. Full Stack Development Intern — Code Innovative Technologies (Remote | Feb 2026 – May 2026):
+1. Full Stack Developer — Link API Tech Pvt Ltd (Delhi, India | 2026 – Present):
+   - Architecting, developing, and deploying scalable full-stack web applications and high-throughput microservices using Next.js 15, React 19, Node.js, and PostgreSQL/MongoDB.
+   - Designing and optimizing resilient RESTful APIs, implementing zero-trust authentication, and establishing caching layers with Redis.
+   - Collaborating across engineering teams to ship customer-facing features, optimize database schemas, and ensure high system uptime.
+
+2. Full Stack Development Intern — Code Innovative Technologies (Remote | Feb 2026 – Aug 2026):
    - Architected full-stack modules across Next.js 15, React 19, Node.js, and MongoDB/PostgreSQL.
    - Designed and deployed 15+ secure RESTful endpoints with JWT auth and RBAC.
    - Automated CI/CD pipelines using GitHub Actions and Docker Alpine, slashing deployment cycle times by 40% with zero-downtime releases.
 
-2. Software Development Intern — Software Beatz (Remote | Oct 2025 – Feb 2026):
+3. Software Development Intern — Software Beatz (Remote | Oct 2025 – Feb 2026):
    - Engineered scalable full-stack features using React, Node.js, Express, and MongoDB under clean MVC design patterns.
    - Optimized high-traffic MongoDB queries with compound indexing and aggregation pipelines, cutting API latency by 35%.
    - Authored Jest unit tests and automated Postman test suites, achieving 85%+ code coverage.
@@ -384,17 +388,23 @@ function getFallbackResponse(query) {
     q.includes("work") ||
     q.includes("internship") ||
     q.includes("company") ||
+    q.includes("link api") ||
+    q.includes("link api tech") ||
     q.includes("code innovative") ||
     q.includes("software beatz")
   ) {
     return `### 💼 Professional Work History
 
-1. **Full Stack Development Intern** – *Code Innovative Technologies* (Feb 2026 – May 2026)
+1. **Full Stack Developer** – *Link API Tech Pvt Ltd* (2026 – Present)
+   - Architecting, developing, and deploying scalable full-stack web applications and backend microservices with React 19, Next.js 15, Node.js, and PostgreSQL/MongoDB.
+   - Engineering high-throughput RESTful APIs, optimizing database schemas, and implementing zero-trust authentication layers.
+
+2. **Full Stack Development Intern** – *Code Innovative Technologies* (Feb 2026 – Aug 2026)
    - Built full-stack production modules with Next.js 15, React 19, Node.js, MongoDB, and PostgreSQL.
    - Designed 15+ secure RESTful APIs with JWT authentication and RBAC.
    - Automated CI/CD with GitHub Actions & Docker, reducing deployment cycle times by 40%.
 
-2. **Software Development Intern** – *Software Beatz* (Oct 2025 – Feb 2026)
+3. **Software Development Intern** – *Software Beatz* (Oct 2025 – Feb 2026)
    - Engineered MERN features with modular MVC architecture.
    - Optimized MongoDB queries with compound indexes, slashing API latency by 35%.
    - Authored Jest unit tests and Postman test suites (85%+ coverage).
@@ -473,10 +483,13 @@ I can provide complete details on:
 - **Hiring & Immediate Joining** (0 Days Notice, Relocation / Remote preferences)
 - **Flagship Systems:** MockMate AI, DentAIva, Grocren, AI Resume Parser, Connectify
 - **1,064+ LeetCode DSA Solutions in Java** (Global Rank #28,349)
-- **2 Industry Internships** (Code Innovative Technologies & Software Beatz)
+- **Current Role:** Full Stack Developer at **Link API Tech Pvt Ltd**
+- **Flagship Systems:** MockMate AI, DentAIva, Grocren, AI Resume Parser, Connectify
+- **1,064+ LeetCode DSA Solutions in Java** (Global Rank #28,349)
+- **Prior Experience:** Code Innovative Technologies & Software Beatz
 - **Technical Skills:** Next.js 15, React 19, Node.js Clustering, Redis, PostgreSQL, GenAI
 - **University Rank #1 College Topper** (8.17 CGPA)
-- **Direct Resume Download & Recruiter Outreach**
+- **Direct Resume Download & Quick Outreach**
 
 How may I assist you today?
 
@@ -488,7 +501,7 @@ function AIChatbot() {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: `Hello! I am Satyam's AI Assistant.\n\nI have complete information on Satyam's **MockMate AI**, **DentAIva**, **Grocren**, **AI Resume Parser**, **1,064+ LeetCode DSA solutions in Java (Rank #28,349)**, **University Rank #1 (8.17 CGPA)**, **2 Internships**, and **Immediate Joining (0 Days Notice)**.\n\nHow can I help you today?`,
+      text: `Hello! I am Satyam's AI Assistant.\n\nI have complete information on Satyam's current role as **Full Stack Developer at Link API Tech Pvt Ltd**, his flagship systems (**MockMate AI**, **DentAIva**, **Grocren**, **AI Resume Parser**), **1,064+ LeetCode DSA solutions in Java (Rank #28,349)**, and **University Rank #1 (8.17 CGPA)**.\n\nHow can I help you today?`,
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -496,13 +509,12 @@ function AIChatbot() {
   const messagesEndRef = useRef(null);
 
   const suggestionChips = [
-    { icon: <FaBolt />, label: "Hire Satyam (0 Days Notice)" },
+    { icon: <FaBriefcase />, label: "Work Experience" },
     { icon: <FaFileDownload />, label: "Download Resume" },
     { icon: <SiLeetcode />, label: "1064+ DSA Stats" },
     { icon: <FaRobot />, label: "MockMate AI" },
     { icon: <FaLaptopCode />, label: "DentAIva" },
     { icon: <FaProjectDiagram />, label: "Top Projects" },
-    { icon: <FaBriefcase />, label: "Work Experience" },
     { icon: <FaGraduationCap />, label: "Academic Rank #1" },
     { icon: <FaPhoneAlt />, label: "Contact Info" },
   ];

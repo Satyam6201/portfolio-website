@@ -1,6 +1,4 @@
-<div align="center">
-
-# Satyam Kumar Mishra — Senior Full-Stack & GenAI Engineer Portfolio
+# Satyam Kumar Mishra — Full-Stack Developer (Link API Tech Pvt Ltd)
 
 An enterprise-grade, high-performance portfolio application built with **React 19, Vite 6/7, Next.js 15, Framer Motion, Google Gemini AI, and a Custom Glassmorphism Multi-Theme Design System**.
 
@@ -50,9 +48,9 @@ An enterprise-grade, high-performance portfolio application built with **React 1
 
 ## Architectural Highlights & Key Features
 
-### 1. Recruiter Fast-Track Executive View
-- High-efficiency modal tailored for technical recruiters and engineering leaders.
-- Provides a **30-second executive summary**, core competencies, quantifiable production metrics (latency reduction, RPS scalability, test coverage), and 1-click candidate actions (copy direct email, download resume PDF, schedule call, view GitHub).
+### 1. Professional Full-Stack Engineering (Link API Tech Pvt Ltd)
+- Industry software development building scalable web platforms, high-throughput microservices, and robust REST APIs.
+- Previous engineering experience at Code Innovative Technologies and Software Beatz delivering core production modules, CI/CD automation, and database optimizations.
 
 ### 2. Spotlight Command Palette (`Cmd+K` / `Ctrl+K`)
 - Global keyboard-accessible spotlight palette supporting instant search filtering, keyboard arrow navigation (`Up`/`Down`/`Enter`), quick section jump links, and direct external shortcuts.
@@ -170,17 +168,14 @@ Portfolio/
 │   │   ├── Footer.jsx                  # Footer with navigation and social channels
 │   │   ├── FunFacts.jsx                # Engineering quirks, setup, and fun stats
 │   │   ├── Goal.jsx                    # Engineering roadmap and career aspirations
-│   │   ├── Header.jsx                  # Responsive navbar with Recruiter Mode and Theme toggle
-│   │   ├── Hiring.jsx                  # Value proposition for recruiters and engineering leads
-│   │   ├── Hobbies.jsx                 # Personal interests, tech reading, and music
+│   │   ├── Header.jsx                  # Responsive navbar with Command Palette and Theme toggle
+│   │   ├── Hiring.jsx                  # Value proposition for engineering leads
 │   │   ├── Home.jsx                    # Hero section with animated typewriter effect
 │   │   ├── LeetCodeMatrix.jsx          # Automated Live LeetCode sync & Topic Mastery Matrix
 │   │   ├── Projects.jsx                # 3-Tier project hierarchy with System Architecture flows
-│   │   ├── RecruiterModal.jsx          # 30-second Executive Summary modal for recruiters
 │   │   ├── TechStack.jsx               # Filterable skill matrix with proficiency ratings
-│   │   ├── Testimonials.jsx            # Peer and mentor recommendations
 │   │   ├── ThemePicker.jsx             # Multi-theme selector dropdown
-│   │   └── Volunteer.jsx               # Tech community volunteering and mentorship
+│   │   └── Experience.jsx              # Work history (Link API Tech Pvt Ltd, CIT, Software Beatz)
 │   ├── context/
 │   │   └── ThemeContext.jsx            # 6-theme global provider and persistence
 │   ├── styles/                         # Modular stylesheets with CSS token architecture
@@ -188,8 +183,7 @@ Portfolio/
 │   │   ├── commandpalette.css          # Spotlight modal and search styling
 │   │   ├── engineeringplayground.css   # Interactive simulator layouts and animations
 │   │   ├── leetcodematrix.css          # DSA matrix cards, progress bars, and responsive styling
-│   │   ├── recruitermodal.css          # Executive view modal and quick-action buttons
-│   │   ├── header.css                  # Responsive header, recruiter badge, and mobile drawer
+│   │   ├── header.css                  # Responsive header and mobile drawer
 │   │   ├── projects.css                # Tiered project cards, modals, and architecture diagrams
 │   │   └── chatbot.css                 # AI Chatbot drawer and bubble styles
 │   ├── App.jsx                         # Application router, keyboard bindings, and layout
@@ -251,7 +245,7 @@ npm run build
 
 ## About the Developer
 
-**Satyam Kumar Mishra** — *Full-Stack MERN & Next.js Engineer*
+**Satyam Kumar Mishra** — *Full-Stack Developer @ Link API Tech Pvt Ltd*
 
 - **Email**: [satyamkmishraa@gmail.com](mailto:satyamkmishraa@gmail.com)
 - **WhatsApp**: [+91 6201902313](https://wa.me/916201902313)
