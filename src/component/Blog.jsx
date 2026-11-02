@@ -7,128 +7,95 @@ import {
   FaClock, 
   FaBookOpen, 
   FaHeart, 
-  FaLaughBeam, 
   FaLightbulb, 
   FaFire, 
-  FaTag,
-  FaShareAlt,
+  FaServer,
   FaCode,
-  FaLock,
-  FaRobot
+  FaTerminal
 } from "react-icons/fa";
 
 const blogPosts = [
   {
     id: 1,
     isFeatured: true,
-    category: "React & Next.js",
-    title: "Mastering Next.js 15 Server Actions & RAG AI Architecture",
-    desc: "A deep dive into building production-ready SaaS platforms with Next.js 15, App Router, Server Actions, and OpenAI API integration.",
-    content: `Building modern AI-powered applications requires leveraging server components and streaming responses.
+    category: "System Architecture",
+    title: "Distributed Redis Caching & Sliding-Window Rate Limiting in Node.js",
+    desc: "Architecting sub-15ms caching tiers and resilient DDoS/brute-force rate limiting using Redis, ioredis, and multi-core Node.js clustering.",
+    content: `When scaling API gateways past 10,000 requests/minute, database bottlenecking becomes inevitable. In this architecture deep-dive, we explore how distributed in-memory caching and sliding-window rate limiting insulate downstream services.
 
-Key Takeaways:
-1. Server Actions simplify form mutations without writing explicit API routes.
-2. Vector embeddings with Pinecone/FAISS enable fast RAG (Retrieval-Augmented Generation) context lookup.
-3. Clerk + Prisma ORM provides enterprise-grade Role-Based Access Control (RBAC).
+Key Architectural Strategies:
+1. Two-Tier Caching Strategy: Implementing an in-memory L1 LRU cache with an L2 Redis distributed store using ioredis. Cache invalidation is coordinated via Redis Pub/Sub events across clustered Node worker processes.
+2. Sliding-Window Counter: Unlike fixed-window counters that allow 2x traffic bursts at boundary resets, Redis sorted sets (ZADD, ZREMRANGEBYSCORE) record epoch timestamps per client IP, guaranteeing deterministic rate enforcement.
+3. Resilience Fallbacks: Circuit breakers (opossum) gracefully bypass Redis to localized memory dictionaries during cluster failovers with zero downtime.
 
-Whether you are building healthcare SaaS or e-commerce platforms, this architecture ensures sub-second response times and maximum security.`,
-    readTime: "6 min read",
-    date: "August 2026",
-    likes: 142,
-    tags: ["Next.js", "AI", "SaaS", "React"],
+This architecture forms the backbone of systems like Grocren and MockMate AI, achieving sub-15ms P99 latency.`,
+    readTime: "7 min read",
+    date: "September 2026",
+    likes: 184,
+    tags: ["Redis", "Node.js", "System Design", "Distributed Systems"],
   },
   {
     id: 2,
     isFeatured: false,
-    category: "Dev Humor",
-    title: "10 Realities of Being a Full-Stack Engineer",
-    desc: "Why do programmers prefer dark mode? Because light attracts bugs! A lighthearted collection of developer humor and debugging sagas.",
-    content: `Coding is 10% writing code and 90% figuring out why it doesn't work!
+    category: "React & Next.js",
+    title: "Next.js 15 Server Actions, Streaming SSR & Zero-Trust RBAC",
+    desc: "End-to-end type safety, optimistic UI mutations, and role-based access control with Next.js 15 App Router, Prisma ORM 6, and Clerk.",
+    content: `Next.js 15 fundamentally alters full-stack React architecture by replacing explicit REST boilerplate with co-located Server Actions and React Server Components (RSC).
 
-Developer Myths vs Realities:
-- Myth: Developers write code non-stop for 8 hours.
-- Reality: Spent 4 hours renaming a variable, 2 hours on StackOverflow, and 2 hours explaining why a missing semicolon broke production.
+Core Architectural Insights:
+1. Deterministic Server Actions: By wrapping actions with Zod validation schemas and transactional Prisma 6 queries, we eliminate client-side state desync and API route overhead.
+2. Suspense & Streaming SSR: Decoupling critical viewport HTML from slow third-party analytics enables instant First Contentful Paint (FCP < 300ms) with progressive component hydration.
+3. Multi-Tenant RBAC: Role-Based Access Control enforced at the Next.js middleware edge layer guarantees unauthenticated or unauthorized users are intercepted before touching serverless handler compute.
 
-Classic Dev Realities:
-1. There are 10 types of people in the world: those who understand binary, and those who don't.
-2. A SQL query walks into a bar, approaches two tables and asks... "Can I join you?"
-3. 99 little bugs in the code... take one down, patch it around... 127 little bugs in the code!
-
-Keep coding, stay calm, and test thoroughly before production deployment.`,
-    readTime: "3 min read",
-    date: "July 2026",
-    likes: 289,
-    tags: ["Dev Humor", "Fun", "Coding Life"],
+Implemented in DentAIva (Healthcare SaaS) to maintain strict HIPAA compliance boundaries and instant scheduling updates.`,
+    readTime: "8 min read",
+    date: "August 2026",
+    likes: 215,
+    tags: ["Next.js 15", "React 19", "Server Actions", "TypeScript", "Prisma"],
   },
   {
     id: 3,
     isFeatured: false,
     category: "Java & DSA",
-    title: "How I Solved 1000+ DSA Problems on LeetCode in Java",
-    desc: "Pattern recognition, time complexity trade-offs, and graph/tree algorithms that cracked coding interviews.",
-    content: `Consistency is the key to mastering Data Structures and Algorithms.
+    title: "Deconstructing 1,064+ LeetCode Solutions: Algorithmic Patterns in Java",
+    desc: "A structured breakdown of graph theory, dynamic programming transitions, and monotonic structures that scale to complex engineering problems.",
+    content: `Solving over 1,064 problems on LeetCode exclusively in Java (Global Rank #28,349) taught me that algorithmic mastery is about pattern synthesis rather than memorization.
 
-Top 5 Problem Patterns to Master:
-1. Two Pointers & Sliding Window (Arrays / Strings)
-2. Fast & Slow Pointers (Linked Lists / Cycle Detection)
-3. Graph BFS/DFS & Dijkstra's Algorithm
-4. Dynamic Programming (Knapsack & Subsequences)
-5. Binary Search on Answer Space
+Key Algorithmic Pillars & Systems Translation:
+1. Graph Traversal & Shortest Paths: Dijkstra, Bellman-Ford, and Kahn's Topological Sort directly inform dependency resolution in build systems and microservice circuit routing.
+2. Dynamic Programming State Reductions: Transforming 2D DP matrices into 1D rolling arrays (e.g. 0/1 Knapsack, Longest Common Subsequence) reflects memory-conscious cache architectures in production backends.
+3. Monotonic Queues & Sliding Windows: Used in sliding-window rate limiters, stock span analytics, and streaming telemetry ingestion pipelines.
+4. Binary Search on Solution Space: Leveraging monotonicity to solve optimization problems in O(log N) where direct computation is infeasible.
 
-Focus on understanding underlying patterns rather than memorizing individual solutions!`,
-    readTime: "7 min read",
-    date: "June 2026",
-    likes: 198,
-    tags: ["Java", "DSA", "LeetCode", "Interviews"],
+These foundational patterns guarantee algorithmic efficiency and predictable time complexities across real-world systems.`,
+    readTime: "10 min read",
+    date: "July 2026",
+    likes: 268,
+    tags: ["Java", "DSA", "LeetCode", "Algorithms", "System Design"],
   },
   {
     id: 4,
     isFeatured: false,
     category: "AI & GenAI",
-    title: "Integrating OpenAI Voice AI & RAG Agents into React Apps",
-    desc: "Learn how to embed conversational AI assistants and real-time voice agents into React & Next.js applications.",
-    content: `Generative AI has shifted web apps from static portals to dynamic conversational partners.
+    title: "Architecting Sub-300ms Conversational Voice AI & RAG Pipelines",
+    desc: "Integrating Vapi Web Voice SDK, FAISS vector embeddings, and multi-LLM orchestration for low-latency interactive AI assistants.",
+    content: `Real-time voice and retrieval-augmented generation (RAG) introduce strict latency constraints where round-trip delays over 500ms feel sluggish to users.
 
-In this guide, we walk through setting up streaming completions with the Vercel AI SDK, managing conversation context buffers, and providing smart fallback knowledge engines when API limits are hit.`,
-    readTime: "5 min read",
-    date: "June 2026",
-    likes: 165,
-    tags: ["GenAI", "OpenAI", "React", "AI Agents"],
-  },
-  {
-    id: 5,
-    isFeatured: false,
-    category: "Dev Humor",
-    title: "Talking to Code: Confessions of a Night-Owl Programmer",
-    desc: "Ever spent 5 hours debugging only to realize you forgot to call the function? You are not alone!",
-    content: `Rubber duck debugging is real! Explaining your code out loud to a plastic duck (or your AI assistant) forces your brain to evaluate logic line by line.
+Production Architecture Breakdown:
+1. Low-Latency Voice Signaling: Integrating Vapi Web SDK with WebRTC bidirectional audio streams provides sub-300ms conversational turn-around for triage and booking agents.
+2. In-Memory Vector Search: Pre-indexing semantic embeddings using FAISS enables similarity lookups in <25ms, avoiding expensive remote vector DB network hops for scoped workflows.
+3. Resilient Multi-LLM Routing: Establishing fallback cascades across Google Gemini (2.0/1.5 Flash) and OpenAI (GPT-4o) via OpenRouter ensures 99.9% uptime during provider rate spikes.
+4. Strict JSON Output Enforcement: Utilizing structured outputs and system prompts guarantees reliable downstream database mutations without hallucinations.
 
-Top 3 Late-Night Debugging Realizations:
-1. It wasn't a framework bug; it was a typo in .env.
-2. The server wasn't hanging; npm run dev was running in another terminal window.
-3. The CSS wasn't applying because of a missing closing curly brace.`,
-    readTime: "4 min read",
-    date: "May 2026",
-    likes: 210,
-    tags: ["Dev Humor", "Debugging", "Life"],
-  },
-  {
-    id: 6,
-    isFeatured: false,
-    category: "API & Security",
-    title: "JWT Authentication, RBAC & Redis Rate Limiting",
-    desc: "Protecting Node.js and Express REST APIs with JWT tokens, refresh tokens, role-based authorization, and Redis caching.",
-    content: `API security is non-negotiable in production SaaS products.
-
-We explore setting up secure HTTP-only cookies for JWT storage, building express middleware for Role-Based Access Control (RBAC), and implementing IP rate limiting using Redis to prevent brute-force attacks.`,
+Powers the conversational triage engine in DentAIva and the dynamic mock interviewer in MockMate AI.`,
     readTime: "6 min read",
-    date: "May 2026",
-    likes: 134,
-    tags: ["Backend", "Security", "Node.js", "JWT"],
+    date: "June 2026",
+    likes: 192,
+    tags: ["GenAI", "Voice AI", "Vapi SDK", "RAG", "Vector Embeddings"],
   }
 ];
 
-const categories = ["All", "React & Next.js", "Dev Humor", "Java & DSA", "AI & GenAI", "API & Security"];
+const categories = ["All", "System Architecture", "React & Next.js", "Java & DSA", "AI & GenAI"];
 
 function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -160,18 +127,18 @@ function Blog() {
     <section id="blog" className="blog">
       <div className="blog-header-section">
         <span className="shimmer-badge">
-          <FaBookOpen /> Insights & Case Studies
+          <FaBookOpen /> Engineering Case Studies
         </span>
-        <h2>Engineering Blog & Technical Insights</h2>
+        <h2>Engineering Blog & Architectural Deep-Dives</h2>
         <p className="blog-intro">
-          Deep dives into Full-Stack Architecture, Generative AI, Java Algorithms, and Modern Web Security.
+          Production case studies on Distributed Systems, Next.js 15 Architecture, Algorithmic Patterns, and Low-Latency Voice AI.
         </p>
       </div>
 
       {featuredPost && (
         <div className="featured-hero-card" onClick={() => setActivePost(featuredPost)}>
           <div className="featured-badge-pill">
-            <FaFire className="fire-icon" /> Featured Masterclass
+            <FaFire className="fire-icon" /> Featured Architecture
           </div>
           <div className="hero-content">
             <span className="hero-category">{featuredPost.category}</span>
@@ -182,7 +149,7 @@ function Blog() {
               <span><FaCalendarAlt /> {featuredPost.date}</span>
               <span><FaClock /> {featuredPost.readTime}</span>
               <button className="hero-read-btn">
-                Read Full Article →
+                Read Deep-Dive →
               </button>
             </div>
           </div>
@@ -212,8 +179,10 @@ function Blog() {
               className={`cat-pill ${selectedCategory === cat ? "active" : ""}`}
               onClick={() => setSelectedCategory(cat)}
             >
-              {cat === "Dev Humor" && <FaLaughBeam className="cat-icon" />}
+              {cat === "System Architecture" && <FaServer className="cat-icon" />}
               {cat === "AI & GenAI" && <FaLightbulb className="cat-icon" />}
+              {cat === "React & Next.js" && <FaCode className="cat-icon" />}
+              {cat === "Java & DSA" && <FaTerminal className="cat-icon" />}
               {cat}
             </button>
           ))}
@@ -227,13 +196,12 @@ function Blog() {
           </div>
         ) : (
           filteredPosts.map((post) => (
-            <article className={`blog-card ${post.category === "Dev Humor" ? "humor-card" : ""}`} key={post.id} onClick={() => setActivePost(post)}>
+            <article className="blog-card" key={post.id} onClick={() => setActivePost(post)}>
               <div className="blog-card-top">
-                <span className={`category-tag ${post.category === "Dev Humor" ? "humor" : ""}`}>
-                  {post.category === "Dev Humor" && <FaLaughBeam className="tag-icon" />}
+                <span className="category-tag">
                   {post.category}
                 </span>
-                <button className="like-btn" onClick={(e) => handleLike(post.id, e)} title="Like this article">
+                <button className="like-btn" onClick={(e) => handleLike(post.id, e)} title="Appreciate this article">
                   <FaHeart className={`heart-icon ${likedPosts[post.id] ? "liked" : ""}`} />
                   <span>{post.likes + (likedPosts[post.id] || 0)}</span>
                 </button>
@@ -256,7 +224,7 @@ function Blog() {
               </div>
 
               <button className="read-more-btn" onClick={(e) => { e.stopPropagation(); setActivePost(post); }}>
-                Read Article →
+                Read Deep-Dive →
               </button>
             </article>
           ))
@@ -276,7 +244,7 @@ function Blog() {
             <div className="blog-meta modal-meta">
               <span><FaCalendarAlt /> Published: {activePost.date}</span>
               <span><FaClock /> {activePost.readTime}</span>
-              <span><FaHeart style={{ color: "#ef4444" }} /> {activePost.likes + (likedPosts[activePost.id] || 0)} Likes</span>
+              <span><FaHeart style={{ color: "#ef4444" }} /> {activePost.likes + (likedPosts[activePost.id] || 0)} Reads & Appreciations</span>
             </div>
 
             <div className="blog-tags">
@@ -287,7 +255,7 @@ function Blog() {
 
             <div className="modal-content-body">
               <div className="overview-callout">
-                <p><strong>Summary:</strong> {activePost.desc}</p>
+                <p><strong>Architecture Overview:</strong> {activePost.desc}</p>
               </div>
               <hr />
               <div className="article-paragraphs">
