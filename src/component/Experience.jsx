@@ -12,13 +12,39 @@ import "../styles/experience.css";
 
 const experiences = [
   {
+    id: "link-api",
+    role: "Full Stack Developer",
+    company: "Link API Tech Pvt Ltd",
+    location: "Delhi, India",
+    date: "2026 – Present",
+    badge: "Current Role",
+    isLatest: true,
+    techStack: [
+      "React.js",
+      "Next.js 15",
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "REST APIs",
+      "Docker"
+    ],
+    highlights: [
+      "Architecting and engineering production-grade full-stack web applications and robust backend microservices with Next.js, React, Node.js, and PostgreSQL/MongoDB.",
+      "Designing, developing, and optimizing high-throughput RESTful APIs with secure authentication, caching strategies, and resilient middleware architectures.",
+      "Collaborating on database schema design, query optimizations, and continuous feature delivery to ensure high scalability and seamless user experiences."
+    ],
+  },
+  {
     id: "cit",
     role: "Full Stack Developer — Intern",
     company: "Code Innovative Technologies",
     location: "Remote",
     date: "Feb 2026 – Aug 2026",
-    badge: "Recent Internship",
-    isLatest: true,
+    badge: "Internship",
+    isLatest: false,
     techStack: [
       "Next.js",
       "React.js",
@@ -41,7 +67,7 @@ const experiences = [
     company: "Software Beatz",
     location: "Remote",
     date: "Oct 2025 – Feb 2026",
-    badge: "Production Delivered",
+    badge: "Internship",
     isLatest: false,
     techStack: [
       "React.js",
@@ -70,7 +96,7 @@ const Experience = () => {
         </span>
         <h2>Professional Experience</h2>
         <p className="experience-subtext">
-          Production software engineering internships building full-stack modules, secure REST APIs with RBAC, automated CI/CD pipelines, and high-performance databases.
+          Professional full-stack software engineering experience building scalable web architectures, robust REST APIs, high-throughput microservices, and optimized databases.
         </p>
       </div>
 

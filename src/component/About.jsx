@@ -23,9 +23,9 @@ import "../styles/about.css";
 const terminalFiles = {
   "satyam.config.ts": `export const engineer = {
   name: "Satyam Kumar Mishra",
-  role: "Full-Stack Software Engineer & GenAI Builder",
+  role: "Full-Stack Developer @ Link API Tech Pvt Ltd",
+  company: "Link API Tech Pvt Ltd",
   location: "Delhi, India (Open to Remote / Hybrid / Relocation)",
-  availability: "Immediate (0 Days Notice)",
   education: {
     degree: "B.Tech Computer Science & Engineering",
     cgpa: 8.17,
@@ -152,9 +152,9 @@ function About() {
             </p>
             <p>
               I channel this analytical mindset into architecting full-stack systems and GenAI applications.
-              From engineering <strong>MockMate AI</strong> (handling 10,000+ req/min with sub-45ms latency and in-memory RAG pipelines)
-              and <strong>DentAIva</strong> (Next.js 15 healthcare SaaS with Vapi AI voice triage)
-              to deploying production features during software internships at <strong>Code Innovative Technologies</strong> and <strong>Software Beatz</strong>,
+              Currently working as a <strong>Full Stack Developer at Link API Tech Pvt Ltd</strong>, and having engineered systems like <strong>MockMate AI</strong> (handling 10,000+ req/min with sub-45ms latency and in-memory RAG pipelines)
+              and <strong>DentAIva</strong> (Next.js 15 healthcare SaaS with Vapi AI voice triage),
+              alongside software internships at <strong>Code Innovative Technologies</strong> and <strong>Software Beatz</strong>,
               I thrive on building scalable, reliable software.
             </p>
             <p>

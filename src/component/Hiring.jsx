@@ -92,14 +92,14 @@ function Hiring() {
       <div className="hiring-header">
         <div className="live-status-pill">
           <span className="live-dot"></span>
-          <span>Open to Work — Immediate Joining (0 Days Notice)</span>
+          <span>Full Stack Developer @ Link API Tech Pvt Ltd · Open to Opportunities</span>
         </div>
         
         <h1 className="hiring-title">
-          <FaLightbulb className="title-icon" /> Candidate Engagement & Hiring Hub
+          <FaLightbulb className="title-icon" /> Candidate Engagement & Opportunities
         </h1>
         <p className="hiring-subtext">
-          Full-Stack MERN & Next.js Developer | Generative AI Integrator | Ready for Full-Time Roles & Internships
+          Full Stack Developer at Link API Tech Pvt Ltd | Generative AI Integrator | MERN & Next.js Systems Specialist
         </p>
 
         <div className="hiring-meta-info">
@@ -203,7 +203,7 @@ function Hiring() {
             <div className="card-body">
               <h2><FaUserGraduate className="card-title-icon" /> Frontend & MERN Intern</h2>
               <p className="card-summary">
-                High-energy developer with internship experience at Code CIT & Software Beatz, ready to deliver feature tickets, fix bugs, and build responsive interfaces rapidly.
+                High-energy engineer with industry experience at Link API Tech Pvt Ltd, Code CIT & Software Beatz, ready to deliver feature tickets, fix bugs, and build responsive interfaces rapidly.
               </p>
 
               <div className="card-highlights">

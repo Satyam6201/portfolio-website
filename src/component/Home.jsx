@@ -14,7 +14,7 @@ import {
   FaAward,
   FaBrain,
   FaCheckCircle,
-  FaBolt,
+  FaBriefcase,
   FaLaptopCode,
   FaServer,
   FaTerminal
@@ -26,7 +26,7 @@ const stats = [
   { icon: <SiLeetcode />, value: "1000+", label: "DSA Solutions in Java", sub: "LeetCode (Graphs, DP, Trees)" },
   { icon: <FaRocket />, value: "15+", label: "Production & SaaS Systems", sub: "RAG AI & Full-Stack" },
   { icon: <FaAward />, value: "Rank #1", label: "University College Topper", sub: "CGPA: 8.17 / 10.0" },
-  { icon: <FaBrain />, value: "2", label: "Software Internships", sub: "Code CIT & Software Beatz" },
+  { icon: <FaBriefcase />, value: "Full Stack", label: "Developer", sub: "Link API Tech Pvt Ltd" },
 ];
 
 const floatingBadges = [
@@ -36,7 +36,7 @@ const floatingBadges = [
   { icon: <FaBrain />, label: "GenAI & RAG", className: "badge-ai", delay: 1.5 },
 ];
 
-function Home({ onOpenRecruiter }) {
+function Home() {
   return (
     <section id="home" className="home">
       <motion.div
@@ -52,7 +52,7 @@ function Home({ onOpenRecruiter }) {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <span className="live-pulse-dot" />
-          <span>Available for Full-Time Engineering Roles · 0 Days Notice</span>
+          <span>Full Stack Developer @ Link API Tech Pvt Ltd</span>
         </motion.div>
 
         <div className="hero-avatar-container">
@@ -138,22 +138,21 @@ function Home({ onOpenRecruiter }) {
         </div>
 
         <div className="hero-action-buttons">
-          <motion.button
-            onClick={onOpenRecruiter}
-            className="hero-btn primary-btn"
-            whileHover={{ scale: 1.04, y: -2 }}
-            whileTap={{ scale: 0.96 }}
-            style={{ cursor: "pointer", border: "none" }}
-          >
-            <FaBolt style={{ color: "#f59e0b" }} /> Recruiter Executive View
-          </motion.button>
           <motion.a
             href="#projects"
-            className="hero-btn secondary-btn"
+            className="hero-btn primary-btn"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.96 }}
           >
             <FaRocket /> Explore Architecture & Work
+          </motion.a>
+          <motion.a
+            href="#experience"
+            className="hero-btn secondary-btn"
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+          >
+            <FaBriefcase /> Work Experience
           </motion.a>
           <motion.a
             href="/assets/Resume.pdf"
