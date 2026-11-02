@@ -167,14 +167,13 @@ Portfolio/
 │   │   ├── Experience.jsx              # Timeline with Google X-Y-Z quantifiable impact
 │   │   ├── Footer.jsx                  # Footer with navigation and social channels
 │   │   ├── FunFacts.jsx                # Engineering quirks, setup, and fun stats
-│   │   ├── Goal.jsx                    # Engineering roadmap and career aspirations
 │   │   ├── Header.jsx                  # Responsive navbar with Command Palette and Theme toggle
-│   │   ├── Hiring.jsx                  # Value proposition for engineering leads
 │   │   ├── Home.jsx                    # Hero section with animated typewriter effect
 │   │   ├── LeetCodeMatrix.jsx          # Automated Live LeetCode sync & Topic Mastery Matrix
 │   │   ├── Projects.jsx                # 3-Tier project hierarchy with System Architecture flows
 │   │   ├── TechStack.jsx               # Filterable skill matrix with proficiency ratings
-│   │   ├── ThemePicker.jsx             # Multi-theme selector dropdown
+│   │   ├── Education.jsx               # B.Tech CS degree, University Rank #1 honors & curriculum
+│   │   ├── Blog.jsx                    # Engineering case studies and architecture deep-dives
 │   │   └── Experience.jsx              # Work history (Link API Tech Pvt Ltd, CIT, Software Beatz)
 │   ├── context/
 │   │   └── ThemeContext.jsx            # 6-theme global provider and persistence
