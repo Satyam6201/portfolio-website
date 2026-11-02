@@ -229,21 +229,21 @@ function getFallbackResponse(query) {
     q.includes("salary") ||
     q.includes("why hire")
   ) {
-    return `### 💼 Candidate Executive Summary & Hiring Availability
+    return `### 💼 Executive Engineering Summary & Experience
 
-**Satyam Kumar Mishra** is available for **Immediate Joining (0 Days Notice Period)**.
+**Satyam Kumar Mishra** is currently working as a **Full Stack Developer at Link API Tech Pvt Ltd**.
 
-#### 🎯 Target Positions:
-- **Full-Stack Software Engineer / SDE 1**
-- **Frontend Engineer** (React 19, Next.js 15, TypeScript 5, Tailwind CSS 4)
-- **Backend Engineer** (Node.js Clustering, Express, PostgreSQL, Redis, REST APIs)
-- **Generative AI & Voice AI Systems Engineer**
+#### 🎯 Core Engineering Capabilities:
+- **Full-Stack Software Engineering & Architecture**
+- **Frontend Systems** (React 19, Next.js 15, TypeScript 5, Tailwind CSS 4)
+- **High-Throughput Backend & Microservices** (Node.js Clustering, Express, PostgreSQL, Redis, REST APIs)
+- **Generative AI, Voice AI & RAG Systems** (Vapi Voice SDK, Google Gemini, OpenAI, FAISS)
 
-#### 🌟 Why Hire Satyam?
-1. **Algorithmic Rigor:** **1,064+ LeetCode DSA Solutions** in Java (Global Rank **#28,349**, 26 Badges, 223+ Days Streak).
-2. **Production Systems:** Engineered **15+ scalable web apps & SaaS** platforms (Node clustering, sub-15ms Redis caching, Vapi AI voice triage).
-3. **Academic Excellence:** **University Rank #1 College Topper** (CGPA **8.17 / 10.0**, Semesters 1–3).
-4. **Industry Experience:** 2 internships delivering production APIs, CI/CD pipelines, and query optimizations.
+#### 🌟 Key Engineering Highlights:
+1. **Current Engineering:** Full Stack Developer at **Link API Tech Pvt Ltd** building scalable web architectures, resilient microservices & high-speed caching.
+2. **Algorithmic Rigor:** **1,064+ LeetCode DSA Solutions** in Java (Global Rank **#28,349**, 26 Badges, 223+ Days Streak).
+3. **Production Systems:** Engineered **15+ scalable web apps & SaaS** platforms (Node clustering, sub-15ms Redis caching, Vapi AI voice triage).
+4. **Academic Distinction:** **University Rank #1 College Topper** (CGPA **8.17 / 10.0**, Semesters 1–3).
 5. **Work Preference:** Open to **Remote**, **Hybrid**, or **Relocation** (Delhi NCR, Bengaluru, Hyderabad, Pune, Mumbai, International).
 
 [DIRECT_CONTACT_ACTIONS]`;

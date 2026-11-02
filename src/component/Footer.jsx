@@ -69,16 +69,16 @@ const socials = [
 const stats = [
   { icon: <FaCode />, value: "15+", label: "Production Apps" },
   { icon: <FaStar />, value: "1000+", label: "DSA in Java" },
-  { icon: <FaRocket />, value: "2", label: "Internships" },
+  { icon: <FaRocket />, value: "Full Stack", label: "Link API Tech" },
   { icon: <FaHeart />, value: "400+", label: "Mentored" },
 ];
 
 const typewriterPhrases = [
   "satyamkmishraa@gmail.com",
   "+91 6201902313",
-  "Open for Remote & On-Site",
-  "0 Days Notice Period",
-  "Available for Full-Time Roles",
+  "Full Stack Developer @ Link API Tech",
+  "Open for High-Impact Roles",
+  "Available for Remote & On-Site",
 ];
 
 function Footer() {
@@ -152,7 +152,7 @@ function Footer() {
           </a>
           <div className="brand-availability">
             <span className="avail-dot" />
-            Available for Hire · 0 Days Notice · Delhi, India
+            Full Stack Developer @ Link API Tech · Delhi, India
           </div>
         </motion.div>
 
